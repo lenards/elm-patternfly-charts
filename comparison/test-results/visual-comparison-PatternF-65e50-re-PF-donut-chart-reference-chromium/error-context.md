@@ -1,0 +1,1011 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - link "Skip to content" [ref=e6] [cursor=pointer]:
+        - /url: "#ws-page-main"
+        - generic [ref=e7]: Skip to content
+      - banner [ref=e8]:
+        - generic [ref=e9]:
+          - button "Global navigation" [expanded] [ref=e11] [cursor=pointer]:
+            - img [ref=e13]
+          - link "PatternFly" [ref=e16] [cursor=pointer]:
+            - /url: /
+            - img "PatternFly" [ref=e17]
+        - generic [ref=e38]:
+          - button "Expandable search input toggle" [ref=e43] [cursor=pointer]:
+            - img [ref=e45]
+          - link "PatternFly GitHub page" [ref=e48] [cursor=pointer]:
+            - /url: //github.com/patternfly
+            - img [ref=e50]
+          - 'button "Theme selection, current: System" [ref=e53] [cursor=pointer]':
+            - img [ref=e57]
+            - img [ref=e61]
+          - button "Release 6.4.0" [ref=e64] [cursor=pointer]:
+            - generic [ref=e65]: Release 6.4.0
+            - img [ref=e68]
+      - navigation "Side Nav" [ref=e72]:
+        - list [ref=e73]:
+          - listitem [ref=e74]:
+            - button "Get started" [ref=e75] [cursor=pointer]:
+              - text: Get started
+              - img [ref=e78]
+          - listitem [ref=e80]:
+            - button "Design foundations" [ref=e81] [cursor=pointer]:
+              - text: Design foundations
+              - img [ref=e84]
+          - listitem [ref=e86]:
+            - button "Tokens" [ref=e87] [cursor=pointer]:
+              - text: Tokens
+              - img [ref=e90]
+          - listitem [ref=e92]:
+            - button "PatternFly AI" [ref=e93] [cursor=pointer]:
+              - text: PatternFly AI
+              - img [ref=e96]
+          - listitem [ref=e98]:
+            - button "Accessibility" [ref=e99] [cursor=pointer]:
+              - text: Accessibility
+              - img [ref=e102]
+          - listitem [ref=e104]:
+            - button "UX writing" [ref=e105] [cursor=pointer]:
+              - text: UX writing
+              - img [ref=e108]
+          - listitem [ref=e110]:
+            - button "Components" [ref=e111] [cursor=pointer]:
+              - text: Components
+              - img [ref=e114]
+          - listitem [ref=e116]:
+            - button "Patterns" [ref=e117] [cursor=pointer]:
+              - text: Patterns
+              - img [ref=e120]
+          - listitem [ref=e122]:
+            - button "Extensions" [ref=e123] [cursor=pointer]:
+              - text: Extensions
+              - img [ref=e126]
+          - listitem [ref=e128]:
+            - button "Component groups" [ref=e129] [cursor=pointer]:
+              - text: Component groups
+              - img [ref=e132]
+          - listitem [ref=e134]:
+            - button "Charts" [expanded] [ref=e135] [cursor=pointer]:
+              - text: Charts
+              - img [ref=e138]
+            - region "Charts" [ref=e140]:
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - link "About charts" [ref=e143] [cursor=pointer]:
+                    - /url: /charts/about-charts
+                    - generic [ref=e145]: About charts
+                - listitem [ref=e146]:
+                  - link "Colors for charts" [ref=e147] [cursor=pointer]:
+                    - /url: /charts/colors-for-charts
+                    - generic [ref=e149]: Colors for charts
+                - listitem [ref=e150]:
+                  - link "Area chart" [ref=e151] [cursor=pointer]:
+                    - /url: /charts/area-chart
+                    - generic [ref=e153]: Area chart
+                - listitem [ref=e154]:
+                  - link "Bar chart" [ref=e155] [cursor=pointer]:
+                    - /url: /charts/bar-chart
+                    - generic [ref=e157]: Bar chart
+                - listitem [ref=e158]:
+                  - link "Box plot chart" [ref=e159] [cursor=pointer]:
+                    - /url: /charts/box-plot-chart
+                    - generic [ref=e161]: Box plot chart
+                - listitem [ref=e162]:
+                  - link "Bullet chart" [ref=e163] [cursor=pointer]:
+                    - /url: /charts/bullet-chart
+                    - generic [ref=e165]: Bullet chart
+                - listitem [ref=e166]:
+                  - link "Donut chart" [ref=e167] [cursor=pointer]:
+                    - /url: /charts/donut-chart
+                    - generic [ref=e169]: Donut chart
+                - listitem [ref=e170]:
+                  - link "Donut utilization chart" [ref=e171] [cursor=pointer]:
+                    - /url: /charts/donut-utilization-chart
+                    - generic [ref=e173]: Donut utilization chart
+                - listitem [ref=e174]:
+                  - link "Legends" [ref=e175] [cursor=pointer]:
+                    - /url: /charts/legends
+                    - generic [ref=e177]: Legends
+                - listitem [ref=e178]:
+                  - link "Line chart Beta" [ref=e179] [cursor=pointer]:
+                    - /url: /charts/line-chart
+                    - generic [ref=e180]:
+                      - generic [ref=e181]: Line chart
+                      - generic [ref=e185]: Beta
+                - listitem [ref=e186]:
+                  - link "Patterns" [ref=e187] [cursor=pointer]:
+                    - /url: /charts/patterns
+                    - generic [ref=e189]: Patterns
+                - listitem [ref=e190]:
+                  - link "Pie chart" [ref=e191] [cursor=pointer]:
+                    - /url: /charts/pie-chart
+                    - generic [ref=e193]: Pie chart
+                - listitem [ref=e194]:
+                  - link "Resize observer" [ref=e195] [cursor=pointer]:
+                    - /url: /charts/resize-observer
+                    - generic [ref=e197]: Resize observer
+                - listitem [ref=e198]:
+                  - link "Sankey chart Beta" [ref=e199] [cursor=pointer]:
+                    - /url: /charts/sankey-chart
+                    - generic [ref=e200]:
+                      - generic [ref=e201]: Sankey chart
+                      - generic [ref=e205]: Beta
+                - listitem [ref=e206]:
+                  - link "Scatter chart" [ref=e207] [cursor=pointer]:
+                    - /url: /charts/scatter-chart
+                    - generic [ref=e209]: Scatter chart
+                - listitem [ref=e210]:
+                  - link "Skeletons" [ref=e211] [cursor=pointer]:
+                    - /url: /charts/skeletons
+                    - generic [ref=e213]: Skeletons
+                - listitem [ref=e214]:
+                  - link "Sparkline chart" [ref=e215] [cursor=pointer]:
+                    - /url: /charts/sparkline-chart
+                    - generic [ref=e217]: Sparkline chart
+                - listitem [ref=e218]:
+                  - link "Stack chart" [ref=e219] [cursor=pointer]:
+                    - /url: /charts/stack-chart
+                    - generic [ref=e221]: Stack chart
+                - listitem [ref=e222]:
+                  - link "Themes" [ref=e223] [cursor=pointer]:
+                    - /url: /charts/themes
+                    - generic [ref=e225]: Themes
+                - listitem [ref=e226]:
+                  - link "Threshold chart" [ref=e227] [cursor=pointer]:
+                    - /url: /charts/threshold-chart
+                    - generic [ref=e229]: Threshold chart
+                - listitem [ref=e230]:
+                  - link "Tooltips" [ref=e231] [cursor=pointer]:
+                    - /url: /charts/tooltips
+                    - generic [ref=e233]: Tooltips
+          - listitem [ref=e234]:
+            - button "Topology" [ref=e235] [cursor=pointer]:
+              - text: Topology
+              - img [ref=e238]
+          - listitem [ref=e240]:
+            - button "Layouts" [ref=e241] [cursor=pointer]:
+              - text: Layouts
+              - img [ref=e244]
+          - listitem [ref=e246]:
+            - button "Utility classes" [ref=e247] [cursor=pointer]:
+              - text: Utility classes
+              - img [ref=e250]
+          - listitem [ref=e252]:
+            - button "Developer resources" [ref=e253] [cursor=pointer]:
+              - text: Developer resources
+              - img [ref=e256]
+          - listitem [ref=e258]:
+            - button "Training" [ref=e259] [cursor=pointer]:
+              - text: Training
+              - img [ref=e262]
+      - generic [ref=e265]:
+        - main [ref=e266]:
+          - generic [ref=e267]:
+            - heading "Donut chart" [level=1] [ref=e273]
+            - list [ref=e277]:
+              - listitem [ref=e278]:
+                - link "Victory" [ref=e279] [cursor=pointer]:
+                  - /url: /charts/donut-chart
+              - listitem [ref=e280]:
+                - link "Design guidelines" [ref=e281] [cursor=pointer]:
+                  - /url: /charts/donut-chart/design-guidelines
+            - generic [ref=e285]:
+              - navigation "Table of contents" [ref=e286]:
+                - button "Table of contents" [ref=e290] [cursor=pointer]:
+                  - img [ref=e293]
+                  - generic [ref=e295]: Table of contents
+              - generic [ref=e296]:
+                - heading "Introduction" [level=2] [ref=e299]:
+                  - button [ref=e301] [cursor=pointer]:
+                    - img [ref=e302]
+                  - text: Introduction
+                - paragraph [ref=e304]:
+                  - text: "Note: PatternFly React charts live in its own package at"
+                  - link "@patternfly/react-charts" [ref=e305] [cursor=pointer]:
+                    - /url: https://www.npmjs.com/package/@patternfly/react-charts
+                  - text: "!"
+                - paragraph [ref=e306]:
+                  - text: The examples below are based on the
+                  - link "Victory" [ref=e307] [cursor=pointer]:
+                    - /url: https://formidable.com/open-source/victory/docs/victory-chart/
+                  - text: chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+                - heading "Examples" [level=2] [ref=e310]:
+                  - button [ref=e312] [cursor=pointer]:
+                    - img [ref=e313]
+                  - text: Examples
+                - generic [ref=e315]:
+                  - heading "Basic" [level=3] [ref=e319]:
+                    - button [ref=e321] [cursor=pointer]:
+                      - img [ref=e322]
+                    - text: Basic
+                  - generic [ref=e326]:
+                    - generic:
+                      - img "Donut chart example" [ref=e327]:
+                        - generic [ref=e329]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e334]:
+                    - button "Toggle TS code in Basic example" [ref=e336] [cursor=pointer]:
+                      - generic [ref=e337]:
+                        - img [ref=e338]
+                        - text: TS
+                    - button "Copy Basic example code to clipboard" [ref=e341] [cursor=pointer]:
+                      - img [ref=e343]
+                    - form "Open Basic example in CodeSandbox form" [ref=e345]:
+                      - button "Open Basic example in CodeSandbox" [ref=e347] [cursor=pointer]:
+                        - img [ref=e349]
+                    - link "Open Basic example in new window" [ref=e352] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/basic
+                      - img [ref=e354]
+                - generic [ref=e356]:
+                  - heading "Right aligned legend" [level=3] [ref=e360]:
+                    - button [ref=e362] [cursor=pointer]:
+                      - img [ref=e363]
+                    - text: Right aligned legend
+                  - generic [ref=e367]:
+                    - generic:
+                      - img "Donut chart example" [ref=e368]:
+                        - generic [ref=e370]:
+                          - generic [ref=e371]: "Cats: 35"
+                          - generic [ref=e372]: "Dogs: 55"
+                          - generic [ref=e373]: "Birds: 10"
+                        - generic [ref=e374]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e379]:
+                    - button "Toggle TS code in Right aligned legend example" [ref=e381] [cursor=pointer]:
+                      - generic [ref=e382]:
+                        - img [ref=e383]
+                        - text: TS
+                    - button "Copy Right aligned legend example code to clipboard" [ref=e386] [cursor=pointer]:
+                      - img [ref=e388]
+                    - form "Open Right aligned legend example in CodeSandbox form" [ref=e390]:
+                      - button "Open Right aligned legend example in CodeSandbox" [ref=e392] [cursor=pointer]:
+                        - img [ref=e394]
+                    - link "Open Right aligned legend example in new window" [ref=e397] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/right-aligned-legend
+                      - img [ref=e399]
+                - generic [ref=e401]:
+                  - heading "Multi-color (ordered) with right aligned legend" [level=3] [ref=e405]:
+                    - button [ref=e407] [cursor=pointer]:
+                      - img [ref=e408]
+                    - text: Multi-color (ordered) with right aligned legend
+                  - generic [ref=e412]:
+                    - generic:
+                      - img "Donut chart example" [ref=e413]:
+                        - generic [ref=e415]:
+                          - generic [ref=e416]: "Cats: 35"
+                          - generic [ref=e417]: "Dogs: 55"
+                          - generic [ref=e418]: "Birds: 10"
+                        - generic [ref=e419]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e424]:
+                    - button "Toggle TS code in Multi-color (ordered) with right aligned legend example" [ref=e426] [cursor=pointer]:
+                      - generic [ref=e427]:
+                        - img [ref=e428]
+                        - text: TS
+                    - button "Copy Multi-color (ordered) with right aligned legend example code to clipboard" [ref=e431] [cursor=pointer]:
+                      - img [ref=e433]
+                    - form "Open Multi-color (ordered) with right aligned legend example in CodeSandbox form" [ref=e435]:
+                      - button "Open Multi-color (ordered) with right aligned legend example in CodeSandbox" [ref=e437] [cursor=pointer]:
+                        - img [ref=e439]
+                    - link "Open Multi-color (ordered) with right aligned legend example in new window" [ref=e442] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/multi-color-ordered-with-right-aligned-legend
+                      - img [ref=e444]
+                - generic [ref=e446]:
+                  - heading "Bottom aligned legend" [level=3] [ref=e450]:
+                    - button [ref=e452] [cursor=pointer]:
+                      - img [ref=e453]
+                    - text: Bottom aligned legend
+                  - generic [ref=e457]:
+                    - generic:
+                      - img "Donut chart example" [ref=e458]:
+                        - generic [ref=e460]:
+                          - generic [ref=e461]: "Cats: 35"
+                          - generic [ref=e462]: "Dogs: 55"
+                          - generic [ref=e463]: "Birds: 10"
+                        - generic [ref=e464]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e469]:
+                    - button "Toggle TS code in Bottom aligned legend example" [ref=e471] [cursor=pointer]:
+                      - generic [ref=e472]:
+                        - img [ref=e473]
+                        - text: TS
+                    - button "Copy Bottom aligned legend example code to clipboard" [ref=e476] [cursor=pointer]:
+                      - img [ref=e478]
+                    - form "Open Bottom aligned legend example in CodeSandbox form" [ref=e480]:
+                      - button "Open Bottom aligned legend example in CodeSandbox" [ref=e482] [cursor=pointer]:
+                        - img [ref=e484]
+                    - link "Open Bottom aligned legend example in new window" [ref=e487] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/bottom-aligned-legend
+                      - img [ref=e489]
+                - generic [ref=e491]:
+                  - heading "Small" [level=3] [ref=e495]:
+                    - button [ref=e497] [cursor=pointer]:
+                      - img [ref=e498]
+                    - text: Small
+                  - generic [ref=e502]:
+                    - generic:
+                      - img "Donut chart example" [ref=e503]:
+                        - generic [ref=e505]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e510]:
+                    - button "Toggle TS code in Small example" [ref=e512] [cursor=pointer]:
+                      - generic [ref=e513]:
+                        - img [ref=e514]
+                        - text: TS
+                    - button "Copy Small example code to clipboard" [ref=e517] [cursor=pointer]:
+                      - img [ref=e519]
+                    - form "Open Small example in CodeSandbox form" [ref=e521]:
+                      - button "Open Small example in CodeSandbox" [ref=e523] [cursor=pointer]:
+                        - img [ref=e525]
+                    - link "Open Small example in new window" [ref=e528] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/small
+                      - img [ref=e530]
+                - generic [ref=e532]:
+                  - heading "Small with right aligned legend" [level=3] [ref=e536]:
+                    - button [ref=e538] [cursor=pointer]:
+                      - img [ref=e539]
+                    - text: Small with right aligned legend
+                  - generic [ref=e543]:
+                    - generic:
+                      - img "Donut chart example" [ref=e544]:
+                        - generic [ref=e546]:
+                          - generic [ref=e547]: "Cats: 35"
+                          - generic [ref=e548]: "Dogs: 55"
+                          - generic [ref=e549]: "Birds: 10"
+                        - generic [ref=e550]: 100Pets
+                      - generic:
+                        - img
+                  - generic [ref=e555]:
+                    - button "Toggle TS code in Small with right aligned legend example" [ref=e557] [cursor=pointer]:
+                      - generic [ref=e558]:
+                        - img [ref=e559]
+                        - text: TS
+                    - button "Copy Small with right aligned legend example code to clipboard" [ref=e562] [cursor=pointer]:
+                      - img [ref=e564]
+                    - form "Open Small with right aligned legend example in CodeSandbox form" [ref=e566]:
+                      - button "Open Small with right aligned legend example in CodeSandbox" [ref=e568] [cursor=pointer]:
+                        - img [ref=e570]
+                    - link "Open Small with right aligned legend example in new window" [ref=e573] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/small-with-right-aligned-legend
+                      - img [ref=e575]
+                - generic [ref=e577]:
+                  - heading "Small with bottom aligned subtitle" [level=3] [ref=e581]:
+                    - button [ref=e583] [cursor=pointer]:
+                      - img [ref=e584]
+                    - text: Small with bottom aligned subtitle
+                  - generic [ref=e588]:
+                    - generic:
+                      - img "Donut chart example" [ref=e589]:
+                        - generic [ref=e591]:
+                          - generic [ref=e592]: "Cats: 35"
+                          - generic [ref=e593]: "Dogs: 55"
+                          - generic [ref=e594]: "Birds: 10"
+                        - generic [ref=e595]: "100"
+                        - generic [ref=e596]: Pets
+                      - generic:
+                        - img
+                  - generic [ref=e601]:
+                    - button "Toggle TS code in Small with bottom aligned subtitle example" [ref=e603] [cursor=pointer]:
+                      - generic [ref=e604]:
+                        - img [ref=e605]
+                        - text: TS
+                    - button "Copy Small with bottom aligned subtitle example code to clipboard" [ref=e608] [cursor=pointer]:
+                      - img [ref=e610]
+                    - form "Open Small with bottom aligned subtitle example in CodeSandbox form" [ref=e612]:
+                      - button "Open Small with bottom aligned subtitle example in CodeSandbox" [ref=e614] [cursor=pointer]:
+                        - img [ref=e616]
+                    - link "Open Small with bottom aligned subtitle example in new window" [ref=e619] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/small-with-bottom-aligned-subtitle
+                      - img [ref=e621]
+                - generic [ref=e623]:
+                  - heading "Small with right aligned subtitle" [level=3] [ref=e627]:
+                    - button [ref=e629] [cursor=pointer]:
+                      - img [ref=e630]
+                    - text: Small with right aligned subtitle
+                  - generic [ref=e634]:
+                    - generic:
+                      - img "Donut chart example" [ref=e635]:
+                        - generic [ref=e637]:
+                          - generic [ref=e638]: "Cats: 35"
+                          - generic [ref=e639]: "Dogs: 55"
+                          - generic [ref=e640]: "Birds: 10"
+                        - generic [ref=e641]: "100"
+                        - generic [ref=e642]: Pets
+                      - generic:
+                        - img
+                  - generic [ref=e647]:
+                    - button "Toggle TS code in Small with right aligned subtitle example" [ref=e649] [cursor=pointer]:
+                      - generic [ref=e650]:
+                        - img [ref=e651]
+                        - text: TS
+                    - button "Copy Small with right aligned subtitle example code to clipboard" [ref=e654] [cursor=pointer]:
+                      - img [ref=e656]
+                    - form "Open Small with right aligned subtitle example in CodeSandbox form" [ref=e658]:
+                      - button "Open Small with right aligned subtitle example in CodeSandbox" [ref=e660] [cursor=pointer]:
+                        - img [ref=e662]
+                    - link "Open Small with right aligned subtitle example in new window" [ref=e665] [cursor=pointer]:
+                      - /url: /charts/donut-chart/-Victory/small-with-right-aligned-subtitle
+                      - img [ref=e667]
+                - heading "Documentation" [level=2] [ref=e671]:
+                  - button [ref=e673] [cursor=pointer]:
+                    - img [ref=e674]
+                  - text: Documentation
+                - heading "Tips" [level=3] [ref=e678]:
+                  - button [ref=e680] [cursor=pointer]:
+                    - img [ref=e681]
+                  - text: Tips
+                - list [ref=e683]:
+                  - listitem [ref=e684]:
+                    - text: See Victory's
+                    - link "FAQ" [ref=e685] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/faq
+                  - listitem [ref=e686]:
+                    - text: For single data points or zero values, you may want to set the
+                    - code [ref=e687]: domain
+                    - text: prop
+                  - listitem [ref=e688]:
+                    - code [ref=e689]: ChartLegend
+                    - text: may be used as a standalone component, instead of using
+                    - code [ref=e690]: legendData
+                - heading "Note" [level=3] [ref=e693]:
+                  - button [ref=e695] [cursor=pointer]:
+                    - img [ref=e696]
+                  - text: Note
+                - paragraph [ref=e698]: "Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the components used in the examples above, Victory pass-thru props are also documented here:"
+                - list [ref=e699]:
+                  - listitem [ref=e700]:
+                    - text: For
+                    - code [ref=e701]: ChartDonut
+                    - text: props, see
+                    - link "VictoryPie" [ref=e702] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-pie
+                - generic [ref=e703]:
+                  - heading "Props" [level=2] [ref=e706]:
+                    - button [ref=e708] [cursor=pointer]:
+                      - img [ref=e709]
+                    - text: Props
+                  - heading "ChartDonut" [level=3] [ref=e713]:
+                    - button [ref=e715] [cursor=pointer]:
+                      - img [ref=e716]
+                    - text: ChartDonut
+                  - grid "ChartDonut" [ref=e718]:
+                    - caption [ref=e719]:
+                      - generic [ref=e720]: ChartDonut renders a dataset as a donut chart. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-pie/src/index.d.ts
+                      - generic [ref=e721]: "*required"
+                    - rowgroup [ref=e722]:
+                      - row "Name Type Default Description" [ref=e723]:
+                        - columnheader "Name" [ref=e724]
+                        - columnheader "Type" [ref=e725]
+                        - columnheader "Default" [ref=e726]
+                        - columnheader "Description" [ref=e727]
+                    - rowgroup [ref=e728]:
+                      - row "allowTooltip boolean true Specifies the tooltip capability of the container component. A value of true allows the chart to add a ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels property is also provided." [ref=e729]:
+                        - gridcell "allowTooltip" [ref=e730]:
+                          - generic [ref=e731]: allowTooltip
+                        - gridcell "boolean" [ref=e732]:
+                          - generic [ref=e733]: boolean
+                        - gridcell "true" [ref=e734]:
+                          - generic [ref=e735]: "true"
+                        - gridcell "Specifies the tooltip capability of the container component. A value of true allows the chart to add a ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels property is also provided." [ref=e736]:
+                          - generic [ref=e737]: Specifies the tooltip capability of the container component. A value of true allows the chart to add a ChartTooltip component to the labelComponent property. This is a shortcut to display tooltips when the labels property is also provided.
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e738]':
+                        - gridcell "animate" [ref=e739]:
+                          - generic [ref=e740]: animate
+                        - gridcell "boolean | object" [ref=e741]:
+                          - generic [ref=e742]: boolean | object
+                        - gridcell [ref=e743]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e744]':
+                          - generic [ref=e745]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "ariaDesc string The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e746]':
+                        - gridcell "ariaDesc" [ref=e747]:
+                          - generic [ref=e748]: ariaDesc
+                        - gridcell "string" [ref=e749]:
+                          - generic [ref=e750]: string
+                        - gridcell [ref=e751]
+                        - 'gridcell "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e752]':
+                          - generic [ref=e753]: "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent"
+                      - 'row "ariaTitle string The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e754]':
+                        - gridcell "ariaTitle" [ref=e755]:
+                          - generic [ref=e756]: ariaTitle
+                        - gridcell "string" [ref=e757]:
+                          - generic [ref=e758]: string
+                        - gridcell [ref=e759]
+                        - 'gridcell "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e760]':
+                          - generic [ref=e761]: "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent"
+                      - 'row "capHeight number | string | Function 1.1 The capHeight prop defines a text metric for the font being used: the expected height of capital letters. This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a unitless number, it is assumed to be ems." [ref=e762]':
+                        - gridcell "capHeight" [ref=e763]:
+                          - generic [ref=e764]: capHeight
+                        - gridcell "number | string | Function" [ref=e765]:
+                          - generic [ref=e766]: number | string | Function
+                        - gridcell "1.1" [ref=e767]:
+                          - generic [ref=e768]: "1.1"
+                        - 'gridcell "The capHeight prop defines a text metric for the font being used: the expected height of capital letters. This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a unitless number, it is assumed to be ems." [ref=e769]':
+                          - generic [ref=e770]: "The capHeight prop defines a text metric for the font being used: the expected height of capital letters. This is necessary because of SVG, which (a) positions the *bottom* of the text at `y`, and (b) has no notion of line height. The value should ideally use the same units as `lineHeight` and `dy`, preferably ems. If given a unitless number, it is assumed to be ems."
+                      - 'row "categories string[] | { x: string[], y: string[] } The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e771]':
+                        - gridcell "categories" [ref=e772]:
+                          - generic [ref=e773]: categories
+                        - 'gridcell "string[] | { x: string[], y: string[] }" [ref=e774]':
+                          - generic [ref=e775]: "string[] | { x: string[], y: string[] }"
+                        - gridcell [ref=e776]
+                        - gridcell "The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e777]:
+                          - generic [ref=e778]: The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example ["dogs", "cats", "mice"]
+                      - row "colorScale string[] The colorScale prop is an optional prop that defines the color scale the pie will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartDonut will automatically assign values from this color scale to the pie slices unless colors are explicitly provided in the data object" [ref=e779]:
+                        - gridcell "colorScale" [ref=e780]:
+                          - generic [ref=e781]: colorScale
+                        - gridcell "string[]" [ref=e782]:
+                          - generic [ref=e783]: string[]
+                        - gridcell [ref=e784]
+                        - gridcell "The colorScale prop is an optional prop that defines the color scale the pie will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartDonut will automatically assign values from this color scale to the pie slices unless colors are explicitly provided in the data object" [ref=e785]:
+                          - generic [ref=e786]: The colorScale prop is an optional prop that defines the color scale the pie will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartDonut will automatically assign values from this color scale to the pie slices unless colors are explicitly provided in the data object
+                      - row "constrainToVisibleArea boolean The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders." [ref=e787]:
+                        - gridcell "constrainToVisibleArea" [ref=e788]:
+                          - generic [ref=e789]: constrainToVisibleArea
+                        - gridcell "boolean" [ref=e790]:
+                          - generic [ref=e791]: boolean
+                        - gridcell [ref=e792]
+                        - gridcell "The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders." [ref=e793]:
+                          - generic [ref=e794]: The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+                      - row [ref=e795]:
+                        - gridcell "containerComponent" [ref=e796]:
+                          - generic [ref=e797]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e798]:
+                          - generic [ref=e799]: React.ReactElement<any>
+                        - gridcell "<ChartContainer />" [ref=e800]:
+                          - generic [ref=e801]: <ChartContainer />
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartDonut: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartDonut will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />" [ref=e802]':
+                          - generic [ref=e803]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartDonut: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartDonut will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />"
+                      - row "cornerRadius number | Function Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut" [ref=e804]:
+                        - gridcell "cornerRadius" [ref=e805]:
+                          - generic [ref=e806]: cornerRadius
+                        - gridcell "number | Function" [ref=e807]:
+                          - generic [ref=e808]: number | Function
+                        - gridcell [ref=e809]
+                        - gridcell "Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut" [ref=e810]:
+                          - generic [ref=e811]: Set the cornerRadius for every dataComponent (Slice by default) within ChartDonut
+                      - 'row "data any[] The data prop specifies the data to be plotted, where data X-value is the slice label (string or number), and Y-value is the corresponding number value represented by the slice Data should be in the form of an array of data points. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e812]':
+                        - gridcell "data" [ref=e813]:
+                          - generic [ref=e814]: data
+                        - gridcell "any[]" [ref=e815]:
+                          - generic [ref=e816]: any[]
+                        - gridcell [ref=e817]
+                        - 'gridcell "The data prop specifies the data to be plotted, where data X-value is the slice label (string or number), and Y-value is the corresponding number value represented by the slice Data should be in the form of an array of data points. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e818]':
+                          - generic [ref=e819]: "The data prop specifies the data to be plotted, where data X-value is the slice label (string or number), and Y-value is the corresponding number value represented by the slice Data should be in the form of an array of data points. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]"
+                      - row "dataComponent React.ReactElement<any> The dataComponent prop takes an entire, HTML-complete data component which will be used to create slices for each datum in the pie chart. The new element created from the passed dataComponent will have the property datum set by the pie chart for the point it renders; properties style and pathFunction calculated by ChartDonut; an index property set corresponding to the location of the datum in the data provided to the pie; events bound to the ChartDonut; and the d3 compatible slice object. If a dataComponent is not provided, ChartDonut's Slice component will be used." [ref=e820]:
+                        - gridcell "dataComponent" [ref=e821]:
+                          - generic [ref=e822]: dataComponent
+                        - gridcell "React.ReactElement<any>" [ref=e823]:
+                          - generic [ref=e824]: React.ReactElement<any>
+                        - gridcell [ref=e825]
+                        - gridcell "The dataComponent prop takes an entire, HTML-complete data component which will be used to create slices for each datum in the pie chart. The new element created from the passed dataComponent will have the property datum set by the pie chart for the point it renders; properties style and pathFunction calculated by ChartDonut; an index property set corresponding to the location of the datum in the data provided to the pie; events bound to the ChartDonut; and the d3 compatible slice object. If a dataComponent is not provided, ChartDonut's Slice component will be used." [ref=e826]:
+                          - generic [ref=e827]: The dataComponent prop takes an entire, HTML-complete data component which will be used to create slices for each datum in the pie chart. The new element created from the passed dataComponent will have the property datum set by the pie chart for the point it renders; properties style and pathFunction calculated by ChartDonut; an index property set corresponding to the location of the datum in the data provided to the pie; events bound to the ChartDonut; and the d3 compatible slice object. If a dataComponent is not provided, ChartDonut's Slice component will be used.
+                      - row "endAngle number The overall end angle of the pie in degrees. This prop is used in conjunction with startAngle to create a pie that spans only a segment of a circle." [ref=e828]:
+                        - gridcell "endAngle" [ref=e829]:
+                          - generic [ref=e830]: endAngle
+                        - gridcell "number" [ref=e831]:
+                          - generic [ref=e832]: number
+                        - gridcell [ref=e833]
+                        - gridcell "The overall end angle of the pie in degrees. This prop is used in conjunction with startAngle to create a pie that spans only a segment of a circle." [ref=e834]:
+                          - generic [ref=e835]: The overall end angle of the pie in degrees. This prop is used in conjunction with startAngle to create a pie that spans only a segment of a circle.
+                      - 'row "eventKey number | string | Function Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e836]':
+                        - gridcell "eventKey" [ref=e837]:
+                          - generic [ref=e838]: eventKey
+                        - gridcell "number | string | Function" [ref=e839]:
+                          - generic [ref=e840]: number | string | Function
+                        - gridcell [ref=e841]
+                        - 'gridcell "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e842]':
+                          - generic [ref=e843]: "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data"
+                      - row [ref=e844]:
+                        - gridcell "events" [ref=e845]:
+                          - generic [ref=e846]: events
+                        - gridcell "object[]" [ref=e847]:
+                          - generic [ref=e848]: object[]
+                        - gridcell [ref=e849]
+                        - gridcell [ref=e850]:
+                          - generic [ref=e851]: "The event prop takes an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"data\" and \"labels\" are all valid targets for ChartDonut events. The eventKey may optionally be used to select a single element by index rather than an entire set. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler is used to modify elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. a single bar), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"data\", eventKey: 1, eventHandlers: { onClick: () => { return [ { eventKey: 2, mutation: (props) => { return {style: merge({}, props.style, {fill: \"orange\"})}; } }, { eventKey: 2, target: \"labels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] ChartDonut uses the standard externalEventMutations prop." [ref=e852]:
+                        - gridcell "externalEventMutations" [ref=e853]:
+                          - generic [ref=e854]: externalEventMutations
+                        - gridcell "object[]" [ref=e855]:
+                          - generic [ref=e856]: object[]
+                        - gridcell [ref=e857]
+                        - gridcell "ChartDonut uses the standard externalEventMutations prop." [ref=e858]:
+                          - generic [ref=e859]: ChartDonut uses the standard externalEventMutations prop.
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e860]:
+                        - gridcell "groupComponent" [ref=e861]:
+                          - generic [ref=e862]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e863]:
+                          - generic [ref=e864]: React.ReactElement<any>
+                        - gridcell [ref=e865]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e866]:
+                          - generic [ref=e867]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - 'row "hasPatterns boolean | boolean[] The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e868]':
+                        - gridcell "hasPatterns" [ref=e869]:
+                          - generic [ref=e870]: hasPatterns
+                        - gridcell "boolean | boolean[]" [ref=e871]:
+                          - generic [ref=e872]: boolean | boolean[]
+                        - gridcell [ref=e873]
+                        - 'gridcell "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e874]':
+                          - generic [ref=e875]: "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}"
+                      - row [ref=e876]:
+                        - gridcell "height" [ref=e877]:
+                          - generic [ref=e878]: height
+                        - gridcell "number" [ref=e879]:
+                          - generic [ref=e880]: number
+                        - gridcell "theme.pie.height" [ref=e881]:
+                          - generic [ref=e882]: theme.pie.height
+                        - 'gridcell "Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size) in order to accommodate the extra legend. By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut height. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e883]':
+                          - generic [ref=e884]: "Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Note: When adding a legend, height (the overall SVG height) may need to be larger than donutHeight (the donut size) in order to accommodate the extra legend. By default, donutHeight is the min. of either height or width. This covers most use cases in order to accommodate legends within the same SVG. However, donutHeight (not height) may need to be set in order to adjust the donut height. Typically, the parent container is set to the same width in order to maintain the aspect ratio."
+                      - row "innerRadius number | Function When creating a donut chart, this prop determines the number of pixels between the center of the chart and the inner edge." [ref=e885]:
+                        - gridcell "innerRadius" [ref=e886]:
+                          - generic [ref=e887]: innerRadius
+                        - gridcell "number | Function" [ref=e888]:
+                          - generic [ref=e889]: number | Function
+                        - gridcell [ref=e890]
+                        - gridcell "When creating a donut chart, this prop determines the number of pixels between the center of the chart and the inner edge." [ref=e891]:
+                          - generic [ref=e892]: When creating a donut chart, this prop determines the number of pixels between the center of the chart and the inner edge.
+                      - 'row "labelComponent React.ReactElement<any> The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartDonut. If individual labels are required for each data point, they should be created by composing ChartDonut with VictoryScatter" [ref=e893]':
+                        - gridcell "labelComponent" [ref=e894]:
+                          - generic [ref=e895]: labelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e896]:
+                          - generic [ref=e897]: React.ReactElement<any>
+                        - gridcell [ref=e898]
+                        - 'gridcell "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartDonut. If individual labels are required for each data point, they should be created by composing ChartDonut with VictoryScatter" [ref=e899]':
+                          - generic [ref=e900]: "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartDonut. If individual labels are required for each data point, they should be created by composing ChartDonut with VictoryScatter"
+                      - row "labelPosition string | Function The labelPosition prop specifies the angular position of each label relative to its corresponding slice. When this prop is not given, the label will be positioned at the centroid of each slice." [ref=e901]:
+                        - gridcell "labelPosition" [ref=e902]:
+                          - generic [ref=e903]: labelPosition
+                        - gridcell "string | Function" [ref=e904]:
+                          - generic [ref=e905]: string | Function
+                        - gridcell [ref=e906]
+                        - gridcell "The labelPosition prop specifies the angular position of each label relative to its corresponding slice. When this prop is not given, the label will be positioned at the centroid of each slice." [ref=e907]:
+                          - generic [ref=e908]: The labelPosition prop specifies the angular position of each label relative to its corresponding slice. When this prop is not given, the label will be positioned at the centroid of each slice.
+                      - row "labelRadius number | Function The labelRadius prop defines the radius of the arc that will be used for positioning each slice label. If this prop is not set, the label radius will default to the radius of the pie + label padding." [ref=e909]:
+                        - gridcell "labelRadius" [ref=e910]:
+                          - generic [ref=e911]: labelRadius
+                        - gridcell "number | Function" [ref=e912]:
+                          - generic [ref=e913]: number | Function
+                        - gridcell [ref=e914]
+                        - gridcell "The labelRadius prop defines the radius of the arc that will be used for positioning each slice label. If this prop is not set, the label radius will default to the radius of the pie + label padding." [ref=e915]:
+                          - generic [ref=e916]: The labelRadius prop defines the radius of the arc that will be used for positioning each slice label. If this prop is not set, the label radius will default to the radius of the pie + label padding.
+                      - 'row "labels string[] | number[] | ((data: any) => string | number | null) The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e917]':
+                        - gridcell "labels" [ref=e918]:
+                          - generic [ref=e919]: labels
+                        - 'gridcell "string[] | number[] | ((data: any) => string | number | null)" [ref=e920]':
+                          - generic [ref=e921]: "string[] | number[] | ((data: any) => string | number | null)"
+                        - gridcell [ref=e922]
+                        - 'gridcell "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e923]':
+                          - generic [ref=e924]: "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title"
+                      - 'row "legendAllowWrap boolean | ((extraHeight: number) => void) Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart''s SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart''s parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart''s parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend''s itemsPerRow property has been calculated. The value provided can be used to increase the chart''s parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property" [ref=e925]':
+                        - gridcell "legendAllowWrap" [ref=e926]:
+                          - generic [ref=e927]: legendAllowWrap
+                        - 'gridcell "boolean | ((extraHeight: number) => void)" [ref=e928]':
+                          - generic [ref=e929]: "boolean | ((extraHeight: number) => void)"
+                        - gridcell [ref=e930]
+                        - 'gridcell "Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart''s SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart''s parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart''s parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend''s itemsPerRow property has been calculated. The value provided can be used to increase the chart''s parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property" [ref=e931]':
+                          - generic [ref=e932]: "Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart's parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart's parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend's itemsPerRow property has been calculated. The value provided can be used to increase the chart's parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property"
+                      - 'row "legendComponent React.ReactElement<any> The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied" [ref=e933]':
+                        - gridcell "legendComponent" [ref=e934]:
+                          - generic [ref=e935]: legendComponent
+                        - gridcell "React.ReactElement<any>" [ref=e936]:
+                          - generic [ref=e937]: React.ReactElement<any>
+                        - gridcell [ref=e938]
+                        - 'gridcell "The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied" [ref=e939]':
+                          - generic [ref=e940]: "The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied"
+                      - 'row "legendData { name?: string; symbol?: { fill?: string; type?: string; }; }[] Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: ''Unused'' }]}" [ref=e941]':
+                        - gridcell "legendData" [ref=e942]:
+                          - generic [ref=e943]: legendData
+                        - 'gridcell "{ name?: string; symbol?: { fill?: string; type?: string; }; }[]" [ref=e944]':
+                          - generic [ref=e945]: "{ name?: string; symbol?: { fill?: string; type?: string; }; }[]"
+                        - gridcell [ref=e946]
+                        - 'gridcell "Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: ''Unused'' }]}" [ref=e947]':
+                          - generic [ref=e948]: "Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}"
+                      - row "legendDirection 'ltr' | 'rtl' 'ltr' Text direction of the legend labels." [ref=e949]:
+                        - gridcell "legendDirection" [ref=e950]:
+                          - generic [ref=e951]: legendDirection
+                        - gridcell "'ltr' | 'rtl'" [ref=e952]:
+                          - generic [ref=e953]: "'ltr' | 'rtl'"
+                        - gridcell "'ltr'" [ref=e954]:
+                          - generic [ref=e955]: "'ltr'"
+                        - gridcell "Text direction of the legend labels." [ref=e956]:
+                          - generic [ref=e957]: Text direction of the legend labels.
+                      - row "legendOrientation 'horizontal' | 'vertical' The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is \"horizontal\", legend items will be displayed in a single row. When orientation is \"vertical\", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so \"vertical\" orientation is both the default setting and recommended for displaying many series of data." [ref=e958]:
+                        - gridcell "legendOrientation" [ref=e959]:
+                          - generic [ref=e960]: legendOrientation
+                        - gridcell "'horizontal' | 'vertical'" [ref=e961]:
+                          - generic [ref=e962]: "'horizontal' | 'vertical'"
+                        - gridcell [ref=e963]
+                        - gridcell "The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is \"horizontal\", legend items will be displayed in a single row. When orientation is \"vertical\", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so \"vertical\" orientation is both the default setting and recommended for displaying many series of data." [ref=e964]:
+                          - generic [ref=e965]: The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is "horizontal", legend items will be displayed in a single row. When orientation is "vertical", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so "vertical" orientation is both the default setting and recommended for displaying many series of data.
+                      - 'row "legendPosition ''bottom'' | ''right'' ChartCommonStyles.legend.position The legend position relation to the donut chart. Valid values are ''bottom'' and ''right'' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied." [ref=e966]':
+                        - gridcell "legendPosition" [ref=e967]:
+                          - generic [ref=e968]: legendPosition
+                        - gridcell "'bottom' | 'right'" [ref=e969]:
+                          - generic [ref=e970]: "'bottom' | 'right'"
+                        - gridcell "ChartCommonStyles.legend.position" [ref=e971]:
+                          - generic [ref=e972]: ChartCommonStyles.legend.position
+                        - 'gridcell "The legend position relation to the donut chart. Valid values are ''bottom'' and ''right'' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied." [ref=e973]':
+                          - generic [ref=e974]: "The legend position relation to the donut chart. Valid values are 'bottom' and 'right' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied."
+                      - row "name string The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e975]:
+                        - gridcell "name" [ref=e976]:
+                          - generic [ref=e977]: name
+                        - gridcell "string" [ref=e978]:
+                          - generic [ref=e979]: string
+                        - gridcell [ref=e980]
+                        - gridcell "The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e981]:
+                          - generic [ref=e982]: The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page.
+                      - 'row "origin { x: number, y: number } Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e983]':
+                        - gridcell "origin" [ref=e984]:
+                          - generic [ref=e985]: origin
+                        - 'gridcell "{ x: number, y: number }" [ref=e986]':
+                          - generic [ref=e987]: "{ x: number, y: number }"
+                        - gridcell [ref=e988]
+                        - 'gridcell "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e989]':
+                          - generic [ref=e990]: "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually"
+                      - row "padAngle number | Function The padAngle prop determines the amount of separation between adjacent data slices in number of degrees" [ref=e991]:
+                        - gridcell "padAngle" [ref=e992]:
+                          - generic [ref=e993]: padAngle
+                        - gridcell "number | Function" [ref=e994]:
+                          - generic [ref=e995]: number | Function
+                        - gridcell [ref=e996]
+                        - gridcell "The padAngle prop determines the amount of separation between adjacent data slices in number of degrees" [ref=e997]:
+                          - generic [ref=e998]: The padAngle prop determines the amount of separation between adjacent data slices in number of degrees
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e999]':
+                        - gridcell "padding" [ref=e1000]:
+                          - generic [ref=e1001]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e1002]':
+                          - generic [ref=e1003]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e1004]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1005]:
+                          - generic [ref=e1006]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - 'row "patternScale string[] The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e1007]':
+                        - gridcell "patternScale" [ref=e1008]:
+                          - generic [ref=e1009]: patternScale
+                        - gridcell "string[]" [ref=e1010]:
+                          - generic [ref=e1011]: string[]
+                        - gridcell [ref=e1012]
+                        - 'gridcell "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e1013]':
+                          - generic [ref=e1014]: "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ 'url(\"#pattern1\")', 'url(\"#pattern2\")', null ]}"
+                      - row "radius number | Function Specifies the radius of the chart. If this property is not provided it is computed from width, height, and padding props" [ref=e1015]:
+                        - gridcell "radius" [ref=e1016]:
+                          - generic [ref=e1017]: radius
+                        - gridcell "number | Function" [ref=e1018]:
+                          - generic [ref=e1019]: number | Function
+                        - gridcell [ref=e1020]
+                        - gridcell "Specifies the radius of the chart. If this property is not provided it is computed from width, height, and padding props" [ref=e1021]:
+                          - generic [ref=e1022]: Specifies the radius of the chart. If this property is not provided it is computed from width, height, and padding props
+                      - row "sortKey number | string | Function | string[] Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1023]:
+                        - gridcell "sortKey" [ref=e1024]:
+                          - generic [ref=e1025]: sortKey
+                        - gridcell "number | string | Function | string[]" [ref=e1026]:
+                          - generic [ref=e1027]: number | string | Function | string[]
+                        - gridcell [ref=e1028]
+                        - gridcell "Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1029]:
+                          - generic [ref=e1030]: Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset.
+                      - row "sortOrder string The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1031]:
+                        - gridcell "sortOrder" [ref=e1032]:
+                          - generic [ref=e1033]: sortOrder
+                        - gridcell "string" [ref=e1034]:
+                          - generic [ref=e1035]: string
+                        - gridcell [ref=e1036]
+                        - gridcell "The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1037]:
+                          - generic [ref=e1038]: The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+                      - row "standalone boolean true The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartDonut with other components within an enclosing <svg> tag." [ref=e1039]:
+                        - gridcell "standalone" [ref=e1040]:
+                          - generic [ref=e1041]: standalone
+                        - gridcell "boolean" [ref=e1042]:
+                          - generic [ref=e1043]: boolean
+                        - gridcell "true" [ref=e1044]:
+                          - generic [ref=e1045]: "true"
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartDonut with other components within an enclosing <svg> tag." [ref=e1046]:
+                          - generic [ref=e1047]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartDonut with other components within an enclosing <svg> tag.
+                      - row "startAngle number The overall start angle of the pie in degrees. This prop is used in conjunction with endAngle to create a pie that spans only a segment of a circle." [ref=e1048]:
+                        - gridcell "startAngle" [ref=e1049]:
+                          - generic [ref=e1050]: startAngle
+                        - gridcell "number" [ref=e1051]:
+                          - generic [ref=e1052]: number
+                        - gridcell [ref=e1053]
+                        - gridcell "The overall start angle of the pie in degrees. This prop is used in conjunction with endAngle to create a pie that spans only a segment of a circle." [ref=e1054]:
+                          - generic [ref=e1055]: The overall start angle of the pie in degrees. This prop is used in conjunction with endAngle to create a pie that spans only a segment of a circle.
+                      - 'row "style { parent: object, data: object, labels: object } The style prop specifies styles for your pie. ChartDonut relies on Radium, so valid Radium style objects should work for this prop. Height, width, and padding should be specified via the height, width, and padding props. @example {data: {stroke: \"black\"}, label: {fontSize: 10}}" [ref=e1056]':
+                        - gridcell "style" [ref=e1057]:
+                          - generic [ref=e1058]: style
+                        - 'gridcell "{ parent: object, data: object, labels: object }" [ref=e1059]':
+                          - generic [ref=e1060]: "{ parent: object, data: object, labels: object }"
+                        - gridcell [ref=e1061]
+                        - 'gridcell "The style prop specifies styles for your pie. ChartDonut relies on Radium, so valid Radium style objects should work for this prop. Height, width, and padding should be specified via the height, width, and padding props. @example {data: {stroke: \"black\"}, label: {fontSize: 10}}" [ref=e1062]':
+                          - generic [ref=e1063]: "The style prop specifies styles for your pie. ChartDonut relies on Radium, so valid Radium style objects should work for this prop. Height, width, and padding should be specified via the height, width, and padding props. @example {data: {stroke: \"black\"}, label: {fontSize: 10}}"
+                      - row "subTitle string The subtitle for the donut chart" [ref=e1064]:
+                        - gridcell "subTitle" [ref=e1065]:
+                          - generic [ref=e1066]: subTitle
+                        - gridcell "string" [ref=e1067]:
+                          - generic [ref=e1068]: string
+                        - gridcell [ref=e1069]
+                        - gridcell "The subtitle for the donut chart" [ref=e1070]:
+                          - generic [ref=e1071]: The subtitle for the donut chart
+                      - 'row "subTitleComponent React.ReactElement<any> The label component to render the chart subTitle. When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to use the x and y props of ChartLabel to adjust the center position. For example: <pre> subTitle=\"Pets\" subTitleComponent={<ChartLabel y={130} />} title={100} titleComponent={<ChartLabel y={107} />} </pre> Note: Default label properties may be applied" [ref=e1072]':
+                        - gridcell "subTitleComponent" [ref=e1073]:
+                          - generic [ref=e1074]: subTitleComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1075]:
+                          - generic [ref=e1076]: React.ReactElement<any>
+                        - gridcell [ref=e1077]
+                        - 'gridcell "The label component to render the chart subTitle. When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to use the x and y props of ChartLabel to adjust the center position. For example: <pre> subTitle=\"Pets\" subTitleComponent={<ChartLabel y={130} />} title={100} titleComponent={<ChartLabel y={107} />} </pre> Note: Default label properties may be applied" [ref=e1078]':
+                          - generic [ref=e1079]: "The label component to render the chart subTitle. When overriding the subTitleComponent prop, title and subTitle will be centered independently. You may choose to use the x and y props of ChartLabel to adjust the center position. For example: <pre> subTitle=\"Pets\" subTitleComponent={<ChartLabel y={130} />} title={100} titleComponent={<ChartLabel y={107} />} </pre> Note: Default label properties may be applied"
+                      - row "subTitlePosition 'bottom' | 'center' | 'right' ChartDonutStyles.label.subTitlePosition The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'" [ref=e1080]:
+                        - gridcell "subTitlePosition" [ref=e1081]:
+                          - generic [ref=e1082]: subTitlePosition
+                        - gridcell "'bottom' | 'center' | 'right'" [ref=e1083]:
+                          - generic [ref=e1084]: "'bottom' | 'center' | 'right'"
+                        - gridcell "ChartDonutStyles.label.subTitlePosition" [ref=e1085]:
+                          - generic [ref=e1086]: ChartDonutStyles.label.subTitlePosition
+                        - gridcell "The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'" [ref=e1087]:
+                          - generic [ref=e1088]: The orientation of the subtitle position. Valid values are 'bottom', 'center', and 'right'
+                      - row "theme object getDonutTheme(themeColor) The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartDonut as a solo component, implement the theme directly on ChartDonut. If you are wrapping ChartDonut in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1089]:
+                        - gridcell "theme" [ref=e1090]:
+                          - generic [ref=e1091]: theme
+                        - gridcell "object" [ref=e1092]:
+                          - generic [ref=e1093]: object
+                        - gridcell "getDonutTheme(themeColor)" [ref=e1094]:
+                          - generic [ref=e1095]: getDonutTheme(themeColor)
+                        - gridcell "The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartDonut as a solo component, implement the theme directly on ChartDonut. If you are wrapping ChartDonut in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1096]:
+                          - generic [ref=e1097]: The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartDonut as a solo component, implement the theme directly on ChartDonut. If you are wrapping ChartDonut in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1098]':
+                        - gridcell "themeColor" [ref=e1099]:
+                          - generic [ref=e1100]: themeColor
+                        - gridcell "string" [ref=e1101]:
+                          - generic [ref=e1102]: string
+                        - gridcell [ref=e1103]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1104]':
+                          - generic [ref=e1105]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "title string The title for the donut chart" [ref=e1106]:
+                        - gridcell "title" [ref=e1107]:
+                          - generic [ref=e1108]: title
+                        - gridcell "string" [ref=e1109]:
+                          - generic [ref=e1110]: string
+                        - gridcell [ref=e1111]
+                        - gridcell "The title for the donut chart" [ref=e1112]:
+                          - generic [ref=e1113]: The title for the donut chart
+                      - row [ref=e1114]:
+                        - gridcell "titleComponent" [ref=e1115]:
+                          - generic [ref=e1116]: titleComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1117]:
+                          - generic [ref=e1118]: React.ReactElement<any>
+                        - gridcell "<ChartLabel />" [ref=e1119]:
+                          - generic [ref=e1120]: <ChartLabel />
+                        - gridcell [ref=e1121]:
+                          - generic [ref=e1122]: "The label component to render the chart title. When centering both title and subTitle props, it's possible to override both styles via an array provided to ChartLabel. The first item in the array is associated with title styles, while the second item in the array is associated with subtitle styles. <pre> subTitle=\"Pets\" title={100} titleComponent={ <ChartLabel style={[{ fill: 'red', // title color fontSize: 24 }, { fill: 'blue', // subtitle color fontSize: 14 }]} /> } </pre> In this case, both title and subTitle will be centered together. However, should you also override the subTitleComponent prop, title and subTitle will be centered independently. You may choose to use the x and y props of ChartLabel to adjust the center position. For example: <pre> subTitle=\"Pets\" subTitleComponent={<ChartLabel y={130} />} title={100} titleComponent={<ChartLabel y={107} />} </pre> Note: Default label properties may be applied"
+                      - row "width number theme.pie.width Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e1123]:
+                        - gridcell "width" [ref=e1124]:
+                          - generic [ref=e1125]: width
+                        - gridcell "number" [ref=e1126]:
+                          - generic [ref=e1127]: number
+                        - gridcell "theme.pie.width" [ref=e1128]:
+                          - generic [ref=e1129]: theme.pie.width
+                        - gridcell "Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e1130]:
+                          - generic [ref=e1131]: Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+                      - 'row "x number | string | Function | string[] The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1132]':
+                        - gridcell "x" [ref=e1133]:
+                          - generic [ref=e1134]: x
+                        - gridcell "number | string | Function | string[]" [ref=e1135]:
+                          - generic [ref=e1136]: number | string | Function | string[]
+                        - gridcell [ref=e1137]
+                        - 'gridcell "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1138]':
+                          - generic [ref=e1139]: "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)"
+                      - 'row "y number | string | Function | string[] The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1140]':
+                        - gridcell "y" [ref=e1141]:
+                          - generic [ref=e1142]: "y"
+                        - gridcell "number | string | Function | string[]" [ref=e1143]:
+                          - generic [ref=e1144]: number | string | Function | string[]
+                        - gridcell [ref=e1145]
+                        - 'gridcell "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1146]':
+                          - generic [ref=e1147]: "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)"
+                - link "Edit this page on GitHub" [ref=e1149] [cursor=pointer]:
+                  - /url: https://github.com/patternfly/patternfly-org/blob/main/packages/react-charts/src/victory/components/ChartDonut/examples/ChartDonut.md
+            - button "Give feedback" [ref=e1151] [cursor=pointer]:
+              - generic [ref=e1152]: Give feedback
+        - contentinfo [ref=e1153]:
+          - generic [ref=e1155]:
+            - generic [ref=e1157]:
+              - generic [ref=e1158]:
+                - paragraph [ref=e1159]: What's new
+                - navigation "Quick Links" [ref=e1160]:
+                  - list [ref=e1161]:
+                    - listitem [ref=e1162]:
+                      - link "Latest PatternFly upgrade guide" [ref=e1164] [cursor=pointer]:
+                        - /url: /get-started/upgrade
+                        - text: Upgrade
+                    - listitem [ref=e1165]:
+                      - link "PatternFly release highlights" [ref=e1167] [cursor=pointer]:
+                        - /url: /get-started/release-highlights/
+                        - text: Releases
+                    - listitem [ref=e1168]:
+                      - link "PatternFly's new AI resources" [ref=e1170] [cursor=pointer]:
+                        - /url: /patternfly-ai/about-ai
+                        - text: PatternFly AI
+                    - listitem [ref=e1171]:
+                      - link "PatternFly's new token system" [ref=e1173] [cursor=pointer]:
+                        - /url: /tokens/about-tokens
+                        - text: Tokens
+              - generic [ref=e1174]:
+                - paragraph [ref=e1175]: Contribute
+                - navigation "Contribute" [ref=e1176]:
+                  - list [ref=e1177]:
+                    - listitem [ref=e1178]:
+                      - link "Learn about PatternFly" [ref=e1180] [cursor=pointer]:
+                        - /url: /get-started/about-patternfly
+                        - text: About PatternFly
+                    - listitem [ref=e1181]:
+                      - link "Our code of conduct for contributions" [ref=e1183] [cursor=pointer]:
+                        - /url: https://github.com/patternfly/patternfly/blob/main/CODE_OF_CONDUCT.md
+                        - text: Code of conduct
+                    - listitem [ref=e1184]:
+                      - link "Learn how to contribute to PatternFly" [ref=e1186] [cursor=pointer]:
+                        - /url: /get-started/contribute
+                        - text: Contribute
+              - generic [ref=e1187]:
+                - paragraph [ref=e1188]: Community
+                - navigation "Stay in touch" [ref=e1189]:
+                  - list [ref=e1190]:
+                    - listitem [ref=e1191]:
+                      - link "Join the PatternFly Slack" [ref=e1193] [cursor=pointer]:
+                        - /url: //join.slack.com/t/patternfly/shared_invite/zt-1npmqswgk-bF2R1E2rglV8jz5DNTezMQ
+                        - text: Slack
+                    - listitem [ref=e1194]:
+                      - link "Read the PatternFly blog" [ref=e1196] [cursor=pointer]:
+                        - /url: //medium.com/patternfly
+                        - text: Blog
+                    - listitem [ref=e1197]:
+                      - link "Join the PatternFly mailing list" [ref=e1199] [cursor=pointer]:
+                        - /url: https://www.redhat.com/dynamic-form/instance/934b1674-bc8a-4a13-8c9d-d19abcceb263
+                        - text: Mailing list
+                    - listitem [ref=e1200]:
+                      - link "Join PatternFly meetings" [ref=e1202] [cursor=pointer]:
+                        - /url: https://calendar.google.com/calendar/embed?src=patternflyteam%40gmail.com&ctz=America%2FNew_York
+                        - text: Calendar
+                    - listitem [ref=e1203]:
+                      - link "Visit the PatternFly discussion forum" [ref=e1205] [cursor=pointer]:
+                        - /url: //github.com/orgs/patternfly/discussions
+                        - text: Discussions
+            - generic [ref=e1207]:
+              - generic [ref=e1208]:
+                - link "PatternFly" [ref=e1209] [cursor=pointer]:
+                  - /url: /
+                  - img "PatternFly" [ref=e1210]
+                - paragraph [ref=e1227]: PatternFly is an open source design system built to drive consistency and unify teams. From documentation and components to code examples and tutorials, PatternFly is a place where design and development can thrive. We’re on a mission to help teams build consistent, accessible, and scalable enterprise product experiences—the open source way.
+              - generic [ref=e1228]:
+                - link "Link to PatternFly GitHub page" [ref=e1229] [cursor=pointer]:
+                  - /url: //github.com/patternfly
+                  - img [ref=e1230]
+                - link "Link to PatternFly X page" [ref=e1232] [cursor=pointer]:
+                  - /url: //x.com/patternfly
+                  - img [ref=e1233]
+        - generic [ref=e1237]:
+          - link "Red Hat" [ref=e1239] [cursor=pointer]:
+            - /url: //www.redhat.com
+            - img "Red Hat" [ref=e1240]
+          - generic [ref=e1242]: Copyright © 2014-2026 Red Hat, Inc.
+          - generic [ref=e1243]:
+            - link "Privacy statement" [ref=e1244] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/privacy-policy
+            - link "Terms of use" [ref=e1245] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/terms-use
+            - link "All policies and guidelines" [ref=e1246] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/all-policies-guidelines
+    - generic [ref=e1251]:
+      - generic [ref=e1252]:
+        - text: We use cookies on our websites to deliver our online services. Details about how we use cookies and how you may disable them are set out in our
+        - link "Privacy Statement" [ref=e1253] [cursor=pointer]:
+          - /url: //www.redhat.com/en/about/privacy-policy
+        - text: . By using this website you agree to our use of cookies.
+      - button "Close banner" [ref=e1255] [cursor=pointer]:
+        - img [ref=e1257]
+  - img [ref=e1259]
+```

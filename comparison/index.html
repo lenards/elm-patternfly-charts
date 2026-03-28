@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PatternFly v6 Charts in Elm — Experiment Index</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@300;400;600&family=Red+Hat+Display:wght@700&display=swap');
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Red Hat Text', Helvetica, Arial, sans-serif;
+      background: #f2f2f2;
+      color: #1f1f1f;
+    }
+    header {
+      background: #1f1f1f;
+      color: #fff;
+      padding: 24px 40px;
+    }
+    header h1 {
+      margin: 0 0 6px 0;
+      font-family: 'Red Hat Display', Helvetica, Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    header p {
+      margin: 0;
+      color: #a3a3a3;
+      font-size: 14px;
+    }
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #c7c7c7;
+      border-radius: 4px;
+      padding: 24px;
+    }
+    .card h2 {
+      margin: 0 0 8px 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    .card .subtitle {
+      font-size: 12px;
+      color: #707070;
+      margin: 0 0 16px 0;
+    }
+    .card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #383838;
+      margin: 0 0 12px 0;
+    }
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .tag {
+      background: #e0f0ff;
+      color: #003366;
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 12px;
+    }
+    .tag.green {
+      background: #e9f7df;
+      color: #204d00;
+    }
+    .tag.orange {
+      background: #ffe8cc;
+      color: #732e00;
+    }
+    .btn {
+      display: inline-block;
+      background: #0066cc;
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .btn:hover { background: #004d99; }
+    .section-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #c7c7c7;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: #fff;
+      border: 1px solid #c7c7c7;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .comparison-table th {
+      background: #f2f2f2;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 600;
+      border-bottom: 1px solid #c7c7c7;
+    }
+    .comparison-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid #e0e0e0;
+      vertical-align: top;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .yes { color: #3d7313; }
+    .no  { color: #b1380b; }
+    .partial { color: #96640f; }
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      color: #8c8c8c;
+      border-top: 1px solid #c7c7c7;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>PatternFly v6 Charts in Elm</h1>
+  <p>Two experiments comparing Elm chart libraries for infrastructure dashboards · OpenStack · Exosphere</p>
+</header>
+
+<main>
+  <div class="card-grid">
+
+    <div class="card">
+      <h2>terezka/elm-charts</h2>
+      <p class="subtitle">High-level declarative API</p>
+      <div class="tag-list">
+        <span class="tag">Area Chart</span>
+        <span class="tag">Bar Chart</span>
+        <span class="tag">Stacked Area</span>
+      </div>
+      <p>
+        React-like element + attributes API. Handles axes, grid lines, legends, and
+        tooltips automatically. Least boilerplate for Cartesian charts (bar, line, area).
+        Think of it as the Victory.js of Elm.
+      </p>
+      <p>
+        <strong>Constraint:</strong> No pie or donut chart support — it's Cartesian-only.
+      </p>
+      <a href="experiments-elm-charts/index.html" class="btn">Open Experiment →</a>
+    </div>
+
+    <div class="card">
+      <h2>gampleman/elm-visualization</h2>
+      <p class="subtitle">Low-level D3-style primitives</p>
+      <div class="tag-list">
+        <span class="tag green">Area Chart</span>
+        <span class="tag green">Bar Chart</span>
+        <span class="tag green">Donut Chart</span>
+      </div>
+      <p>
+        Scale, Shape, Axis primitives — the D3.js of Elm. You compose every SVG
+        element manually. More boilerplate but complete control; perfect for
+        non-standard chart types or custom interactions.
+      </p>
+      <p>
+        <strong>Strength:</strong> Donut, pie, histogram, force-directed graphs, anything.
+      </p>
+      <a href="experiments-elm-viz/index.html" class="btn">Open Experiment →</a>
+    </div>
+
+  </div>
+
+  <h2 class="section-title">Library Comparison</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Capability</th>
+        <th>elm-charts</th>
+        <th>elm-visualization</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Area / Line charts</strong></td>
+        <td class="yes">✓ Built-in, declarative</td>
+        <td class="yes">✓ Manual (Scale + Shape)</td>
+      </tr>
+      <tr>
+        <td><strong>Bar charts</strong></td>
+        <td class="yes">✓ Grouped, stacked</td>
+        <td class="yes">✓ Scale.band + rect</td>
+      </tr>
+      <tr>
+        <td><strong>Donut / Pie charts</strong></td>
+        <td class="no">✗ Not supported</td>
+        <td class="yes">✓ Shape.pie + Shape.arc</td>
+      </tr>
+      <tr>
+        <td><strong>Histogram</strong></td>
+        <td class="no">✗ Not supported</td>
+        <td class="yes">✓ Histogram module</td>
+      </tr>
+      <tr>
+        <td><strong>Force-directed graphs</strong></td>
+        <td class="no">✗ Not supported</td>
+        <td class="yes">✓ Force module</td>
+      </tr>
+      <tr>
+        <td><strong>Tooltips on hover</strong></td>
+        <td class="yes">✓ CE.onMouseMove</td>
+        <td class="partial">~ Manual SVG events</td>
+      </tr>
+      <tr>
+        <td><strong>Axes &amp; grid lines</strong></td>
+        <td class="yes">✓ Automatic</td>
+        <td class="partial">~ Axis module (generates SVG)</td>
+      </tr>
+      <tr>
+        <td><strong>PatternFly color tokens</strong></td>
+        <td class="yes">✓ CA.color accepts hex string</td>
+        <td class="yes">✓ SA.fill accepts hex string</td>
+      </tr>
+      <tr>
+        <td><strong>PF rounded bar tops</strong></td>
+        <td class="yes">✓ CA.roundTop</td>
+        <td class="partial">~ rx/ry rect trick</td>
+      </tr>
+      <tr>
+        <td><strong>Responsive / fluid width</strong></td>
+        <td class="yes">✓ CA.viewport</td>
+        <td class="partial">~ viewBox + CSS width:100%</td>
+      </tr>
+      <tr>
+        <td><strong>Lines of code for a basic chart</strong></td>
+        <td>~50 lines</td>
+        <td>~120 lines</td>
+      </tr>
+      <tr>
+        <td><strong>PatternFly design fidelity</strong></td>
+        <td class="yes">High — colors, fonts, grid match</td>
+        <td class="yes">High — with manual styling</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title" style="margin-top:32px">Design Token Mapping (PF v6)</h2>
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>PF v6 CSS Variable</th>
+        <th>Hex Value</th>
+        <th>Used For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>chart-theme-blue-ColorScale-300</td><td><code>#0066cc</code></td><td>Primary series color</td></tr>
+      <tr><td>chart-theme-blue-ColorScale-200</td><td><code>#4394e5</code></td><td>Secondary blue</td></tr>
+      <tr><td>chart-theme-blue-ColorScale-100</td><td><code>#92c5f9</code></td><td>Tertiary / light blue</td></tr>
+      <tr><td>chart-theme-blue-ColorScale-400</td><td><code>#004d99</code></td><td>Dark blue series</td></tr>
+      <tr><td>chart-theme-blue-ColorScale-500</td><td><code>#003366</code></td><td>Darkest blue</td></tr>
+      <tr><td>chart-axis-axis-stroke-Color</td><td><code>#c7c7c7</code></td><td>Axis lines, grid lines, ticks</td></tr>
+      <tr><td>chart-axis-tick-label-Fill</td><td><code>#383838</code></td><td>Axis tick labels</td></tr>
+      <tr><td>chart-global-FontFamily</td><td>Red Hat Text, Helvetica…</td><td>All chart text</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title" style="margin-top:32px">Verdict &amp; Recommendation</h2>
+  <div class="card">
+    <p>
+      <strong>For Exosphere / OpenStack dashboards:</strong> a hybrid approach makes sense.
+      Use <strong>elm-charts</strong> for area and line charts (CPU, network, memory over time)
+      where its automatic axis handling saves significant boilerplate.
+      Use <strong>elm-visualization</strong> for donut and pie charts (storage allocation,
+      quota usage) and anything non-Cartesian.
+    </p>
+    <p>
+      A thin <code>PF.Charts</code> abstraction layer wrapping both libraries with shared
+      color tokens, font settings, and axis styles would give you a consistent PatternFly
+      look without duplicating the styling code in every chart.
+    </p>
+    <p>
+      Both libraries can match PF v6 design guidelines. The main differentiator is
+      <em>how much you want to control</em> vs. <em>how fast you want to ship</em>.
+    </p>
+  </div>
+
+</main>
+
+<footer>
+  PatternFly v6 · terezka/elm-charts · gampleman/elm-visualization · Elm 0.19.1
+</footer>
+</body>
+</html>

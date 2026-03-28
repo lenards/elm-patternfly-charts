@@ -1,0 +1,2369 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - generic [ref=e4]:
+      - link "Skip to content" [ref=e6] [cursor=pointer]:
+        - /url: "#ws-page-main"
+        - generic [ref=e7]: Skip to content
+      - banner [ref=e8]:
+        - generic [ref=e9]:
+          - button "Global navigation" [expanded] [ref=e11] [cursor=pointer]:
+            - img [ref=e13]
+          - link "PatternFly" [ref=e16] [cursor=pointer]:
+            - /url: /
+            - img "PatternFly" [ref=e17]
+        - generic [ref=e38]:
+          - button "Expandable search input toggle" [ref=e43] [cursor=pointer]:
+            - img [ref=e45]
+          - link "PatternFly GitHub page" [ref=e48] [cursor=pointer]:
+            - /url: //github.com/patternfly
+            - img [ref=e50]
+          - 'button "Theme selection, current: System" [ref=e53] [cursor=pointer]':
+            - img [ref=e57]
+            - img [ref=e61]
+          - button "Release 6.4.0" [ref=e64] [cursor=pointer]:
+            - generic [ref=e65]: Release 6.4.0
+            - img [ref=e68]
+      - navigation "Side Nav" [ref=e72]:
+        - list [ref=e73]:
+          - listitem [ref=e74]:
+            - button "Get started" [ref=e75] [cursor=pointer]:
+              - text: Get started
+              - img [ref=e78]
+          - listitem [ref=e80]:
+            - button "Design foundations" [ref=e81] [cursor=pointer]:
+              - text: Design foundations
+              - img [ref=e84]
+          - listitem [ref=e86]:
+            - button "Tokens" [ref=e87] [cursor=pointer]:
+              - text: Tokens
+              - img [ref=e90]
+          - listitem [ref=e92]:
+            - button "PatternFly AI" [ref=e93] [cursor=pointer]:
+              - text: PatternFly AI
+              - img [ref=e96]
+          - listitem [ref=e98]:
+            - button "Accessibility" [ref=e99] [cursor=pointer]:
+              - text: Accessibility
+              - img [ref=e102]
+          - listitem [ref=e104]:
+            - button "UX writing" [ref=e105] [cursor=pointer]:
+              - text: UX writing
+              - img [ref=e108]
+          - listitem [ref=e110]:
+            - button "Components" [ref=e111] [cursor=pointer]:
+              - text: Components
+              - img [ref=e114]
+          - listitem [ref=e116]:
+            - button "Patterns" [ref=e117] [cursor=pointer]:
+              - text: Patterns
+              - img [ref=e120]
+          - listitem [ref=e122]:
+            - button "Extensions" [ref=e123] [cursor=pointer]:
+              - text: Extensions
+              - img [ref=e126]
+          - listitem [ref=e128]:
+            - button "Component groups" [ref=e129] [cursor=pointer]:
+              - text: Component groups
+              - img [ref=e132]
+          - listitem [ref=e134]:
+            - button "Charts" [expanded] [ref=e135] [cursor=pointer]:
+              - text: Charts
+              - img [ref=e138]
+            - region "Charts" [ref=e140]:
+              - list [ref=e141]:
+                - listitem [ref=e142]:
+                  - link "About charts" [ref=e143] [cursor=pointer]:
+                    - /url: /charts/about-charts
+                    - generic [ref=e145]: About charts
+                - listitem [ref=e146]:
+                  - link "Colors for charts" [ref=e147] [cursor=pointer]:
+                    - /url: /charts/colors-for-charts
+                    - generic [ref=e149]: Colors for charts
+                - listitem [ref=e150]:
+                  - link "Area chart" [ref=e151] [cursor=pointer]:
+                    - /url: /charts/area-chart
+                    - generic [ref=e153]: Area chart
+                - listitem [ref=e154]:
+                  - link "Bar chart" [ref=e155] [cursor=pointer]:
+                    - /url: /charts/bar-chart
+                    - generic [ref=e157]: Bar chart
+                - listitem [ref=e158]:
+                  - link "Box plot chart" [ref=e159] [cursor=pointer]:
+                    - /url: /charts/box-plot-chart
+                    - generic [ref=e161]: Box plot chart
+                - listitem [ref=e162]:
+                  - link "Bullet chart" [ref=e163] [cursor=pointer]:
+                    - /url: /charts/bullet-chart
+                    - generic [ref=e165]: Bullet chart
+                - listitem [ref=e166]:
+                  - link "Donut chart" [ref=e167] [cursor=pointer]:
+                    - /url: /charts/donut-chart
+                    - generic [ref=e169]: Donut chart
+                - listitem [ref=e170]:
+                  - link "Donut utilization chart" [ref=e171] [cursor=pointer]:
+                    - /url: /charts/donut-utilization-chart
+                    - generic [ref=e173]: Donut utilization chart
+                - listitem [ref=e174]:
+                  - link "Legends" [ref=e175] [cursor=pointer]:
+                    - /url: /charts/legends
+                    - generic [ref=e177]: Legends
+                - listitem [ref=e178]:
+                  - link "Line chart Beta" [ref=e179] [cursor=pointer]:
+                    - /url: /charts/line-chart
+                    - generic [ref=e180]:
+                      - generic [ref=e181]: Line chart
+                      - generic [ref=e185]: Beta
+                - listitem [ref=e186]:
+                  - link "Patterns" [ref=e187] [cursor=pointer]:
+                    - /url: /charts/patterns
+                    - generic [ref=e189]: Patterns
+                - listitem [ref=e190]:
+                  - link "Pie chart" [ref=e191] [cursor=pointer]:
+                    - /url: /charts/pie-chart
+                    - generic [ref=e193]: Pie chart
+                - listitem [ref=e194]:
+                  - link "Resize observer" [ref=e195] [cursor=pointer]:
+                    - /url: /charts/resize-observer
+                    - generic [ref=e197]: Resize observer
+                - listitem [ref=e198]:
+                  - link "Sankey chart Beta" [ref=e199] [cursor=pointer]:
+                    - /url: /charts/sankey-chart
+                    - generic [ref=e200]:
+                      - generic [ref=e201]: Sankey chart
+                      - generic [ref=e205]: Beta
+                - listitem [ref=e206]:
+                  - link "Scatter chart" [ref=e207] [cursor=pointer]:
+                    - /url: /charts/scatter-chart
+                    - generic [ref=e209]: Scatter chart
+                - listitem [ref=e210]:
+                  - link "Skeletons" [ref=e211] [cursor=pointer]:
+                    - /url: /charts/skeletons
+                    - generic [ref=e213]: Skeletons
+                - listitem [ref=e214]:
+                  - link "Sparkline chart" [ref=e215] [cursor=pointer]:
+                    - /url: /charts/sparkline-chart
+                    - generic [ref=e217]: Sparkline chart
+                - listitem [ref=e218]:
+                  - link "Stack chart" [ref=e219] [cursor=pointer]:
+                    - /url: /charts/stack-chart
+                    - generic [ref=e221]: Stack chart
+                - listitem [ref=e222]:
+                  - link "Themes" [ref=e223] [cursor=pointer]:
+                    - /url: /charts/themes
+                    - generic [ref=e225]: Themes
+                - listitem [ref=e226]:
+                  - link "Threshold chart" [ref=e227] [cursor=pointer]:
+                    - /url: /charts/threshold-chart
+                    - generic [ref=e229]: Threshold chart
+                - listitem [ref=e230]:
+                  - link "Tooltips" [ref=e231] [cursor=pointer]:
+                    - /url: /charts/tooltips
+                    - generic [ref=e233]: Tooltips
+          - listitem [ref=e234]:
+            - button "Topology" [ref=e235] [cursor=pointer]:
+              - text: Topology
+              - img [ref=e238]
+          - listitem [ref=e240]:
+            - button "Layouts" [ref=e241] [cursor=pointer]:
+              - text: Layouts
+              - img [ref=e244]
+          - listitem [ref=e246]:
+            - button "Utility classes" [ref=e247] [cursor=pointer]:
+              - text: Utility classes
+              - img [ref=e250]
+          - listitem [ref=e252]:
+            - button "Developer resources" [ref=e253] [cursor=pointer]:
+              - text: Developer resources
+              - img [ref=e256]
+          - listitem [ref=e258]:
+            - button "Training" [ref=e259] [cursor=pointer]:
+              - text: Training
+              - img [ref=e262]
+      - generic [ref=e265]:
+        - main [ref=e266]:
+          - generic [ref=e267]:
+            - heading "Area chart" [level=1] [ref=e273]
+            - list [ref=e277]:
+              - listitem [ref=e278]:
+                - link "Victory" [ref=e279] [cursor=pointer]:
+                  - /url: /charts/area-chart
+              - listitem [ref=e280]:
+                - link "Design guidelines" [ref=e281] [cursor=pointer]:
+                  - /url: /charts/area-chart/design-guidelines
+            - generic [ref=e285]:
+              - navigation "Table of contents" [ref=e286]:
+                - button "Table of contents" [ref=e290] [cursor=pointer]:
+                  - img [ref=e293]
+                  - generic [ref=e295]: Table of contents
+              - generic [ref=e296]:
+                - heading "Introduction" [level=2] [ref=e299]:
+                  - button [ref=e301] [cursor=pointer]:
+                    - img [ref=e302]
+                  - text: Introduction
+                - paragraph [ref=e304]:
+                  - text: "Note: PatternFly React charts live in its own package at"
+                  - link "@patternfly/react-charts" [ref=e305] [cursor=pointer]:
+                    - /url: https://www.npmjs.com/package/@patternfly/react-charts
+                  - text: "!"
+                - paragraph [ref=e306]:
+                  - text: The examples below are based on the
+                  - link "Victory" [ref=e307] [cursor=pointer]:
+                    - /url: https://formidable.com/open-source/victory/docs/victory-chart/
+                  - text: chart library, along with additional functionality, custom components, and theming for PatternFly. This provides a collection of React based components you can use to build PatternFly patterns with consistent markup, styling, and behavior.
+                - heading "Examples" [level=2] [ref=e310]:
+                  - button [ref=e312] [cursor=pointer]:
+                    - img [ref=e313]
+                  - text: Examples
+                - generic [ref=e315]:
+                  - heading "Basic with right aligned legend" [level=3] [ref=e319]:
+                    - button [ref=e321] [cursor=pointer]:
+                      - img [ref=e322]
+                    - text: Basic with right aligned legend
+                  - generic [ref=e326]:
+                    - generic:
+                      - img "Area chart example" [ref=e327]:
+                        - generic [ref=e328]: "2015"
+                        - generic [ref=e329]: "2016"
+                        - generic [ref=e330]: "2017"
+                        - generic [ref=e331]: "2018"
+                        - generic [ref=e332]: "2019"
+                        - generic [ref=e333]: "2"
+                        - generic [ref=e334]: "4"
+                        - generic [ref=e335]: "6"
+                        - generic [ref=e336]: "8"
+                        - generic [ref=e341]:
+                          - generic [ref=e342]: Cats
+                          - generic [ref=e343]: Dogs
+                          - generic [ref=e344]: Birds
+                      - generic:
+                        - img
+                  - generic [ref=e349]:
+                    - button "Toggle TS code in Basic with right aligned legend example" [ref=e351] [cursor=pointer]:
+                      - generic [ref=e352]:
+                        - img [ref=e353]
+                        - text: TS
+                    - button "Copy Basic with right aligned legend example code to clipboard" [ref=e356] [cursor=pointer]:
+                      - img [ref=e358]
+                    - form "Open Basic with right aligned legend example in CodeSandbox form" [ref=e360]:
+                      - button "Open Basic with right aligned legend example in CodeSandbox" [ref=e362] [cursor=pointer]:
+                        - img [ref=e364]
+                    - link "Open Basic with right aligned legend example in new window" [ref=e367] [cursor=pointer]:
+                      - /url: /charts/area-chart/-Victory/basic-with-right-aligned-legend
+                      - img [ref=e369]
+                - generic [ref=e371]:
+                  - generic [ref=e372]:
+                    - heading "Teal with bottom aligned legend and axis label" [level=3] [ref=e375]:
+                      - button [ref=e377] [cursor=pointer]:
+                        - img [ref=e378]
+                      - text: Teal with bottom aligned legend and axis label
+                    - paragraph [ref=e380]: This demonstrates how to combine cursor and voronoi containers to display tooltips along with a cursor.
+                  - generic [ref=e383]:
+                    - generic:
+                      - img "Area chart example" [ref=e384]:
+                        - generic [ref=e385]: Years
+                        - generic [ref=e386]: "2015"
+                        - generic [ref=e387]: "2016"
+                        - generic [ref=e388]: "2017"
+                        - generic [ref=e389]: "2018"
+                        - generic [ref=e390]: "2019"
+                        - generic [ref=e391]: "2"
+                        - generic [ref=e392]: "4"
+                        - generic [ref=e393]: "6"
+                        - generic [ref=e394]: "8"
+                        - generic [ref=e399]:
+                          - generic [ref=e400]: Cats
+                          - generic [ref=e401]: Dogs
+                          - generic [ref=e402]: Birds
+                      - generic:
+                        - img
+                  - generic [ref=e407]:
+                    - button "Toggle TS code in Teal with bottom aligned legend and axis label example" [ref=e409] [cursor=pointer]:
+                      - generic [ref=e410]:
+                        - img [ref=e411]
+                        - text: TS
+                    - button "Copy Teal with bottom aligned legend and axis label example code to clipboard" [ref=e414] [cursor=pointer]:
+                      - img [ref=e416]
+                    - form "Open Teal with bottom aligned legend and axis label example in CodeSandbox form" [ref=e418]:
+                      - button "Open Teal with bottom aligned legend and axis label example in CodeSandbox" [ref=e420] [cursor=pointer]:
+                        - img [ref=e422]
+                    - link "Open Teal with bottom aligned legend and axis label example in new window" [ref=e425] [cursor=pointer]:
+                      - /url: /charts/area-chart/-Victory/teal-with-bottom-aligned-legend-and-axis-label
+                      - img [ref=e427]
+                - generic [ref=e429]:
+                  - heading "Multi-color (unordered) bottom-left aligned legend and responsive container" [level=3] [ref=e433]:
+                    - button [ref=e435] [cursor=pointer]:
+                      - img [ref=e436]
+                    - text: Multi-color (unordered) bottom-left aligned legend and responsive container
+                  - generic [ref=e440]:
+                    - generic:
+                      - img "Area chart example" [ref=e441]:
+                        - generic [ref=e442]: "2015"
+                        - generic [ref=e443]: "2016"
+                        - generic [ref=e444]: "2017"
+                        - generic [ref=e445]: "2018"
+                        - generic [ref=e446]: "2019"
+                        - generic [ref=e447]: "2"
+                        - generic [ref=e448]: "4"
+                        - generic [ref=e449]: "6"
+                        - generic [ref=e450]: "8"
+                        - generic [ref=e455]:
+                          - generic [ref=e456]: Cats
+                          - generic [ref=e457]: Dogs
+                          - generic [ref=e458]: Birds
+                      - generic:
+                        - img
+                  - generic [ref=e463]:
+                    - button "Toggle TS code in Multi-color (unordered) bottom-left aligned legend and responsive container example" [ref=e465] [cursor=pointer]:
+                      - generic [ref=e466]:
+                        - img [ref=e467]
+                        - text: TS
+                    - button "Copy Multi-color (unordered) bottom-left aligned legend and responsive container example code to clipboard" [ref=e470] [cursor=pointer]:
+                      - img [ref=e472]
+                    - form "Open Multi-color (unordered) bottom-left aligned legend and responsive container example in CodeSandbox form" [ref=e474]:
+                      - button "Open Multi-color (unordered) bottom-left aligned legend and responsive container example in CodeSandbox" [ref=e476] [cursor=pointer]:
+                        - img [ref=e478]
+                    - link "Open Multi-color (unordered) bottom-left aligned legend and responsive container example in new window" [ref=e481] [cursor=pointer]:
+                      - /url: /charts/area-chart/-Victory/multi-color-unordered-bottom-left-aligned-legend-and-responsive-container
+                      - img [ref=e483]
+                - heading "Documentation" [level=2] [ref=e487]:
+                  - button [ref=e489] [cursor=pointer]:
+                    - img [ref=e490]
+                  - text: Documentation
+                - heading "Tips" [level=3] [ref=e494]:
+                  - button [ref=e496] [cursor=pointer]:
+                    - img [ref=e497]
+                  - text: Tips
+                - list [ref=e499]:
+                  - listitem [ref=e500]:
+                    - text: See Victory's
+                    - link "FAQ" [ref=e501] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/faq
+                  - listitem [ref=e502]:
+                    - text: For single data points or zero values, you may want to set the
+                    - code [ref=e503]: domain
+                    - text: prop
+                  - listitem [ref=e504]:
+                    - code [ref=e505]: ChartLegend
+                    - text: may be used as a standalone component, instead of using
+                    - code [ref=e506]: legendData
+                  - listitem [ref=e507]:
+                    - text: The
+                    - code [ref=e508]: theme
+                    - text: and
+                    - code [ref=e509]: themeColor
+                    - text: props should be applied at the most top level component
+                  - listitem [ref=e510]:
+                    - text: Use
+                    - code [ref=e511]: ChartGroup
+                    - text: to apply theme color scales and other properties to multiple components
+                - heading "Note" [level=3] [ref=e514]:
+                  - button [ref=e516] [cursor=pointer]:
+                    - img [ref=e517]
+                  - text: Note
+                - paragraph [ref=e519]: "Currently, the generated documentation below is not able to resolve type definitions from Victory imports. For the components used in the examples above, Victory pass-thru props are also documented here:"
+                - list [ref=e520]:
+                  - listitem [ref=e521]:
+                    - text: For
+                    - code [ref=e522]: Chart
+                    - text: props, see
+                    - link "VictoryChart" [ref=e523] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-chart
+                  - listitem [ref=e524]:
+                    - text: For
+                    - code [ref=e525]: ChartArea
+                    - text: props, see
+                    - link "VictoryArea" [ref=e526] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-area
+                  - listitem [ref=e527]:
+                    - text: For
+                    - code [ref=e528]: ChartAxis
+                    - text: props, see
+                    - link "VictoryAxis" [ref=e529] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-axis
+                  - listitem [ref=e530]:
+                    - text: For
+                    - code [ref=e531]: ChartGroup
+                    - text: props, see
+                    - link "VictoryGroup" [ref=e532] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-group
+                  - listitem [ref=e533]:
+                    - text: For
+                    - code [ref=e534]: ChartVoronoiContainer
+                    - text: props, see
+                    - link "VictoryVoronoiContainer" [ref=e535] [cursor=pointer]:
+                      - /url: https://formidable.com/open-source/victory/docs/victory-voronoi-container
+                - generic [ref=e536]:
+                  - heading "Props" [level=2] [ref=e539]:
+                    - button [ref=e541] [cursor=pointer]:
+                      - img [ref=e542]
+                    - text: Props
+                  - heading "Chart" [level=3] [ref=e546]:
+                    - button [ref=e548] [cursor=pointer]:
+                      - img [ref=e549]
+                    - text: Chart
+                  - grid "Chart" [ref=e551]:
+                    - caption [ref=e552]:
+                      - generic [ref=e553]: Chart is a wrapper component that reconciles the domain for all its children, controls the layout of the chart, and coordinates animations and shared events. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-chart/src/victory-chart.tsx
+                      - generic [ref=e554]: "*required"
+                    - rowgroup [ref=e555]:
+                      - row "Name Type Default Description" [ref=e556]:
+                        - columnheader "Name" [ref=e557]
+                        - columnheader "Type" [ref=e558]
+                        - columnheader "Default" [ref=e559]
+                        - columnheader "Description" [ref=e560]
+                    - rowgroup [ref=e561]:
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e562]':
+                        - gridcell "animate" [ref=e563]:
+                          - generic [ref=e564]: animate
+                        - gridcell "boolean | object" [ref=e565]:
+                          - generic [ref=e566]: boolean | object
+                        - gridcell [ref=e567]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e568]':
+                          - generic [ref=e569]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "ariaDesc string The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e570]':
+                        - gridcell "ariaDesc" [ref=e571]:
+                          - generic [ref=e572]: ariaDesc
+                        - gridcell "string" [ref=e573]:
+                          - generic [ref=e574]: string
+                        - gridcell [ref=e575]
+                        - 'gridcell "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e576]':
+                          - generic [ref=e577]: "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent"
+                      - 'row "ariaTitle string The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e578]':
+                        - gridcell "ariaTitle" [ref=e579]:
+                          - generic [ref=e580]: ariaTitle
+                        - gridcell "string" [ref=e581]:
+                          - generic [ref=e582]: string
+                        - gridcell [ref=e583]
+                        - 'gridcell "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e584]':
+                          - generic [ref=e585]: "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent"
+                      - 'row "backgroundComponent React.ReactElement<any> The backgroundComponent prop takes a component instance which will be responsible for rendering a background if the Chart''s style component includes background styles. The new element created from the passed backgroundComponent will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width. All of these props on Background should take precedence over what VictoryChart is trying to set." [ref=e586]':
+                        - gridcell "backgroundComponent" [ref=e587]:
+                          - generic [ref=e588]: backgroundComponent
+                        - gridcell "React.ReactElement<any>" [ref=e589]:
+                          - generic [ref=e590]: React.ReactElement<any>
+                        - gridcell [ref=e591]
+                        - 'gridcell "The backgroundComponent prop takes a component instance which will be responsible for rendering a background if the Chart''s style component includes background styles. The new element created from the passed backgroundComponent will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width. All of these props on Background should take precedence over what VictoryChart is trying to set." [ref=e592]':
+                          - generic [ref=e593]: "The backgroundComponent prop takes a component instance which will be responsible for rendering a background if the Chart's style component includes background styles. The new element created from the passed backgroundComponent will be provided with the following properties calculated by Chart: height, polar, scale, style, x, y, width. All of these props on Background should take precedence over what VictoryChart is trying to set."
+                      - row "children React.ReactNode | React.ReactNode[] The children to render with the chart" [ref=e594]:
+                        - gridcell "children" [ref=e595]:
+                          - generic [ref=e596]: children
+                        - gridcell "React.ReactNode | React.ReactNode[]" [ref=e597]:
+                          - generic [ref=e598]: React.ReactNode | React.ReactNode[]
+                        - gridcell [ref=e599]
+                        - gridcell "The children to render with the chart" [ref=e600]:
+                          - generic [ref=e601]: The children to render with the chart
+                      - row [ref=e602]:
+                        - gridcell "containerComponent" [ref=e603]:
+                          - generic [ref=e604]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e605]:
+                          - generic [ref=e606]: React.ReactElement<any>
+                        - gridcell "<ChartContainer />" [ref=e607]:
+                          - generic [ref=e608]: <ChartContainer />
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartArea: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />" [ref=e609]':
+                          - generic [ref=e610]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartArea: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />"
+                      - 'row "domain number[] | { x: number[], y: number[] } The domain prop describes the range of values your chart will include. This prop can be given as a array of the minimum and maximum expected values for your chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e611]':
+                        - gridcell "domain" [ref=e612]:
+                          - generic [ref=e613]: domain
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e614]':
+                          - generic [ref=e615]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e616]
+                        - 'gridcell "The domain prop describes the range of values your chart will include. This prop can be given as a array of the minimum and maximum expected values for your chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e617]':
+                          - generic [ref=e618]: "The domain prop describes the range of values your chart will include. This prop can be given as a array of the minimum and maximum expected values for your chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}"
+                      - 'row "domainPadding number | number[] | { x: number[], y: number[] } The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e619]':
+                        - gridcell "domainPadding" [ref=e620]:
+                          - generic [ref=e621]: domainPadding
+                        - 'gridcell "number | number[] | { x: number[], y: number[] }" [ref=e622]':
+                          - generic [ref=e623]: "number | number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e624]
+                        - 'gridcell "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e625]':
+                          - generic [ref=e626]: "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}"
+                      - row "endAngle number The endAngle props defines the overall end angle of a polar chart in degrees. This prop is used in conjunction with startAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise." [ref=e627]:
+                        - gridcell "endAngle" [ref=e628]:
+                          - generic [ref=e629]: endAngle
+                        - gridcell "number" [ref=e630]:
+                          - generic [ref=e631]: number
+                        - gridcell [ref=e632]
+                        - gridcell "The endAngle props defines the overall end angle of a polar chart in degrees. This prop is used in conjunction with startAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise." [ref=e633]:
+                          - generic [ref=e634]: The endAngle props defines the overall end angle of a polar chart in degrees. This prop is used in conjunction with startAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise.
+                      - 'row "eventKey number | string | Function Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e635]':
+                        - gridcell "eventKey" [ref=e636]:
+                          - generic [ref=e637]: eventKey
+                        - gridcell "number | string | Function" [ref=e638]:
+                          - generic [ref=e639]: number | string | Function
+                        - gridcell [ref=e640]
+                        - 'gridcell "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e641]':
+                          - generic [ref=e642]: "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data"
+                      - row [ref=e643]:
+                        - gridcell "events" [ref=e644]:
+                          - generic [ref=e645]: events
+                        - gridcell "object[]" [ref=e646]:
+                          - generic [ref=e647]: object[]
+                        - gridcell [ref=e648]
+                        - gridcell [ref=e649]:
+                          - generic [ref=e650]: "The event prop takes an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"data\" and \"labels\" are all valid targets for ChartPie events. The eventKey may optionally be used to select a single element by index rather than an entire set. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler is used to modify elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. a single bar), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"data\", eventKey: 1, eventHandlers: { onClick: () => { return [ { eventKey: 2, mutation: (props) => { return {style: merge({}, props.style, {fill: \"orange\"})}; } }, { eventKey: 2, target: \"labels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] Chart uses the standard externalEventMutations prop." [ref=e651]:
+                        - gridcell "externalEventMutations" [ref=e652]:
+                          - generic [ref=e653]: externalEventMutations
+                        - gridcell "object[]" [ref=e654]:
+                          - generic [ref=e655]: object[]
+                        - gridcell [ref=e656]
+                        - gridcell "Chart uses the standard externalEventMutations prop." [ref=e657]:
+                          - generic [ref=e658]: Chart uses the standard externalEventMutations prop.
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e659]:
+                        - gridcell "groupComponent" [ref=e660]:
+                          - generic [ref=e661]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e662]:
+                          - generic [ref=e663]: React.ReactElement<any>
+                        - gridcell [ref=e664]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e665]:
+                          - generic [ref=e666]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - 'row "hasPatterns boolean | boolean[] The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e667]':
+                        - gridcell "hasPatterns" [ref=e668]:
+                          - generic [ref=e669]: hasPatterns
+                        - gridcell "boolean | boolean[]" [ref=e670]:
+                          - generic [ref=e671]: boolean | boolean[]
+                        - gridcell [ref=e672]
+                        - 'gridcell "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e673]':
+                          - generic [ref=e674]: "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}"
+                      - row "height number theme.chart.height Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e675]:
+                        - gridcell "height" [ref=e676]:
+                          - generic [ref=e677]: height
+                        - gridcell "number" [ref=e678]:
+                          - generic [ref=e679]: number
+                        - gridcell "theme.chart.height" [ref=e680]:
+                          - generic [ref=e681]: theme.chart.height
+                        - gridcell "Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e682]:
+                          - generic [ref=e683]: Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+                      - row "horizontal boolean The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e684]:
+                        - gridcell "horizontal" [ref=e685]:
+                          - generic [ref=e686]: horizontal
+                        - gridcell "boolean" [ref=e687]:
+                          - generic [ref=e688]: boolean
+                        - gridcell [ref=e689]
+                        - gridcell "The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e690]:
+                          - generic [ref=e691]: The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis.
+                      - row "innerRadius number | Function When the innerRadius prop is set, polar charts will be hollow rather than circular." [ref=e692]:
+                        - gridcell "innerRadius" [ref=e693]:
+                          - generic [ref=e694]: innerRadius
+                        - gridcell "number | Function" [ref=e695]:
+                          - generic [ref=e696]: number | Function
+                        - gridcell [ref=e697]
+                        - gridcell "When the innerRadius prop is set, polar charts will be hollow rather than circular." [ref=e698]:
+                          - generic [ref=e699]: When the innerRadius prop is set, polar charts will be hollow rather than circular.
+                      - 'row "legendAllowWrap boolean | ((extraHeight: number) => void) Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart''s SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart''s parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart''s parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend''s itemsPerRow property has been calculated. The value provided can be used to increase the chart''s parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property" [ref=e700]':
+                        - gridcell "legendAllowWrap" [ref=e701]:
+                          - generic [ref=e702]: legendAllowWrap
+                        - 'gridcell "boolean | ((extraHeight: number) => void)" [ref=e703]':
+                          - generic [ref=e704]: "boolean | ((extraHeight: number) => void)"
+                        - gridcell [ref=e705]
+                        - 'gridcell "Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart''s SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart''s parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart''s parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend''s itemsPerRow property has been calculated. The value provided can be used to increase the chart''s parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property" [ref=e706]':
+                          - generic [ref=e707]: "Allows legend items to wrap onto the next line if the chart is not wide enough. Note that the chart's SVG height and width are 100% by default, so it can be responsive itself. However, if you define the height and width of the chart's parent container, you must accommodate for extra legend height due to legend items wrapping onto the next line. When the height of the chart's parent container is too small, some legend items may not be visible. Alternatively, a callback function may be provided, which will be called after the legend's itemsPerRow property has been calculated. The value provided can be used to increase the chart's parent container height as legend items wrap onto the next line. If no adjustment is necessary, the value will be zero. Note: This is overridden by the legendItemsPerRow property"
+                      - 'row "legendComponent React.ReactElement<any> <ChartLegend /> The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied" [ref=e708]':
+                        - gridcell "legendComponent" [ref=e709]:
+                          - generic [ref=e710]: legendComponent
+                        - gridcell "React.ReactElement<any>" [ref=e711]:
+                          - generic [ref=e712]: React.ReactElement<any>
+                        - gridcell "<ChartLegend />" [ref=e713]:
+                          - generic [ref=e714]: <ChartLegend />
+                        - 'gridcell "The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied" [ref=e715]':
+                          - generic [ref=e716]: "The legend component to render with chart. Note: Use legendData so the legend width can be calculated and positioned properly. Default legend properties may be applied"
+                      - 'row "legendData { name?: string; symbol?: { fill?: string; type?: string; }; }[] Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: ''Unused'' }]}" [ref=e717]':
+                        - gridcell "legendData" [ref=e718]:
+                          - generic [ref=e719]: legendData
+                        - 'gridcell "{ name?: string; symbol?: { fill?: string; type?: string; }; }[]" [ref=e720]':
+                          - generic [ref=e721]: "{ name?: string; symbol?: { fill?: string; type?: string; }; }[]"
+                        - gridcell [ref=e722]
+                        - 'gridcell "Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: ''Unused'' }]}" [ref=e723]':
+                          - generic [ref=e724]: "Specify data via the data prop. ChartLegend expects data as an array of objects with name (required), symbol, and labels properties. The data prop must be given as an array. @example legendData={[{ name: `GBps capacity - 45%` }, { name: 'Unused' }]}"
+                      - row "legendDirection 'ltr' | 'rtl' 'ltr' Text direction of the legend labels." [ref=e725]:
+                        - gridcell "legendDirection" [ref=e726]:
+                          - generic [ref=e727]: legendDirection
+                        - gridcell "'ltr' | 'rtl'" [ref=e728]:
+                          - generic [ref=e729]: "'ltr' | 'rtl'"
+                        - gridcell "'ltr'" [ref=e730]:
+                          - generic [ref=e731]: "'ltr'"
+                        - gridcell "Text direction of the legend labels." [ref=e732]:
+                          - generic [ref=e733]: Text direction of the legend labels.
+                      - row "legendOrientation 'horizontal' | 'vertical' theme.legend.orientation The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is \"horizontal\", legend items will be displayed in a single row. When orientation is \"vertical\", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so \"vertical\" orientation is both the default setting and recommended for displaying many series of data." [ref=e734]:
+                        - gridcell "legendOrientation" [ref=e735]:
+                          - generic [ref=e736]: legendOrientation
+                        - gridcell "'horizontal' | 'vertical'" [ref=e737]:
+                          - generic [ref=e738]: "'horizontal' | 'vertical'"
+                        - gridcell "theme.legend.orientation" [ref=e739]:
+                          - generic [ref=e740]: theme.legend.orientation
+                        - gridcell "The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is \"horizontal\", legend items will be displayed in a single row. When orientation is \"vertical\", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so \"vertical\" orientation is both the default setting and recommended for displaying many series of data." [ref=e741]:
+                          - generic [ref=e742]: The orientation prop takes a string that defines whether legend data are displayed in a row or column. When orientation is "horizontal", legend items will be displayed in a single row. When orientation is "vertical", legend items will be displayed in a single column. Line and text-wrapping is not currently supported, so "vertical" orientation is both the default setting and recommended for displaying many series of data.
+                      - 'row "legendPosition ''bottom'' | ''bottom-left'' | ''right'' ChartCommonStyles.legend.position The legend position relation to the chart. Valid values are ''bottom'', ''bottom-left'', and ''right'' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied." [ref=e743]':
+                        - gridcell "legendPosition" [ref=e744]:
+                          - generic [ref=e745]: legendPosition
+                        - gridcell "'bottom' | 'bottom-left' | 'right'" [ref=e746]:
+                          - generic [ref=e747]: "'bottom' | 'bottom-left' | 'right'"
+                        - gridcell "ChartCommonStyles.legend.position" [ref=e748]:
+                          - generic [ref=e749]: ChartCommonStyles.legend.position
+                        - 'gridcell "The legend position relation to the chart. Valid values are ''bottom'', ''bottom-left'', and ''right'' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied." [ref=e750]':
+                          - generic [ref=e751]: "The legend position relation to the chart. Valid values are 'bottom', 'bottom-left', and 'right' Note: When adding a legend, padding may need to be adjusted in order to accommodate the extra legend. In some cases, the legend may not be visible until enough padding is applied."
+                      - 'row "maxDomain number | { x?: number; y?: number } The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e752]':
+                        - gridcell "maxDomain" [ref=e753]:
+                          - generic [ref=e754]: maxDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e755]':
+                          - generic [ref=e756]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e757]
+                        - 'gridcell "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e758]':
+                          - generic [ref=e759]: "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}"
+                      - 'row "minDomain number | { x?: number; y?: number } The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e760]':
+                        - gridcell "minDomain" [ref=e761]:
+                          - generic [ref=e762]: minDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e763]':
+                          - generic [ref=e764]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e765]
+                        - 'gridcell "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e766]':
+                          - generic [ref=e767]: "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}"
+                      - row "name string The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e768]:
+                        - gridcell "name" [ref=e769]:
+                          - generic [ref=e770]: name
+                        - gridcell "string" [ref=e771]:
+                          - generic [ref=e772]: string
+                        - gridcell [ref=e773]
+                        - gridcell "The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e774]:
+                          - generic [ref=e775]: The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page.
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e776]':
+                        - gridcell "padding" [ref=e777]:
+                          - generic [ref=e778]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e779]':
+                          - generic [ref=e780]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e781]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e782]:
+                          - generic [ref=e783]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - 'row "patternScale string[] The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e784]':
+                        - gridcell "patternScale" [ref=e785]:
+                          - generic [ref=e786]: patternScale
+                        - gridcell "string[]" [ref=e787]:
+                          - generic [ref=e788]: string[]
+                        - gridcell [ref=e789]
+                        - 'gridcell "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e790]':
+                          - generic [ref=e791]: "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ 'url(\"#pattern1\")', 'url(\"#pattern2\")', null ]}"
+                      - row "polar boolean Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e792]:
+                        - gridcell "polar" [ref=e793]:
+                          - generic [ref=e794]: polar
+                        - gridcell "boolean" [ref=e795]:
+                          - generic [ref=e796]: boolean
+                        - gridcell [ref=e797]
+                        - gridcell "Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e798]:
+                          - generic [ref=e799]: Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+                      - 'row "range number[] | { x: number[], y: number[] } The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e800]':
+                        - gridcell "range" [ref=e801]:
+                          - generic [ref=e802]: range
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e803]':
+                          - generic [ref=e804]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e805]
+                        - 'gridcell "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e806]':
+                          - generic [ref=e807]: "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}"
+                      - 'row "scale string | { x: string, y: string } The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e808]':
+                        - gridcell "scale" [ref=e809]:
+                          - generic [ref=e810]: scale
+                        - 'gridcell "string | { x: string, y: string }" [ref=e811]':
+                          - generic [ref=e812]: "string | { x: string, y: string }"
+                        - gridcell [ref=e813]
+                        - 'gridcell "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e814]':
+                          - generic [ref=e815]: "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}"
+                      - row "showAxis boolean true Convenience prop to hide both x and y axis, which are shown by default. Alternatively, the axis can be hidden via chart styles." [ref=e816]:
+                        - gridcell "showAxis" [ref=e817]:
+                          - generic [ref=e818]: showAxis
+                        - gridcell "boolean" [ref=e819]:
+                          - generic [ref=e820]: boolean
+                        - gridcell "true" [ref=e821]:
+                          - generic [ref=e822]: "true"
+                        - gridcell "Convenience prop to hide both x and y axis, which are shown by default. Alternatively, the axis can be hidden via chart styles." [ref=e823]:
+                          - generic [ref=e824]: Convenience prop to hide both x and y axis, which are shown by default. Alternatively, the axis can be hidden via chart styles.
+                      - row [ref=e825]:
+                        - gridcell "singleQuadrantDomainPadding" [ref=e826]:
+                          - generic [ref=e827]: singleQuadrantDomainPadding
+                        - 'gridcell "boolean | { x?: boolean; y?: boolean }" [ref=e828]':
+                          - generic [ref=e829]: "boolean | { x?: boolean; y?: boolean }"
+                        - gridcell [ref=e830]
+                        - gridcell [ref=e831]:
+                          - generic [ref=e832]: "By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the desired behavior in most cases. For users that need to apply padding without regard to quadrant, the singleQuadrantDomainPadding prop may be used. This prop may be given as a boolean or an object with boolean values specified for \"x\" and/or \"y\". When this prop is false (or false for a given dimension), padding will be applied without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants. Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example singleQuadrantDomainPadding={false} singleQuadrantDomainPadding={{ x: false }}"
+                      - row "standalone boolean The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose Chart with other components within an enclosing <svg> tag." [ref=e833]:
+                        - gridcell "standalone" [ref=e834]:
+                          - generic [ref=e835]: standalone
+                        - gridcell "boolean" [ref=e836]:
+                          - generic [ref=e837]: boolean
+                        - gridcell [ref=e838]
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose Chart with other components within an enclosing <svg> tag." [ref=e839]:
+                          - generic [ref=e840]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose Chart with other components within an enclosing <svg> tag.
+                      - row "startAngle number The startAngle props defines the overall start angle of a polar chart in degrees. This prop is used in conjunction with endAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise." [ref=e841]:
+                        - gridcell "startAngle" [ref=e842]:
+                          - generic [ref=e843]: startAngle
+                        - gridcell "number" [ref=e844]:
+                          - generic [ref=e845]: number
+                        - gridcell [ref=e846]
+                        - gridcell "The startAngle props defines the overall start angle of a polar chart in degrees. This prop is used in conjunction with endAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise." [ref=e847]:
+                          - generic [ref=e848]: The startAngle props defines the overall start angle of a polar chart in degrees. This prop is used in conjunction with endAngle to create polar chart that spans only a segment of a circle, or to change overall rotation of the chart. This prop should be given as a number of degrees. Degrees are defined as starting at the 3 o'clock position, and proceeding counterclockwise.
+                      - 'row "style { parent: object, background: object } The style prop defines the style of the component. The style prop should be given as an object with styles defined for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified via props as they determine relative layout for components in Chart. @propType { parent: object, background: object }" [ref=e849]':
+                        - gridcell "style" [ref=e850]:
+                          - generic [ref=e851]: style
+                        - 'gridcell "{ parent: object, background: object }" [ref=e852]':
+                          - generic [ref=e853]: "{ parent: object, background: object }"
+                        - gridcell [ref=e854]
+                        - 'gridcell "The style prop defines the style of the component. The style prop should be given as an object with styles defined for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified via props as they determine relative layout for components in Chart. @propType { parent: object, background: object }" [ref=e855]':
+                          - generic [ref=e856]: "The style prop defines the style of the component. The style prop should be given as an object with styles defined for data, labels and parent. Any valid svg styles are supported, but width, height, and padding should be specified via props as they determine relative layout for components in Chart. @propType { parent: object, background: object }"
+                      - row "theme object getChartTheme(themeColor, showAxis) The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e857]:
+                        - gridcell "theme" [ref=e858]:
+                          - generic [ref=e859]: theme
+                        - gridcell "object" [ref=e860]:
+                          - generic [ref=e861]: object
+                        - gridcell "getChartTheme(themeColor, showAxis)" [ref=e862]:
+                          - generic [ref=e863]: getChartTheme(themeColor, showAxis)
+                        - gridcell "The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e864]:
+                          - generic [ref=e865]: The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e866]':
+                        - gridcell "themeColor" [ref=e867]:
+                          - generic [ref=e868]: themeColor
+                        - gridcell "string" [ref=e869]:
+                          - generic [ref=e870]: string
+                        - gridcell [ref=e871]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e872]':
+                          - generic [ref=e873]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "width number theme.chart.width Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e874]:
+                        - gridcell "width" [ref=e875]:
+                          - generic [ref=e876]: width
+                        - gridcell "number" [ref=e877]:
+                          - generic [ref=e878]: number
+                        - gridcell "theme.chart.width" [ref=e879]:
+                          - generic [ref=e880]: theme.chart.width
+                        - gridcell "Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio." [ref=e881]:
+                          - generic [ref=e882]: Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Typically, the parent container is set to the same width in order to maintain the aspect ratio.
+                  - heading "ChartArea" [level=3] [ref=e885]:
+                    - button [ref=e887] [cursor=pointer]:
+                      - img [ref=e888]
+                    - text: ChartArea
+                  - grid "ChartArea" [ref=e890]:
+                    - caption [ref=e891]:
+                      - generic [ref=e892]: ChartArea renders a dataset as a single area path. Since ChartArea renders only a single element to represent a dataset rather than individual elements for each data point, some of its behavior is different from other Victory based components. Pay special attention to style and events props, and take advantage of ChartVoronoiContainer to enable tooltips. ChartArea can be composed with Chart to create area charts. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-area/src/victory-area.tsx
+                      - generic [ref=e893]: "*required"
+                    - rowgroup [ref=e894]:
+                      - row "Name Type Default Description" [ref=e895]:
+                        - columnheader "Name" [ref=e896]
+                        - columnheader "Type" [ref=e897]
+                        - columnheader "Default" [ref=e898]
+                        - columnheader "Description" [ref=e899]
+                    - rowgroup [ref=e900]:
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e901]':
+                        - gridcell "animate" [ref=e902]:
+                          - generic [ref=e903]: animate
+                        - gridcell "boolean | object" [ref=e904]:
+                          - generic [ref=e905]: boolean | object
+                        - gridcell [ref=e906]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e907]':
+                          - generic [ref=e908]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "categories string[] | { x: string[], y: string[] } The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e909]':
+                        - gridcell "categories" [ref=e910]:
+                          - generic [ref=e911]: categories
+                        - 'gridcell "string[] | { x: string[], y: string[] }" [ref=e912]':
+                          - generic [ref=e913]: "string[] | { x: string[], y: string[] }"
+                        - gridcell [ref=e914]
+                        - gridcell "The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e915]:
+                          - generic [ref=e916]: The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example ["dogs", "cats", "mice"]
+                      - row [ref=e917]:
+                        - gridcell "containerComponent" [ref=e918]:
+                          - generic [ref=e919]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e920]:
+                          - generic [ref=e921]: React.ReactElement<any>
+                        - gridcell "<ChartContainer />" [ref=e922]:
+                          - generic [ref=e923]: <ChartContainer />
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartArea: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />" [ref=e924]':
+                          - generic [ref=e925]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartArea: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />"
+                      - 'row "data any[] The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e926]':
+                        - gridcell "data" [ref=e927]:
+                          - generic [ref=e928]: data
+                        - gridcell "any[]" [ref=e929]:
+                          - generic [ref=e930]: any[]
+                        - gridcell [ref=e931]
+                        - 'gridcell "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e932]':
+                          - generic [ref=e933]: "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]"
+                      - 'row "dataComponent React.ReactElement<any> The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartArea: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use its default Area component." [ref=e934]':
+                        - gridcell "dataComponent" [ref=e935]:
+                          - generic [ref=e936]: dataComponent
+                        - gridcell "React.ReactElement<any>" [ref=e937]:
+                          - generic [ref=e938]: React.ReactElement<any>
+                        - gridcell [ref=e939]
+                        - 'gridcell "The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartArea: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use its default Area component." [ref=e940]':
+                          - generic [ref=e941]: "The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartArea: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartArea will use its default Area component."
+                      - 'row "domain number[] | { x: number[], y: number[] } The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e942]':
+                        - gridcell "domain" [ref=e943]:
+                          - generic [ref=e944]: domain
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e945]':
+                          - generic [ref=e946]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e947]
+                        - 'gridcell "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e948]':
+                          - generic [ref=e949]: "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}"
+                      - 'row "domainPadding number | number[] | { x: number[], y: number[] } The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e950]':
+                        - gridcell "domainPadding" [ref=e951]:
+                          - generic [ref=e952]: domainPadding
+                        - 'gridcell "number | number[] | { x: number[], y: number[] }" [ref=e953]':
+                          - generic [ref=e954]: "number | number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e955]
+                        - 'gridcell "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e956]':
+                          - generic [ref=e957]: "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}"
+                      - 'row "eventKey number | string | Function | string[] | number[] Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e958]':
+                        - gridcell "eventKey" [ref=e959]:
+                          - generic [ref=e960]: eventKey
+                        - gridcell "number | string | Function | string[] | number[]" [ref=e961]:
+                          - generic [ref=e962]: number | string | Function | string[] | number[]
+                        - gridcell [ref=e963]
+                        - 'gridcell "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e964]':
+                          - generic [ref=e965]: "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data"
+                      - row [ref=e966]:
+                        - gridcell "events" [ref=e967]:
+                          - generic [ref=e968]: events
+                        - gridcell "object[]" [ref=e969]:
+                          - generic [ref=e970]: object[]
+                        - gridcell [ref=e971]
+                        - gridcell [ref=e972]:
+                          - generic [ref=e973]: "The event prop take an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"data\" and \"labels\" are all valid targets for ChartArea events. Since ChartArea only renders a single element, the eventKey property is not used. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler is used to modify elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. an area), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"data\", eventHandlers: { onClick: () => { return [ { mutation: (props) => { return {style: merge({}, props.style, {fill: \"orange\"})}; } }, { target: \"labels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] ChartArea uses the standard externalEventMutations prop." [ref=e974]:
+                        - gridcell "externalEventMutations" [ref=e975]:
+                          - generic [ref=e976]: externalEventMutations
+                        - gridcell "object[]" [ref=e977]:
+                          - generic [ref=e978]: object[]
+                        - gridcell [ref=e979]
+                        - gridcell "ChartArea uses the standard externalEventMutations prop." [ref=e980]:
+                          - generic [ref=e981]: ChartArea uses the standard externalEventMutations prop.
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e982]:
+                        - gridcell "groupComponent" [ref=e983]:
+                          - generic [ref=e984]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e985]:
+                          - generic [ref=e986]: React.ReactElement<any>
+                        - gridcell [ref=e987]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e988]:
+                          - generic [ref=e989]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - row "height number The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e990]:
+                        - gridcell "height" [ref=e991]:
+                          - generic [ref=e992]: height
+                        - gridcell "number" [ref=e993]:
+                          - generic [ref=e994]: number
+                        - gridcell [ref=e995]
+                        - gridcell "The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e996]:
+                          - generic [ref=e997]: The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels
+                      - row "horizontal boolean The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e998]:
+                        - gridcell "horizontal" [ref=e999]:
+                          - generic [ref=e1000]: horizontal
+                        - gridcell "boolean" [ref=e1001]:
+                          - generic [ref=e1002]: boolean
+                        - gridcell [ref=e1003]
+                        - gridcell "The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e1004]:
+                          - generic [ref=e1005]: The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis.
+                      - 'row "interpolation string | Function The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"." [ref=e1006]':
+                        - gridcell "interpolation" [ref=e1007]:
+                          - generic [ref=e1008]: interpolation
+                        - gridcell "string | Function" [ref=e1009]:
+                          - generic [ref=e1010]: string | Function
+                        - gridcell [ref=e1011]
+                        - 'gridcell "The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"." [ref=e1012]':
+                          - generic [ref=e1013]: "The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"."
+                      - 'row "labelComponent React.ReactElement<any> The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartArea. If individual labels are required for each data point, they should be created by composing ChartArea with VictoryScatter" [ref=e1014]':
+                        - gridcell "labelComponent" [ref=e1015]:
+                          - generic [ref=e1016]: labelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1017]:
+                          - generic [ref=e1018]: React.ReactElement<any>
+                        - gridcell [ref=e1019]
+                        - 'gridcell "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartArea. If individual labels are required for each data point, they should be created by composing ChartArea with VictoryScatter" [ref=e1020]':
+                          - generic [ref=e1021]: "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartArea. If individual labels are required for each data point, they should be created by composing ChartArea with VictoryScatter"
+                      - 'row "labels string[] | number[] | ((data: any) => string | number | null) The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e1022]':
+                        - gridcell "labels" [ref=e1023]:
+                          - generic [ref=e1024]: labels
+                        - 'gridcell "string[] | number[] | ((data: any) => string | number | null)" [ref=e1025]':
+                          - generic [ref=e1026]: "string[] | number[] | ((data: any) => string | number | null)"
+                        - gridcell [ref=e1027]
+                        - 'gridcell "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e1028]':
+                          - generic [ref=e1029]: "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title"
+                      - 'row "maxDomain number | { x?: number; y?: number } The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1030]':
+                        - gridcell "maxDomain" [ref=e1031]:
+                          - generic [ref=e1032]: maxDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1033]':
+                          - generic [ref=e1034]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1035]
+                        - 'gridcell "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1036]':
+                          - generic [ref=e1037]: "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}"
+                      - 'row "minDomain number | { x?: number; y?: number } The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1038]':
+                        - gridcell "minDomain" [ref=e1039]:
+                          - generic [ref=e1040]: minDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1041]':
+                          - generic [ref=e1042]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1043]
+                        - 'gridcell "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1044]':
+                          - generic [ref=e1045]: "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}"
+                      - row "name string The name prop is used to reference a component instance when defining shared events." [ref=e1046]:
+                        - gridcell "name" [ref=e1047]:
+                          - generic [ref=e1048]: name
+                        - gridcell "string" [ref=e1049]:
+                          - generic [ref=e1050]: string
+                        - gridcell [ref=e1051]
+                        - gridcell "The name prop is used to reference a component instance when defining shared events." [ref=e1052]:
+                          - generic [ref=e1053]: The name prop is used to reference a component instance when defining shared events.
+                      - 'row "origin { x: number, y: number } Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e1054]':
+                        - gridcell "origin" [ref=e1055]:
+                          - generic [ref=e1056]: origin
+                        - 'gridcell "{ x: number, y: number }" [ref=e1057]':
+                          - generic [ref=e1058]: "{ x: number, y: number }"
+                        - gridcell [ref=e1059]
+                        - 'gridcell "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e1060]':
+                          - generic [ref=e1061]: "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually"
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1062]':
+                        - gridcell "padding" [ref=e1063]:
+                          - generic [ref=e1064]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e1065]':
+                          - generic [ref=e1066]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e1067]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1068]:
+                          - generic [ref=e1069]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - row "polar boolean Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e1070]:
+                        - gridcell "polar" [ref=e1071]:
+                          - generic [ref=e1072]: polar
+                        - gridcell "boolean" [ref=e1073]:
+                          - generic [ref=e1074]: boolean
+                        - gridcell [ref=e1075]
+                        - gridcell "Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e1076]:
+                          - generic [ref=e1077]: Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+                      - 'row "range number[] | { x: number[], y: number[] } The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1078]':
+                        - gridcell "range" [ref=e1079]:
+                          - generic [ref=e1080]: range
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1081]':
+                          - generic [ref=e1082]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1083]
+                        - 'gridcell "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1084]':
+                          - generic [ref=e1085]: "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}"
+                      - row "samples number The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e1086]:
+                        - gridcell "samples" [ref=e1087]:
+                          - generic [ref=e1088]: samples
+                        - gridcell "number" [ref=e1089]:
+                          - generic [ref=e1090]: number
+                        - gridcell [ref=e1091]
+                        - gridcell "The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e1092]:
+                          - generic [ref=e1093]: The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead.
+                      - 'row "scale string | { x: string, y: string } The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1094]':
+                        - gridcell "scale" [ref=e1095]:
+                          - generic [ref=e1096]: scale
+                        - 'gridcell "string | { x: string, y: string }" [ref=e1097]':
+                          - generic [ref=e1098]: "string | { x: string, y: string }"
+                        - gridcell [ref=e1099]
+                        - 'gridcell "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1100]':
+                          - generic [ref=e1101]: "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}"
+                      - row [ref=e1102]:
+                        - gridcell "singleQuadrantDomainPadding" [ref=e1103]:
+                          - generic [ref=e1104]: singleQuadrantDomainPadding
+                        - 'gridcell "boolean | { x?: boolean; y?: boolean }" [ref=e1105]':
+                          - generic [ref=e1106]: "boolean | { x?: boolean; y?: boolean }"
+                        - gridcell [ref=e1107]
+                        - gridcell [ref=e1108]:
+                          - generic [ref=e1109]: "By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the desired behavior in most cases. For users that need to apply padding without regard to quadrant, the singleQuadrantDomainPadding prop may be used. This prop may be given as a boolean or an object with boolean values specified for \"x\" and/or \"y\". When this prop is false (or false for a given dimension), padding will be applied without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants. Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example singleQuadrantDomainPadding={false} singleQuadrantDomainPadding={{ x: false }}"
+                      - row "sortKey number | string | Function | string[] Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1110]:
+                        - gridcell "sortKey" [ref=e1111]:
+                          - generic [ref=e1112]: sortKey
+                        - gridcell "number | string | Function | string[]" [ref=e1113]:
+                          - generic [ref=e1114]: number | string | Function | string[]
+                        - gridcell [ref=e1115]
+                        - gridcell "Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1116]:
+                          - generic [ref=e1117]: Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset.
+                      - row "sortOrder string The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1118]:
+                        - gridcell "sortOrder" [ref=e1119]:
+                          - generic [ref=e1120]: sortOrder
+                        - gridcell "string" [ref=e1121]:
+                          - generic [ref=e1122]: string
+                        - gridcell [ref=e1123]
+                        - gridcell "The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1124]:
+                          - generic [ref=e1125]: The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+                      - row "standalone boolean The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartArea with other components within an enclosing <svg> tag." [ref=e1126]:
+                        - gridcell "standalone" [ref=e1127]:
+                          - generic [ref=e1128]: standalone
+                        - gridcell "boolean" [ref=e1129]:
+                          - generic [ref=e1130]: boolean
+                        - gridcell [ref=e1131]
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartArea with other components within an enclosing <svg> tag." [ref=e1132]:
+                          - generic [ref=e1133]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartArea with other components within an enclosing <svg> tag.
+                      - 'row "style { parent: object, data: object, labels: object } The style prop specifies styles for your ChartArea. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e1134]':
+                        - gridcell "style" [ref=e1135]:
+                          - generic [ref=e1136]: style
+                        - 'gridcell "{ parent: object, data: object, labels: object }" [ref=e1137]':
+                          - generic [ref=e1138]: "{ parent: object, data: object, labels: object }"
+                        - gridcell [ref=e1139]
+                        - 'gridcell "The style prop specifies styles for your ChartArea. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e1140]':
+                          - generic [ref=e1141]: "The style prop specifies styles for your ChartArea. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}"
+                      - row "theme object getTheme(themeColor) The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartArea as a solo component, implement the theme directly on ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1142]:
+                        - gridcell "theme" [ref=e1143]:
+                          - generic [ref=e1144]: theme
+                        - gridcell "object" [ref=e1145]:
+                          - generic [ref=e1146]: object
+                        - gridcell "getTheme(themeColor)" [ref=e1147]:
+                          - generic [ref=e1148]: getTheme(themeColor)
+                        - gridcell "The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartArea as a solo component, implement the theme directly on ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1149]:
+                          - generic [ref=e1150]: The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartArea as a solo component, implement the theme directly on ChartArea. If you are wrapping ChartArea in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1151]':
+                        - gridcell "themeColor" [ref=e1152]:
+                          - generic [ref=e1153]: themeColor
+                        - gridcell "string" [ref=e1154]:
+                          - generic [ref=e1155]: string
+                        - gridcell [ref=e1156]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1157]':
+                          - generic [ref=e1158]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "width number The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e1159]:
+                        - gridcell "width" [ref=e1160]:
+                          - generic [ref=e1161]: width
+                        - gridcell "number" [ref=e1162]:
+                          - generic [ref=e1163]: number
+                        - gridcell [ref=e1164]
+                        - gridcell "The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e1165]:
+                          - generic [ref=e1166]: The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels
+                      - 'row "x number | string | Function | string[] The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1167]':
+                        - gridcell "x" [ref=e1168]:
+                          - generic [ref=e1169]: x
+                        - gridcell "number | string | Function | string[]" [ref=e1170]:
+                          - generic [ref=e1171]: number | string | Function | string[]
+                        - gridcell [ref=e1172]
+                        - 'gridcell "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1173]':
+                          - generic [ref=e1174]: "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)"
+                      - 'row "y number | string | Function | string[] The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1175]':
+                        - gridcell "y" [ref=e1176]:
+                          - generic [ref=e1177]: "y"
+                        - gridcell "number | string | Function | string[]" [ref=e1178]:
+                          - generic [ref=e1179]: number | string | Function | string[]
+                        - gridcell [ref=e1180]
+                        - 'gridcell "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1181]':
+                          - generic [ref=e1182]: "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)"
+                      - row "y0 number | string | Function | string[] Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e1183]:
+                        - gridcell "y0" [ref=e1184]:
+                          - generic [ref=e1185]: y0
+                        - gridcell "number | string | Function | string[]" [ref=e1186]:
+                          - generic [ref=e1187]: number | string | Function | string[]
+                        - gridcell [ref=e1188]
+                        - gridcell "Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e1189]:
+                          - generic [ref=e1190]: Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
+                  - heading "ChartAxis" [level=3] [ref=e1193]:
+                    - button [ref=e1195] [cursor=pointer]:
+                      - img [ref=e1196]
+                    - text: ChartAxis
+                  - grid "ChartAxis" [ref=e1198]:
+                    - caption [ref=e1199]:
+                      - generic [ref=e1200]: ChartAxis renders a single axis which can be used on its own or composed with Chart. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-axis/src/index.d.ts
+                      - generic [ref=e1201]: "*required"
+                    - rowgroup [ref=e1202]:
+                      - row "Name Type Default Description" [ref=e1203]:
+                        - columnheader "Name" [ref=e1204]
+                        - columnheader "Type" [ref=e1205]
+                        - columnheader "Default" [ref=e1206]
+                        - columnheader "Description" [ref=e1207]
+                    - rowgroup [ref=e1208]:
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1209]':
+                        - gridcell "animate" [ref=e1210]:
+                          - generic [ref=e1211]: animate
+                        - gridcell "boolean | object" [ref=e1212]:
+                          - generic [ref=e1213]: boolean | object
+                        - gridcell [ref=e1214]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1215]':
+                          - generic [ref=e1216]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "axisComponent React.ReactElement<any> The axisComponent prop takes in an entire component which will be used to create the axis line. The new element created from the passed axisComponent will be supplied with the following properties: x1, y1, x2, y2, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisComponent is not supplied, ChartAxis will render its default AxisLine component." [ref=e1217]':
+                        - gridcell "axisComponent" [ref=e1218]:
+                          - generic [ref=e1219]: axisComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1220]:
+                          - generic [ref=e1221]: React.ReactElement<any>
+                        - gridcell [ref=e1222]
+                        - 'gridcell "The axisComponent prop takes in an entire component which will be used to create the axis line. The new element created from the passed axisComponent will be supplied with the following properties: x1, y1, x2, y2, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisComponent is not supplied, ChartAxis will render its default AxisLine component." [ref=e1223]':
+                          - generic [ref=e1224]: "The axisComponent prop takes in an entire component which will be used to create the axis line. The new element created from the passed axisComponent will be supplied with the following properties: x1, y1, x2, y2, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisComponent is not supplied, ChartAxis will render its default AxisLine component."
+                      - 'row "axisLabelComponent React.ReactElement<any> <ChartLabel /> The axisLabelComponent prop takes in an entire component which will be used to create the axis label. The new element created from the passed axisLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, transform, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisLabelComponent is not supplied, a new ChartLabel will be created with props described above" [ref=e1225]':
+                        - gridcell "axisLabelComponent" [ref=e1226]:
+                          - generic [ref=e1227]: axisLabelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1228]:
+                          - generic [ref=e1229]: React.ReactElement<any>
+                        - gridcell "<ChartLabel />" [ref=e1230]:
+                          - generic [ref=e1231]: <ChartLabel />
+                        - 'gridcell "The axisLabelComponent prop takes in an entire component which will be used to create the axis label. The new element created from the passed axisLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, transform, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisLabelComponent is not supplied, a new ChartLabel will be created with props described above" [ref=e1232]':
+                          - generic [ref=e1233]: "The axisLabelComponent prop takes in an entire component which will be used to create the axis label. The new element created from the passed axisLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, transform, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an axisLabelComponent is not supplied, a new ChartLabel will be created with props described above"
+                      - row "axisValue number | string | object | Date The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when dependent axes should line up with values on the independent axis." [ref=e1234]:
+                        - gridcell "axisValue" [ref=e1235]:
+                          - generic [ref=e1236]: axisValue
+                        - gridcell "number | string | object | Date" [ref=e1237]:
+                          - generic [ref=e1238]: number | string | object | Date
+                        - gridcell [ref=e1239]
+                        - gridcell "The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when dependent axes should line up with values on the independent axis." [ref=e1240]:
+                          - generic [ref=e1241]: The axisValue prop may be used instead of axisAngle to position the dependent axis. Ths prop is useful when dependent axes should line up with values on the independent axis.
+                      - row [ref=e1242]:
+                        - gridcell "containerComponent" [ref=e1243]:
+                          - generic [ref=e1244]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1245]:
+                          - generic [ref=e1246]: React.ReactElement<any>
+                        - gridcell "<ChartContainer />" [ref=e1247]:
+                          - generic [ref=e1248]: <ChartContainer />
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartAxis: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartAxis will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />" [ref=e1249]':
+                          - generic [ref=e1250]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartAxis: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartAxis will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows ...\" />"
+                      - row "crossAxis boolean This prop specifies whether a given axis is intended to cross another axis." [ref=e1251]:
+                        - gridcell "crossAxis" [ref=e1252]:
+                          - generic [ref=e1253]: crossAxis
+                        - gridcell "boolean" [ref=e1254]:
+                          - generic [ref=e1255]: boolean
+                        - gridcell [ref=e1256]
+                        - gridcell "This prop specifies whether a given axis is intended to cross another axis." [ref=e1257]:
+                          - generic [ref=e1258]: This prop specifies whether a given axis is intended to cross another axis.
+                      - row "dependentAxis boolean The dependentAxis prop specifies whether the axis corresponds to the dependent variable (usually y). This prop is useful when composing axis with other components to form a chart." [ref=e1259]:
+                        - gridcell "dependentAxis" [ref=e1260]:
+                          - generic [ref=e1261]: dependentAxis
+                        - gridcell "boolean" [ref=e1262]:
+                          - generic [ref=e1263]: boolean
+                        - gridcell [ref=e1264]
+                        - gridcell "The dependentAxis prop specifies whether the axis corresponds to the dependent variable (usually y). This prop is useful when composing axis with other components to form a chart." [ref=e1265]:
+                          - generic [ref=e1266]: The dependentAxis prop specifies whether the axis corresponds to the dependent variable (usually y). This prop is useful when composing axis with other components to form a chart.
+                      - 'row "domain number[] | { x: number[], y: number[] } The domain prop describes the range of values your axis will include. This prop should be given as a array of the minimum and maximum expected values for your axis. If this value is not given it will be calculated based on the scale or tickValues. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1267]':
+                        - gridcell "domain" [ref=e1268]:
+                          - generic [ref=e1269]: domain
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1270]':
+                          - generic [ref=e1271]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1272]
+                        - 'gridcell "The domain prop describes the range of values your axis will include. This prop should be given as a array of the minimum and maximum expected values for your axis. If this value is not given it will be calculated based on the scale or tickValues. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1273]':
+                          - generic [ref=e1274]: "The domain prop describes the range of values your axis will include. This prop should be given as a array of the minimum and maximum expected values for your axis. If this value is not given it will be calculated based on the scale or tickValues. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}"
+                      - 'row "domainPadding number | number[] | { x: number[], y: number[] } The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1275]':
+                        - gridcell "domainPadding" [ref=e1276]:
+                          - generic [ref=e1277]: domainPadding
+                        - 'gridcell "number | number[] | { x: number[], y: number[] }" [ref=e1278]':
+                          - generic [ref=e1279]: "number | number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1280]
+                        - 'gridcell "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1281]':
+                          - generic [ref=e1282]: "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}"
+                      - row [ref=e1283]:
+                        - gridcell "events" [ref=e1284]:
+                          - generic [ref=e1285]: events
+                        - gridcell "object[]" [ref=e1286]:
+                          - generic [ref=e1287]: object[]
+                        - gridcell [ref=e1288]
+                        - gridcell [ref=e1289]:
+                          - generic [ref=e1290]: "The event prop take an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"axis\", \"axisLabel\", \"ticks\", \"tickLabels\", and \"grid\" are all valid targets for ChartAxis events. The eventKey may optionally be used to select a single element by index rather than an entire set. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler be used to modify other elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. a single tick), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"grid\", eventKey: 2, eventHandlers: { onClick: () => { return [ { mutation: (props) => { return {style: merge({}, props.style, {stroke: \"orange\"})}; } }, { target: \"tickLabels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] ChartAxis uses the standard externalEventMutations prop." [ref=e1291]:
+                        - gridcell "externalEventMutations" [ref=e1292]:
+                          - generic [ref=e1293]: externalEventMutations
+                        - gridcell "object[]" [ref=e1294]:
+                          - generic [ref=e1295]: object[]
+                        - gridcell [ref=e1296]
+                        - gridcell "ChartAxis uses the standard externalEventMutations prop." [ref=e1297]:
+                          - generic [ref=e1298]: ChartAxis uses the standard externalEventMutations prop.
+                      - row "fixAxisLabelHeight boolean When true, this prop adjusts the height between the axis label and bottom positioned legend" [ref=e1299]:
+                        - gridcell "fixAxisLabelHeight" [ref=e1300]:
+                          - generic [ref=e1301]: fixAxisLabelHeight
+                        - gridcell "boolean" [ref=e1302]:
+                          - generic [ref=e1303]: boolean
+                        - gridcell [ref=e1304]
+                        - gridcell "When true, this prop adjusts the height between the axis label and bottom positioned legend" [ref=e1305]:
+                          - generic [ref=e1306]: When true, this prop adjusts the height between the axis label and bottom positioned legend
+                      - row "fixLabelOverlap boolean When true, this prop reduces the number of tick labels to fit the length of the axis. Labels are removed at approximately even intervals from the original array of labels. This feature only works well for labels that are approximately evenly spaced." [ref=e1307]:
+                        - gridcell "fixLabelOverlap" [ref=e1308]:
+                          - generic [ref=e1309]: fixLabelOverlap
+                        - gridcell "boolean" [ref=e1310]:
+                          - generic [ref=e1311]: boolean
+                        - gridcell [ref=e1312]
+                        - gridcell "When true, this prop reduces the number of tick labels to fit the length of the axis. Labels are removed at approximately even intervals from the original array of labels. This feature only works well for labels that are approximately evenly spaced." [ref=e1313]:
+                          - generic [ref=e1314]: When true, this prop reduces the number of tick labels to fit the length of the axis. Labels are removed at approximately even intervals from the original array of labels. This feature only works well for labels that are approximately evenly spaced.
+                      - 'row "gridComponent React.ReactElement<any> The gridComponent prop takes in an entire component which will be used to create grid lines. The new element created from the passed gridComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a gridComponent is not supplied, ChartAxis will render its default GridLine component." [ref=e1315]':
+                        - gridcell "gridComponent" [ref=e1316]:
+                          - generic [ref=e1317]: gridComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1318]:
+                          - generic [ref=e1319]: React.ReactElement<any>
+                        - gridcell [ref=e1320]
+                        - 'gridcell "The gridComponent prop takes in an entire component which will be used to create grid lines. The new element created from the passed gridComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a gridComponent is not supplied, ChartAxis will render its default GridLine component." [ref=e1321]':
+                          - generic [ref=e1322]: "The gridComponent prop takes in an entire component which will be used to create grid lines. The new element created from the passed gridComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a gridComponent is not supplied, ChartAxis will render its default GridLine component."
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1323]:
+                        - gridcell "groupComponent" [ref=e1324]:
+                          - generic [ref=e1325]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1326]:
+                          - generic [ref=e1327]: React.ReactElement<any>
+                        - gridcell [ref=e1328]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1329]:
+                          - generic [ref=e1330]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - row "height number Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into." [ref=e1331]:
+                        - gridcell "height" [ref=e1332]:
+                          - generic [ref=e1333]: height
+                        - gridcell "number" [ref=e1334]:
+                          - generic [ref=e1335]: number
+                        - gridcell [ref=e1336]
+                        - gridcell "Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into." [ref=e1337]:
+                          - generic [ref=e1338]: Specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into.
+                      - row "invertAxis boolean If true, this value will flip the domain of a given axis." [ref=e1339]:
+                        - gridcell "invertAxis" [ref=e1340]:
+                          - generic [ref=e1341]: invertAxis
+                        - gridcell "boolean" [ref=e1342]:
+                          - generic [ref=e1343]: boolean
+                        - gridcell [ref=e1344]
+                        - gridcell "If true, this value will flip the domain of a given axis." [ref=e1345]:
+                          - generic [ref=e1346]: If true, this value will flip the domain of a given axis.
+                      - row "label any The label prop defines the label that will appear along the axis. This prop should be given as a value or an entire, HTML-complete label component. If a label component is given, it will be cloned. The new element's properties x, y, textAnchor, verticalAnchor, and transform will have defaults provided by the axis; styles filled out with defaults provided by the axis, and overrides from the label component. If a value is given, a new ChartLabel will be created with props and styles from the axis." [ref=e1347]:
+                        - gridcell "label" [ref=e1348]:
+                          - generic [ref=e1349]: label
+                        - gridcell "any" [ref=e1350]:
+                          - generic [ref=e1351]: any
+                        - gridcell [ref=e1352]
+                        - gridcell "The label prop defines the label that will appear along the axis. This prop should be given as a value or an entire, HTML-complete label component. If a label component is given, it will be cloned. The new element's properties x, y, textAnchor, verticalAnchor, and transform will have defaults provided by the axis; styles filled out with defaults provided by the axis, and overrides from the label component. If a value is given, a new ChartLabel will be created with props and styles from the axis." [ref=e1353]:
+                          - generic [ref=e1354]: The label prop defines the label that will appear along the axis. This prop should be given as a value or an entire, HTML-complete label component. If a label component is given, it will be cloned. The new element's properties x, y, textAnchor, verticalAnchor, and transform will have defaults provided by the axis; styles filled out with defaults provided by the axis, and overrides from the label component. If a value is given, a new ChartLabel will be created with props and styles from the axis.
+                      - 'row "maxDomain number | { x?: number; y?: number } The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1355]':
+                        - gridcell "maxDomain" [ref=e1356]:
+                          - generic [ref=e1357]: maxDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1358]':
+                          - generic [ref=e1359]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1360]
+                        - 'gridcell "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1361]':
+                          - generic [ref=e1362]: "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}"
+                      - 'row "minDomain number | { x?: number; y?: number } The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1363]':
+                        - gridcell "minDomain" [ref=e1364]:
+                          - generic [ref=e1365]: minDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1366]':
+                          - generic [ref=e1367]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1368]
+                        - 'gridcell "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1369]':
+                          - generic [ref=e1370]: "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}"
+                      - row "name string The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e1371]:
+                        - gridcell "name" [ref=e1372]:
+                          - generic [ref=e1373]: name
+                        - gridcell "string" [ref=e1374]:
+                          - generic [ref=e1375]: string
+                        - gridcell [ref=e1376]
+                        - gridcell "The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page." [ref=e1377]:
+                          - generic [ref=e1378]: The name prop is typically used to reference a component instance when defining shared events. However, this optional prop may also be applied to child elements as an ID prefix. This is a workaround to ensure Victory based components output unique IDs when multiple charts appear in a page.
+                      - row "offsetX number This value describes how far from the \"edge\" of its permitted area each axis will be set back in the x-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding." [ref=e1379]:
+                        - gridcell "offsetX" [ref=e1380]:
+                          - generic [ref=e1381]: offsetX
+                        - gridcell "number" [ref=e1382]:
+                          - generic [ref=e1383]: number
+                        - gridcell [ref=e1384]
+                        - gridcell "This value describes how far from the \"edge\" of its permitted area each axis will be set back in the x-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding." [ref=e1385]:
+                          - generic [ref=e1386]: This value describes how far from the "edge" of its permitted area each axis will be set back in the x-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding.
+                      - row "offsetY number This value describes how far from the \"edge\" of its permitted area each axis will be set back in the y-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding." [ref=e1387]:
+                        - gridcell "offsetY" [ref=e1388]:
+                          - generic [ref=e1389]: offsetY
+                        - gridcell "number" [ref=e1390]:
+                          - generic [ref=e1391]: number
+                        - gridcell [ref=e1392]
+                        - gridcell "This value describes how far from the \"edge\" of its permitted area each axis will be set back in the y-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding." [ref=e1393]:
+                          - generic [ref=e1394]: This value describes how far from the "edge" of its permitted area each axis will be set back in the y-direction. If this prop is not given, the offset is calculated based on font size, axis orientation, and label padding.
+                      - row "orientation string The orientation prop specifies the position and orientation of your axis. Valid values are 'top', 'bottom', 'left' and 'right'." [ref=e1395]:
+                        - gridcell "orientation" [ref=e1396]:
+                          - generic [ref=e1397]: orientation
+                        - gridcell "string" [ref=e1398]:
+                          - generic [ref=e1399]: string
+                        - gridcell [ref=e1400]
+                        - gridcell "The orientation prop specifies the position and orientation of your axis. Valid values are 'top', 'bottom', 'left' and 'right'." [ref=e1401]:
+                          - generic [ref=e1402]: The orientation prop specifies the position and orientation of your axis. Valid values are 'top', 'bottom', 'left' and 'right'.
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1403]':
+                        - gridcell "padding" [ref=e1404]:
+                          - generic [ref=e1405]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e1406]':
+                          - generic [ref=e1407]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e1408]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1409]:
+                          - generic [ref=e1410]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - 'row "range number[] | { x: number[], y: number[] } The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1411]':
+                        - gridcell "range" [ref=e1412]:
+                          - generic [ref=e1413]: range
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1414]':
+                          - generic [ref=e1415]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1416]
+                        - 'gridcell "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1417]':
+                          - generic [ref=e1418]: "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartStack, or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}"
+                      - 'row "scale string | { x: string, y: string } The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1419]':
+                        - gridcell "scale" [ref=e1420]:
+                          - generic [ref=e1421]: scale
+                        - 'gridcell "string | { x: string, y: string }" [ref=e1422]':
+                          - generic [ref=e1423]: "string | { x: string, y: string }"
+                        - gridcell [ref=e1424]
+                        - 'gridcell "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1425]':
+                          - generic [ref=e1426]: "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}"
+                      - row "showGrid boolean false Show axis grid and ticks" [ref=e1427]:
+                        - gridcell "showGrid" [ref=e1428]:
+                          - generic [ref=e1429]: showGrid
+                        - gridcell "boolean" [ref=e1430]:
+                          - generic [ref=e1431]: boolean
+                        - gridcell "false" [ref=e1432]:
+                          - generic [ref=e1433]: "false"
+                        - gridcell "Show axis grid and ticks" [ref=e1434]:
+                          - generic [ref=e1435]: Show axis grid and ticks
+                      - row [ref=e1436]:
+                        - gridcell "singleQuadrantDomainPadding" [ref=e1437]:
+                          - generic [ref=e1438]: singleQuadrantDomainPadding
+                        - 'gridcell "boolean | { x?: boolean; y?: boolean }" [ref=e1439]':
+                          - generic [ref=e1440]: "boolean | { x?: boolean; y?: boolean }"
+                        - gridcell [ref=e1441]
+                        - gridcell [ref=e1442]:
+                          - generic [ref=e1443]: "By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the desired behavior in most cases. For users that need to apply padding without regard to quadrant, the singleQuadrantDomainPadding prop may be used. This prop may be given as a boolean or an object with boolean values specified for \"x\" and/or \"y\". When this prop is false (or false for a given dimension), padding will be applied without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants. Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example singleQuadrantDomainPadding={false} singleQuadrantDomainPadding={{ x: false }}"
+                      - row "standalone boolean The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartAxis with other components within an enclosing <svg> tag." [ref=e1444]:
+                        - gridcell "standalone" [ref=e1445]:
+                          - generic [ref=e1446]: standalone
+                        - gridcell "boolean" [ref=e1447]:
+                          - generic [ref=e1448]: boolean
+                        - gridcell [ref=e1449]
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartAxis with other components within an enclosing <svg> tag." [ref=e1450]:
+                          - generic [ref=e1451]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartAxis with other components within an enclosing <svg> tag.
+                      - row [ref=e1452]:
+                        - gridcell "style" [ref=e1453]:
+                          - generic [ref=e1454]: style
+                        - 'gridcell "{ axis: object, axisLabel: object, grid: object, ticks: object, tickLabels: object }" [ref=e1455]':
+                          - generic [ref=e1456]: "{ axis: object, axisLabel: object, grid: object, ticks: object, tickLabels: object }"
+                        - gridcell [ref=e1457]
+                        - 'gridcell "The style prop defines the style of the component. The style prop should be given as an object with styles defined for parent, axis, axisLabel, grid, ticks, and tickLabels. Any valid svg styles are supported, but width, height, and padding should be specified via props as they determine relative layout for components in Chart. Functional styles may be defined for grid, tick, and tickLabel style properties, and they will be evaluated with each tick. Note: When a component is rendered as a child of another Victory component, or within a custom <svg> element with standalone={false} parent styles will be applied to the enclosing <g> tag. Many styles that can be applied to a parent <svg> will not be expressed when applied to a <g>. Note: custom angle and verticalAnchor properties may be included in labels styles." [ref=e1458]':
+                          - generic [ref=e1459]: "The style prop defines the style of the component. The style prop should be given as an object with styles defined for parent, axis, axisLabel, grid, ticks, and tickLabels. Any valid svg styles are supported, but width, height, and padding should be specified via props as they determine relative layout for components in Chart. Functional styles may be defined for grid, tick, and tickLabel style properties, and they will be evaluated with each tick. Note: When a component is rendered as a child of another Victory component, or within a custom <svg> element with standalone={false} parent styles will be applied to the enclosing <g> tag. Many styles that can be applied to a parent <svg> will not be expressed when applied to a <g>. Note: custom angle and verticalAnchor properties may be included in labels styles."
+                      - row "theme object getTheme(themeColor) The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartAxis as a solo component, implement the theme directly on ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1460]:
+                        - gridcell "theme" [ref=e1461]:
+                          - generic [ref=e1462]: theme
+                        - gridcell "object" [ref=e1463]:
+                          - generic [ref=e1464]: object
+                        - gridcell "getTheme(themeColor)" [ref=e1465]:
+                          - generic [ref=e1466]: getTheme(themeColor)
+                        - gridcell "The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartAxis as a solo component, implement the theme directly on ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e1467]:
+                          - generic [ref=e1468]: The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartAxis as a solo component, implement the theme directly on ChartAxis. If you are wrapping ChartAxis in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1469]':
+                        - gridcell "themeColor" [ref=e1470]:
+                          - generic [ref=e1471]: themeColor
+                        - gridcell "string" [ref=e1472]:
+                          - generic [ref=e1473]: string
+                        - gridcell [ref=e1474]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1475]':
+                          - generic [ref=e1476]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - 'row "tickComponent React.ReactElement<any> The tickComponent prop takes in an entire component which will be used to create tick lines. The new element created from the passed tickComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a tickComponent is not supplied, ChartAxis will render its default Tick component." [ref=e1477]':
+                        - gridcell "tickComponent" [ref=e1478]:
+                          - generic [ref=e1479]: tickComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1480]:
+                          - generic [ref=e1481]: React.ReactElement<any>
+                        - gridcell [ref=e1482]
+                        - 'gridcell "The tickComponent prop takes in an entire component which will be used to create tick lines. The new element created from the passed tickComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a tickComponent is not supplied, ChartAxis will render its default Tick component." [ref=e1483]':
+                          - generic [ref=e1484]: "The tickComponent prop takes in an entire component which will be used to create tick lines. The new element created from the passed tickComponent will be supplied with the following properties: x1, y1, x2, y2, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a tickComponent is not supplied, ChartAxis will render its default Tick component."
+                      - row "tickCount number The tickCount prop specifies approximately how many ticks should be drawn on the axis if tickValues are not explicitly provided. This value is calculated by d3 scale and prioritizes returning \"nice\" values and evenly spaced ticks over an exact number of ticks. If you need an exact number of ticks, please specify them via the tickValues prop. This prop must have a value greater than zero." [ref=e1485]:
+                        - gridcell "tickCount" [ref=e1486]:
+                          - generic [ref=e1487]: tickCount
+                        - gridcell "number" [ref=e1488]:
+                          - generic [ref=e1489]: number
+                        - gridcell [ref=e1490]
+                        - gridcell "The tickCount prop specifies approximately how many ticks should be drawn on the axis if tickValues are not explicitly provided. This value is calculated by d3 scale and prioritizes returning \"nice\" values and evenly spaced ticks over an exact number of ticks. If you need an exact number of ticks, please specify them via the tickValues prop. This prop must have a value greater than zero." [ref=e1491]:
+                          - generic [ref=e1492]: The tickCount prop specifies approximately how many ticks should be drawn on the axis if tickValues are not explicitly provided. This value is calculated by d3 scale and prioritizes returning "nice" values and evenly spaced ticks over an exact number of ticks. If you need an exact number of ticks, please specify them via the tickValues prop. This prop must have a value greater than zero.
+                      - 'row "tickFormat any[] | ((tick: any, index: number, ticks: any[]) => string | number) The tickFormat prop specifies how tick values should be expressed visually. tickFormat can be given as a function to be applied to every tickValue, or as an array of display values for each tickValue. @example d3.time.format(\"%Y\"), (x) => x.toPrecision(2), [\"first\", \"second\", \"third\"]" [ref=e1493]':
+                        - gridcell "tickFormat" [ref=e1494]:
+                          - generic [ref=e1495]: tickFormat
+                        - 'gridcell "any[] | ((tick: any, index: number, ticks: any[]) => string | number)" [ref=e1496]':
+                          - generic [ref=e1497]: "any[] | ((tick: any, index: number, ticks: any[]) => string | number)"
+                        - gridcell [ref=e1498]
+                        - gridcell "The tickFormat prop specifies how tick values should be expressed visually. tickFormat can be given as a function to be applied to every tickValue, or as an array of display values for each tickValue. @example d3.time.format(\"%Y\"), (x) => x.toPrecision(2), [\"first\", \"second\", \"third\"]" [ref=e1499]:
+                          - generic [ref=e1500]: The tickFormat prop specifies how tick values should be expressed visually. tickFormat can be given as a function to be applied to every tickValue, or as an array of display values for each tickValue. @example d3.time.format("%Y"), (x) => x.toPrecision(2), ["first", "second", "third"]
+                      - 'row "tickLabelComponent React.ReactElement<any> <ChartLabel /> The tickLabelComponent prop takes in an entire component which will be used to create the tick labels. The new element created from the passed tickLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an tickLabelComponent is not supplied, a new ChartLabel will be created with props described above" [ref=e1501]':
+                        - gridcell "tickLabelComponent" [ref=e1502]:
+                          - generic [ref=e1503]: tickLabelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1504]:
+                          - generic [ref=e1505]: React.ReactElement<any>
+                        - gridcell "<ChartLabel />" [ref=e1506]:
+                          - generic [ref=e1507]: <ChartLabel />
+                        - 'gridcell "The tickLabelComponent prop takes in an entire component which will be used to create the tick labels. The new element created from the passed tickLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an tickLabelComponent is not supplied, a new ChartLabel will be created with props described above" [ref=e1508]':
+                          - generic [ref=e1509]: "The tickLabelComponent prop takes in an entire component which will be used to create the tick labels. The new element created from the passed tickLabelComponent will be supplied with the following properties: x, y, verticalAnchor, textAnchor, angle, tick, style and events. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If an tickLabelComponent is not supplied, a new ChartLabel will be created with props described above"
+                      - row "tickValues any[] The tickValues prop explicitly specifies which tick values to draw on the axis. @example [\"apples\", \"bananas\", \"oranges\"], [2, 4, 6, 8]" [ref=e1510]:
+                        - gridcell "tickValues" [ref=e1511]:
+                          - generic [ref=e1512]: tickValues
+                        - gridcell "any[]" [ref=e1513]:
+                          - generic [ref=e1514]: any[]
+                        - gridcell [ref=e1515]
+                        - gridcell "The tickValues prop explicitly specifies which tick values to draw on the axis. @example [\"apples\", \"bananas\", \"oranges\"], [2, 4, 6, 8]" [ref=e1516]:
+                          - generic [ref=e1517]: The tickValues prop explicitly specifies which tick values to draw on the axis. @example ["apples", "bananas", "oranges"], [2, 4, 6, 8]
+                      - 'row "width number Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Note: innerRadius may need to be set when using this property." [ref=e1518]':
+                        - gridcell "width" [ref=e1519]:
+                          - generic [ref=e1520]: width
+                        - gridcell "number" [ref=e1521]:
+                          - generic [ref=e1522]: number
+                        - gridcell [ref=e1523]
+                        - 'gridcell "Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Note: innerRadius may need to be set when using this property." [ref=e1524]':
+                          - generic [ref=e1525]: "Specifies the width of the svg viewBox of the chart container. This value should be given as a number of pixels. Because Victory renders responsive containers, the width and height props do not determine the width and height of the chart in number of pixels, but instead define an aspect ratio for the chart. The exact number of pixels will depend on the size of the container the chart is rendered into. Note: innerRadius may need to be set when using this property."
+                  - heading "ChartGroup" [level=3] [ref=e1528]:
+                    - button [ref=e1530] [cursor=pointer]:
+                      - img [ref=e1531]
+                    - text: ChartGroup
+                  - grid "ChartGroup" [ref=e1533]:
+                    - caption [ref=e1534]:
+                      - generic [ref=e1535]: ChartGroup is a wrapper component that renders a given set of children with some shared props. ChartGroup reconciles the domain and layout for all its children, and coordinates animations and shared events. ChartGroup may also be used to supply common data and styles to all its children. This is especially useful when adding markers to a line, or adding voronoi tooltips to data. ChartGroup may also be used to apply an offset to a group of children, as with grouped bar charts, or may be used to stack several components on the same level, e.g., stacked area charts with data markers. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-group/src/index.d.ts
+                      - generic [ref=e1536]: "*required"
+                    - rowgroup [ref=e1537]:
+                      - row "Name Type Default Description" [ref=e1538]:
+                        - columnheader "Name" [ref=e1539]
+                        - columnheader "Type" [ref=e1540]
+                        - columnheader "Default" [ref=e1541]
+                        - columnheader "Description" [ref=e1542]
+                    - rowgroup [ref=e1543]:
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1544]':
+                        - gridcell "animate" [ref=e1545]:
+                          - generic [ref=e1546]: animate
+                        - gridcell "boolean | object" [ref=e1547]:
+                          - generic [ref=e1548]: boolean | object
+                        - gridcell [ref=e1549]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1550]':
+                          - generic [ref=e1551]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "ariaDesc string The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e1552]':
+                        - gridcell "ariaDesc" [ref=e1553]:
+                          - generic [ref=e1554]: ariaDesc
+                        - gridcell "string" [ref=e1555]:
+                          - generic [ref=e1556]: string
+                        - gridcell [ref=e1557]
+                        - 'gridcell "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent" [ref=e1558]':
+                          - generic [ref=e1559]: "The ariaDesc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. Note: Overridden by the desc prop of containerComponent"
+                      - 'row "ariaTitle string The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e1560]':
+                        - gridcell "ariaTitle" [ref=e1561]:
+                          - generic [ref=e1562]: ariaTitle
+                        - gridcell "string" [ref=e1563]:
+                          - generic [ref=e1564]: string
+                        - gridcell [ref=e1565]
+                        - 'gridcell "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent" [ref=e1566]':
+                          - generic [ref=e1567]: "The ariaTitle prop specifies the title to be applied to the SVG to assist accessibility for screen readers. Note: Overridden by the title prop of containerComponent"
+                      - 'row "categories string[] | { x: string[], y: string[] } The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e1568]':
+                        - gridcell "categories" [ref=e1569]:
+                          - generic [ref=e1570]: categories
+                        - 'gridcell "string[] | { x: string[], y: string[] }" [ref=e1571]':
+                          - generic [ref=e1572]: "string[] | { x: string[], y: string[] }"
+                        - gridcell [ref=e1573]
+                        - gridcell "The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e1574]:
+                          - generic [ref=e1575]: The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example ["dogs", "cats", "mice"]
+                      - row "children React.ReactNode | React.ReactNode[] The children to render with the chart" [ref=e1576]:
+                        - gridcell "children" [ref=e1577]:
+                          - generic [ref=e1578]: children
+                        - gridcell "React.ReactNode | React.ReactNode[]" [ref=e1579]:
+                          - generic [ref=e1580]: React.ReactNode | React.ReactNode[]
+                        - gridcell [ref=e1581]
+                        - gridcell "The children to render with the chart" [ref=e1582]:
+                          - generic [ref=e1583]: The children to render with the chart
+                      - row "color string The color prop is an optional prop that defines a single color to be applied to the children of ChartGroup. The color prop will override colors specified via colorScale." [ref=e1584]:
+                        - gridcell "color" [ref=e1585]:
+                          - generic [ref=e1586]: color
+                        - gridcell "string" [ref=e1587]:
+                          - generic [ref=e1588]: string
+                        - gridcell [ref=e1589]
+                        - gridcell "The color prop is an optional prop that defines a single color to be applied to the children of ChartGroup. The color prop will override colors specified via colorScale." [ref=e1590]:
+                          - generic [ref=e1591]: The color prop is an optional prop that defines a single color to be applied to the children of ChartGroup. The color prop will override colors specified via colorScale.
+                      - 'row "colorScale string[] The colorScale prop is an optional prop that defines the color scale the chart''s bars will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartGroup will automatically assign values from this color scale to the bars unless colors are explicitly provided in the `dataAttributes` prop." [ref=e1592]':
+                        - gridcell "colorScale" [ref=e1593]:
+                          - generic [ref=e1594]: colorScale
+                        - gridcell "string[]" [ref=e1595]:
+                          - generic [ref=e1596]: string[]
+                        - gridcell [ref=e1597]
+                        - 'gridcell "The colorScale prop is an optional prop that defines the color scale the chart''s bars will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartGroup will automatically assign values from this color scale to the bars unless colors are explicitly provided in the `dataAttributes` prop." [ref=e1598]':
+                          - generic [ref=e1599]: "The colorScale prop is an optional prop that defines the color scale the chart's bars will be created on. This prop should be given as an array of CSS colors, or as a string corresponding to one of the built in color scales. ChartGroup will automatically assign values from this color scale to the bars unless colors are explicitly provided in the `dataAttributes` prop."
+                      - row [ref=e1600]:
+                        - gridcell "containerComponent" [ref=e1601]:
+                          - generic [ref=e1602]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1603]:
+                          - generic [ref=e1604]: React.ReactElement<any>
+                        - gridcell "<ChartContainer />" [ref=e1605]:
+                          - generic [ref=e1606]: <ChartContainer />
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartGroup: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartGroup will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />" [ref=e1607]':
+                          - generic [ref=e1608]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartGroup: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartGroup will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />"
+                      - 'row "data any[] The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e1609]':
+                        - gridcell "data" [ref=e1610]:
+                          - generic [ref=e1611]: data
+                        - gridcell "any[]" [ref=e1612]:
+                          - generic [ref=e1613]: any[]
+                        - gridcell [ref=e1614]
+                        - 'gridcell "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e1615]':
+                          - generic [ref=e1616]: "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]"
+                      - 'row "domain number[] | { x: number[], y: number[] } The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1617]':
+                        - gridcell "domain" [ref=e1618]:
+                          - generic [ref=e1619]: domain
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1620]':
+                          - generic [ref=e1621]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1622]
+                        - 'gridcell "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1623]':
+                          - generic [ref=e1624]: "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}"
+                      - 'row "domainPadding number | number[] | { x: number[], y: number[] } The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1625]':
+                        - gridcell "domainPadding" [ref=e1626]:
+                          - generic [ref=e1627]: domainPadding
+                        - 'gridcell "number | number[] | { x: number[], y: number[] }" [ref=e1628]':
+                          - generic [ref=e1629]: "number | number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1630]
+                        - 'gridcell "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1631]':
+                          - generic [ref=e1632]: "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}"
+                      - 'row "eventKey number | string | Function Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e1633]':
+                        - gridcell "eventKey" [ref=e1634]:
+                          - generic [ref=e1635]: eventKey
+                        - gridcell "number | string | Function" [ref=e1636]:
+                          - generic [ref=e1637]: number | string | Function
+                        - gridcell [ref=e1638]
+                        - 'gridcell "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e1639]':
+                          - generic [ref=e1640]: "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data"
+                      - row [ref=e1641]:
+                        - gridcell "events" [ref=e1642]:
+                          - generic [ref=e1643]: events
+                        - gridcell "object[]" [ref=e1644]:
+                          - generic [ref=e1645]: object[]
+                        - gridcell [ref=e1646]
+                        - gridcell [ref=e1647]:
+                          - generic [ref=e1648]: "The event prop take an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"data\" and \"labels\" are all valid targets for ChartGroup events. Since ChartGroup only renders a single element, the eventKey property is not used. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler is used to modify elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. an area), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"data\", eventHandlers: { onClick: () => { return [ { mutation: (props) => { return {style: merge({}, props.style, {fill: \"orange\"})}; } }, { target: \"labels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] ChartGroup uses the standard externalEventMutations prop." [ref=e1649]:
+                        - gridcell "externalEventMutations" [ref=e1650]:
+                          - generic [ref=e1651]: externalEventMutations
+                        - gridcell "object[]" [ref=e1652]:
+                          - generic [ref=e1653]: object[]
+                        - gridcell [ref=e1654]
+                        - gridcell "ChartGroup uses the standard externalEventMutations prop." [ref=e1655]:
+                          - generic [ref=e1656]: ChartGroup uses the standard externalEventMutations prop.
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1657]:
+                        - gridcell "groupComponent" [ref=e1658]:
+                          - generic [ref=e1659]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1660]:
+                          - generic [ref=e1661]: React.ReactElement<any>
+                        - gridcell [ref=e1662]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1663]:
+                          - generic [ref=e1664]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - 'row "hasPatterns boolean | boolean[] The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e1665]':
+                        - gridcell "hasPatterns" [ref=e1666]:
+                          - generic [ref=e1667]: hasPatterns
+                        - gridcell "boolean | boolean[]" [ref=e1668]:
+                          - generic [ref=e1669]: boolean | boolean[]
+                        - gridcell [ref=e1670]
+                        - 'gridcell "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}" [ref=e1671]':
+                          - generic [ref=e1672]: "The hasPatterns prop is an optional prop that indicates whether a pattern is shown for a chart. SVG patterns are dynamically generated (unique to each chart) in order to apply colors from the selected color theme or custom color scale. Those generated patterns are applied in a specific order (via a URL), similar to the color theme ordering defined by PatternFly. If the multi-color theme was in use; for example, colorized patterns would be displayed in that same order. Create custom patterns via the patternScale prop. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example hasPatterns={ true } @example hasPatterns={[ true, true, false ]}"
+                      - row "height number The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e1673]:
+                        - gridcell "height" [ref=e1674]:
+                          - generic [ref=e1675]: height
+                        - gridcell "number" [ref=e1676]:
+                          - generic [ref=e1677]: number
+                        - gridcell [ref=e1678]
+                        - gridcell "The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e1679]:
+                          - generic [ref=e1680]: The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels
+                      - row "horizontal boolean The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e1681]:
+                        - gridcell "horizontal" [ref=e1682]:
+                          - generic [ref=e1683]: horizontal
+                        - gridcell "boolean" [ref=e1684]:
+                          - generic [ref=e1685]: boolean
+                        - gridcell [ref=e1686]
+                        - gridcell "The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e1687]:
+                          - generic [ref=e1688]: The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis.
+                      - 'row "labelComponent React.ReactElement<any> The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartGroup. If individual labels are required for each data point, they should be created by composing ChartGroup with VictoryScatter" [ref=e1689]':
+                        - gridcell "labelComponent" [ref=e1690]:
+                          - generic [ref=e1691]: labelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1692]:
+                          - generic [ref=e1693]: React.ReactElement<any>
+                        - gridcell [ref=e1694]
+                        - 'gridcell "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartGroup. If individual labels are required for each data point, they should be created by composing ChartGroup with VictoryScatter" [ref=e1695]':
+                          - generic [ref=e1696]: "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartGroup. If individual labels are required for each data point, they should be created by composing ChartGroup with VictoryScatter"
+                      - 'row "labels string[] | number[] | ((data: any) => string | number | null) The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e1697]':
+                        - gridcell "labels" [ref=e1698]:
+                          - generic [ref=e1699]: labels
+                        - 'gridcell "string[] | number[] | ((data: any) => string | number | null)" [ref=e1700]':
+                          - generic [ref=e1701]: "string[] | number[] | ((data: any) => string | number | null)"
+                        - gridcell [ref=e1702]
+                        - 'gridcell "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e1703]':
+                          - generic [ref=e1704]: "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title"
+                      - 'row "maxDomain number | { x?: number; y?: number } The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1705]':
+                        - gridcell "maxDomain" [ref=e1706]:
+                          - generic [ref=e1707]: maxDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1708]':
+                          - generic [ref=e1709]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1710]
+                        - 'gridcell "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e1711]':
+                          - generic [ref=e1712]: "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}"
+                      - 'row "minDomain number | { x?: number; y?: number } The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1713]':
+                        - gridcell "minDomain" [ref=e1714]:
+                          - generic [ref=e1715]: minDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e1716]':
+                          - generic [ref=e1717]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e1718]
+                        - 'gridcell "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e1719]':
+                          - generic [ref=e1720]: "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}"
+                      - row "name string The name prop is used to reference a component instance when defining shared events." [ref=e1721]:
+                        - gridcell "name" [ref=e1722]:
+                          - generic [ref=e1723]: name
+                        - gridcell "string" [ref=e1724]:
+                          - generic [ref=e1725]: string
+                        - gridcell [ref=e1726]
+                        - gridcell "The name prop is used to reference a component instance when defining shared events." [ref=e1727]:
+                          - generic [ref=e1728]: The name prop is used to reference a component instance when defining shared events.
+                      - row "offset number The offset prop determines the number of pixels each element in a group should be offset from its original position of the on the independent axis. In the case of groups of bars, this number should be equal to the width of the bar plus the desired spacing between bars." [ref=e1729]:
+                        - gridcell "offset" [ref=e1730]:
+                          - generic [ref=e1731]: offset
+                        - gridcell "number" [ref=e1732]:
+                          - generic [ref=e1733]: number
+                        - gridcell [ref=e1734]
+                        - gridcell "The offset prop determines the number of pixels each element in a group should be offset from its original position of the on the independent axis. In the case of groups of bars, this number should be equal to the width of the bar plus the desired spacing between bars." [ref=e1735]:
+                          - generic [ref=e1736]: The offset prop determines the number of pixels each element in a group should be offset from its original position of the on the independent axis. In the case of groups of bars, this number should be equal to the width of the bar plus the desired spacing between bars.
+                      - 'row "origin { x: number, y: number } Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e1737]':
+                        - gridcell "origin" [ref=e1738]:
+                          - generic [ref=e1739]: origin
+                        - 'gridcell "{ x: number, y: number }" [ref=e1740]':
+                          - generic [ref=e1741]: "{ x: number, y: number }"
+                        - gridcell [ref=e1742]
+                        - 'gridcell "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e1743]':
+                          - generic [ref=e1744]: "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually"
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1745]':
+                        - gridcell "padding" [ref=e1746]:
+                          - generic [ref=e1747]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e1748]':
+                          - generic [ref=e1749]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e1750]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e1751]:
+                          - generic [ref=e1752]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - 'row "patternScale string[] The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e1753]':
+                        - gridcell "patternScale" [ref=e1754]:
+                          - generic [ref=e1755]: patternScale
+                        - gridcell "string[]" [ref=e1756]:
+                          - generic [ref=e1757]: string[]
+                        - gridcell [ref=e1758]
+                        - 'gridcell "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ ''url(\"#pattern1\")'', ''url(\"#pattern2\")'', null ]}" [ref=e1759]':
+                          - generic [ref=e1760]: "The patternScale prop is an optional prop that defines patterns to apply, where applicable. This prop should be given as a string array of pattern URLs. Patterns will be assigned to children by index and will repeat when there are more children than patterns in the provided patternScale. Use null to omit the pattern for a given index. Note: Not all components are supported; for example, ChartLine, ChartBullet, ChartThreshold, etc. @example patternScale={[ 'url(\"#pattern1\")', 'url(\"#pattern2\")', null ]}"
+                      - row "polar boolean Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e1761]:
+                        - gridcell "polar" [ref=e1762]:
+                          - generic [ref=e1763]: polar
+                        - gridcell "boolean" [ref=e1764]:
+                          - generic [ref=e1765]: boolean
+                        - gridcell [ref=e1766]
+                        - gridcell "Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart." [ref=e1767]:
+                          - generic [ref=e1768]: Victory components can pass a boolean polar prop to specify whether a label is part of a polar chart.
+                      - 'row "range number[] | { x: number[], y: number[] } The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1769]':
+                        - gridcell "range" [ref=e1770]:
+                          - generic [ref=e1771]: range
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1772]':
+                          - generic [ref=e1773]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1774]
+                        - 'gridcell "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e1775]':
+                          - generic [ref=e1776]: "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart, ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}"
+                      - row "samples number The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e1777]:
+                        - gridcell "samples" [ref=e1778]:
+                          - generic [ref=e1779]: samples
+                        - gridcell "number" [ref=e1780]:
+                          - generic [ref=e1781]: number
+                        - gridcell [ref=e1782]
+                        - gridcell "The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e1783]:
+                          - generic [ref=e1784]: The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead.
+                      - 'row "scale string | { x: string, y: string } The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1785]':
+                        - gridcell "scale" [ref=e1786]:
+                          - generic [ref=e1787]: scale
+                        - 'gridcell "string | { x: string, y: string }" [ref=e1788]':
+                          - generic [ref=e1789]: "string | { x: string, y: string }"
+                        - gridcell [ref=e1790]
+                        - 'gridcell "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e1791]':
+                          - generic [ref=e1792]: "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}"
+                      - row [ref=e1793]:
+                        - gridcell "singleQuadrantDomainPadding" [ref=e1794]:
+                          - generic [ref=e1795]: singleQuadrantDomainPadding
+                        - 'gridcell "boolean | { x?: boolean; y?: boolean }" [ref=e1796]':
+                          - generic [ref=e1797]: "boolean | { x?: boolean; y?: boolean }"
+                        - gridcell [ref=e1798]
+                        - gridcell [ref=e1799]:
+                          - generic [ref=e1800]: "By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the desired behavior in most cases. For users that need to apply padding without regard to quadrant, the singleQuadrantDomainPadding prop may be used. This prop may be given as a boolean or an object with boolean values specified for \"x\" and/or \"y\". When this prop is false (or false for a given dimension), padding will be applied without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants. Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example singleQuadrantDomainPadding={false} singleQuadrantDomainPadding={{ x: false }}"
+                      - row "sortKey number | string | Function | string[] Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1801]:
+                        - gridcell "sortKey" [ref=e1802]:
+                          - generic [ref=e1803]: sortKey
+                        - gridcell "number | string | Function | string[]" [ref=e1804]:
+                          - generic [ref=e1805]: number | string | Function | string[]
+                        - gridcell [ref=e1806]
+                        - gridcell "Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e1807]:
+                          - generic [ref=e1808]: Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset.
+                      - row "sortOrder string The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1809]:
+                        - gridcell "sortOrder" [ref=e1810]:
+                          - generic [ref=e1811]: sortOrder
+                        - gridcell "string" [ref=e1812]:
+                          - generic [ref=e1813]: string
+                        - gridcell [ref=e1814]
+                        - gridcell "The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e1815]:
+                          - generic [ref=e1816]: The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+                      - row "standalone boolean The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartGroup with other components within an enclosing <svg> tag." [ref=e1817]:
+                        - gridcell "standalone" [ref=e1818]:
+                          - generic [ref=e1819]: standalone
+                        - gridcell "boolean" [ref=e1820]:
+                          - generic [ref=e1821]: boolean
+                        - gridcell [ref=e1822]
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartGroup with other components within an enclosing <svg> tag." [ref=e1823]:
+                          - generic [ref=e1824]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartGroup with other components within an enclosing <svg> tag.
+                      - 'row "style { parent: object, data: object, labels: object } The style prop specifies styles for your ChartGroup. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e1825]':
+                        - gridcell "style" [ref=e1826]:
+                          - generic [ref=e1827]: style
+                        - 'gridcell "{ parent: object, data: object, labels: object }" [ref=e1828]':
+                          - generic [ref=e1829]: "{ parent: object, data: object, labels: object }"
+                        - gridcell [ref=e1830]
+                        - 'gridcell "The style prop specifies styles for your ChartGroup. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e1831]':
+                          - generic [ref=e1832]: "The style prop specifies styles for your ChartGroup. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}"
+                      - row "theme object getTheme(themeColor) The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e1833]:
+                        - gridcell "theme" [ref=e1834]:
+                          - generic [ref=e1835]: theme
+                        - gridcell "object" [ref=e1836]:
+                          - generic [ref=e1837]: object
+                        - gridcell "getTheme(themeColor)" [ref=e1838]:
+                          - generic [ref=e1839]: getTheme(themeColor)
+                        - gridcell "The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e1840]:
+                          - generic [ref=e1841]: The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1842]':
+                        - gridcell "themeColor" [ref=e1843]:
+                          - generic [ref=e1844]: themeColor
+                        - gridcell "string" [ref=e1845]:
+                          - generic [ref=e1846]: string
+                        - gridcell [ref=e1847]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e1848]':
+                          - generic [ref=e1849]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "width number The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e1850]:
+                        - gridcell "width" [ref=e1851]:
+                          - generic [ref=e1852]: width
+                        - gridcell "number" [ref=e1853]:
+                          - generic [ref=e1854]: number
+                        - gridcell [ref=e1855]
+                        - gridcell "The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e1856]:
+                          - generic [ref=e1857]: The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels
+                      - 'row "x number | string | Function | string[] The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1858]':
+                        - gridcell "x" [ref=e1859]:
+                          - generic [ref=e1860]: x
+                        - gridcell "number | string | Function | string[]" [ref=e1861]:
+                          - generic [ref=e1862]: number | string | Function | string[]
+                        - gridcell [ref=e1863]
+                        - 'gridcell "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e1864]':
+                          - generic [ref=e1865]: "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)"
+                      - 'row "y number | string | Function | string[] The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1866]':
+                        - gridcell "y" [ref=e1867]:
+                          - generic [ref=e1868]: "y"
+                        - gridcell "number | string | Function | string[]" [ref=e1869]:
+                          - generic [ref=e1870]: number | string | Function | string[]
+                        - gridcell [ref=e1871]
+                        - 'gridcell "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e1872]':
+                          - generic [ref=e1873]: "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)"
+                      - row "y0 number | string | Function | string[] Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartBar or ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e1874]:
+                        - gridcell "y0" [ref=e1875]:
+                          - generic [ref=e1876]: y0
+                        - gridcell "number | string | Function | string[]" [ref=e1877]:
+                          - generic [ref=e1878]: number | string | Function | string[]
+                        - gridcell [ref=e1879]
+                        - gridcell "Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartBar or ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e1880]:
+                          - generic [ref=e1881]: Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartBar or ChartArea. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
+                  - heading "ChartThreshold" [level=3] [ref=e1884]:
+                    - button [ref=e1886] [cursor=pointer]:
+                      - img [ref=e1887]
+                    - text: ChartThreshold
+                  - grid "ChartThreshold" [ref=e1889]:
+                    - caption [ref=e1890]:
+                      - generic [ref=e1891]: CharThreshold renders a dataset as a threshold chart. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-line/src/victory-line.tsx
+                      - generic [ref=e1892]: "*required"
+                    - rowgroup [ref=e1893]:
+                      - row "Name Type Default Description" [ref=e1894]:
+                        - columnheader "Name" [ref=e1895]
+                        - columnheader "Type" [ref=e1896]
+                        - columnheader "Default" [ref=e1897]
+                        - columnheader "Description" [ref=e1898]
+                    - rowgroup [ref=e1899]:
+                      - 'row "animate boolean | object The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1900]':
+                        - gridcell "animate" [ref=e1901]:
+                          - generic [ref=e1902]: animate
+                        - gridcell "boolean | object" [ref=e1903]:
+                          - generic [ref=e1904]: boolean | object
+                        - gridcell [ref=e1905]
+                        - 'gridcell "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}" [ref=e1906]':
+                          - generic [ref=e1907]: "The animate prop specifies props for VictoryAnimation to use. The animate prop should also be used to specify enter and exit transition configurations with the `onExit` and `onEnter` namespaces respectively. @example {duration: 500, onExit: () => {}, onEnter: {duration: 500, before: () => ({y: 0})})}"
+                      - 'row "categories string[] | { x: string[], y: string[] } The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e1908]':
+                        - gridcell "categories" [ref=e1909]:
+                          - generic [ref=e1910]: categories
+                        - 'gridcell "string[] | { x: string[], y: string[] }" [ref=e1911]':
+                          - generic [ref=e1912]: "string[] | { x: string[], y: string[] }"
+                        - gridcell [ref=e1913]
+                        - gridcell "The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example [\"dogs\", \"cats\", \"mice\"]" [ref=e1914]:
+                          - generic [ref=e1915]: The categories prop specifies how categorical data for a chart should be ordered. This prop should be given as an array of string values, or an object with these arrays of values specified for x and y. If this prop is not set, categorical data will be plotted in the order it was given in the data array @example ["dogs", "cats", "mice"]
+                      - row [ref=e1916]:
+                        - gridcell "containerComponent" [ref=e1917]:
+                          - generic [ref=e1918]: containerComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1919]:
+                          - generic [ref=e1920]: React.ReactElement<any>
+                        - gridcell [ref=e1921]
+                        - 'gridcell "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartLine: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartLine will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />" [ref=e1922]':
+                          - generic [ref=e1923]: "The containerComponent prop takes an entire component which will be used to create a container element for standalone charts. The new element created from the passed containerComponent wil be provided with these props from ChartLine: height, width, children (the chart itself) and style. Props that are not provided by the child chart component include title and desc, both of which are intended to add accessibility to Victory components. The more descriptive these props are, the more accessible your data will be for people using screen readers. Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartLine will use the default ChartContainer component. @example <ChartContainer title=\"Chart of Dog Breeds\" desc=\"This chart shows...\" />"
+                      - 'row "data any[] The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e1924]':
+                        - gridcell "data" [ref=e1925]:
+                          - generic [ref=e1926]: data
+                        - gridcell "any[]" [ref=e1927]:
+                          - generic [ref=e1928]: any[]
+                        - gridcell [ref=e1929]
+                        - 'gridcell "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]" [ref=e1930]':
+                          - generic [ref=e1931]: "The data prop specifies the data to be plotted. Data should be in the form of an array of data points, or an array of arrays of data points for multiple datasets. Each data point may be any format you wish (depending on the `x` and `y` accessor props), but by default, an object with x and y properties is expected. @example [{x: 1, y: 2}, {x: 2, y: 3}], [[1, 2], [2, 3]], [[{x: \"a\", y: 1}, {x: \"b\", y: 2}], [{x: \"a\", y: 2}, {x: \"b\", y: 3}]]"
+                      - 'row "dataComponent React.ReactElement<any> The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartLine: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartLine will use its default Line component." [ref=e1932]':
+                        - gridcell "dataComponent" [ref=e1933]:
+                          - generic [ref=e1934]: dataComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1935]:
+                          - generic [ref=e1936]: React.ReactElement<any>
+                        - gridcell [ref=e1937]
+                        - 'gridcell "The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartLine: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartLine will use its default Line component." [ref=e1938]':
+                          - generic [ref=e1939]: "The dataComponent prop takes an entire component which will be used to create an area. The new element created from the passed dataComponent will be provided with the following properties calculated by ChartLine: a scale, style, events, interpolation, and an array of modified data objects (including x, y, and calculated y0 and y1). Any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If a dataComponent is not provided, ChartLine will use its default Line component."
+                      - 'row "domain number[] | { x: number[], y: number[] } The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1940]':
+                        - gridcell "domain" [ref=e1941]:
+                          - generic [ref=e1942]: domain
+                        - 'gridcell "number[] | { x: number[], y: number[] }" [ref=e1943]':
+                          - generic [ref=e1944]: "number[] | { x: number[], y: number[] }"
+                        - gridcell [ref=e1945]
+                        - 'gridcell "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}" [ref=e1946]':
+                          - generic [ref=e1947]: "The domain prop describes the range of values your chart will cover. This prop can be given as a array of the minimum and maximum expected values for your bar chart, or as an object that specifies separate arrays for x and y. If this prop is not provided, a domain will be calculated from data, or other available information. @example [low, high], { x: [low, high], y: [low, high] } [-1, 1], {x: [0, 100], y: [0, 1]}"
+                      - 'row "domainPadding number | number[] | { x: number[], y: [number, number] } The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1948]':
+                        - gridcell "domainPadding" [ref=e1949]:
+                          - generic [ref=e1950]: domainPadding
+                        - 'gridcell "number | number[] | { x: number[], y: [number, number] }" [ref=e1951]':
+                          - generic [ref=e1952]: "number | number[] | { x: number[], y: [number, number] }"
+                        - gridcell [ref=e1953]
+                        - 'gridcell "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}" [ref=e1954]':
+                          - generic [ref=e1955]: "The domainPadding prop specifies a number of pixels of padding to add to the beginning and end of a domain. This prop is useful for explicitly spacing ticks farther from the origin to prevent crowding. This prop should be given as an object with numbers specified for x and y. @example [left, right], { x: [left, right], y: [bottom, top] } {x: [10, -10], y: 5}"
+                      - 'row "eventKey number | string | Function Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e1956]':
+                        - gridcell "eventKey" [ref=e1957]:
+                          - generic [ref=e1958]: eventKey
+                        - gridcell "number | string | Function" [ref=e1959]:
+                          - generic [ref=e1960]: number | string | Function
+                        - gridcell [ref=e1961]
+                        - 'gridcell "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data" [ref=e1962]':
+                          - generic [ref=e1963]: "Similar to data accessor props `x` and `y`, this prop may be used to functionally assign eventKeys to data"
+                      - row [ref=e1964]:
+                        - gridcell "events" [ref=e1965]:
+                          - generic [ref=e1966]: events
+                        - gridcell "object[]" [ref=e1967]:
+                          - generic [ref=e1968]: object[]
+                        - gridcell [ref=e1969]
+                        - gridcell [ref=e1970]:
+                          - generic [ref=e1971]: "The event prop take an array of event objects. Event objects are composed of a target, an eventKey, and eventHandlers. Targets may be any valid style namespace for a given component, so \"data\" and \"labels\" are all valid targets for ChartLine events. Since ChartLine only renders a single element, the eventKey property is not used. The eventHandlers object should be given as an object whose keys are standard event names (i.e. onClick) and whose values are event callbacks. The return value of an event handler is used to modify elements. The return value should be given as an object or an array of objects with optional target and eventKey keys, and a mutation key whose value is a function. The target and eventKey keys will default to those corresponding to the element the event handler was attached to. The mutation function will be called with the calculated props for the individual selected element (i.e. a line), and the object returned from the mutation function will override the props of the selected element via object assignment. @example events={[ { target: \"data\", eventHandlers: { onClick: () => { return [ { mutation: (props) => { return {style: merge({}, props.style, {stroke: \"orange\"})}; } }, { target: \"labels\", mutation: () => { return {text: \"hey\"}; } } ]; } } } ]}"
+                      - row "externalEventMutations object[] ChartLine uses the standard externalEventMutations prop." [ref=e1972]:
+                        - gridcell "externalEventMutations" [ref=e1973]:
+                          - generic [ref=e1974]: externalEventMutations
+                        - gridcell "object[]" [ref=e1975]:
+                          - generic [ref=e1976]: object[]
+                        - gridcell [ref=e1977]
+                        - gridcell "ChartLine uses the standard externalEventMutations prop." [ref=e1978]:
+                          - generic [ref=e1979]: ChartLine uses the standard externalEventMutations prop.
+                      - row "groupComponent React.ReactElement<any> The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1980]:
+                        - gridcell "groupComponent" [ref=e1981]:
+                          - generic [ref=e1982]: groupComponent
+                        - gridcell "React.ReactElement<any>" [ref=e1983]:
+                          - generic [ref=e1984]: React.ReactElement<any>
+                        - gridcell [ref=e1985]
+                        - gridcell "The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile" [ref=e1986]:
+                          - generic [ref=e1987]: The groupComponent prop takes an entire component which will be used to create group elements for use within container elements. This prop defaults to a <g> tag on web, and a react-native-svg <G> tag on mobile
+                      - row "height number The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e1988]:
+                        - gridcell "height" [ref=e1989]:
+                          - generic [ref=e1990]: height
+                        - gridcell "number" [ref=e1991]:
+                          - generic [ref=e1992]: number
+                        - gridcell [ref=e1993]
+                        - gridcell "The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels" [ref=e1994]:
+                          - generic [ref=e1995]: The height props specifies the height the svg viewBox of the chart container. This value should be given as a number of pixels
+                      - row "horizontal boolean The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e1996]:
+                        - gridcell "horizontal" [ref=e1997]:
+                          - generic [ref=e1998]: horizontal
+                        - gridcell "boolean" [ref=e1999]:
+                          - generic [ref=e2000]: boolean
+                        - gridcell [ref=e2001]
+                        - gridcell "The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis." [ref=e2002]:
+                          - generic [ref=e2003]: The horizontal prop determines whether data will be plotted horizontally. When this prop is set to true, the independent variable will be plotted on the y axis and the dependent variable will be plotted on the x axis.
+                      - 'row "interpolation string | Function The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"." [ref=e2004]':
+                        - gridcell "interpolation" [ref=e2005]:
+                          - generic [ref=e2006]: interpolation
+                        - gridcell "string | Function" [ref=e2007]:
+                          - generic [ref=e2008]: string | Function
+                        - gridcell [ref=e2009]
+                        - 'gridcell "The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"." [ref=e2010]':
+                          - generic [ref=e2011]: "The interpolation prop determines how data points should be connected when plotting a line. Polar area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\". Cartesian area charts may use the following interpolation options: \"basis\", \"cardinal\", \"catmullRom\", \"linear\", \"monotoneX\", \"monotoneY\", \"natural\", \"step\", \"stepAfter\", \"stepBefore\"."
+                      - 'row "labelComponent React.ReactElement<any> The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartLine. If individual labels are required for each data point, they should be created by composing ChartLine with VictoryScatter" [ref=e2012]':
+                        - gridcell "labelComponent" [ref=e2013]:
+                          - generic [ref=e2014]: labelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e2015]:
+                          - generic [ref=e2016]: React.ReactElement<any>
+                        - gridcell [ref=e2017]
+                        - 'gridcell "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartLine. If individual labels are required for each data point, they should be created by composing ChartLine with VictoryScatter" [ref=e2018]':
+                          - generic [ref=e2019]: "The labelComponent prop takes in an entire label component which will be used to create a label for the area. The new element created from the passed labelComponent will be supplied with the following properties: x, y, index, data, verticalAnchor, textAnchor, angle, style, text, and events. any of these props may be overridden by passing in props to the supplied component, or modified or ignored within the custom component itself. If labelComponent is omitted, a new ChartLabel will be created with props described above. This labelComponent prop should be used to provide a series label for ChartLine. If individual labels are required for each data point, they should be created by composing ChartLine with VictoryScatter"
+                      - 'row "labels string[] | number[] | ((data: any) => string | number | null) The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e2020]':
+                        - gridcell "labels" [ref=e2021]:
+                          - generic [ref=e2022]: labels
+                        - 'gridcell "string[] | number[] | ((data: any) => string | number | null)" [ref=e2023]':
+                          - generic [ref=e2024]: "string[] | number[] | ((data: any) => string | number | null)"
+                        - gridcell [ref=e2025]
+                        - 'gridcell "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title" [ref=e2026]':
+                          - generic [ref=e2027]: "The labels prop defines labels that will appear above each bar in your chart. This prop should be given as an array of values or as a function of data. If given as an array, the number of elements in the array should be equal to the length of the data array. Labels may also be added directly to the data object like data={[{x: 1, y: 1, label: \"first\"}]}. @example [\"spring\", \"summer\", \"fall\", \"winter\"], (datum) => datum.title"
+                      - 'row "maxDomain number | { x?: number; y?: number } The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e2028]':
+                        - gridcell "maxDomain" [ref=e2029]:
+                          - generic [ref=e2030]: maxDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e2031]':
+                          - generic [ref=e2032]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e2033]
+                        - 'gridcell "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}" [ref=e2034]':
+                          - generic [ref=e2035]: "The maxDomain prop defines a maximum domain value for a chart. This prop is useful in situations where the maximum domain of a chart is static, while the minimum value depends on data or other variable information. If the domain prop is set in addition to maximumDomain, domain will be used. Note: The x value supplied to the maxDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example maxDomain={0} maxDomain={{ y: 0 }}"
+                      - 'row "minDomain number | { x?: number; y?: number } The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e2036]':
+                        - gridcell "minDomain" [ref=e2037]:
+                          - generic [ref=e2038]: minDomain
+                        - 'gridcell "number | { x?: number; y?: number }" [ref=e2039]':
+                          - generic [ref=e2040]: "number | { x?: number; y?: number }"
+                        - gridcell [ref=e2041]
+                        - 'gridcell "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}" [ref=e2042]':
+                          - generic [ref=e2043]: "The minDomain prop defines a minimum domain value for a chart. This prop is useful in situations where the minimum domain of a chart is static, while the maximum value depends on data or other variable information. If the domain prop is set in addition to minimumDomain, domain will be used. Note: The x value supplied to the minDomain prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example minDomain={0} minDomain={{ y: 0 }}"
+                      - row "name string The name prop is used to reference a component instance when defining shared events." [ref=e2044]:
+                        - gridcell "name" [ref=e2045]:
+                          - generic [ref=e2046]: name
+                        - gridcell "string" [ref=e2047]:
+                          - generic [ref=e2048]: string
+                        - gridcell [ref=e2049]
+                        - gridcell "The name prop is used to reference a component instance when defining shared events." [ref=e2050]:
+                          - generic [ref=e2051]: The name prop is used to reference a component instance when defining shared events.
+                      - 'row "origin { x: number, y: number } Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e2052]':
+                        - gridcell "origin" [ref=e2053]:
+                          - generic [ref=e2054]: origin
+                        - 'gridcell "{ x: number, y: number }" [ref=e2055]':
+                          - generic [ref=e2056]: "{ x: number, y: number }"
+                        - gridcell [ref=e2057]
+                        - 'gridcell "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e2058]':
+                          - generic [ref=e2059]: "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually"
+                      - 'row "padding number | { top: number, bottom: number, left: number, right: number } The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e2060]':
+                        - gridcell "padding" [ref=e2061]:
+                          - generic [ref=e2062]: padding
+                        - 'gridcell "number | { top: number, bottom: number, left: number, right: number }" [ref=e2063]':
+                          - generic [ref=e2064]: "number | { top: number, bottom: number, left: number, right: number }"
+                        - gridcell [ref=e2065]
+                        - gridcell "The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right." [ref=e2066]:
+                          - generic [ref=e2067]: The padding props specifies the amount of padding in number of pixels between the edge of the chart and any rendered child components. This prop can be given as a number or as an object with padding specified for top, bottom, left and right.
+                      - 'row "range [number, number] | { x: [number, number], y: [number, number] } The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e2068]':
+                        - gridcell "range" [ref=e2069]:
+                          - generic [ref=e2070]: range
+                        - 'gridcell "[number, number] | { x: [number, number], y: [number, number] }" [ref=e2071]':
+                          - generic [ref=e2072]: "[number, number] | { x: [number, number], y: [number, number] }"
+                        - gridcell [ref=e2073]
+                        - 'gridcell "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}" [ref=e2074]':
+                          - generic [ref=e2075]: "The range prop describes the dimensions over which data may be plotted. For cartesian coordinate systems, this corresponds to minimum and maximum svg coordinates in the x and y dimension. In polar coordinate systems this corresponds to a range of angles and radii. When this value is not given it will be calculated from the width, height, and padding, or from the startAngle and endAngle in the case of polar charts. All components in a given chart must share the same range, so setting this prop on children nested within Chart or ChartGroup will have no effect. This prop is usually not set manually. @example [low, high] | { x: [low, high], y: [low, high] } Cartesian: range={{ x: [50, 250], y: [50, 250] }} Polar: range={{ x: [0, 360], y: [0, 250] }}"
+                      - row "samples number The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e2076]:
+                        - gridcell "samples" [ref=e2077]:
+                          - generic [ref=e2078]: samples
+                        - gridcell "number" [ref=e2079]:
+                          - generic [ref=e2080]: number
+                        - gridcell [ref=e2081]
+                        - gridcell "The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead." [ref=e2082]:
+                          - generic [ref=e2083]: The samples prop specifies how many individual points to plot when plotting y as a function of x. Samples is ignored if x props are provided instead.
+                      - 'row "scale string | { x: string, y: string } The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e2084]':
+                        - gridcell "scale" [ref=e2085]:
+                          - generic [ref=e2086]: scale
+                        - 'gridcell "string | { x: string, y: string }" [ref=e2087]':
+                          - generic [ref=e2088]: "string | { x: string, y: string }"
+                        - gridcell [ref=e2089]
+                        - 'gridcell "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}" [ref=e2090]':
+                          - generic [ref=e2091]: "The scale prop determines which scales your chart should use. This prop can be given as a string specifying a supported scale (\"linear\", \"time\", \"log\", \"sqrt\"), as a d3 scale function, or as an object with scales specified for x and y @example d3Scale.time(), {x: \"linear\", y: \"log\"}"
+                      - row [ref=e2092]:
+                        - gridcell "singleQuadrantDomainPadding" [ref=e2093]:
+                          - generic [ref=e2094]: singleQuadrantDomainPadding
+                        - 'gridcell "boolean | { x?: boolean; y?: boolean }" [ref=e2095]':
+                          - generic [ref=e2096]: "boolean | { x?: boolean; y?: boolean }"
+                        - gridcell [ref=e2097]
+                        - gridcell [ref=e2098]:
+                          - generic [ref=e2099]: "By default domainPadding is coerced to existing quadrants. This means that if a given domain only includes positive values, no amount of padding applied by domainPadding will result in a domain with negative values. This is the desired behavior in most cases. For users that need to apply padding without regard to quadrant, the singleQuadrantDomainPadding prop may be used. This prop may be given as a boolean or an object with boolean values specified for \"x\" and/or \"y\". When this prop is false (or false for a given dimension), padding will be applied without regard to quadrant. If this prop is not specified, domainPadding will be coerced to existing quadrants. Note: The x value supplied to the singleQuadrantDomainPadding prop refers to the independent variable, and the y value refers to the dependent variable. This may cause confusion in horizontal charts, as the independent variable will corresponds to the y axis. @example singleQuadrantDomainPadding={false} singleQuadrantDomainPadding={{ x: false }}"
+                      - row "sortKey DataGetterPropType Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e2100]:
+                        - gridcell "sortKey" [ref=e2101]:
+                          - generic [ref=e2102]: sortKey
+                        - gridcell "DataGetterPropType" [ref=e2103]:
+                          - generic [ref=e2104]: DataGetterPropType
+                        - gridcell [ref=e2105]
+                        - gridcell "Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset." [ref=e2106]:
+                          - generic [ref=e2107]: Use the sortKey prop to indicate how data should be sorted. This prop is given directly to the lodash sortBy function to be executed on the final dataset.
+                      - row "sortOrder string The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e2108]:
+                        - gridcell "sortOrder" [ref=e2109]:
+                          - generic [ref=e2110]: sortOrder
+                        - gridcell "string" [ref=e2111]:
+                          - generic [ref=e2112]: string
+                        - gridcell [ref=e2113]
+                        - gridcell "The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order." [ref=e2114]:
+                          - generic [ref=e2115]: The sortOrder prop specifies whether sorted data should be returned in 'ascending' or 'descending' order.
+                      - row "standalone boolean The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartLine with other components within an enclosing <svg> tag." [ref=e2116]:
+                        - gridcell "standalone" [ref=e2117]:
+                          - generic [ref=e2118]: standalone
+                        - gridcell "boolean" [ref=e2119]:
+                          - generic [ref=e2120]: boolean
+                        - gridcell [ref=e2121]
+                        - gridcell "The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartLine with other components within an enclosing <svg> tag." [ref=e2122]:
+                          - generic [ref=e2123]: The standalone prop determines whether the component will render a standalone svg or a <g> tag that will be included in an external svg. Set standalone to false to compose ChartLine with other components within an enclosing <svg> tag.
+                      - 'row "style { parent: object, data: object, labels: object } {} The style prop specifies styles for your ChartLine. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e2124]':
+                        - gridcell "style" [ref=e2125]:
+                          - generic [ref=e2126]: style
+                        - 'gridcell "{ parent: object, data: object, labels: object }" [ref=e2127]':
+                          - generic [ref=e2128]: "{ parent: object, data: object, labels: object }"
+                        - 'gridcell "{}" [ref=e2129]':
+                          - generic [ref=e2130]: "{}"
+                        - 'gridcell "The style prop specifies styles for your ChartLine. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}" [ref=e2131]':
+                          - generic [ref=e2132]: "The style prop specifies styles for your ChartLine. Any valid inline style properties will be applied. Height, width, and padding should be specified via the height, width, and padding props, as they are used to calculate the alignment of components within chart. @example {data: {fill: \"red\"}, labels: {fontSize: 12}}"
+                      - row "theme object getThresholdTheme(themeColor) The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartLine as a solo component, implement the theme directly on ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e2133]:
+                        - gridcell "theme" [ref=e2134]:
+                          - generic [ref=e2135]: theme
+                        - gridcell "object" [ref=e2136]:
+                          - generic [ref=e2137]: object
+                        - gridcell "getThresholdTheme(themeColor)" [ref=e2138]:
+                          - generic [ref=e2139]: getThresholdTheme(themeColor)
+                        - gridcell "The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartLine as a solo component, implement the theme directly on ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead." [ref=e2140]:
+                          - generic [ref=e2141]: The theme prop takes a style object with nested data, labels, and parent objects. You can create this object yourself, or you can use a theme provided by When using ChartLine as a solo component, implement the theme directly on ChartLine. If you are wrapping ChartLine in ChartChart or ChartGroup, please call the theme on the outermost wrapper component instead.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e2142]':
+                        - gridcell "themeColor" [ref=e2143]:
+                          - generic [ref=e2144]: themeColor
+                        - gridcell "string" [ref=e2145]:
+                          - generic [ref=e2146]: string
+                        - gridcell [ref=e2147]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e2148]':
+                          - generic [ref=e2149]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "width number The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e2150]:
+                        - gridcell "width" [ref=e2151]:
+                          - generic [ref=e2152]: width
+                        - gridcell "number" [ref=e2153]:
+                          - generic [ref=e2154]: number
+                        - gridcell [ref=e2155]
+                        - gridcell "The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels" [ref=e2156]:
+                          - generic [ref=e2157]: The width props specifies the width of the svg viewBox of the chart container This value should be given as a number of pixels
+                      - 'row "x number | string | Function | string[] The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e2158]':
+                        - gridcell "x" [ref=e2159]:
+                          - generic [ref=e2160]: x
+                        - gridcell "number | string | Function | string[]" [ref=e2161]:
+                          - generic [ref=e2162]: number | string | Function | string[]
+                        - gridcell [ref=e2163]
+                        - 'gridcell "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''x'', ''x.value.nested.1.thing'', ''x[2].also.nested'', null, d => Math.sin(d)" [ref=e2164]':
+                          - generic [ref=e2165]: "The x prop specifies how to access the X value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'x', 'x.value.nested.1.thing', 'x[2].also.nested', null, d => Math.sin(d)"
+                      - 'row "y number | string | Function | string[] The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e2166]':
+                        - gridcell "y" [ref=e2167]:
+                          - generic [ref=e2168]: "y"
+                        - gridcell "number | string | Function | string[]" [ref=e2169]:
+                          - generic [ref=e2170]: number | string | Function | string[]
+                        - gridcell [ref=e2171]
+                        - 'gridcell "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, ''y'', ''y.value.nested.1.thing'', ''y[2].also.nested'', null, d => Math.sin(d)" [ref=e2172]':
+                          - generic [ref=e2173]: "The y prop specifies how to access the Y value of each data point. If given as a function, it will be run on each data point, and returned value will be used. If given as an integer, it will be used as an array index for array-type data points. If given as a string, it will be used as a property key for object-type data points. If given as an array of strings, or a string containing dots or brackets, it will be used as a nested object property path (for details see Lodash docs for _.get). If `null` or `undefined`, the data value will be used as is (identity function/pass-through). @example 0, 'y', 'y.value.nested.1.thing', 'y[2].also.nested', null, d => Math.sin(d)"
+                      - row "y0 number | string | Function | string[] Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartLine. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e2174]:
+                        - gridcell "y0" [ref=e2175]:
+                          - generic [ref=e2176]: y0
+                        - gridcell "number | string | Function | string[]" [ref=e2177]:
+                          - generic [ref=e2178]: number | string | Function | string[]
+                        - gridcell [ref=e2179]
+                        - gridcell "Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartLine. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', [\"employees\", \"salary\"]" [ref=e2180]:
+                          - generic [ref=e2181]: Use y0 data accessor prop to determine how the component defines the baseline y0 data. This prop is useful for defining custom baselines for components like ChartLine. This prop may be given in a variety of formats. @example 'last_quarter_profit', () => 10, 1, 'employees.salary', ["employees", "salary"]
+                  - heading "ChartVoronoiContainer" [level=3] [ref=e2184]:
+                    - button [ref=e2186] [cursor=pointer]:
+                      - img [ref=e2187]
+                    - text: ChartVoronoiContainer
+                  - grid "ChartVoronoiContainer" [ref=e2189]:
+                    - caption [ref=e2190]:
+                      - generic [ref=e2191]: ChartVoronoiContainer adds the ability to associate a mouse position with the data point(s) closest to it. When this container is added to a chart, changes in mouse position will add the active prop to data and label components closest to the current mouse position. The closeness of data points to a given position is determined by calculating a voronoi diagram based on the data of every child VictoryVoronoiContainer renders. This container is useful for adding hover interactions, like tooltips, to small data points, or charts with dense or overlapping data. See https://github.com/FormidableLabs/victory/blob/main/packages/victory-voronoi-container/src/index.d.ts
+                      - generic [ref=e2192]: "*required"
+                    - rowgroup [ref=e2193]:
+                      - row "Name Type Default Description" [ref=e2194]:
+                        - columnheader "Name" [ref=e2195]
+                        - columnheader "Type" [ref=e2196]
+                        - columnheader "Default" [ref=e2197]
+                        - columnheader "Description" [ref=e2198]
+                    - rowgroup [ref=e2199]:
+                      - row "activateData boolean When the activateData prop is set to true, the active prop will be set to true on all data components within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to data components will occur via Victory’s event system." [ref=e2200]:
+                        - gridcell "activateData" [ref=e2201]:
+                          - generic [ref=e2202]: activateData
+                        - gridcell "boolean" [ref=e2203]:
+                          - generic [ref=e2204]: boolean
+                        - gridcell [ref=e2205]
+                        - gridcell "When the activateData prop is set to true, the active prop will be set to true on all data components within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to data components will occur via Victory’s event system." [ref=e2206]:
+                          - generic [ref=e2207]: When the activateData prop is set to true, the active prop will be set to true on all data components within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to data components will occur via Victory’s event system.
+                      - row "activateLabels boolean When the activateLabels prop is set to true, the active prop will be set to true on all labels corresponding to points within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to label components will occur via Victory’s event system. Labels defined directly on ChartVoronoiContainer via the labels prop will still appear when this prop is set to false." [ref=e2208]:
+                        - gridcell "activateLabels" [ref=e2209]:
+                          - generic [ref=e2210]: activateLabels
+                        - gridcell "boolean" [ref=e2211]:
+                          - generic [ref=e2212]: boolean
+                        - gridcell [ref=e2213]
+                        - gridcell "When the activateLabels prop is set to true, the active prop will be set to true on all labels corresponding to points within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to label components will occur via Victory’s event system. Labels defined directly on ChartVoronoiContainer via the labels prop will still appear when this prop is set to false." [ref=e2214]:
+                          - generic [ref=e2215]: When the activateLabels prop is set to true, the active prop will be set to true on all labels corresponding to points within a voronoi area. When this prop is set to false, the onActivated and onDeactivated callbacks will still fire, but no mutations to label components will occur via Victory’s event system. Labels defined directly on ChartVoronoiContainer via the labels prop will still appear when this prop is set to false.
+                      - row "className string The className prop specifies a className that will be applied to the outermost div rendered by the container" [ref=e2216]:
+                        - gridcell "className" [ref=e2217]:
+                          - generic [ref=e2218]: className
+                        - gridcell "string" [ref=e2219]:
+                          - generic [ref=e2220]: string
+                        - gridcell [ref=e2221]
+                        - gridcell "The className prop specifies a className that will be applied to the outermost div rendered by the container" [ref=e2222]:
+                          - generic [ref=e2223]: The className prop specifies a className that will be applied to the outermost div rendered by the container
+                      - row "constrainToVisibleArea boolean false The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders." [ref=e2224]:
+                        - gridcell "constrainToVisibleArea" [ref=e2225]:
+                          - generic [ref=e2226]: constrainToVisibleArea
+                        - gridcell "boolean" [ref=e2227]:
+                          - generic [ref=e2228]: boolean
+                        - gridcell "false" [ref=e2229]:
+                          - generic [ref=e2230]: "false"
+                        - gridcell "The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders." [ref=e2231]:
+                          - generic [ref=e2232]: The constrainToVisibleArea prop determines whether to coerce tooltips so that they fit within the visible area of the chart. When this prop is set to true, tooltip pointers will still point to the correct data point, but the center of the tooltip will be shifted to fit within the overall width and height of the svg Victory renders.
+                      - row "containerId number | string The containerId prop may be used to set a deterministic id for the container. When a containerId is not manually set, a unique id will be generated. It is usually necessary to set deterministic ids for automated testing." [ref=e2233]:
+                        - gridcell "containerId" [ref=e2234]:
+                          - generic [ref=e2235]: containerId
+                        - gridcell "number | string" [ref=e2236]:
+                          - generic [ref=e2237]: number | string
+                        - gridcell [ref=e2238]
+                        - gridcell "The containerId prop may be used to set a deterministic id for the container. When a containerId is not manually set, a unique id will be generated. It is usually necessary to set deterministic ids for automated testing." [ref=e2239]:
+                          - generic [ref=e2240]: The containerId prop may be used to set a deterministic id for the container. When a containerId is not manually set, a unique id will be generated. It is usually necessary to set deterministic ids for automated testing.
+                      - row "desc string The desc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. The more info about the chart provided in the description, the more usable it will be for people using screen readers. This prop defaults to an empty string. @example \"Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are not represented above 5% each.\"" [ref=e2241]:
+                        - gridcell "desc" [ref=e2242]:
+                          - generic [ref=e2243]: desc
+                        - gridcell "string" [ref=e2244]:
+                          - generic [ref=e2245]: string
+                        - gridcell [ref=e2246]
+                        - gridcell "The desc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. The more info about the chart provided in the description, the more usable it will be for people using screen readers. This prop defaults to an empty string. @example \"Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are not represented above 5% each.\"" [ref=e2247]:
+                          - generic [ref=e2248]: The desc prop specifies the description of the chart/SVG to assist with accessibility for screen readers. The more info about the chart provided in the description, the more usable it will be for people using screen readers. This prop defaults to an empty string. @example "Golden retrievers make up 30%, Labs make up 25%, and other dog breeds are not represented above 5% each."
+                      - row "disable boolean When the disable prop is set to true, ChartVoronoiContainer events will not fire." [ref=e2249]:
+                        - gridcell "disable" [ref=e2250]:
+                          - generic [ref=e2251]: disable
+                        - gridcell "boolean" [ref=e2252]:
+                          - generic [ref=e2253]: boolean
+                        - gridcell [ref=e2254]
+                        - gridcell "When the disable prop is set to true, ChartVoronoiContainer events will not fire." [ref=e2255]:
+                          - generic [ref=e2256]: When the disable prop is set to true, ChartVoronoiContainer events will not fire.
+                      - 'row "events React.DOMAttributes<any> The events prop attaches arbitrary event handlers to the container component. Event handlers passed from other Victory components are called with their corresponding events as well as scale, style, width, height, and data when applicable. Use the invert method to convert event coordinate information to data. `scale.x.invert(evt.offsetX)`. @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}" [ref=e2257]':
+                        - gridcell "events" [ref=e2258]:
+                          - generic [ref=e2259]: events
+                        - gridcell "React.DOMAttributes<any>" [ref=e2260]:
+                          - generic [ref=e2261]: React.DOMAttributes<any>
+                        - gridcell [ref=e2262]
+                        - 'gridcell "The events prop attaches arbitrary event handlers to the container component. Event handlers passed from other Victory components are called with their corresponding events as well as scale, style, width, height, and data when applicable. Use the invert method to convert event coordinate information to data. `scale.x.invert(evt.offsetX)`. @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}" [ref=e2263]':
+                          - generic [ref=e2264]: "The events prop attaches arbitrary event handlers to the container component. Event handlers passed from other Victory components are called with their corresponding events as well as scale, style, width, height, and data when applicable. Use the invert method to convert event coordinate information to data. `scale.x.invert(evt.offsetX)`. @example {onClick: (evt) => alert(`x: ${evt.clientX}, y: ${evt.clientY}`)}"
+                      - row "height number The height props specifies the height the svg viewBox of the container. This value should be given as a number of pixels. If no height prop is given, the height prop from the child component passed will be used." [ref=e2265]:
+                        - gridcell "height" [ref=e2266]:
+                          - generic [ref=e2267]: height
+                        - gridcell "number" [ref=e2268]:
+                          - generic [ref=e2269]: number
+                        - gridcell [ref=e2270]
+                        - gridcell "The height props specifies the height the svg viewBox of the container. This value should be given as a number of pixels. If no height prop is given, the height prop from the child component passed will be used." [ref=e2271]:
+                          - generic [ref=e2272]: The height props specifies the height the svg viewBox of the container. This value should be given as a number of pixels. If no height prop is given, the height prop from the child component passed will be used.
+                      - row "labelComponent React.ReactElement<any> <ChartTooltip /> The labelComponent prop specified the component that will be rendered when labels are defined on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered." [ref=e2273]:
+                        - gridcell "labelComponent" [ref=e2274]:
+                          - generic [ref=e2275]: labelComponent
+                        - gridcell "React.ReactElement<any>" [ref=e2276]:
+                          - generic [ref=e2277]: React.ReactElement<any>
+                        - gridcell "<ChartTooltip />" [ref=e2278]:
+                          - generic [ref=e2279]: <ChartTooltip />
+                        - gridcell "The labelComponent prop specified the component that will be rendered when labels are defined on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered." [ref=e2280]:
+                          - generic [ref=e2281]: The labelComponent prop specified the component that will be rendered when labels are defined on ChartVoronoiContainer. If the labels prop is omitted, no label component will be rendered.
+                      - 'row "labels (point: any, index: number, points: any[]) => string When a labels prop is provided to ChartVoronoiContainer it will render a label component rather than activating labels on the child components it renders. This is useful for creating multi- point tooltips. This prop should be given as a function which will be called once for each active point. The labels function will be called with the arguments point, index, and points, where point refers to a single active point, index refers to the position of that point in the array of active points, and points is an array of all active points." [ref=e2282]':
+                        - gridcell "labels" [ref=e2283]:
+                          - generic [ref=e2284]: labels
+                        - 'gridcell "(point: any, index: number, points: any[]) => string" [ref=e2285]':
+                          - generic [ref=e2286]: "(point: any, index: number, points: any[]) => string"
+                        - gridcell [ref=e2287]
+                        - gridcell "When a labels prop is provided to ChartVoronoiContainer it will render a label component rather than activating labels on the child components it renders. This is useful for creating multi- point tooltips. This prop should be given as a function which will be called once for each active point. The labels function will be called with the arguments point, index, and points, where point refers to a single active point, index refers to the position of that point in the array of active points, and points is an array of all active points." [ref=e2288]:
+                          - generic [ref=e2289]: When a labels prop is provided to ChartVoronoiContainer it will render a label component rather than activating labels on the child components it renders. This is useful for creating multi- point tooltips. This prop should be given as a function which will be called once for each active point. The labels function will be called with the arguments point, index, and points, where point refers to a single active point, index refers to the position of that point in the array of active points, and points is an array of all active points.
+                      - row "mouseFollowTooltips boolean When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip follows the position of the mouse." [ref=e2290]:
+                        - gridcell "mouseFollowTooltips" [ref=e2291]:
+                          - generic [ref=e2292]: mouseFollowTooltips
+                        - gridcell "boolean" [ref=e2293]:
+                          - generic [ref=e2294]: boolean
+                        - gridcell [ref=e2295]
+                        - gridcell "When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip follows the position of the mouse." [ref=e2296]:
+                          - generic [ref=e2297]: When the mouseFollowTooltip prop is set on ChartVoronoiContainer, The position of the center of the tooltip follows the position of the mouse.
+                      - row "name string The name prop is used to reference a component instance when defining shared events." [ref=e2298]:
+                        - gridcell "name" [ref=e2299]:
+                          - generic [ref=e2300]: name
+                        - gridcell "string" [ref=e2301]:
+                          - generic [ref=e2302]: string
+                        - gridcell [ref=e2303]
+                        - gridcell "The name prop is used to reference a component instance when defining shared events." [ref=e2304]:
+                          - generic [ref=e2305]: The name prop is used to reference a component instance when defining shared events.
+                      - row "onActivated Function The onActivated prop accepts a function to be called whenever new data points are activated. The function is called with the parameters points (an array of active data objects) and props (the props used by ChartVoronoiContainer)." [ref=e2306]:
+                        - gridcell "onActivated" [ref=e2307]:
+                          - generic [ref=e2308]: onActivated
+                        - gridcell "Function" [ref=e2309]:
+                          - generic [ref=e2310]: Function
+                        - gridcell [ref=e2311]
+                        - gridcell "The onActivated prop accepts a function to be called whenever new data points are activated. The function is called with the parameters points (an array of active data objects) and props (the props used by ChartVoronoiContainer)." [ref=e2312]:
+                          - generic [ref=e2313]: The onActivated prop accepts a function to be called whenever new data points are activated. The function is called with the parameters points (an array of active data objects) and props (the props used by ChartVoronoiContainer).
+                      - row "onDeactivated Function The onDeactivated prop accepts a function to be called whenever points are deactivated. The function is called with the parameters points (an array of the newly-deactivated data objects) and props (the props used by ChartVoronoiContainer)." [ref=e2314]:
+                        - gridcell "onDeactivated" [ref=e2315]:
+                          - generic [ref=e2316]: onDeactivated
+                        - gridcell "Function" [ref=e2317]:
+                          - generic [ref=e2318]: Function
+                        - gridcell [ref=e2319]
+                        - gridcell "The onDeactivated prop accepts a function to be called whenever points are deactivated. The function is called with the parameters points (an array of the newly-deactivated data objects) and props (the props used by ChartVoronoiContainer)." [ref=e2320]:
+                          - generic [ref=e2321]: The onDeactivated prop accepts a function to be called whenever points are deactivated. The function is called with the parameters points (an array of the newly-deactivated data objects) and props (the props used by ChartVoronoiContainer).
+                      - 'row "origin { x: number, y: number } Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e2322]':
+                        - gridcell "origin" [ref=e2323]:
+                          - generic [ref=e2324]: origin
+                        - 'gridcell "{ x: number, y: number }" [ref=e2325]':
+                          - generic [ref=e2326]: "{ x: number, y: number }"
+                        - gridcell [ref=e2327]
+                        - 'gridcell "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually" [ref=e2328]':
+                          - generic [ref=e2329]: "Victory components will pass an origin prop is to define the center point in svg coordinates for polar charts. Note: It will not typically be necessary to set an origin prop manually"
+                      - row "portalComponent React.ReactElement<any> The portalComponent prop takes a component instance which will be used as a container for children that should render inside a top-level container so that they will always appear above other elements. ChartTooltip renders inside a portal so that tooltips always render above data. VictoryPortal is used to define elements that should render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered elements from SVG to another type of element e.g., react-native-svg elements." [ref=e2330]:
+                        - gridcell "portalComponent" [ref=e2331]:
+                          - generic [ref=e2332]: portalComponent
+                        - gridcell "React.ReactElement<any>" [ref=e2333]:
+                          - generic [ref=e2334]: React.ReactElement<any>
+                        - gridcell [ref=e2335]
+                        - gridcell "The portalComponent prop takes a component instance which will be used as a container for children that should render inside a top-level container so that they will always appear above other elements. ChartTooltip renders inside a portal so that tooltips always render above data. VictoryPortal is used to define elements that should render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered elements from SVG to another type of element e.g., react-native-svg elements." [ref=e2336]:
+                          - generic [ref=e2337]: The portalComponent prop takes a component instance which will be used as a container for children that should render inside a top-level container so that they will always appear above other elements. ChartTooltip renders inside a portal so that tooltips always render above data. VictoryPortal is used to define elements that should render in the portal container. This prop defaults to Portal, and should only be overridden when changing rendered elements from SVG to another type of element e.g., react-native-svg elements.
+                      - row "portalZIndex number The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is not set, the z-index of the enclosing div will be set to 99." [ref=e2338]:
+                        - gridcell "portalZIndex" [ref=e2339]:
+                          - generic [ref=e2340]: portalZIndex
+                        - gridcell "number" [ref=e2341]:
+                          - generic [ref=e2342]: number
+                        - gridcell [ref=e2343]
+                        - gridcell "The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is not set, the z-index of the enclosing div will be set to 99." [ref=e2344]:
+                          - generic [ref=e2345]: The portalZIndex prop determines the z-index of the div enclosing the portal component. If a portalZIndex prop is not set, the z-index of the enclosing div will be set to 99.
+                      - row "radius number When the radius prop is set, the voronoi areas associated with each data point will be no larger than the given radius. This prop should be given as a number." [ref=e2346]:
+                        - gridcell "radius" [ref=e2347]:
+                          - generic [ref=e2348]: radius
+                        - gridcell "number" [ref=e2349]:
+                          - generic [ref=e2350]: number
+                        - gridcell [ref=e2351]
+                        - gridcell "When the radius prop is set, the voronoi areas associated with each data point will be no larger than the given radius. This prop should be given as a number." [ref=e2352]:
+                          - generic [ref=e2353]: When the radius prop is set, the voronoi areas associated with each data point will be no larger than the given radius. This prop should be given as a number.
+                      - row "responsive boolean The responsive prop specifies whether the rendered container should be a responsive container with a viewBox attribute, or a static container with absolute width and height. @default true" [ref=e2354]:
+                        - gridcell "responsive" [ref=e2355]:
+                          - generic [ref=e2356]: responsive
+                        - gridcell "boolean" [ref=e2357]:
+                          - generic [ref=e2358]: boolean
+                        - gridcell [ref=e2359]
+                        - gridcell "The responsive prop specifies whether the rendered container should be a responsive container with a viewBox attribute, or a static container with absolute width and height. @default true" [ref=e2360]:
+                          - generic [ref=e2361]: The responsive prop specifies whether the rendered container should be a responsive container with a viewBox attribute, or a static container with absolute width and height. @default true
+                      - 'row "style React.CSSProperties The style prop specifies styles for your ChartContainer. Any valid inline style properties will be applied. Height and width should be specified via the height and width props, as they are used to calculate the alignment of components within the container. Styles from the child component will also be passed, if any exist. @example {border: 1px solid red}" [ref=e2362]':
+                        - gridcell "style" [ref=e2363]:
+                          - generic [ref=e2364]: style
+                        - gridcell "React.CSSProperties" [ref=e2365]:
+                          - generic [ref=e2366]: React.CSSProperties
+                        - gridcell [ref=e2367]
+                        - 'gridcell "The style prop specifies styles for your ChartContainer. Any valid inline style properties will be applied. Height and width should be specified via the height and width props, as they are used to calculate the alignment of components within the container. Styles from the child component will also be passed, if any exist. @example {border: 1px solid red}" [ref=e2368]':
+                          - generic [ref=e2369]: "The style prop specifies styles for your ChartContainer. Any valid inline style properties will be applied. Height and width should be specified via the height and width props, as they are used to calculate the alignment of components within the container. Styles from the child component will also be passed, if any exist. @example {border: 1px solid red}"
+                      - row "tabIndex number The tabIndex prop specifies the description of the chart/SVG to assist with accessibility." [ref=e2370]:
+                        - gridcell "tabIndex" [ref=e2371]:
+                          - generic [ref=e2372]: tabIndex
+                        - gridcell "number" [ref=e2373]:
+                          - generic [ref=e2374]: number
+                        - gridcell [ref=e2375]
+                        - gridcell "The tabIndex prop specifies the description of the chart/SVG to assist with accessibility." [ref=e2376]:
+                          - generic [ref=e2377]: The tabIndex prop specifies the description of the chart/SVG to assist with accessibility.
+                      - row "theme object getTheme(themeColor) The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e2378]:
+                        - gridcell "theme" [ref=e2379]:
+                          - generic [ref=e2380]: theme
+                        - gridcell "object" [ref=e2381]:
+                          - generic [ref=e2382]: object
+                        - gridcell "getTheme(themeColor)" [ref=e2383]:
+                          - generic [ref=e2384]: getTheme(themeColor)
+                        - gridcell "The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance." [ref=e2385]:
+                          - generic [ref=e2386]: The theme prop specifies a theme to use for determining styles and layout properties for a component. Any styles or props defined in theme may be overwritten by props specified on the component instance.
+                      - 'row "themeColor string Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e2387]':
+                        - gridcell "themeColor" [ref=e2388]:
+                          - generic [ref=e2389]: themeColor
+                        - gridcell "string" [ref=e2390]:
+                          - generic [ref=e2391]: string
+                        - gridcell [ref=e2392]
+                        - 'gridcell "Specifies the theme color. Valid values are ''blue'', ''green'', ''multi'', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}" [ref=e2393]':
+                          - generic [ref=e2394]: "Specifies the theme color. Valid values are 'blue', 'green', 'multi', etc. Note: Not compatible with theme prop @example themeColor={ChartThemeColor.blue}"
+                      - row "voronoiBlacklist string[] The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as active, and will not contribute date to shared tooltips or labels." [ref=e2395]:
+                        - gridcell "voronoiBlacklist" [ref=e2396]:
+                          - generic [ref=e2397]: voronoiBlacklist
+                        - gridcell "string[]" [ref=e2398]:
+                          - generic [ref=e2399]: string[]
+                        - gridcell [ref=e2400]
+                        - gridcell "The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as active, and will not contribute date to shared tooltips or labels." [ref=e2401]:
+                          - generic [ref=e2402]: The voronoiBlacklist prop is used to specify a list of components to ignore when calculating a shared voronoi diagram. Components with a name prop matching an element in the voronoiBlacklist array will be ignored by ChartVoronoiContainer. Ignored components will never be flagged as active, and will not contribute date to shared tooltips or labels.
+                      - row "voronoiDimension 'x' | 'y' When the voronoiDimension prop is set, voronoi selection will only take the given dimension into account. For example, when dimension is set to “x”, all data points matching a particular x mouse position will be activated regardless of y value. When this prop is not given, voronoi selection is determined by both x any y values." [ref=e2403]:
+                        - gridcell "voronoiDimension" [ref=e2404]:
+                          - generic [ref=e2405]: voronoiDimension
+                        - gridcell "'x' | 'y'" [ref=e2406]:
+                          - generic [ref=e2407]: "'x' | 'y'"
+                        - gridcell [ref=e2408]
+                        - gridcell "When the voronoiDimension prop is set, voronoi selection will only take the given dimension into account. For example, when dimension is set to “x”, all data points matching a particular x mouse position will be activated regardless of y value. When this prop is not given, voronoi selection is determined by both x any y values." [ref=e2409]:
+                          - generic [ref=e2410]: When the voronoiDimension prop is set, voronoi selection will only take the given dimension into account. For example, when dimension is set to “x”, all data points matching a particular x mouse position will be activated regardless of y value. When this prop is not given, voronoi selection is determined by both x any y values.
+                      - row "voronoiPadding number When the voronoiPadding prop is given, the area of the chart that will trigger voronoi events is reduced by the given padding on every side. By default, no padding is applied, and the entire range of a given chart may trigger voronoi events. This prop should be given as a number." [ref=e2411]:
+                        - gridcell "voronoiPadding" [ref=e2412]:
+                          - generic [ref=e2413]: voronoiPadding
+                        - gridcell "number" [ref=e2414]:
+                          - generic [ref=e2415]: number
+                        - gridcell [ref=e2416]
+                        - gridcell "When the voronoiPadding prop is given, the area of the chart that will trigger voronoi events is reduced by the given padding on every side. By default, no padding is applied, and the entire range of a given chart may trigger voronoi events. This prop should be given as a number." [ref=e2417]:
+                          - generic [ref=e2418]: When the voronoiPadding prop is given, the area of the chart that will trigger voronoi events is reduced by the given padding on every side. By default, no padding is applied, and the entire range of a given chart may trigger voronoi events. This prop should be given as a number.
+                      - row "width number The width props specifies the width of the svg viewBox of the container This value should be given as a number of pixels. If no width prop is given, the width prop from the child component passed will be used." [ref=e2419]:
+                        - gridcell "width" [ref=e2420]:
+                          - generic [ref=e2421]: width
+                        - gridcell "number" [ref=e2422]:
+                          - generic [ref=e2423]: number
+                        - gridcell [ref=e2424]
+                        - gridcell "The width props specifies the width of the svg viewBox of the container This value should be given as a number of pixels. If no width prop is given, the width prop from the child component passed will be used." [ref=e2425]:
+                          - generic [ref=e2426]: The width props specifies the width of the svg viewBox of the container This value should be given as a number of pixels. If no width prop is given, the width prop from the child component passed will be used.
+                - link "Edit this page on GitHub" [ref=e2428] [cursor=pointer]:
+                  - /url: https://github.com/patternfly/patternfly-org/blob/main/packages/react-charts/src/victory/components/ChartArea/examples/ChartArea.md
+            - button "Give feedback" [ref=e2430] [cursor=pointer]:
+              - generic [ref=e2431]: Give feedback
+        - contentinfo [ref=e2432]:
+          - generic [ref=e2434]:
+            - generic [ref=e2436]:
+              - generic [ref=e2437]:
+                - paragraph [ref=e2438]: What's new
+                - navigation "Quick Links" [ref=e2439]:
+                  - list [ref=e2440]:
+                    - listitem [ref=e2441]:
+                      - link "Latest PatternFly upgrade guide" [ref=e2443] [cursor=pointer]:
+                        - /url: /get-started/upgrade
+                        - text: Upgrade
+                    - listitem [ref=e2444]:
+                      - link "PatternFly release highlights" [ref=e2446] [cursor=pointer]:
+                        - /url: /get-started/release-highlights/
+                        - text: Releases
+                    - listitem [ref=e2447]:
+                      - link "PatternFly's new AI resources" [ref=e2449] [cursor=pointer]:
+                        - /url: /patternfly-ai/about-ai
+                        - text: PatternFly AI
+                    - listitem [ref=e2450]:
+                      - link "PatternFly's new token system" [ref=e2452] [cursor=pointer]:
+                        - /url: /tokens/about-tokens
+                        - text: Tokens
+              - generic [ref=e2453]:
+                - paragraph [ref=e2454]: Contribute
+                - navigation "Contribute" [ref=e2455]:
+                  - list [ref=e2456]:
+                    - listitem [ref=e2457]:
+                      - link "Learn about PatternFly" [ref=e2459] [cursor=pointer]:
+                        - /url: /get-started/about-patternfly
+                        - text: About PatternFly
+                    - listitem [ref=e2460]:
+                      - link "Our code of conduct for contributions" [ref=e2462] [cursor=pointer]:
+                        - /url: https://github.com/patternfly/patternfly/blob/main/CODE_OF_CONDUCT.md
+                        - text: Code of conduct
+                    - listitem [ref=e2463]:
+                      - link "Learn how to contribute to PatternFly" [ref=e2465] [cursor=pointer]:
+                        - /url: /get-started/contribute
+                        - text: Contribute
+              - generic [ref=e2466]:
+                - paragraph [ref=e2467]: Community
+                - navigation "Stay in touch" [ref=e2468]:
+                  - list [ref=e2469]:
+                    - listitem [ref=e2470]:
+                      - link "Join the PatternFly Slack" [ref=e2472] [cursor=pointer]:
+                        - /url: //join.slack.com/t/patternfly/shared_invite/zt-1npmqswgk-bF2R1E2rglV8jz5DNTezMQ
+                        - text: Slack
+                    - listitem [ref=e2473]:
+                      - link "Read the PatternFly blog" [ref=e2475] [cursor=pointer]:
+                        - /url: //medium.com/patternfly
+                        - text: Blog
+                    - listitem [ref=e2476]:
+                      - link "Join the PatternFly mailing list" [ref=e2478] [cursor=pointer]:
+                        - /url: https://www.redhat.com/dynamic-form/instance/934b1674-bc8a-4a13-8c9d-d19abcceb263
+                        - text: Mailing list
+                    - listitem [ref=e2479]:
+                      - link "Join PatternFly meetings" [ref=e2481] [cursor=pointer]:
+                        - /url: https://calendar.google.com/calendar/embed?src=patternflyteam%40gmail.com&ctz=America%2FNew_York
+                        - text: Calendar
+                    - listitem [ref=e2482]:
+                      - link "Visit the PatternFly discussion forum" [ref=e2484] [cursor=pointer]:
+                        - /url: //github.com/orgs/patternfly/discussions
+                        - text: Discussions
+            - generic [ref=e2486]:
+              - generic [ref=e2487]:
+                - link "PatternFly" [ref=e2488] [cursor=pointer]:
+                  - /url: /
+                  - img "PatternFly" [ref=e2489]
+                - paragraph [ref=e2506]: PatternFly is an open source design system built to drive consistency and unify teams. From documentation and components to code examples and tutorials, PatternFly is a place where design and development can thrive. We’re on a mission to help teams build consistent, accessible, and scalable enterprise product experiences—the open source way.
+              - generic [ref=e2507]:
+                - link "Link to PatternFly GitHub page" [ref=e2508] [cursor=pointer]:
+                  - /url: //github.com/patternfly
+                  - img [ref=e2509]
+                - link "Link to PatternFly X page" [ref=e2511] [cursor=pointer]:
+                  - /url: //x.com/patternfly
+                  - img [ref=e2512]
+        - generic [ref=e2516]:
+          - link "Red Hat" [ref=e2518] [cursor=pointer]:
+            - /url: //www.redhat.com
+            - img "Red Hat" [ref=e2519]
+          - generic [ref=e2521]: Copyright © 2014-2026 Red Hat, Inc.
+          - generic [ref=e2522]:
+            - link "Privacy statement" [ref=e2523] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/privacy-policy
+            - link "Terms of use" [ref=e2524] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/terms-use
+            - link "All policies and guidelines" [ref=e2525] [cursor=pointer]:
+              - /url: //www.redhat.com/en/about/all-policies-guidelines
+    - generic [ref=e2530]:
+      - generic [ref=e2531]:
+        - text: We use cookies on our websites to deliver our online services. Details about how we use cookies and how you may disable them are set out in our
+        - link "Privacy Statement" [ref=e2532] [cursor=pointer]:
+          - /url: //www.redhat.com/en/about/privacy-policy
+        - text: . By using this website you agree to our use of cookies.
+      - button "Close banner" [ref=e2534] [cursor=pointer]:
+        - img [ref=e2536]
+  - img [ref=e2538]
+```

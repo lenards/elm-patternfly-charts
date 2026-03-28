@@ -17,8 +17,10 @@ cd demo
 elm make src/Main.elm --output=../docs/main.js
 ```
 
-> **Note:** `elm make` needs write access to `~/.elm/0.19.1/packages/lock`.
-> In Claude Code, run with `dangerouslyDisableSandbox: true`.
+> **Note:** If you ask Claude Code to run this command, it will need
+> `dangerouslyDisableSandbox: true` — the Claude Code shell sandbox blocks
+> writes to `~/.elm/0.19.1/packages/lock`. Running it yourself in a normal
+> terminal has no such restriction.
 
 Then commit the updated `docs/main.js` and push — GitHub Pages redeploys automatically.
 

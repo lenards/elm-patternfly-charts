@@ -214,14 +214,20 @@ toSvg (AreaChart cfg) =
         yScale =
             Scale.linear ( toFloat innerH, 0 ) ( 0, yMax * 1.1 )
 
-        toPoint ( x, y ) =
+        toLinePoint ( x, y ) =
             Just ( Scale.convert xScale x, Scale.convert yScale y )
 
+        toAreaPoint ( x, y ) =
+            Just
+                ( ( Scale.convert xScale x, Scale.convert yScale 0 )
+                , ( Scale.convert xScale x, Scale.convert yScale y )
+                )
+
         areaPath =
-            Shape.area Shape.monotoneInXCurve (List.map toPoint cfg.data)
+            Shape.area Shape.monotoneInXCurve (List.map toAreaPoint cfg.data)
 
         linePath =
-            Shape.line Shape.monotoneInXCurve (List.map toPoint cfg.data)
+            Shape.line Shape.monotoneInXCurve (List.map toLinePoint cfg.data)
 
         fillColor =
             IC.hexToRgba cfg.color cfg.fillOpacity

@@ -206,6 +206,7 @@ toSvg (BoxPlotChart cfg) =
             Scale.band
                 { paddingInner = 0.3
                 , paddingOuter = 0.2
+                , align = 0.5
                 }
                 ( 0, toFloat innerW )
                 labels
@@ -382,7 +383,7 @@ toSvg (BoxPlotChart cfg) =
                     ++ boxes
                     ++ [ Svg.g
                             [ SA.transform ("translate(0," ++ String.fromInt innerH ++ ")") ]
-                            [ Axis.bottom [] xScale ]
+                            [ Axis.bottom [] (Scale.toRenderable identity xScale) ]
                        , Svg.g [] [ Axis.left [ Axis.tickCount 5 ] yScale ]
                        ]
                 )

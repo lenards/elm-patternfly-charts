@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PF6.Charts — PatternFly v6 Charts for Elm</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&family=Red+Hat+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Red Hat Text', sans-serif;
+        background: #f0f0f0;
+      }
+
+      /* Scrollbar styling for sidebar */
+      nav::-webkit-scrollbar { width: 6px; }
+      nav::-webkit-scrollbar-track { background: transparent; }
+      nav::-webkit-scrollbar-thumb { background: #4a4a4a; border-radius: 3px; }
+
+      pre, code {
+        font-family: 'Red Hat Mono', 'Fira Code', 'Consolas', monospace;
+      }
+
+      /* SVG axis tick line / domain line styling to match PF6 */
+      .tick line, .domain {
+        stroke: #c7c7c7;
+      }
+      .tick text {
+        fill: #383838;
+        font-family: 'Red Hat Text', sans-serif;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="main.js"></script>
+    <script>
+      var app = Elm.Main.init({ node: document.getElementById('app') });
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 module PF6.Charts.Donut exposing
-    ( DonutChart
+    ( DonutChart, Slice
     , fromData
     , withSize
     , withTheme
@@ -16,9 +16,9 @@ A core PatternFly chart type used for showing categorical proportions
 display a summary metric.
 
 
-# Type
+# Types
 
-@docs DonutChart
+@docs DonutChart, Slice
 
 
 # Constructor
@@ -184,10 +184,11 @@ toSvg (DonutChart cfg) =
                 , endAngle = 2 * pi
                 , padAngle = 0.02
                 , sortingFn = \_ _ -> EQ
-                , labelPosition = Shape.Centroid
+                , valueFn = identity
                 , innerRadius = innerRadius
                 , outerRadius = outerRadius
                 , cornerRadius = 2
+                , padRadius = 0
                 }
                 values
 

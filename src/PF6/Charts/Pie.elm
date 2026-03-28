@@ -1,5 +1,5 @@
 module PF6.Charts.Pie exposing
-    ( PieChart
+    ( PieChart, Slice
     , fromData
     , withSize
     , withTheme
@@ -14,9 +14,9 @@ Similar to `Donut` but with no hollow center. Use `Donut` when you need to
 display a summary metric in the center.
 
 
-# Type
+# Types
 
-@docs PieChart
+@docs PieChart, Slice
 
 
 # Constructor
@@ -158,10 +158,11 @@ toSvg (PieChart cfg) =
                 , endAngle = 2 * pi
                 , padAngle = 0.02
                 , sortingFn = \_ _ -> EQ
-                , labelPosition = Shape.Centroid
+                , valueFn = identity
                 , innerRadius = 0
                 , outerRadius = outerRadius
                 , cornerRadius = 2
+                , padRadius = 0
                 }
                 values
 

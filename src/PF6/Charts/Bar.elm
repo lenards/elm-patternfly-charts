@@ -1,5 +1,5 @@
 module PF6.Charts.Bar exposing
-    ( BarChart
+    ( BarChart, SeriesData
     , fromData
     , withWidth, withHeight
     , withTheme
@@ -16,9 +16,9 @@ Supports single-series and grouped multi-series bars with automatic
 color assignment from the theme's multi-ordered color scale.
 
 
-# Type
+# Types
 
-@docs BarChart
+@docs BarChart, SeriesData
 
 
 # Constructor
@@ -228,6 +228,7 @@ toSvg (BarChart cfg) =
             Scale.band
                 { paddingInner = 0.15
                 , paddingOuter = 0.1
+                , align = 0.5
                 }
                 ( 0, toFloat innerW )
                 cfg.categories
@@ -241,6 +242,7 @@ toSvg (BarChart cfg) =
             Scale.band
                 { paddingInner = 0.05
                 , paddingOuter = 0
+                , align = 0.5
                 }
                 ( 0, outerBandwidth )
                 (List.range 0 (numSeries - 1))
@@ -431,7 +433,7 @@ toSvg (BarChart cfg) =
                     ++ bars
                     ++ [ Svg.g
                             [ SA.transform ("translate(0," ++ String.fromInt innerH ++ ")") ]
-                            [ Axis.bottom [] outerScale ]
+                            [ Axis.bottom [] (Scale.toRenderable identity outerScale) ]
                        , Svg.g [] [ Axis.left [ Axis.tickCount 5 ] yScale ]
                        ]
                 )

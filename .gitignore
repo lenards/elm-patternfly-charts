@@ -19,3 +19,7 @@ examples/pf6-guide/main.js
 # Playwright test results and reports
 examples/pf6-guide/test-results/
 examples/pf6-guide/playwright-report/
+
+# Demo app compiled output (use docs/ for GitHub Pages)
+demo/main.js
+demo/elm-stuff/

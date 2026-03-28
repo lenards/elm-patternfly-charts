@@ -158,14 +158,20 @@ toSvg (Sparkline cfg) =
         yScale =
             Scale.linear ( toFloat innerH, 0 ) ( yMin, yMax )
 
-        toPoint ( x, y ) =
+        toLinePoint ( x, y ) =
             Just ( Scale.convert xScale x, Scale.convert yScale y )
 
+        toAreaPoint ( x, y ) =
+            Just
+                ( ( Scale.convert xScale x, Scale.convert yScale yMin )
+                , ( Scale.convert xScale x, Scale.convert yScale y )
+                )
+
         linePath =
-            Shape.line Shape.monotoneInXCurve (List.map toPoint indexedData)
+            Shape.line Shape.monotoneInXCurve (List.map toLinePoint indexedData)
 
         areaPath =
-            Shape.area Shape.monotoneInXCurve (List.map toPoint indexedData)
+            Shape.area Shape.monotoneInXCurve (List.map toAreaPoint indexedData)
 
         fillColor =
             IC.hexToRgba cfg.color 0.15

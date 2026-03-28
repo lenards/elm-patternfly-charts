@@ -1,0 +1,20 @@
+# Elm build cache
+elm-stuff/
+
+# Compiled Elm JS output — rebuild with `elm make src/Main.elm --output=...`
+experiments-elm-charts/elm-charts.js
+experiments-elm-viz/elm-viz.js
+
+# Node
+node_modules/
+
+# Playwright artifacts
+test-results/
+playwright-report/
+.playwright/
+
+# Diagnostic / scratch scripts
+diag.js
+
+# macOS
+.DS_Store

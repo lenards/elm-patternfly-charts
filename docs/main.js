@@ -10236,7 +10236,6 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 		var padTop = (cfg.H !== '') ? 40 : 20;
 		var padRight = 30;
 		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
 		var legendWidth = $elm$core$List$length(cfg.a4) * 120;
 		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
 		var legendItems = ($elm$core$List$length(cfg.a4) > 1) ? A2(
@@ -10284,6 +10283,8 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 			cfg.a4) : _List_Nil;
 		var innerW = (cfg.aB - padLeft) - padRight;
 		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
+		var hasLegend = $elm$core$List$length(cfg.a4) > 1;
+		var padBottom = ((cfg.be !== '') && hasLegend) ? 75 : ((cfg.be !== '') ? 55 : (hasLegend ? 50 : 40));
 		var innerH = (cfg.as - padTop) - padBottom;
 		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
 		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
@@ -10458,7 +10459,8 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(
+										cfg.as - (hasLegend ? 30 : 8))),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
@@ -10671,7 +10673,6 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 		var padTop = (cfg.H !== '') ? 40 : 20;
 		var padRight = 30;
 		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
 		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
 		var legendItems = ($elm$core$List$length(cfg.a4) > 1) ? A2(
 			$elm$core$List$indexedMap,
@@ -10719,6 +10720,8 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 			$elm$core$Basics$max,
 			0,
 			((innerW / 2) | 0) - ($elm$core$List$length(cfg.a4) * 55));
+		var hasLegend = $elm$core$List$length(cfg.a4) > 1;
+		var padBottom = ((cfg.be !== '') && hasLegend) ? 75 : ((cfg.be !== '') ? 55 : (hasLegend ? 50 : 40));
 		var innerH = (cfg.as - padTop) - padBottom;
 		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
 		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
@@ -10910,7 +10913,8 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(
+										cfg.as - (hasLegend ? 30 : 8))),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
@@ -11111,7 +11115,7 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 		var padTop = (cfg.H !== '') ? 40 : 20;
 		var padRight = 30;
 		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
+		var padBottom = (cfg.be !== '') ? 75 : 50;
 		var n = $elm$core$List$length(cfg.bf);
 		var totals = A3(
 			$elm$core$List$foldl,
@@ -11407,7 +11411,7 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(cfg.as - 30)),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)

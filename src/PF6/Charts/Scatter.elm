@@ -196,9 +196,16 @@ toSvg (ScatterChart cfg) =
         padRight =
             30
 
+        hasLegend =
+            List.length cfg.series > 1
+
         padBottom =
-            if cfg.xLabel /= "" then
+            if cfg.xLabel /= "" && hasLegend then
+                75
+            else if cfg.xLabel /= "" then
                 55
+            else if hasLegend then
+                50
             else
                 40
 
@@ -406,7 +413,7 @@ toSvg (ScatterChart cfg) =
             , if cfg.xLabel /= "" then
                 Svg.text_
                     [ SA.x (String.fromInt (padLeft + innerW // 2))
-                    , SA.y (String.fromInt (cfg.height - 8))
+                    , SA.y (String.fromInt (cfg.height - (if hasLegend then 30 else 8)))
                     , SA.textAnchor "middle"
                     , SA.fontSize "12"
                     , SA.fill labelColor

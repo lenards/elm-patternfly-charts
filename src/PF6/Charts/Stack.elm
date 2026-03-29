@@ -193,9 +193,9 @@ toSvg (StackChart cfg) =
 
         padBottom =
             if cfg.xLabel /= "" then
-                55
+                75
             else
-                40
+                50
 
         padLeft =
             if cfg.yLabel /= "" then
@@ -450,7 +450,7 @@ toSvg (StackChart cfg) =
             , if cfg.xLabel /= "" then
                 Svg.text_
                     [ SA.x (String.fromInt (padLeft + innerW // 2))
-                    , SA.y (String.fromInt (cfg.height - 8))
+                    , SA.y (String.fromInt (cfg.height - 30))
                     , SA.textAnchor "middle"
                     , SA.fontSize "12"
                     , SA.fill labelColor

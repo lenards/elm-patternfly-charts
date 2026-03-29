@@ -8385,7 +8385,7 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 		var innerW = (cfg.aB - padLeft) - padRight;
 		var xScale = A3(
 			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.6, eq: 0.2},
+			{dP: 0.5, ep: 0.78, eq: 0.2},
 			_Utils_Tuple2(0, innerW),
 			labels);
 		var innerH = (cfg.as - padTop) - padBottom;

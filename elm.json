@@ -3,7 +3,7 @@
     "name": "lenards/elm-patternfly-charts",
     "summary": "PatternFly v6 chart components for Elm, powered by gampleman/elm-visualization",
     "license": "BSD-3-Clause",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "exposed-modules": {
         "PF6.Charts": [
             "PF6.Charts.Colors",

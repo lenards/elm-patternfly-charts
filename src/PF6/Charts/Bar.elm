@@ -93,7 +93,7 @@ defaultConfig categories series =
     , height = 300
     , categories = categories
     , series = series
-    , colors = Colors.multiOrdered
+    , colors = Colors.blueFamily
     , xLabel = ""
     , yLabel = ""
     , title = ""
@@ -257,8 +257,8 @@ toSvg (BarChart cfg) =
         outerScale : BandScale String
         outerScale =
             Scale.band
-                { paddingInner = 0.15
-                , paddingOuter = 0.1
+                { paddingInner = 0.6
+                , paddingOuter = 0.15
                 , align = 0.5
                 }
                 ( 0, toFloat innerW )
@@ -271,7 +271,7 @@ toSvg (BarChart cfg) =
         innerScale : BandScale Int
         innerScale =
             Scale.band
-                { paddingInner = 0.05
+                { paddingInner = 0.1
                 , paddingOuter = 0
                 , align = 0.5
                 }

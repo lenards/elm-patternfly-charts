@@ -220,7 +220,7 @@ toSvg (BoxPlotChart cfg) =
         xScale : BandScale String
         xScale =
             Scale.band
-                { paddingInner = 0.3
+                { paddingInner = 0.6
                 , paddingOuter = 0.2
                 , align = 0.5
                 }

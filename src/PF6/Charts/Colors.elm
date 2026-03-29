@@ -6,7 +6,7 @@ module PF6.Charts.Colors exposing
     , gold100, gold200, gold300, gold400, gold500
     , orange100, orange200, orange300, orange400, orange500
     , axisLine, gridLine, labelText, background
-    , multiOrdered, multiUnordered
+    , blueFamily, multiOrdered, multiUnordered
     , white, black
     )
 
@@ -50,7 +50,7 @@ for time-series with multiple series (stacked area, multi-line).
 
 # Multi-series Color Scales
 
-@docs multiOrdered, multiUnordered
+@docs blueFamily, multiOrdered, multiUnordered
 
 
 # Utility
@@ -309,6 +309,25 @@ black =
 
 
 -- Multi-series scales
+
+
+{-| Blue color family — five shades of PF6 blue from primary outward.
+
+Use this when you want a monochromatic, on-brand palette (e.g. a grouped bar
+chart where each series is a different blue shade). Ordered from most to least
+prominent so the first series draws the eye.
+
+    Bar.fromData categories values
+        |> Bar.withColors Colors.blueFamily
+-}
+blueFamily : List String
+blueFamily =
+    [ blue300 -- #0066cc  primary / most prominent
+    , blue200 -- #4394e5  secondary
+    , blue400 -- #004d99  dark
+    , blue100 -- #92c5f9  light
+    , blue500 -- #003366  darkest
+    ]
 
 
 {-| Multi-ordered color scale for categorical data — cycles through blue,

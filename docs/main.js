@@ -5272,9 +5272,14 @@ var $author$project$PF6$Charts$Area$fromData = function (data) {
 	return $author$project$PF6$Charts$Area$defaultConfig(data);
 };
 var $author$project$PF6$Charts$Bar$BarChart = $elm$core$Basics$identity;
+var $author$project$PF6$Charts$Colors$blue100 = '#92c5f9';
+var $author$project$PF6$Charts$Colors$blue200 = '#4394e5';
+var $author$project$PF6$Charts$Colors$blue400 = '#004d99';
+var $author$project$PF6$Charts$Colors$blueFamily = _List_fromArray(
+	[$author$project$PF6$Charts$Colors$blue300, $author$project$PF6$Charts$Colors$blue200, $author$project$PF6$Charts$Colors$blue400, $author$project$PF6$Charts$Colors$blue100, $author$project$PF6$Charts$Colors$blue500]);
 var $author$project$PF6$Charts$Bar$defaultConfig = F2(
 	function (categories, series) {
-		return {bm: categories, bX: $author$project$PF6$Charts$Colors$multiOrdered, cG: true, as: 300, b8: false, a4: series, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
+		return {bm: categories, bX: $author$project$PF6$Charts$Colors$blueFamily, cG: true, as: 300, b8: false, a4: series, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
 	});
 var $author$project$PF6$Charts$Bar$fromData = F2(
 	function (categories, series) {
@@ -5298,7 +5303,7 @@ var $author$project$PF6$Charts$Bullet$fromData = F3(
 	});
 var $author$project$PF6$Charts$Donut$DonutChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Donut$defaultConfig = function (data) {
-	return {bn: '', bo: '', bX: $author$project$PF6$Charts$Colors$multiOrdered, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
+	return {bn: '', bo: '', bX: $author$project$PF6$Charts$Colors$blueFamily, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
 };
 var $author$project$PF6$Charts$Donut$fromData = function (slices) {
 	return $author$project$PF6$Charts$Donut$defaultConfig(slices);
@@ -5314,7 +5319,7 @@ var $author$project$PF6$Charts$DonutUtilization$fromData = F2(
 	});
 var $author$project$PF6$Charts$Pie$PieChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Pie$defaultConfig = function (data) {
-	return {bX: $author$project$PF6$Charts$Colors$multiOrdered, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
+	return {bX: $author$project$PF6$Charts$Colors$blueFamily, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
 };
 var $author$project$PF6$Charts$Pie$fromData = function (slices) {
 	return $author$project$PF6$Charts$Pie$defaultConfig(slices);
@@ -8094,13 +8099,13 @@ var $author$project$PF6$Charts$Bar$toSvg = function (_v0) {
 		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
 		var outerScale = A3(
 			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.15, eq: 0.1},
+			{dP: 0.5, ep: 0.6, eq: 0.15},
 			_Utils_Tuple2(0, innerW),
 			cfg.bm);
 		var outerBandwidth = $author$project$Scale$bandwidth(outerScale);
 		var innerScale = A3(
 			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.05, eq: 0},
+			{dP: 0.5, ep: 0.1, eq: 0},
 			_Utils_Tuple2(0, outerBandwidth),
 			A2($elm$core$List$range, 0, numSeries - 1));
 		var innerH = (cfg.as - padTop) - padBottom;
@@ -8380,7 +8385,7 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 		var innerW = (cfg.aB - padLeft) - padRight;
 		var xScale = A3(
 			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.3, eq: 0.2},
+			{dP: 0.5, ep: 0.6, eq: 0.2},
 			_Utils_Tuple2(0, innerW),
 			labels);
 		var innerH = (cfg.as - padTop) - padBottom;

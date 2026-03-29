@@ -87,7 +87,7 @@ defaultConfig : List Slice -> Config
 defaultConfig data =
     { size = 230
     , data = data
-    , colors = Colors.multiOrdered
+    , colors = Colors.blueFamily
     , title = ""
     , centerValue = ""
     , centerLabel = ""

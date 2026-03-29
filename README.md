@@ -7,21 +7,19 @@ PatternFly v6 chart components for Elm, built on
 
 ## Chart types
 
-| Module | Chart |
-|--------|-------|
-| `PF6.Charts.Area` | Area chart — filled line for continuous metrics |
-| `PF6.Charts.Bar` | Bar chart — grouped or single-series vertical bars |
-| `PF6.Charts.BoxPlot` | Box plot — statistical distribution per category |
-| `PF6.Charts.Bullet` | Bullet chart — measure vs. range + target marker |
-| `PF6.Charts.Donut` | Donut chart — ring with center metric label |
-| `PF6.Charts.DonutUtilization` | Donut utilization — single-metric with warning/danger thresholds |
-| `PF6.Charts.Line` | Line chart — multi-series continuous data |
-| `PF6.Charts.Pie` | Pie chart — solid slices for part-to-whole |
-| `PF6.Charts.Scatter` | Scatter chart — multi-series 2D point cloud |
-| `PF6.Charts.Sparkline` | Sparkline — miniature inline trend line |
-| `PF6.Charts.Stack` | Stacked area chart — cumulative series |
-| `PF6.Charts.Threshold` | Threshold chart — line chart with warning/danger lines |
-| `PF6.Charts.Skeleton` | Skeleton placeholders for loading states |
+  - `PF6.Charts.Area` — filled line chart for continuous metrics
+  - `PF6.Charts.Bar` — grouped or single-series vertical bars
+  - `PF6.Charts.BoxPlot` — statistical distribution per category
+  - `PF6.Charts.Bullet` — measure vs. qualitative range + target marker
+  - `PF6.Charts.Donut` — ring chart with center metric label
+  - `PF6.Charts.DonutUtilization` — single-metric with warning/danger thresholds
+  - `PF6.Charts.Line` — multi-series continuous data
+  - `PF6.Charts.Pie` — solid slices for part-to-whole
+  - `PF6.Charts.Scatter` — multi-series 2D point cloud
+  - `PF6.Charts.Sparkline` — miniature inline trend line
+  - `PF6.Charts.Stack` — stacked area chart for cumulative series
+  - `PF6.Charts.Threshold` — line chart with warning/danger threshold lines
+  - `PF6.Charts.Skeleton` — loading state placeholders for every chart type
 
 ## Quick start
 

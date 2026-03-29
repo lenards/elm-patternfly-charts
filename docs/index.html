@@ -45,6 +45,23 @@
     <script src="main.js"></script>
     <script>
       var app = Elm.Main.init({ node: document.getElementById('app') });
+
+      // ResizeObserver: sends the main content area width to Elm so charts
+      // can reflow responsively. The library itself has no ports — only the
+      // consumer application (this file) does.
+      if (typeof ResizeObserver !== 'undefined') {
+        var ro = new ResizeObserver(function(entries) {
+          for (var i = 0; i < entries.length; i++) {
+            var w = Math.round(entries[i].contentRect.width);
+            app.ports.containerWidth.send(w);
+          }
+        });
+        // Observe the main content area once Elm has rendered it
+        requestAnimationFrame(function() {
+          var main = document.querySelector('main');
+          if (main) { ro.observe(main); }
+        });
+      }
     </script>
   </body>
 </html>

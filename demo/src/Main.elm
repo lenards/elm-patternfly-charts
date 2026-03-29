@@ -1,4 +1,4 @@
-module Main exposing (main)
+port module Main exposing (main)
 
 {-| PF6.Charts gallery — shows all 13 chart types with PatternFly v6 styling.
 
@@ -27,13 +27,19 @@ import PF6.Charts.Theme as Theme
 import PF6.Charts.Threshold as Threshold
 
 
+{-| Port that receives the container width in pixels from the ResizeObserver
+in index.html. The library itself has no ports — they live in the consumer app.
+-}
+port containerWidth : (Int -> msg) -> Sub msg
+
+
 main : Program () Model Msg
 main =
     Browser.element
         { init = \_ -> ( initialModel, Cmd.none )
         , update = update
         , view = view
-        , subscriptions = \_ -> Sub.none
+        , subscriptions = subscriptions
         }
 
 
@@ -43,16 +49,20 @@ main =
 
 type alias Model =
     { activeSection : String
+    , responsiveWidth : Int
     }
 
 
 initialModel : Model
 initialModel =
-    { activeSection = "area" }
+    { activeSection = "area"
+    , responsiveWidth = 560
+    }
 
 
 type Msg
     = SetSection String
+    | ResizedTo Int
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -60,6 +70,14 @@ update msg model =
     case msg of
         SetSection id ->
             ( { model | activeSection = id }, Cmd.none )
+
+        ResizedTo w ->
+            ( { model | responsiveWidth = max 200 (w - 48) }, Cmd.none )
+
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    containerWidth ResizedTo
 
 
 
@@ -80,6 +98,7 @@ navItems =
     , ( "sparkline", "Sparkline" )
     , ( "stack", "Stack Chart" )
     , ( "threshold", "Threshold Chart" )
+    , ( "resize", "Resize Observer" )
     ]
 
 
@@ -159,7 +178,7 @@ view model =
                     dark themes, PF6 color tokens, and the builder pattern."""
                 ]
             , Html.div []
-                (List.map viewChartPanel allChartPanels)
+                (List.map viewChartPanel (allChartPanels model))
             ]
         ]
 
@@ -371,33 +390,36 @@ thresholdData =
 -- CHART PANELS
 
 
-allChartPanels : List ChartPanel
-allChartPanels =
+allChartPanels : Model -> List ChartPanel
+allChartPanels model =
     [ { id = "area"
       , title = "Area Chart"
-      , description = "Area charts show a metric over time with a filled region under the line. Best for continuous data like CPU utilization, memory usage, or bandwidth."
+      , description = "Area charts show a metric over time with a filled region under the line. Best for continuous data like CPU utilization, memory usage, or bandwidth. Hover the data points to see tooltips."
       , chart =
             Area.fromData cpuData
                 |> Area.withWidth 560
                 |> Area.withXLabel "Time (minutes)"
                 |> Area.withYLabel "CPU %"
                 |> Area.withTitle "CPU Utilization"
+                |> Area.withTooltips True
                 |> Area.toSvg
       , code = """Area.fromData cpuData
     |> Area.withWidth 560
     |> Area.withXLabel "Time (minutes)"
     |> Area.withYLabel "CPU %"
     |> Area.withTitle "CPU Utilization"
+    |> Area.withTooltips True
     |> Area.toSvg"""
       }
     , { id = "bar"
       , title = "Bar Chart"
-      , description = "Bar charts compare values across categories. Grouped bars let you compare multiple series side-by-side per category."
+      , description = "Bar charts compare values across categories. Grouped bars let you compare multiple series side-by-side per category. Hover bars for value tooltips."
       , chart =
             Bar.fromData memoryCategories memoryData
                 |> Bar.withWidth 560
                 |> Bar.withYLabel "GiB"
                 |> Bar.withTitle "Memory Usage by Node"
+                |> Bar.withTooltips True
                 |> Bar.toSvg
       , code = """Bar.fromData
     [ "Node 1", "Node 2", "Node 3", "Node 4", "Node 5" ]
@@ -407,6 +429,7 @@ allChartPanels =
     |> Bar.withWidth 560
     |> Bar.withYLabel "GiB"
     |> Bar.withTitle "Memory Usage by Node"
+    |> Bar.withTooltips True
     |> Bar.toSvg"""
       }
     , { id = "boxplot"
@@ -462,7 +485,7 @@ allChartPanels =
       }
     , { id = "donut"
       , title = "Donut Chart"
-      , description = "Donut charts show part-to-whole relationships with a hollow center that can display a summary metric. A core PatternFly pattern for resource allocation and status breakdowns."
+      , description = "Donut charts show part-to-whole relationships with a hollow center that can display a summary metric. A core PatternFly pattern for resource allocation and status breakdowns. Hover slices for label + percentage tooltips."
       , chart =
             Html.div
                 [ HA.style "display" "flex"
@@ -473,12 +496,14 @@ allChartPanels =
                 [ Donut.fromData donutSlices
                     |> Donut.withCenterText "58" "Instances"
                     |> Donut.withTitle "Instance Status"
+                    |> Donut.withTooltips True
                     |> Donut.toSvg
                 , Donut.fromData donutSlices
                     |> Donut.withSize 200
                     |> Donut.withColors Colors.multiOrdered
                     |> Donut.withCenterText "58" "Instances"
                     |> Donut.withTitle "Smaller variant"
+                    |> Donut.withTooltips True
                     |> Donut.toSvg
                 ]
       , code = """Donut.fromData
@@ -489,6 +514,7 @@ allChartPanels =
     ]
     |> Donut.withCenterText "58" "Instances"
     |> Donut.withTitle "Instance Status"
+    |> Donut.withTooltips True
     |> Donut.toSvg"""
       }
     , { id = "donut-util"
@@ -546,11 +572,12 @@ DonutUtil.fromData 78 100
       }
     , { id = "pie"
       , title = "Pie Chart"
-      , description = "Pie charts show part-to-whole relationships as solid circular slices. Use Donut when you need a center metric label."
+      , description = "Pie charts show part-to-whole relationships as solid circular slices. Use Donut when you need a center metric label. Hover slices for label + percentage tooltips."
       , chart =
             Pie.fromData pieSlices
                 |> Pie.withSize 250
                 |> Pie.withTitle "Instances by Region"
+                |> Pie.withTooltips True
                 |> Pie.toSvg
       , code = """Pie.fromData
     [ { label = "US East", value = 35 }
@@ -560,17 +587,19 @@ DonutUtil.fromData 78 100
     ]
     |> Pie.withSize 250
     |> Pie.withTitle "Instances by Region"
+    |> Pie.withTooltips True
     |> Pie.toSvg"""
       }
     , { id = "scatter"
       , title = "Scatter Chart"
-      , description = "Scatter charts plot individual data points on a 2D plane to reveal correlations or clusters. Multiple series use distinct colors."
+      , description = "Scatter charts plot individual data points on a 2D plane to reveal correlations or clusters. Multiple series use distinct colors. Hover points for (x, y) tooltips."
       , chart =
             Scatter.fromSeries scatterSeriesData
                 |> Scatter.withWidth 560
                 |> Scatter.withXLabel "CPU Cores"
                 |> Scatter.withYLabel "Memory (GiB)"
                 |> Scatter.withTitle "Cluster Resource Distribution"
+                |> Scatter.withTooltips True
                 |> Scatter.toSvg
       , code = """Scatter.fromSeries
     [ { label = "Cluster A", data = clusterAPoints }
@@ -580,6 +609,7 @@ DonutUtil.fromData 78 100
     |> Scatter.withXLabel "CPU Cores"
     |> Scatter.withYLabel "Memory (GiB)"
     |> Scatter.withTitle "Cluster Resource Distribution"
+    |> Scatter.withTooltips True
     |> Scatter.toSvg"""
       }
     , { id = "sparkline"
@@ -719,5 +749,66 @@ Html.div [ HA.style "display" "flex", HA.style "align-items" "center" ]
     |> Threshold.withThresholdLabel 75 "#f0ab00" "Warning (75%)"
     |> Threshold.withThresholdLabel 90 "#c9190b" "Critical (90%)"
     |> Threshold.toSvg"""
+      }
+    , { id = "resize"
+      , title = "Resize Observer"
+      , description =
+            "PF6.Charts is a package and cannot contain ports, but all chart types accept withWidth and withHeight. Wire up a ResizeObserver port in your own app to make any chart responsive — the library just consumes the width you pass. Resize your browser window to see the chart below reflow. The ResizeObserver is optional: charts fall back to their last known width if the JS API is unavailable."
+      , chart =
+            Area.fromData cpuData
+                |> Area.withWidth model.responsiveWidth
+                |> Area.withXLabel "Time (minutes)"
+                |> Area.withYLabel "CPU %"
+                |> Area.withTitle ("Responsive Area Chart (" ++ String.fromInt model.responsiveWidth ++ "px)")
+                |> Area.withTooltips True
+                |> Area.toSvg
+      , code = """-- ─── Elm side (your app, not the library) ────────────────────────────────
+
+-- 1. Change your module declaration:
+port module Main exposing (main)
+
+-- 2. Declare the port (one line):
+port containerWidth : (Int -> msg) -> Sub msg
+
+-- 3. Add a field to your Model:
+type alias Model =
+    { ..., chartWidth : Int }
+
+-- 4. Add a Msg variant:
+type Msg = ... | ResizedTo Int
+
+-- 5. Handle it in update:
+ResizedTo w ->
+    ( { model | chartWidth = max 200 (w - 48) }, Cmd.none )
+
+-- 6. Subscribe:
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    containerWidth ResizedTo
+
+-- 7. Pass the width to any chart:
+Area.fromData cpuData
+    |> Area.withWidth model.chartWidth
+    |> Area.toSvg
+
+
+-- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────
+
+-- This entire block is optional — charts just use their last-set width
+-- if ResizeObserver is unavailable.
+if (typeof ResizeObserver !== 'undefined') {
+  const ro = new ResizeObserver(entries => {
+    for (const entry of entries) {
+      app.ports.containerWidth.send(
+        Math.round(entry.contentRect.width)
+      );
+    }
+  });
+  // Observe whichever element wraps your chart area:
+  requestAnimationFrame(() => {
+    const el = document.querySelector('main');
+    if (el) ro.observe(el);
+  });
+}"""
       }
     ]

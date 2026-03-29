@@ -1,11 +1,12 @@
 module PF6.Charts.Scatter exposing
-    ( ScatterChart, Series
+    ( ScatterChart, Series, Overlay(..)
     , fromSeries, fromData
     , withWidth, withHeight
     , withTheme
     , withXLabel, withYLabel
     , withTitle
     , withPointRadius
+    , withOverlay
     , withLoading
     , withTooltips
     , toSvg
@@ -13,12 +14,13 @@ module PF6.Charts.Scatter exposing
 
 {-| Scatter chart — discrete data points on a 2D Cartesian plane.
 
-Supports multiple series with automatic color assignment.
+Supports multiple series with automatic color assignment, and optional
+line or area overlays connecting each series' points.
 
 
 # Types
 
-@docs ScatterChart, Series
+@docs ScatterChart, Series, Overlay
 
 
 # Constructors
@@ -33,6 +35,7 @@ Supports multiple series with automatic color assignment.
 @docs withXLabel, withYLabel
 @docs withTitle
 @docs withPointRadius
+@docs withOverlay
 @docs withLoading
 @docs withTooltips
 
@@ -46,10 +49,13 @@ Supports multiple series with automatic color assignment.
 import Axis
 import Html exposing (Html)
 import Html.Attributes as HA
+import Path
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Color as IC
 import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
+import Shape
 import Svg exposing (Svg)
 import Svg.Attributes as SA
 
@@ -60,6 +66,19 @@ type alias Series =
     { label : String
     , data : List ( Float, Float )
     }
+
+
+{-| Optional overlay drawn on top of scatter points.
+
+  - `NoOverlay` — points only (default).
+  - `WithLine` — connects each series' points with a line (sorted by x).
+  - `WithArea` — fills the region under each series' points.
+
+-}
+type Overlay
+    = NoOverlay
+    | WithLine
+    | WithArea
 
 
 {-| An opaque scatter chart configuration.
@@ -77,6 +96,7 @@ type alias Config =
     , title : String
     , theme : Theme
     , pointRadius : Float
+    , overlay : Overlay
     , loading : Bool
     , tooltips : Bool
     }
@@ -92,6 +112,7 @@ defaultConfig series =
     , title = ""
     , theme = Theme.light
     , pointRadius = 5
+    , overlay = NoOverlay
     , loading = False
     , tooltips = False
     }
@@ -158,6 +179,24 @@ withTitle t (ScatterChart cfg) =
 withPointRadius : Float -> ScatterChart -> ScatterChart
 withPointRadius r (ScatterChart cfg) =
     ScatterChart { cfg | pointRadius = r }
+
+
+{-| Add a line or area overlay connecting each series' points. Default: `NoOverlay`.
+
+    -- Scatter + connecting line (sorted by x):
+    Scatter.fromSeries series
+        |> Scatter.withOverlay Scatter.WithLine
+        |> Scatter.toSvg
+
+    -- Scatter + filled area:
+    Scatter.fromSeries series
+        |> Scatter.withOverlay Scatter.WithArea
+        |> Scatter.toSvg
+
+-}
+withOverlay : Overlay -> ScatterChart -> ScatterChart
+withOverlay o (ScatterChart cfg) =
+    ScatterChart { cfg | overlay = o }
 
 
 {-| Show a skeleton placeholder instead of the chart while data is loading.
@@ -285,6 +324,99 @@ toSvg (ScatterChart cfg) =
                             []
                     )
 
+        -- Sort each series' points by x before drawing overlays
+        sortedSeries =
+            List.map
+                (\s -> { s | data = List.sortBy Tuple.first s.data })
+                cfg.series
+
+        overlayElements =
+            case cfg.overlay of
+                NoOverlay ->
+                    []
+
+                WithLine ->
+                    List.indexedMap
+                        (\idx series ->
+                            let
+                                color =
+                                    Theme.seriesColor idx cfg.theme
+
+                                path =
+                                    Shape.line Shape.monotoneInXCurve
+                                        (List.map
+                                            (\( x, y ) ->
+                                                Just
+                                                    ( Scale.convert xScale x
+                                                    , Scale.convert yScale y
+                                                    )
+                                            )
+                                            series.data
+                                        )
+                            in
+                            Path.element path
+                                [ SA.fill "none"
+                                , SA.stroke color
+                                , SA.strokeWidth "1.5"
+                                , SA.strokeLinejoin "round"
+                                , SA.opacity "0.7"
+                                ]
+                        )
+                        sortedSeries
+
+                WithArea ->
+                    List.indexedMap
+                        (\idx series ->
+                            let
+                                color =
+                                    Theme.seriesColor idx cfg.theme
+
+                                fillColor =
+                                    IC.hexToRgba color 0.20
+
+                                areaPath =
+                                    Shape.area Shape.monotoneInXCurve
+                                        (List.map
+                                            (\( x, y ) ->
+                                                Just
+                                                    ( ( Scale.convert xScale x
+                                                      , Scale.convert yScale 0
+                                                      )
+                                                    , ( Scale.convert xScale x
+                                                      , Scale.convert yScale y
+                                                      )
+                                                    )
+                                            )
+                                            series.data
+                                        )
+
+                                linePath =
+                                    Shape.line Shape.monotoneInXCurve
+                                        (List.map
+                                            (\( x, y ) ->
+                                                Just
+                                                    ( Scale.convert xScale x
+                                                    , Scale.convert yScale y
+                                                    )
+                                            )
+                                            series.data
+                                        )
+                            in
+                            Svg.g []
+                                [ Path.element areaPath
+                                    [ SA.fill fillColor
+                                    , SA.stroke "none"
+                                    ]
+                                , Path.element linePath
+                                    [ SA.fill "none"
+                                    , SA.stroke color
+                                    , SA.strokeWidth "1.5"
+                                    , SA.strokeLinejoin "round"
+                                    ]
+                                ]
+                        )
+                        sortedSeries
+
         points =
             List.concatMap
                 (\( idx, series ) ->
@@ -403,6 +535,7 @@ toSvg (ScatterChart cfg) =
                     )
                 ]
                 (gridLines
+                    ++ overlayElements
                     ++ points
                     ++ [ Svg.g
                             [ SA.transform ("translate(0," ++ String.fromInt innerH ++ ")") ]

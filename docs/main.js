@@ -600,11 +600,11 @@ function _Debug_crash_UNUSED(identifier, fact1, fact2, fact3, fact4)
 
 function _Debug_regionToString(region)
 {
-	if (region.dw.bB === region.dZ.bB)
+	if (region.dC.bF === region.d2.bF)
 	{
-		return 'on line ' + region.dw.bB;
+		return 'on line ' + region.dC.bF;
 	}
-	return 'on lines ' + region.dw.bB + ' through ' + region.dZ.bB;
+	return 'on lines ' + region.dC.bF + ' through ' + region.d2.bF;
 }
 
 
@@ -1857,9 +1857,9 @@ var _Platform_worker = F4(function(impl, flagDecoder, debugMetadata, args)
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fi,
-		impl.fZ,
-		impl.fR,
+		impl.fl,
+		impl.f0,
+		impl.fU,
 		function() { return function() {} }
 	);
 });
@@ -2719,9 +2719,9 @@ var _VirtualDom_mapEventTuple = F2(function(func, tuple)
 var _VirtualDom_mapEventRecord = F2(function(func, record)
 {
 	return {
-		au: func(record.au),
-		dy: record.dy,
-		dh: record.dh
+		aw: func(record.aw),
+		dE: record.dE,
+		dn: record.dn
 	}
 });
 
@@ -2989,11 +2989,11 @@ function _VirtualDom_makeCallback(eventNode, initialHandler)
 		// 3 = Custom
 
 		var value = result.a;
-		var message = !tag ? value : tag < 3 ? value.a : value.au;
-		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.dy;
+		var message = !tag ? value : tag < 3 ? value.a : value.aw;
+		var stopPropagation = tag == 1 ? value.b : tag == 3 && value.dE;
 		var currentEventNode = (
 			stopPropagation && event.stopPropagation(),
-			(tag == 2 ? value.b : tag == 3 && value.dh) && event.preventDefault(),
+			(tag == 2 ? value.b : tag == 3 && value.dn) && event.preventDefault(),
 			eventNode
 		);
 		var tagger;
@@ -3943,11 +3943,11 @@ var _Browser_element = _Debugger_element || F4(function(impl, flagDecoder, debug
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fi,
-		impl.fZ,
-		impl.fR,
+		impl.fl,
+		impl.f0,
+		impl.fU,
 		function(sendToApp, initialModel) {
-			var view = impl.f0;
+			var view = impl.f3;
 			/**/
 			var domNode = args['node'];
 			//*/
@@ -3979,12 +3979,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 	return _Platform_initialize(
 		flagDecoder,
 		args,
-		impl.fi,
-		impl.fZ,
-		impl.fR,
+		impl.fl,
+		impl.f0,
+		impl.fU,
 		function(sendToApp, initialModel) {
-			var divertHrefToApp = impl.dp && impl.dp(sendToApp)
-			var view = impl.f0;
+			var divertHrefToApp = impl.dv && impl.dv(sendToApp)
+			var view = impl.f3;
 			var title = _VirtualDom_doc.title;
 			var bodyNode = _VirtualDom_doc.body;
 			var currNode = _VirtualDom_virtualize(bodyNode);
@@ -3992,12 +3992,12 @@ var _Browser_document = _Debugger_document || F4(function(impl, flagDecoder, deb
 			{
 				_VirtualDom_divertHrefToApp = divertHrefToApp;
 				var doc = view(model);
-				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.e_);
+				var nextNode = _VirtualDom_node('body')(_List_Nil)(doc.e1);
 				var patches = _VirtualDom_diff(currNode, nextNode);
 				bodyNode = _VirtualDom_applyPatches(bodyNode, currNode, patches, sendToApp);
 				currNode = nextNode;
 				_VirtualDom_divertHrefToApp = 0;
-				(title !== doc.H) && (_VirtualDom_doc.title = title = doc.H);
+				(title !== doc.w) && (_VirtualDom_doc.title = title = doc.w);
 			});
 		}
 	);
@@ -4053,12 +4053,12 @@ function _Browser_makeAnimator(model, draw)
 
 function _Browser_application(impl)
 {
-	var onUrlChange = impl.fB;
-	var onUrlRequest = impl.fC;
+	var onUrlChange = impl.fE;
+	var onUrlRequest = impl.fF;
 	var key = function() { key.a(onUrlChange(_Browser_getUrl())); };
 
 	return _Browser_document({
-		dp: function(sendToApp)
+		dv: function(sendToApp)
 		{
 			key.a = sendToApp;
 			_Browser_window.addEventListener('popstate', key);
@@ -4074,9 +4074,9 @@ function _Browser_application(impl)
 					var next = $elm$url$Url$fromString(href).a;
 					sendToApp(onUrlRequest(
 						(next
-							&& curr.ey === next.ey
-							&& curr.d3 === next.d3
-							&& curr.eu.a === next.eu.a
+							&& curr.eB === next.eB
+							&& curr.d8 === next.d8
+							&& curr.ex.a === next.ex.a
 						)
 							? $elm$browser$Browser$Internal(next)
 							: $elm$browser$Browser$External(href)
@@ -4084,13 +4084,13 @@ function _Browser_application(impl)
 				}
 			});
 		},
-		fi: function(flags)
+		fl: function(flags)
 		{
-			return A3(impl.fi, flags, _Browser_getUrl(), key);
+			return A3(impl.fl, flags, _Browser_getUrl(), key);
 		},
+		f3: impl.f3,
 		f0: impl.f0,
-		fZ: impl.fZ,
-		fR: impl.fR
+		fU: impl.fU
 	});
 }
 
@@ -4156,17 +4156,17 @@ var _Browser_decodeEvent = F2(function(decoder, event)
 function _Browser_visibilityInfo()
 {
 	return (typeof _VirtualDom_doc.hidden !== 'undefined')
-		? { fg: 'hidden', e1: 'visibilitychange' }
+		? { fj: 'hidden', e4: 'visibilitychange' }
 		:
 	(typeof _VirtualDom_doc.mozHidden !== 'undefined')
-		? { fg: 'mozHidden', e1: 'mozvisibilitychange' }
+		? { fj: 'mozHidden', e4: 'mozvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.msHidden !== 'undefined')
-		? { fg: 'msHidden', e1: 'msvisibilitychange' }
+		? { fj: 'msHidden', e4: 'msvisibilitychange' }
 		:
 	(typeof _VirtualDom_doc.webkitHidden !== 'undefined')
-		? { fg: 'webkitHidden', e1: 'webkitvisibilitychange' }
-		: { fg: 'hidden', e1: 'visibilitychange' };
+		? { fj: 'webkitHidden', e4: 'webkitvisibilitychange' }
+		: { fj: 'hidden', e4: 'visibilitychange' };
 }
 
 
@@ -4247,12 +4247,12 @@ var _Browser_call = F2(function(functionName, id)
 function _Browser_getViewport()
 {
 	return {
-		eG: _Browser_getScene(),
-		eS: {
-			dG: _Browser_window.pageXOffset,
-			dJ: _Browser_window.pageYOffset,
-			aB: _Browser_doc.documentElement.clientWidth,
-			as: _Browser_doc.documentElement.clientHeight
+		eJ: _Browser_getScene(),
+		eV: {
+			dM: _Browser_window.pageXOffset,
+			dP: _Browser_window.pageYOffset,
+			aE: _Browser_doc.documentElement.clientWidth,
+			aj: _Browser_doc.documentElement.clientHeight
 		}
 	};
 }
@@ -4262,8 +4262,8 @@ function _Browser_getScene()
 	var body = _Browser_doc.body;
 	var elem = _Browser_doc.documentElement;
 	return {
-		aB: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
-		as: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
+		aE: Math.max(body.scrollWidth, body.offsetWidth, elem.scrollWidth, elem.offsetWidth, elem.clientWidth),
+		aj: Math.max(body.scrollHeight, body.offsetHeight, elem.scrollHeight, elem.offsetHeight, elem.clientHeight)
 	};
 }
 
@@ -4286,15 +4286,15 @@ function _Browser_getViewportOf(id)
 	return _Browser_withNode(id, function(node)
 	{
 		return {
-			eG: {
-				aB: node.scrollWidth,
-				as: node.scrollHeight
+			eJ: {
+				aE: node.scrollWidth,
+				aj: node.scrollHeight
 			},
-			eS: {
-				dG: node.scrollLeft,
-				dJ: node.scrollTop,
-				aB: node.clientWidth,
-				as: node.clientHeight
+			eV: {
+				dM: node.scrollLeft,
+				dP: node.scrollTop,
+				aE: node.clientWidth,
+				aj: node.clientHeight
 			}
 		};
 	});
@@ -4324,18 +4324,18 @@ function _Browser_getElement(id)
 		var x = _Browser_window.pageXOffset;
 		var y = _Browser_window.pageYOffset;
 		return {
-			eG: _Browser_getScene(),
-			eS: {
-				dG: x,
-				dJ: y,
-				aB: _Browser_doc.documentElement.clientWidth,
-				as: _Browser_doc.documentElement.clientHeight
+			eJ: _Browser_getScene(),
+			eV: {
+				dM: x,
+				dP: y,
+				aE: _Browser_doc.documentElement.clientWidth,
+				aj: _Browser_doc.documentElement.clientHeight
 			},
-			fb: {
-				dG: x + rect.left,
-				dJ: y + rect.top,
-				aB: rect.width,
-				as: rect.height
+			fe: {
+				dM: x + rect.left,
+				dP: y + rect.top,
+				aE: rect.width,
+				aj: rect.height
 			}
 		};
 	});
@@ -4816,22 +4816,22 @@ var $elm$core$Array$builderToArray = F2(
 		if (!builder.p) {
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.s),
+				$elm$core$Elm$JsArray$length(builder.v),
 				$elm$core$Array$shiftStep,
 				$elm$core$Elm$JsArray$empty,
-				builder.s);
+				builder.v);
 		} else {
 			var treeLen = builder.p * $elm$core$Array$branchFactor;
 			var depth = $elm$core$Basics$floor(
 				A2($elm$core$Basics$logBase, $elm$core$Array$branchFactor, treeLen - 1));
-			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.w) : builder.w;
+			var correctNodeList = reverseNodeList ? $elm$core$List$reverse(builder.A) : builder.A;
 			var tree = A2($elm$core$Array$treeFromBuilder, correctNodeList, builder.p);
 			return A4(
 				$elm$core$Array$Array_elm_builtin,
-				$elm$core$Elm$JsArray$length(builder.s) + treeLen,
+				$elm$core$Elm$JsArray$length(builder.v) + treeLen,
 				A2($elm$core$Basics$max, 5, depth * $elm$core$Array$shiftStep),
 				tree,
-				builder.s);
+				builder.v);
 		}
 	});
 var $elm$core$Basics$idiv = _Basics_idiv;
@@ -4844,7 +4844,7 @@ var $elm$core$Array$initializeHelp = F5(
 				return A2(
 					$elm$core$Array$builderToArray,
 					false,
-					{w: nodeList, p: (len / $elm$core$Array$branchFactor) | 0, s: tail});
+					{A: nodeList, p: (len / $elm$core$Array$branchFactor) | 0, v: tail});
 			} else {
 				var leaf = $elm$core$Array$Leaf(
 					A3($elm$core$Elm$JsArray$initialize, $elm$core$Array$branchFactor, fromIndex, fn));
@@ -4911,7 +4911,7 @@ var $elm$url$Url$Http = 0;
 var $elm$url$Url$Https = 1;
 var $elm$url$Url$Url = F6(
 	function (protocol, host, port_, path, query, fragment) {
-		return {d2: fragment, d3: host, es: path, eu: port_, ey: protocol, ez: query};
+		return {d7: fragment, d8: host, ev: path, ex: port_, eB: protocol, eC: query};
 	});
 var $elm$core$String$contains = _String_contains;
 var $elm$core$String$length = _String_length;
@@ -5190,7 +5190,7 @@ var $elm$core$Task$perform = F2(
 			A2($elm$core$Task$map, toMessage, task));
 	});
 var $elm$browser$Browser$element = _Browser_element;
-var $author$project$Main$initialModel = {bS: 'area', bD: 560};
+var $author$project$Main$initialModel = {bV: 'area', au: _List_Nil, bH: 560};
 var $elm$core$Platform$Cmd$batch = _Platform_batch;
 var $elm$core$Platform$Cmd$none = $elm$core$Platform$Cmd$batch(_List_Nil);
 var $author$project$Main$ResizedTo = function (a) {
@@ -5201,34 +5201,260 @@ var $author$project$Main$containerWidth = _Platform_incomingPort('containerWidth
 var $author$project$Main$subscriptions = function (_v0) {
 	return $author$project$Main$containerWidth($author$project$Main$ResizedTo);
 };
+var $elm$core$List$filter = F2(
+	function (isGood, list) {
+		return A3(
+			$elm$core$List$foldr,
+			F2(
+				function (x, xs) {
+					return isGood(x) ? A2($elm$core$List$cons, x, xs) : xs;
+				}),
+			_List_Nil,
+			list);
+	});
+var $elm$core$List$any = F2(
+	function (isOkay, list) {
+		any:
+		while (true) {
+			if (!list.b) {
+				return false;
+			} else {
+				var x = list.a;
+				var xs = list.b;
+				if (isOkay(x)) {
+					return true;
+				} else {
+					var $temp$isOkay = isOkay,
+						$temp$list = xs;
+					isOkay = $temp$isOkay;
+					list = $temp$list;
+					continue any;
+				}
+			}
+		}
+	});
+var $elm$core$List$member = F2(
+	function (x, xs) {
+		return A2(
+			$elm$core$List$any,
+			function (a) {
+				return _Utils_eq(a, x);
+			},
+			xs);
+	});
+var $elm$core$Basics$neq = _Utils_notEqual;
 var $author$project$Main$update = F2(
 	function (msg, model) {
-		if (!msg.$) {
-			var id = msg.a;
-			return _Utils_Tuple2(
-				_Utils_update(
-					model,
-					{bS: id}),
-				$elm$core$Platform$Cmd$none);
-		} else {
-			var w = msg.a;
-			return _Utils_Tuple2(
-				_Utils_update(
-					model,
-					{
-						bD: A2($elm$core$Basics$max, 200, w)
-					}),
-				$elm$core$Platform$Cmd$none);
+		switch (msg.$) {
+			case 0:
+				var id = msg.a;
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{bV: id}),
+					$elm$core$Platform$Cmd$none);
+			case 1:
+				var w = msg.a;
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{
+							bH: A2($elm$core$Basics$max, 200, w)
+						}),
+					$elm$core$Platform$Cmd$none);
+			default:
+				var label = msg.a;
+				var newHidden = A2($elm$core$List$member, label, model.au) ? A2(
+					$elm$core$List$filter,
+					function (l) {
+						return !_Utils_eq(l, label);
+					},
+					model.au) : A2($elm$core$List$cons, label, model.au);
+				return _Utils_Tuple2(
+					_Utils_update(
+						model,
+						{au: newHidden}),
+					$elm$core$Platform$Cmd$none);
 		}
 	});
 var $elm$html$Html$a = _VirtualDom_node('a');
+var $author$project$PF6$Charts$Bar$Horizontal = 1;
+var $author$project$Main$ToggleSeries = function (a) {
+	return {$: 2, a: a};
+};
+var $author$project$PF6$Charts$Scatter$WithArea = 2;
+var $author$project$PF6$Charts$Scatter$WithLine = 1;
+var $elm$svg$Svg$Attributes$class = _VirtualDom_attribute('class');
+var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
+var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
+var $elm$svg$Svg$g = $elm$svg$Svg$trustedNode('g');
+var $elm$svg$Svg$Attributes$height = _VirtualDom_attribute('height');
+var $elm$svg$Svg$rect = $elm$svg$Svg$trustedNode('rect');
+var $elm$core$Basics$round = _Basics_round;
+var $elm$svg$Svg$Attributes$rx = _VirtualDom_attribute('rx');
+var $elm$virtual_dom$VirtualDom$nodeNS = F2(
+	function (namespace, tag) {
+		return A2(
+			_VirtualDom_nodeNS,
+			namespace,
+			_VirtualDom_noScript(tag));
+	});
+var $elm$svg$Svg$node = $elm$virtual_dom$VirtualDom$nodeNS('http://www.w3.org/2000/svg');
+var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
+var $elm$svg$Svg$text = $elm$virtual_dom$VirtualDom$text;
+var $author$project$PF6$Charts$Internal$Skeleton$shimmerStyle = A3(
+	$elm$svg$Svg$node,
+	'style',
+	_List_Nil,
+	_List_fromArray(
+		[
+			$elm$svg$Svg$text('\n            @keyframes pf-shimmer {\n              0%   { opacity: 0.35; }\n              50%  { opacity: 0.65; }\n              100% { opacity: 0.35; }\n            }\n            .pf-skeleton { animation: pf-shimmer 1.4s ease-in-out infinite; }\n            ')
+		]));
+var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
+var $elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
+var $elm$svg$Svg$Attributes$width = _VirtualDom_attribute('width');
+var $elm$svg$Svg$Attributes$x = _VirtualDom_attribute('x');
+var $elm$svg$Svg$Attributes$y = _VirtualDom_attribute('y');
+var $author$project$PF6$Charts$Internal$Skeleton$xTickPlaceholders = F6(
+	function (padLeft, padTop, padBottom, innerW, innerH, color) {
+		return A2(
+			$elm$core$List$map,
+			function (i) {
+				var x = padLeft + $elm$core$Basics$round(innerW * (i / 5));
+				return A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x(
+							$elm$core$String$fromInt(x - 12)),
+							$elm$svg$Svg$Attributes$y(
+							$elm$core$String$fromInt((padTop + innerH) + 10)),
+							$elm$svg$Svg$Attributes$width('24'),
+							$elm$svg$Svg$Attributes$height('8'),
+							$elm$svg$Svg$Attributes$fill(color),
+							$elm$svg$Svg$Attributes$rx('3'),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil);
+			},
+			A2($elm$core$List$range, 0, 5));
+	});
+var $author$project$PF6$Charts$Internal$Skeleton$yTickPlaceholders = F4(
+	function (padLeft, padTop, innerH, color) {
+		return A2(
+			$elm$core$List$map,
+			function (i) {
+				var y = padTop + $elm$core$Basics$round(innerH * (i / 5));
+				return A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x(
+							$elm$core$String$fromInt(padLeft - 28)),
+							$elm$svg$Svg$Attributes$y(
+							$elm$core$String$fromInt(y - 4)),
+							$elm$svg$Svg$Attributes$width('24'),
+							$elm$svg$Svg$Attributes$height('8'),
+							$elm$svg$Svg$Attributes$fill(color),
+							$elm$svg$Svg$Attributes$rx('3'),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil);
+			},
+			A2($elm$core$List$range, 0, 5));
+	});
+var $author$project$PF6$Charts$Internal$Skeleton$view = F2(
+	function (w, h) {
+		var padTop = 20;
+		var padRight = 20;
+		var padLeft = 50;
+		var padBottom = 40;
+		var innerW = (w - padLeft) - padRight;
+		var innerH = (h - padTop) - padBottom;
+		var barColor = '#d2d2d2';
+		var axisColor = '#e8e8e8';
+		return A2(
+			$elm$svg$Svg$svg,
+			_List_fromArray(
+				[
+					$elm$svg$Svg$Attributes$width(
+					$elm$core$String$fromInt(w)),
+					$elm$svg$Svg$Attributes$height(
+					$elm$core$String$fromInt(h)),
+					$elm$svg$Svg$Attributes$viewBox(
+					'0 0 ' + ($elm$core$String$fromInt(w) + (' ' + $elm$core$String$fromInt(h))))
+				]),
+			_List_fromArray(
+				[
+					$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
+					A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x(
+							$elm$core$String$fromInt(padLeft - 1)),
+							$elm$svg$Svg$Attributes$y(
+							$elm$core$String$fromInt(padTop)),
+							$elm$svg$Svg$Attributes$width('2'),
+							$elm$svg$Svg$Attributes$height(
+							$elm$core$String$fromInt(innerH)),
+							$elm$svg$Svg$Attributes$fill(axisColor),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil),
+					A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x(
+							$elm$core$String$fromInt(padLeft)),
+							$elm$svg$Svg$Attributes$y(
+							$elm$core$String$fromInt(padTop + innerH)),
+							$elm$svg$Svg$Attributes$width(
+							$elm$core$String$fromInt(innerW)),
+							$elm$svg$Svg$Attributes$height('2'),
+							$elm$svg$Svg$Attributes$fill(axisColor),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil),
+					A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x(
+							$elm$core$String$fromInt(padLeft + 4)),
+							$elm$svg$Svg$Attributes$y(
+							$elm$core$String$fromInt(
+								padTop + $elm$core$Basics$round(innerH * 0.2))),
+							$elm$svg$Svg$Attributes$width(
+							$elm$core$String$fromInt(innerW - 8)),
+							$elm$svg$Svg$Attributes$height(
+							$elm$core$String$fromInt(
+								$elm$core$Basics$round(innerH * 0.7))),
+							$elm$svg$Svg$Attributes$fill(barColor),
+							$elm$svg$Svg$Attributes$rx('4'),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil),
+					A2(
+					$elm$svg$Svg$g,
+					_List_Nil,
+					A4($author$project$PF6$Charts$Internal$Skeleton$yTickPlaceholders, padLeft, padTop, innerH, axisColor)),
+					A2(
+					$elm$svg$Svg$g,
+					_List_Nil,
+					A6($author$project$PF6$Charts$Internal$Skeleton$xTickPlaceholders, padLeft, padTop, padBottom, innerW, innerH, axisColor))
+				]));
+	});
+var $author$project$PF6$Charts$Skeleton$area = $author$project$PF6$Charts$Internal$Skeleton$view;
 var $author$project$Main$boxData = _List_fromArray(
 	[
-		{o: 'Jan', ca: 78, cb: 42, cd: 12, cj: 28, ck: 58},
-		{o: 'Feb', ca: 82, cb: 47, cd: 18, cj: 32, ck: 63},
-		{o: 'Mar', ca: 88, cb: 50, cd: 15, cj: 35, ck: 68},
-		{o: 'Apr', ca: 90, cb: 55, cd: 22, cj: 40, ck: 72}
+		{c: 'Jan', cc: 78, cd: 42, cf: 12, cp: 28, cq: 58},
+		{c: 'Feb', cc: 82, cd: 47, cf: 18, cp: 32, cq: 63},
+		{c: 'Mar', cc: 88, cd: 50, cf: 15, cp: 35, cq: 68},
+		{c: 'Apr', cc: 90, cd: 55, cf: 22, cp: 40, cq: 72}
 	]);
+var $elm$html$Html$button = _VirtualDom_node('button');
 var $author$project$Main$cpuData = A2(
 	$elm$core$List$indexedMap,
 	F2(
@@ -5237,16 +5463,103 @@ var $author$project$Main$cpuData = A2(
 		}),
 	_List_fromArray(
 		[42, 55, 48, 72, 63, 58, 70, 65, 80, 73, 68, 75]));
+var $author$project$PF6$Charts$Theme$Theme = $elm$core$Basics$identity;
+var $author$project$PF6$Charts$Theme$dark = {
+	bm: '#4a4a4a',
+	aI: '#212427',
+	bA: 'Red Hat Text, RedHatText, sans-serif',
+	bC: '#3a3a3a',
+	c: '#e0e0e0',
+	al: '#73bcf7',
+	aR: _List_fromArray(
+		['#73bcf7', '#7cc674', '#009596', '#f0ab00', '#ef9234', '#4394e5', '#4cb140', '#005f60', '#c58c00', '#c46100'])
+};
 var $elm$html$Html$div = _VirtualDom_node('div');
+var $elm$svg$Svg$circle = $elm$svg$Svg$trustedNode('circle');
+var $elm$svg$Svg$Attributes$cx = _VirtualDom_attribute('cx');
+var $elm$svg$Svg$Attributes$cy = _VirtualDom_attribute('cy');
+var $elm$core$String$fromFloat = _String_fromNumber;
+var $elm$svg$Svg$Attributes$r = _VirtualDom_attribute('r');
+var $author$project$PF6$Charts$Internal$Skeleton$viewCircle = function (size) {
+	var cy = size / 2;
+	var cx = size / 2;
+	var r = cx - 10;
+	var innerR = r * 0.65;
+	return A2(
+		$elm$svg$Svg$svg,
+		_List_fromArray(
+			[
+				$elm$svg$Svg$Attributes$width(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$height(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$viewBox(
+				'0 0 ' + ($elm$core$String$fromInt(size) + (' ' + $elm$core$String$fromInt(size))))
+			]),
+		_List_fromArray(
+			[
+				$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
+				A2(
+				$elm$svg$Svg$circle,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$cx(
+						$elm$core$String$fromFloat(cx)),
+						$elm$svg$Svg$Attributes$cy(
+						$elm$core$String$fromFloat(cy)),
+						$elm$svg$Svg$Attributes$r(
+						$elm$core$String$fromFloat(r)),
+						$elm$svg$Svg$Attributes$fill('#d2d2d2'),
+						$elm$svg$Svg$Attributes$class('pf-skeleton')
+					]),
+				_List_Nil),
+				A2(
+				$elm$svg$Svg$circle,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$cx(
+						$elm$core$String$fromFloat(cx)),
+						$elm$svg$Svg$Attributes$cy(
+						$elm$core$String$fromFloat(cy)),
+						$elm$svg$Svg$Attributes$r(
+						$elm$core$String$fromFloat(innerR)),
+						$elm$svg$Svg$Attributes$fill('#ffffff')
+					]),
+				_List_Nil)
+			]));
+};
+var $author$project$PF6$Charts$Skeleton$donut = function (size) {
+	return $author$project$PF6$Charts$Internal$Skeleton$viewCircle(size);
+};
 var $author$project$Main$donutSlices = _List_fromArray(
 	[
-		{o: 'Running', az: 42},
-		{o: 'Stopped', az: 8},
-		{o: 'Pending', az: 5},
-		{o: 'Failed', az: 3}
+		{c: 'Running', aC: 42},
+		{c: 'Stopped', aC: 8},
+		{c: 'Pending', aC: 5},
+		{c: 'Failed', aC: 3}
 	]);
+var $elm$core$List$drop = F2(
+	function (n, list) {
+		drop:
+		while (true) {
+			if (n <= 0) {
+				return list;
+			} else {
+				if (!list.b) {
+					return list;
+				} else {
+					var x = list.a;
+					var xs = list.b;
+					var $temp$n = n - 1,
+						$temp$list = xs;
+					n = $temp$n;
+					list = $temp$list;
+					continue drop;
+				}
+			}
+		}
+	});
 var $author$project$PF6$Charts$Area$AreaChart = $elm$core$Basics$identity;
-var $author$project$PF6$Charts$Theme$Theme = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Colors$axisLine = '#c7c7c7';
 var $author$project$PF6$Charts$Colors$background = '#ffffff';
 var $author$project$PF6$Charts$Colors$gridLine = '#c7c7c7';
@@ -5264,14 +5577,19 @@ var $author$project$PF6$Charts$Colors$teal500 = '#003737';
 var $author$project$PF6$Charts$Colors$multiOrdered = _List_fromArray(
 	[$author$project$PF6$Charts$Colors$blue300, $author$project$PF6$Charts$Colors$green300, $author$project$PF6$Charts$Colors$teal300, $author$project$PF6$Charts$Colors$gold400, $author$project$PF6$Charts$Colors$orange300, $author$project$PF6$Charts$Colors$blue500, $author$project$PF6$Charts$Colors$green500, $author$project$PF6$Charts$Colors$teal500, $author$project$PF6$Charts$Colors$gold500, $author$project$PF6$Charts$Colors$orange500]);
 var $author$project$PF6$Charts$Colors$primary = '#0066cc';
-var $author$project$PF6$Charts$Theme$light = {bj: $author$project$PF6$Charts$Colors$axisLine, aF: $author$project$PF6$Charts$Colors$background, bw: 'Red Hat Text, RedHatText, sans-serif', by: $author$project$PF6$Charts$Colors$gridLine, o: $author$project$PF6$Charts$Colors$labelText, aj: $author$project$PF6$Charts$Colors$primary, a4: $author$project$PF6$Charts$Colors$multiOrdered};
-var $author$project$PF6$Charts$Area$defaultConfig = function (data) {
-	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.20, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
+var $author$project$PF6$Charts$Theme$light = {bm: $author$project$PF6$Charts$Colors$axisLine, aI: $author$project$PF6$Charts$Colors$background, bA: 'Red Hat Text, RedHatText, sans-serif', bC: $author$project$PF6$Charts$Colors$gridLine, c: $author$project$PF6$Charts$Colors$labelText, al: $author$project$PF6$Charts$Colors$primary, aR: $author$project$PF6$Charts$Colors$multiOrdered};
+var $author$project$PF6$Charts$Area$defaultConfig = function (series) {
+	return {br: $elm$core$Maybe$Nothing, b5: 0.20, aj: 250, ca: false, aR: series, az: $author$project$PF6$Charts$Theme$light, w: '', cv: false, aE: 500, aX: '', bj: ''};
 };
 var $author$project$PF6$Charts$Area$fromData = function (data) {
-	return $author$project$PF6$Charts$Area$defaultConfig(data);
+	return $author$project$PF6$Charts$Area$defaultConfig(
+		_List_fromArray(
+			[
+				{_: data, c: ''}
+			]));
 };
 var $author$project$PF6$Charts$Bar$BarChart = $elm$core$Basics$identity;
+var $author$project$PF6$Charts$Bar$Vertical = 0;
 var $author$project$PF6$Charts$Colors$blue100 = '#92c5f9';
 var $author$project$PF6$Charts$Colors$blue200 = '#4394e5';
 var $author$project$PF6$Charts$Colors$blue400 = '#004d99';
@@ -5279,7 +5597,7 @@ var $author$project$PF6$Charts$Colors$blueFamily = _List_fromArray(
 	[$author$project$PF6$Charts$Colors$blue300, $author$project$PF6$Charts$Colors$blue200, $author$project$PF6$Charts$Colors$blue400, $author$project$PF6$Charts$Colors$blue100, $author$project$PF6$Charts$Colors$blue500]);
 var $author$project$PF6$Charts$Bar$defaultConfig = F2(
 	function (categories, series) {
-		return {bm: categories, bX: $author$project$PF6$Charts$Colors$blueFamily, cG: true, as: 300, b8: false, a4: series, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
+		return {ae: categories, bs: $author$project$PF6$Charts$Colors$blueFamily, cM: true, aj: 300, ca: false, ci: 0, aR: series, az: $author$project$PF6$Charts$Theme$light, w: '', cv: false, aE: 500, aX: '', bj: ''};
 	});
 var $author$project$PF6$Charts$Bar$fromData = F2(
 	function (categories, series) {
@@ -5287,7 +5605,7 @@ var $author$project$PF6$Charts$Bar$fromData = F2(
 	});
 var $author$project$PF6$Charts$BoxPlot$BoxPlotChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$BoxPlot$defaultConfig = function (data) {
-	return {b0: data, as: 300, b8: false, aO: $author$project$PF6$Charts$Theme$light, H: '', aB: 500, be: '', bg: ''};
+	return {_: data, aj: 300, ca: false, az: $author$project$PF6$Charts$Theme$light, w: '', aE: 500, aX: '', bj: ''};
 };
 var $author$project$PF6$Charts$BoxPlot$fromData = function (data) {
 	return $author$project$PF6$Charts$BoxPlot$defaultConfig(data);
@@ -5295,7 +5613,7 @@ var $author$project$PF6$Charts$BoxPlot$fromData = function (data) {
 var $author$project$PF6$Charts$Bullet$BulletChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Bullet$defaultConfig = F3(
 	function (actual, target, max) {
-		return {cv: actual, as: 120, b8: false, ca: max, eM: '', fT: target, aO: $author$project$PF6$Charts$Theme$light, H: '', cs: '', aB: 450};
+		return {cB: actual, aj: 120, ca: false, cc: max, eP: '', fW: target, az: $author$project$PF6$Charts$Theme$light, w: '', cy: '', aE: 450};
 	});
 var $author$project$PF6$Charts$Bullet$fromData = F3(
 	function (actual, target, max) {
@@ -5303,7 +5621,7 @@ var $author$project$PF6$Charts$Bullet$fromData = F3(
 	});
 var $author$project$PF6$Charts$Donut$DonutChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Donut$defaultConfig = function (data) {
-	return {bn: '', bo: '', bX: $author$project$PF6$Charts$Colors$blueFamily, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
+	return {bp: '', bq: '', bs: $author$project$PF6$Charts$Colors$blueFamily, _: data, ca: false, bJ: 230, az: $author$project$PF6$Charts$Theme$light, w: '', cv: false};
 };
 var $author$project$PF6$Charts$Donut$fromData = function (slices) {
 	return $author$project$PF6$Charts$Donut$defaultConfig(slices);
@@ -5311,7 +5629,7 @@ var $author$project$PF6$Charts$Donut$fromData = function (slices) {
 var $author$project$PF6$Charts$DonutUtilization$DonutUtilization = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$DonutUtilization$defaultConfig = F2(
 	function (used, total) {
-		return {b$: 90, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', bO: total, cs: '', ct: used, cu: 75};
+		return {b2: 90, ca: false, bJ: 230, az: $author$project$PF6$Charts$Theme$light, w: '', bS: total, cy: '', cz: used, cA: 75};
 	});
 var $author$project$PF6$Charts$DonutUtilization$fromData = F2(
 	function (used, total) {
@@ -5319,35 +5637,39 @@ var $author$project$PF6$Charts$DonutUtilization$fromData = F2(
 	});
 var $author$project$PF6$Charts$Pie$PieChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Pie$defaultConfig = function (data) {
-	return {bX: $author$project$PF6$Charts$Colors$blueFamily, b0: data, b8: false, bF: 230, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false};
+	return {bs: $author$project$PF6$Charts$Colors$blueFamily, _: data, ca: false, bJ: 230, az: $author$project$PF6$Charts$Theme$light, w: '', cv: false};
 };
 var $author$project$PF6$Charts$Pie$fromData = function (slices) {
 	return $author$project$PF6$Charts$Pie$defaultConfig(slices);
 };
 var $author$project$PF6$Charts$Sparkline$Sparkline = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Sparkline$defaultConfig = function (data) {
-	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b2: true, as: 40, b8: false, aO: $author$project$PF6$Charts$Theme$light, aB: 150};
+	return {aY: $author$project$PF6$Charts$Colors$primary, _: data, b4: true, aj: 40, ca: false, az: $author$project$PF6$Charts$Theme$light, aE: 150};
 };
 var $author$project$PF6$Charts$Sparkline$fromData = function (data) {
 	return $author$project$PF6$Charts$Sparkline$defaultConfig(data);
 };
 var $author$project$PF6$Charts$Threshold$ThresholdChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Threshold$defaultConfig = function (data) {
-	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.20, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, aP: _List_Nil, H: '', aB: 500, be: '', bg: ''};
+	return {aY: $author$project$PF6$Charts$Colors$primary, _: data, b5: 0.20, aj: 250, ca: false, az: $author$project$PF6$Charts$Theme$light, aS: _List_Nil, w: '', aE: 500, aX: '', bj: ''};
 };
 var $author$project$PF6$Charts$Threshold$fromData = function (data) {
 	return $author$project$PF6$Charts$Threshold$defaultConfig(data);
 };
+var $author$project$PF6$Charts$Area$fromSeries = function (series) {
+	return $author$project$PF6$Charts$Area$defaultConfig(series);
+};
 var $author$project$PF6$Charts$Line$LineChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Line$defaultConfig = function (series) {
-	return {as: 250, b8: false, a4: series, aO: $author$project$PF6$Charts$Theme$light, H: '', aB: 500, be: '', bg: ''};
+	return {aj: 250, ca: false, aR: series, az: $author$project$PF6$Charts$Theme$light, w: '', aE: 500, aX: '', bj: ''};
 };
 var $author$project$PF6$Charts$Line$fromSeries = function (series) {
 	return $author$project$PF6$Charts$Line$defaultConfig(series);
 };
 var $author$project$PF6$Charts$Scatter$ScatterChart = $elm$core$Basics$identity;
+var $author$project$PF6$Charts$Scatter$NoOverlay = 0;
 var $author$project$PF6$Charts$Scatter$defaultConfig = function (series) {
-	return {as: 300, b8: false, ci: 5, a4: series, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
+	return {aj: 300, ca: false, ck: 0, co: 5, aR: series, az: $author$project$PF6$Charts$Theme$light, w: '', cv: false, aE: 500, aX: '', bj: ''};
 };
 var $author$project$PF6$Charts$Scatter$fromSeries = function (series) {
 	return $author$project$PF6$Charts$Scatter$defaultConfig(series);
@@ -5395,23 +5717,23 @@ var $author$project$PF6$Charts$Stack$defaultConfig = function (series) {
 			A2(
 				$elm$core$Basics$composeR,
 				function ($) {
-					return $.bR;
+					return $.bg;
 				},
 				$elm$core$List$length),
 			$elm$core$List$head(series)));
 	return {
-		as: 250,
-		b8: false,
-		a4: series,
-		aO: $author$project$PF6$Charts$Theme$light,
-		H: '',
-		aB: 500,
-		be: '',
-		bf: A2(
+		aj: 250,
+		ca: false,
+		aR: series,
+		az: $author$project$PF6$Charts$Theme$light,
+		w: '',
+		aE: 500,
+		aX: '',
+		bi: A2(
 			$elm$core$List$map,
 			$elm$core$Basics$toFloat,
 			A2($elm$core$List$range, 0, n - 1)),
-		bg: ''
+		bj: ''
 	};
 };
 var $author$project$PF6$Charts$Stack$fromSeries = function (series) {
@@ -5426,25 +5748,104 @@ var $elm$html$Html$Attributes$stringProperty = F2(
 			$elm$json$Json$Encode$string(string));
 	});
 var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
+var $author$project$Main$interactiveSeriesAll = _List_fromArray(
+	[
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[42, 55, 48, 72, 63, 58, 70, 65, 80, 73, 68, 75])),
+		c: 'CPU'
+	},
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[60, 62, 65, 68, 72, 70, 75, 80, 78, 82, 85, 88])),
+		c: 'Memory'
+	},
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[20, 25, 22, 28, 30, 35, 28, 32, 38, 35, 40, 42])),
+		c: 'Disk I/O'
+	}
+	]);
+var $elm$core$List$isEmpty = function (xs) {
+	if (!xs.b) {
+		return true;
+	} else {
+		return false;
+	}
+};
 var $author$project$Main$memoryCategories = _List_fromArray(
 	['Node 1', 'Node 2', 'Node 3', 'Node 4', 'Node 5']);
 var $author$project$Main$memoryData = _List_fromArray(
 	[
 		{
-		o: 'Used (GiB)',
-		bR: _List_fromArray(
+		c: 'Used (GiB)',
+		bg: _List_fromArray(
 			[12.4, 18.7, 8.2, 15.1, 22.0])
 	},
 		{
-		o: 'Cached (GiB)',
-		bR: _List_fromArray(
+		c: 'Cached (GiB)',
+		bg: _List_fromArray(
 			[4.2, 6.1, 3.5, 5.8, 7.3])
+	}
+	]);
+var $author$project$Main$multiAreaSeriesData = _List_fromArray(
+	[
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[2, 3, 4, 3, 5, 6, 4, 6, 7, 5, 6, 7])),
+		c: 'Cats'
+	},
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[1, 2, 2, 3, 3, 4, 3, 4, 5, 4, 5, 5])),
+		c: 'Dogs'
+	},
+		{
+		_: A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (i, v) {
+					return _Utils_Tuple2(i, v);
+				}),
+			_List_fromArray(
+				[1, 1, 2, 1, 2, 2, 1, 2, 3, 2, 2, 3])),
+		c: 'Birds'
 	}
 	]);
 var $author$project$Main$networkSeriesData = _List_fromArray(
 	[
 		{
-		b0: A2(
+		_: A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (i, v) {
@@ -5452,10 +5853,10 @@ var $author$project$Main$networkSeriesData = _List_fromArray(
 				}),
 			_List_fromArray(
 				[10, 25, 18, 42, 35, 28, 45, 38, 52, 44, 36, 50])),
-		o: 'Inbound'
+		c: 'Inbound'
 	},
 		{
-		b0: A2(
+		_: A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (i, v) {
@@ -5463,21 +5864,86 @@ var $author$project$Main$networkSeriesData = _List_fromArray(
 				}),
 			_List_fromArray(
 				[8, 20, 14, 30, 25, 20, 32, 27, 40, 34, 28, 38])),
-		o: 'Outbound'
+		c: 'Outbound'
 	}
 	]);
+var $elm$core$Basics$not = _Basics_not;
+var $elm$virtual_dom$VirtualDom$Normal = function (a) {
+	return {$: 0, a: a};
+};
+var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
+var $elm$html$Html$Events$on = F2(
+	function (event, decoder) {
+		return A2(
+			$elm$virtual_dom$VirtualDom$on,
+			event,
+			$elm$virtual_dom$VirtualDom$Normal(decoder));
+	});
+var $elm$html$Html$Events$onClick = function (msg) {
+	return A2(
+		$elm$html$Html$Events$on,
+		'click',
+		$elm$json$Json$Decode$succeed(msg));
+};
 var $elm$html$Html$p = _VirtualDom_node('p');
+var $author$project$PF6$Charts$Internal$Skeleton$viewPie = function (size) {
+	var cy = size / 2;
+	var cx = size / 2;
+	var r = cx - 10;
+	return A2(
+		$elm$svg$Svg$svg,
+		_List_fromArray(
+			[
+				$elm$svg$Svg$Attributes$width(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$height(
+				$elm$core$String$fromInt(size)),
+				$elm$svg$Svg$Attributes$viewBox(
+				'0 0 ' + ($elm$core$String$fromInt(size) + (' ' + $elm$core$String$fromInt(size))))
+			]),
+		_List_fromArray(
+			[
+				$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
+				A2(
+				$elm$svg$Svg$circle,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$cx(
+						$elm$core$String$fromFloat(cx)),
+						$elm$svg$Svg$Attributes$cy(
+						$elm$core$String$fromFloat(cy)),
+						$elm$svg$Svg$Attributes$r(
+						$elm$core$String$fromFloat(r)),
+						$elm$svg$Svg$Attributes$fill('#d2d2d2'),
+						$elm$svg$Svg$Attributes$class('pf-skeleton')
+					]),
+				_List_Nil)
+			]));
+};
+var $author$project$PF6$Charts$Skeleton$pie = function (size) {
+	return $author$project$PF6$Charts$Internal$Skeleton$viewPie(size);
+};
 var $author$project$Main$pieSlices = _List_fromArray(
 	[
-		{o: 'US East', az: 35},
-		{o: 'US West', az: 28},
-		{o: 'EU', az: 22},
-		{o: 'APAC', az: 15}
+		{c: 'US East', aC: 35},
+		{c: 'US West', aC: 28},
+		{c: 'EU', aC: 22},
+		{c: 'APAC', aC: 15}
+	]);
+var $author$project$Main$regionCategories = _List_fromArray(
+	['US East', 'US West', 'EU Central', 'APAC', 'SA East']);
+var $author$project$Main$regionData = _List_fromArray(
+	[
+		{
+		c: 'Instances',
+		bg: _List_fromArray(
+			[142, 98, 76, 55, 31])
+	}
 	]);
 var $author$project$Main$scatterSeriesData = _List_fromArray(
 	[
 		{
-		b0: _List_fromArray(
+		_: _List_fromArray(
 			[
 				_Utils_Tuple2(10, 22),
 				_Utils_Tuple2(15, 35),
@@ -5490,10 +5956,10 @@ var $author$project$Main$scatterSeriesData = _List_fromArray(
 				_Utils_Tuple2(50, 58),
 				_Utils_Tuple2(55, 72)
 			]),
-		o: 'Cluster A'
+		c: 'Cluster A'
 	},
 		{
-		b0: _List_fromArray(
+		_: _List_fromArray(
 			[
 				_Utils_Tuple2(12, 8),
 				_Utils_Tuple2(18, 15),
@@ -5506,33 +5972,66 @@ var $author$project$Main$scatterSeriesData = _List_fromArray(
 				_Utils_Tuple2(52, 28),
 				_Utils_Tuple2(58, 35)
 			]),
-		o: 'Cluster B'
+		c: 'Cluster B'
 	}
 	]);
 var $elm$html$Html$span = _VirtualDom_node('span');
+var $author$project$PF6$Charts$Internal$Skeleton$viewSparkline = F2(
+	function (w, h) {
+		return A2(
+			$elm$svg$Svg$svg,
+			_List_fromArray(
+				[
+					$elm$svg$Svg$Attributes$width(
+					$elm$core$String$fromInt(w)),
+					$elm$svg$Svg$Attributes$height(
+					$elm$core$String$fromInt(h)),
+					$elm$svg$Svg$Attributes$viewBox(
+					'0 0 ' + ($elm$core$String$fromInt(w) + (' ' + $elm$core$String$fromInt(h))))
+				]),
+			_List_fromArray(
+				[
+					$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
+					A2(
+					$elm$svg$Svg$rect,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$x('2'),
+							$elm$svg$Svg$Attributes$y('2'),
+							$elm$svg$Svg$Attributes$width(
+							$elm$core$String$fromInt(w - 4)),
+							$elm$svg$Svg$Attributes$height(
+							$elm$core$String$fromInt(h - 4)),
+							$elm$svg$Svg$Attributes$fill('#d2d2d2'),
+							$elm$svg$Svg$Attributes$rx('3'),
+							$elm$svg$Svg$Attributes$class('pf-skeleton')
+						]),
+					_List_Nil)
+				]));
+	});
+var $author$project$PF6$Charts$Skeleton$sparkline = $author$project$PF6$Charts$Internal$Skeleton$viewSparkline;
 var $author$project$Main$sparklineValues = _List_fromArray(
 	[42, 55, 48, 72, 63, 58, 70, 65, 80, 73, 68, 75]);
 var $author$project$Main$stackSeriesData = _List_fromArray(
 	[
 		{
-		o: 'Project A',
-		bR: _List_fromArray(
+		c: 'Project A',
+		bg: _List_fromArray(
 			[10, 14, 18, 22, 20, 25, 28, 24])
 	},
 		{
-		o: 'Project B',
-		bR: _List_fromArray(
+		c: 'Project B',
+		bg: _List_fromArray(
 			[8, 10, 12, 15, 13, 16, 18, 15])
 	},
 		{
-		o: 'Project C',
-		bR: _List_fromArray(
+		c: 'Project C',
+		bg: _List_fromArray(
 			[5, 7, 9, 11, 10, 12, 14, 12])
 	}
 	]);
 var $elm$virtual_dom$VirtualDom$style = _VirtualDom_style;
 var $elm$html$Html$Attributes$style = $elm$virtual_dom$VirtualDom$style;
-var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$thresholdData = A2(
 	$elm$core$List$indexedMap,
@@ -5546,7 +6045,7 @@ var $folkertdev$one_true_path_experiment$SubPath$SubPath = function (a) {
 	return {$: 0, a: a};
 };
 var $folkertdev$one_true_path_experiment$SubPath$firstPoint = function (_v0) {
-	var moveto = _v0.fv;
+	var moveto = _v0.fy;
 	var p = moveto;
 	return p;
 };
@@ -5585,27 +6084,6 @@ var $folkertdev$elm_deque$Deque$mapAbstract = F2(
 	function (f, _v0) {
 		var _abstract = _v0;
 		return f(_abstract);
-	});
-var $elm$core$List$drop = F2(
-	function (n, list) {
-		drop:
-		while (true) {
-			if (n <= 0) {
-				return list;
-			} else {
-				if (!list.b) {
-					return list;
-				} else {
-					var x = list.a;
-					var xs = list.b;
-					var $temp$n = n - 1,
-						$temp$list = xs;
-					n = $temp$n;
-					list = $temp$list;
-					continue drop;
-				}
-			}
-		}
 	});
 var $elm$core$List$takeReverse = F3(
 	function (n, list, kept) {
@@ -5783,7 +6261,7 @@ var $folkertdev$one_true_path_experiment$SubPath$pushBack = F2(
 		return _Utils_update(
 			data,
 			{
-				fa: A2($folkertdev$elm_deque$Deque$pushBack, drawto, data.fa)
+				fd: A2($folkertdev$elm_deque$Deque$pushBack, drawto, data.fd)
 			});
 	});
 var $elm$core$Basics$composeL = F3(
@@ -5823,7 +6301,7 @@ var $folkertdev$one_true_path_experiment$SubPath$unsafeConcatenate = F2(
 		return _Utils_update(
 			a,
 			{
-				fa: A2($folkertdev$elm_deque$Deque$append, a.fa, b.fa)
+				fd: A2($folkertdev$elm_deque$Deque$append, a.fd, b.fd)
 			});
 	});
 var $folkertdev$one_true_path_experiment$SubPath$connect = function () {
@@ -5928,17 +6406,16 @@ var $author$project$Shape$Generators$area = F2(
 var $author$project$Shape$area = $author$project$Shape$Generators$area;
 var $author$project$PF6$Charts$Theme$axisColor = function (_v0) {
 	var c = _v0;
-	return c.bj;
+	return c.bm;
 };
-var $elm$svg$Svg$Attributes$class = _VirtualDom_attribute('class');
 var $author$project$Scale$tickFormat = function (_v0) {
 	var opts = _v0;
-	return opts.dz(opts.D);
+	return opts.dF(opts.E);
 };
 var $author$project$Scale$ticks = F2(
 	function (_v0, count) {
 		var scale = _v0;
-		return A2(scale.dA, scale.D, count);
+		return A2(scale.dG, scale.E, count);
 	});
 var $author$project$Axis$computeOptions = F2(
 	function (attrs, scale) {
@@ -5954,28 +6431,28 @@ var $author$project$Axis$computeOptions = F2(
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{a8: val}),
+									{bb: val}),
 								post);
 						case 3:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{a9: val}),
+									{bc: val}),
 								post);
 						case 4:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{ax: val}),
+									{aA: val}),
 								post);
 						case 5:
 							var val = attr.a;
 							return _Utils_Tuple2(
 								_Utils_update(
 									babyOpts,
-									{bH: val}),
+									{bL: val}),
 								post);
 						default:
 							return _Utils_Tuple2(
@@ -5984,7 +6461,7 @@ var $author$project$Axis$computeOptions = F2(
 					}
 				}),
 			_Utils_Tuple2(
-				{a8: 10, bH: 3, a9: 6, ax: 6},
+				{bb: 10, bL: 3, bc: 6, aA: 6},
 				_List_Nil),
 			attrs);
 		var opts = _v0.a;
@@ -5998,59 +6475,54 @@ var $author$project$Axis$computeOptions = F2(
 							var val = attr.a;
 							return _Utils_update(
 								options,
-								{dA: val});
+								{dG: val});
 						case 1:
 							var val = attr.a;
 							return _Utils_update(
 								options,
-								{dz: val});
+								{dF: val});
 						default:
 							return options;
 					}
 				}),
 			{
-				a8: opts.a8,
-				dz: A2($author$project$Scale$tickFormat, scale, opts.a8),
-				bH: opts.bH,
-				a9: opts.a9,
-				ax: opts.ax,
-				dA: A2($author$project$Scale$ticks, scale, opts.a8)
+				bb: opts.bb,
+				dF: A2($author$project$Scale$tickFormat, scale, opts.bb),
+				bL: opts.bL,
+				bc: opts.bc,
+				aA: opts.aA,
+				dG: A2($author$project$Scale$ticks, scale, opts.bb)
 			},
 			postList);
 	});
 var $author$project$Scale$convert = F2(
 	function (_v0, value) {
 		var scale = _v0;
-		return A3(scale.ag, scale.D, scale.W, value);
+		return A3(scale.ah, scale.E, scale.W, value);
 	});
 var $elm$svg$Svg$Attributes$d = _VirtualDom_attribute('d');
 var $elm$svg$Svg$Attributes$dy = _VirtualDom_attribute('dy');
-var $elm$svg$Svg$Attributes$fill = _VirtualDom_attribute('fill');
 var $elm$svg$Svg$Attributes$fontFamily = _VirtualDom_attribute('font-family');
 var $elm$svg$Svg$Attributes$fontSize = _VirtualDom_attribute('font-size');
-var $elm$core$String$fromFloat = _String_fromNumber;
-var $elm$svg$Svg$trustedNode = _VirtualDom_nodeNS('http://www.w3.org/2000/svg');
-var $elm$svg$Svg$g = $elm$svg$Svg$trustedNode('g');
 var $elm$svg$Svg$line = $elm$svg$Svg$trustedNode('line');
 var $elm$svg$Svg$path = $elm$svg$Svg$trustedNode('path');
 var $author$project$Scale$rangeExtent = function (_v0) {
 	var options = _v0;
-	return A2(options.di, options.D, options.W);
+	return A2(options.$7, options.E, options.W);
 };
 var $elm$svg$Svg$Attributes$stroke = _VirtualDom_attribute('stroke');
-var $elm$svg$Svg$text = $elm$virtual_dom$VirtualDom$text;
 var $elm$svg$Svg$Attributes$textAnchor = _VirtualDom_attribute('text-anchor');
 var $elm$svg$Svg$text_ = $elm$svg$Svg$trustedNode('text');
 var $elm$svg$Svg$Attributes$transform = _VirtualDom_attribute('transform');
 var $author$project$Axis$element = F4(
 	function (_v0, k, displacement, textAnchorPosition) {
-		var x = _v0.dG;
-		var y = _v0.dJ;
-		var x2 = _v0.dH;
-		var y1 = _v0.dK;
-		var y2 = _v0.dL;
-		var translate = _v0.dB;
-		var horizontal = _v0.cH;
+		var x = _v0.dM;
+		var y = _v0.dP;
+		var x2 = _v0.dN;
+		var y1 = _v0.dQ;
+		var y2 = _v0.dR;
+		var translate = _v0.dH;
+		var horizontal = _v0.cN;
 		return F2(
 			function (attrs, scale) {
 				var rangeExtent = $author$project$Scale$rangeExtent(scale);
@@ -6058,7 +6530,7 @@ var $author$project$Axis$element = F4(
 				var range0 = rangeExtent.a + 0.5;
 				var position = $author$project$Scale$convert(scale);
 				var opts = A2($author$project$Axis$computeOptions, attrs, scale);
-				var spacing = A2($elm$core$Basics$max, opts.a9, 0) + opts.bH;
+				var spacing = A2($elm$core$Basics$max, opts.bc, 0) + opts.bL;
 				var drawTick = function (tick) {
 					return A2(
 						$elm$svg$Svg$g,
@@ -6076,7 +6548,7 @@ var $author$project$Axis$element = F4(
 								_List_fromArray(
 									[
 										$elm$svg$Svg$Attributes$stroke('#000'),
-										x2(k * opts.a9),
+										x2(k * opts.bc),
 										y1(0.5),
 										y2(0.5)
 									]),
@@ -6093,11 +6565,11 @@ var $author$project$Axis$element = F4(
 								_List_fromArray(
 									[
 										$elm$svg$Svg$text(
-										opts.dz(tick))
+										opts.dF(tick))
 									]))
 							]));
 				};
-				var domainLine = horizontal ? ('M' + ($elm$core$String$fromFloat(k * opts.ax) + (',' + ($elm$core$String$fromFloat(range0) + ('H0.5V' + ($elm$core$String$fromFloat(range1) + ('H' + $elm$core$String$fromFloat(k * opts.ax)))))))) : ('M' + ($elm$core$String$fromFloat(range0) + (',' + ($elm$core$String$fromFloat(k * opts.ax) + ('V0.5H' + ($elm$core$String$fromFloat(range1) + ('V' + $elm$core$String$fromFloat(k * opts.ax))))))));
+				var domainLine = horizontal ? ('M' + ($elm$core$String$fromFloat(k * opts.aA) + (',' + ($elm$core$String$fromFloat(range0) + ('H0.5V' + ($elm$core$String$fromFloat(range1) + ('H' + $elm$core$String$fromFloat(k * opts.aA)))))))) : ('M' + ($elm$core$String$fromFloat(range0) + (',' + ($elm$core$String$fromFloat(k * opts.aA) + ('V0.5H' + ($elm$core$String$fromFloat(range1) + ('V' + $elm$core$String$fromFloat(k * opts.aA))))))));
 				return A2(
 					$elm$svg$Svg$g,
 					_List_fromArray(
@@ -6118,31 +6590,42 @@ var $author$project$Axis$element = F4(
 									$elm$svg$Svg$Attributes$d(domainLine)
 								]),
 							_List_Nil),
-						A2($elm$core$List$map, drawTick, opts.dA)));
+						A2($elm$core$List$map, drawTick, opts.dG)));
 			});
 	});
-var $elm$svg$Svg$Attributes$x = _VirtualDom_attribute('x');
 var $elm$svg$Svg$Attributes$x1 = _VirtualDom_attribute('x1');
 var $elm$svg$Svg$Attributes$x2 = _VirtualDom_attribute('x2');
-var $elm$svg$Svg$Attributes$y = _VirtualDom_attribute('y');
 var $elm$svg$Svg$Attributes$y1 = _VirtualDom_attribute('y1');
 var $elm$svg$Svg$Attributes$y2 = _VirtualDom_attribute('y2');
 var $author$project$Axis$verticalAttrs = {
-	cH: false,
-	dB: function (x) {
+	cN: false,
+	dH: function (x) {
 		return 'translate(' + ($elm$core$String$fromFloat(x) + ', 0)');
 	},
-	dG: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
-	eV: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
-	dH: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat),
-	dJ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
-	dK: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
-	dL: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat)
+	dM: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
+	eY: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
+	dN: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat),
+	dP: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
+	dQ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
+	dR: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat)
 };
 var $author$project$Axis$bottom = A4($author$project$Axis$element, $author$project$Axis$verticalAttrs, 1, '0.71em', 'middle');
-var $elm$svg$Svg$circle = $elm$svg$Svg$trustedNode('circle');
-var $elm$svg$Svg$Attributes$cx = _VirtualDom_attribute('cx');
-var $elm$svg$Svg$Attributes$cy = _VirtualDom_attribute('cy');
+var $elm$core$List$append = F2(
+	function (xs, ys) {
+		if (!ys.b) {
+			return xs;
+		} else {
+			return A3($elm$core$List$foldr, $elm$core$List$cons, ys, xs);
+		}
+	});
+var $elm$core$List$concat = function (lists) {
+	return A3($elm$core$List$foldr, $elm$core$List$append, _List_Nil, lists);
+};
+var $elm$core$List$concatMap = F2(
+	function (f, list) {
+		return $elm$core$List$concat(
+			A2($elm$core$List$map, f, list));
+	});
 var $folkertdev$elm_deque$Internal$empty = {S: _List_Nil, T: _List_Nil, M: 0, N: 0};
 var $folkertdev$elm_deque$Deque$empty = $folkertdev$elm_deque$Internal$empty;
 var $folkertdev$elm_deque$Internal$fromList = function (list) {
@@ -6274,13 +6757,13 @@ var $folkertdev$one_true_path_experiment$SubPath$compress = function (subpath) {
 			_Utils_update(
 				data,
 				{
-					fa: $folkertdev$one_true_path_experiment$SubPath$compressHelper(data.fa)
+					fd: $folkertdev$one_true_path_experiment$SubPath$compressHelper(data.fd)
 				}));
 	}
 };
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$DecimalPlaces = $elm$core$Basics$identity;
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$decimalPlaces = $elm$core$Basics$identity;
-var $folkertdev$one_true_path_experiment$SubPath$defaultConfig = {b1: $elm$core$Maybe$Nothing, cc: false};
+var $folkertdev$one_true_path_experiment$SubPath$defaultConfig = {b3: $elm$core$Maybe$Nothing, ce: false};
 var $folkertdev$one_true_path_experiment$SubPath$optionFolder = F2(
 	function (option, config) {
 		if (!option.$) {
@@ -6288,12 +6771,12 @@ var $folkertdev$one_true_path_experiment$SubPath$optionFolder = F2(
 			return _Utils_update(
 				config,
 				{
-					b1: $elm$core$Maybe$Just(n)
+					b3: $elm$core$Maybe$Just(n)
 				});
 		} else {
 			return _Utils_update(
 				config,
-				{cc: true});
+				{ce: true});
 		}
 	});
 var $elm$core$List$singleton = function (value) {
@@ -6348,19 +6831,19 @@ var $folkertdev$one_true_path_experiment$SubPath$toLowLevel = function (subpath)
 	if (subpath.$ === 1) {
 		return $elm$core$Maybe$Nothing;
 	} else {
-		var moveto = subpath.a.fv;
-		var drawtos = subpath.a.fa;
+		var moveto = subpath.a.fy;
+		var drawtos = subpath.a.fd;
 		return $elm$core$Maybe$Just(
 			{
-				fa: A2(
+				fd: A2(
 					$elm$core$List$map,
 					$folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelDrawTo,
 					$folkertdev$elm_deque$Deque$toList(drawtos)),
-				fv: $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelMoveTo(moveto)
+				fy: $folkertdev$one_true_path_experiment$LowLevel$Command$toLowLevelMoveTo(moveto)
 			});
 	}
 };
-var $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig = {bv: $elm$core$String$fromFloat};
+var $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig = {bz: $elm$core$String$fromFloat};
 var $elm$core$Basics$negate = function (n) {
 	return -n;
 };
@@ -6368,7 +6851,6 @@ var $elm$core$Basics$abs = function (n) {
 	return (n < 0) ? (-n) : n;
 };
 var $elm$core$Basics$pow = _Basics_pow;
-var $elm$core$Basics$round = _Basics_round;
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo = F2(
 	function (n, value) {
 		if (!n) {
@@ -6391,17 +6873,10 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$optionFolder = F2(
 		return _Utils_update(
 			config,
 			{
-				bv: $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo(n)
+				bz: $folkertdev$svg_path_lowlevel$Path$LowLevel$roundTo(n)
 			});
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$accumulateOptions = A2($elm$core$List$foldl, $folkertdev$svg_path_lowlevel$Path$LowLevel$optionFolder, $folkertdev$svg_path_lowlevel$Path$LowLevel$defaultConfig);
-var $elm$core$List$isEmpty = function (xs) {
-	if (!xs.b) {
-		return true;
-	} else {
-		return false;
-	}
-};
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$isEmpty = function (command) {
 	switch (command.$) {
 		case 0:
@@ -6460,7 +6935,7 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate = F2(
 	function (config, _v0) {
 		var x = _v0.a;
 		var y = _v0.b;
-		return config.bv(x) + (',' + config.bv(y));
+		return config.bz(x) + (',' + config.bz(y));
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyCoordinate2 = F2(
 	function (config, _v0) {
@@ -6503,11 +6978,11 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags = function (_v0) {
 };
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyEllipticalArcArgument = F2(
 	function (config, _v0) {
-		var radii = _v0.fH;
-		var xAxisRotate = _v0.dI;
-		var arcFlag = _v0.cw;
-		var direction = _v0.cC;
-		var target = _v0.fT;
+		var radii = _v0.fK;
+		var xAxisRotate = _v0.dO;
+		var arcFlag = _v0.cC;
+		var direction = _v0.cI;
+		var target = _v0.fW;
 		var _v1 = $folkertdev$svg_path_lowlevel$Path$LowLevel$encodeFlags(
 			_Utils_Tuple2(arcFlag, direction));
 		var arc = _v1.a;
@@ -6637,8 +7112,8 @@ var $folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyMoveTo = F2(
 	});
 var $folkertdev$svg_path_lowlevel$Path$LowLevel$toStringSubPath = F2(
 	function (config, _v0) {
-		var moveto = _v0.fv;
-		var drawtos = _v0.fa;
+		var moveto = _v0.fy;
+		var drawtos = _v0.fd;
 		return A2($folkertdev$svg_path_lowlevel$Path$LowLevel$stringifyMoveTo, config, moveto) + (' ' + A2(
 			$elm$core$String$join,
 			' ',
@@ -6662,7 +7137,7 @@ var $folkertdev$one_true_path_experiment$SubPath$toStringWith = F2(
 	function (options, subpath) {
 		var config = A3($elm$core$List$foldl, $folkertdev$one_true_path_experiment$SubPath$optionFolder, $folkertdev$one_true_path_experiment$SubPath$defaultConfig, options);
 		var lowLevelOptions = function () {
-			var _v0 = config.b1;
+			var _v0 = config.b3;
 			if (_v0.$ === 1) {
 				return _List_Nil;
 			} else {
@@ -6683,7 +7158,7 @@ var $folkertdev$one_true_path_experiment$SubPath$toStringWith = F2(
 					$folkertdev$svg_path_lowlevel$Path$LowLevel$toStringWith(lowLevelOptions),
 					$elm$core$List$singleton),
 				$folkertdev$one_true_path_experiment$SubPath$toLowLevel(
-					(config.cc ? $folkertdev$one_true_path_experiment$SubPath$compress : $elm$core$Basics$identity)(subpath))));
+					(config.ce ? $folkertdev$one_true_path_experiment$SubPath$compress : $elm$core$Basics$identity)(subpath))));
 	});
 var $folkertdev$one_true_path_experiment$SubPath$toString = function (subpath) {
 	return A2($folkertdev$one_true_path_experiment$SubPath$toStringWith, _List_Nil, subpath);
@@ -6705,14 +7180,13 @@ var $folkertdev$one_true_path_experiment$Path$element = F2(
 	});
 var $author$project$PF6$Charts$Theme$fontFamily = function (_v0) {
 	var c = _v0;
-	return c.bw;
+	return c.bA;
 };
 var $elm$svg$Svg$Attributes$fontWeight = _VirtualDom_attribute('font-weight');
 var $author$project$PF6$Charts$Theme$gridColor = function (_v0) {
 	var c = _v0;
-	return c.by;
+	return c.bC;
 };
-var $elm$svg$Svg$Attributes$height = _VirtualDom_attribute('height');
 var $elm$core$Basics$ge = _Utils_ge;
 var $elm$core$String$foldr = _String_foldr;
 var $elm$core$String$toList = function (string) {
@@ -6747,19 +7221,19 @@ var $author$project$PF6$Charts$Internal$Color$hexToRgba = F2(
 	});
 var $author$project$PF6$Charts$Theme$labelColor = function (_v0) {
 	var c = _v0;
-	return c.o;
+	return c.c;
 };
 var $author$project$Axis$horizontalAttrs = {
-	cH: true,
-	dB: function (y) {
+	cN: true,
+	dH: function (y) {
 		return 'translate(0, ' + ($elm$core$String$fromFloat(y) + ')');
 	},
-	dG: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
-	eV: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
-	dH: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat),
-	dJ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
-	dK: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
-	dL: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat)
+	dM: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x, $elm$core$String$fromFloat),
+	eY: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x1, $elm$core$String$fromFloat),
+	dN: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$x2, $elm$core$String$fromFloat),
+	dP: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y, $elm$core$String$fromFloat),
+	dQ: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y1, $elm$core$String$fromFloat),
+	dR: A2($elm$core$Basics$composeL, $elm$svg$Svg$Attributes$y2, $elm$core$String$fromFloat)
 };
 var $author$project$Axis$left = A4($author$project$Axis$element, $author$project$Axis$horizontalAttrs, -1, '0.32em', 'end');
 var $author$project$Shape$Generators$line = F2(
@@ -7139,17 +7613,17 @@ var $author$project$Scale$Continuous$ticks = F2(
 var $author$project$Scale$Continuous$scaleWithTransform = F4(
 	function (transform, untransform, range_, domain_) {
 		return {
-			ag: A2($author$project$Scale$Continuous$convertTransform, transform, $author$project$Interpolation$float),
-			D: domain_,
-			fk: A2($author$project$Scale$Continuous$invertTransform, transform, untransform),
-			ek: $author$project$Scale$Continuous$nice,
+			ah: A2($author$project$Scale$Continuous$convertTransform, transform, $author$project$Interpolation$float),
+			E: domain_,
+			fn: A2($author$project$Scale$Continuous$invertTransform, transform, untransform),
+			ep: $author$project$Scale$Continuous$nice,
 			W: range_,
-			di: F2(
+			$7: F2(
 				function (_v0, r) {
 					return r;
 				}),
-			dz: $author$project$Scale$Continuous$tickFormat,
-			dA: $author$project$Scale$Continuous$ticks
+			dF: $author$project$Scale$Continuous$tickFormat,
+			dG: $author$project$Scale$Continuous$ticks
 		};
 	});
 var $author$project$Scale$Continuous$linear = A2($author$project$Scale$Continuous$scaleWithTransform, $elm$core$Basics$identity, $elm$core$Basics$identity);
@@ -7192,7 +7666,7 @@ var $ianmackenzie$elm_geometry$Vector2d$xy = F2(
 	function (_v0, _v1) {
 		var x = _v0;
 		var y = _v1;
-		return {dG: x, dJ: y};
+		return {dM: x, dP: y};
 	});
 var $ianmackenzie$elm_geometry$Vector2d$fromTuple = F2(
 	function (toQuantity, _v0) {
@@ -7219,20 +7693,19 @@ var $ianmackenzie$elm_geometry$Vector2d$minus = F2(
 	function (_v0, _v1) {
 		var v2 = _v0;
 		var v1 = _v1;
-		return {dG: v1.dG - v2.dG, dJ: v1.dJ - v2.dJ};
+		return {dM: v1.dM - v2.dM, dP: v1.dP - v2.dP};
 	});
-var $elm$core$Basics$neq = _Utils_notEqual;
 var $ianmackenzie$elm_units$Quantity$toFloat = function (_v0) {
 	var value = _v0;
 	return value;
 };
 var $ianmackenzie$elm_geometry$Vector2d$xComponent = function (_v0) {
 	var v = _v0;
-	return v.dG;
+	return v.dM;
 };
 var $ianmackenzie$elm_geometry$Vector2d$yComponent = function (_v0) {
 	var v = _v0;
-	return v.dJ;
+	return v.dP;
 };
 var $ianmackenzie$elm_geometry$Vector2d$toTuple = F2(
 	function (fromQuantity, vector) {
@@ -7345,8 +7818,8 @@ var $folkertdev$one_true_path_experiment$SubPath$with = F2(
 	function (moveto, drawtos) {
 		return $folkertdev$one_true_path_experiment$SubPath$SubPath(
 			{
-				fa: $folkertdev$elm_deque$Deque$fromList(drawtos),
-				fv: moveto
+				fd: $folkertdev$elm_deque$Deque$fromList(drawtos),
+				fy: moveto
 			});
 	});
 var $folkertdev$one_true_path_experiment$Curve$monotoneX = function (points) {
@@ -7408,226 +7881,121 @@ var $folkertdev$one_true_path_experiment$Curve$monotoneX = function (points) {
 	}
 };
 var $author$project$Shape$monotoneInXCurve = $folkertdev$one_true_path_experiment$Curve$monotoneX;
-var $elm$virtual_dom$VirtualDom$nodeNS = F2(
-	function (namespace, tag) {
+var $author$project$PF6$Charts$Theme$seriesColor = F2(
+	function (idx, _v0) {
+		var c = _v0;
 		return A2(
-			_VirtualDom_nodeNS,
-			namespace,
-			_VirtualDom_noScript(tag));
+			$elm$core$Maybe$withDefault,
+			c.al,
+			$elm$core$List$head(
+				A2($elm$core$List$drop, idx, c.aR)));
 	});
-var $elm$svg$Svg$node = $elm$virtual_dom$VirtualDom$nodeNS('http://www.w3.org/2000/svg');
-var $elm$svg$Svg$Attributes$r = _VirtualDom_attribute('r');
 var $elm$svg$Svg$Attributes$strokeDasharray = _VirtualDom_attribute('stroke-dasharray');
 var $elm$svg$Svg$Attributes$strokeLinejoin = _VirtualDom_attribute('stroke-linejoin');
 var $elm$svg$Svg$Attributes$strokeWidth = _VirtualDom_attribute('stroke-width');
 var $elm$svg$Svg$Attributes$style = _VirtualDom_attribute('style');
-var $elm$svg$Svg$svg = $elm$svg$Svg$trustedNode('svg');
 var $author$project$Axis$TickCount = function (a) {
 	return {$: 2, a: a};
 };
 var $author$project$Axis$tickCount = $author$project$Axis$TickCount;
-var $elm$svg$Svg$rect = $elm$svg$Svg$trustedNode('rect');
-var $elm$svg$Svg$Attributes$rx = _VirtualDom_attribute('rx');
-var $author$project$PF6$Charts$Internal$Skeleton$shimmerStyle = A3(
-	$elm$svg$Svg$node,
-	'style',
-	_List_Nil,
-	_List_fromArray(
-		[
-			$elm$svg$Svg$text('\n            @keyframes pf-shimmer {\n              0%   { opacity: 0.35; }\n              50%  { opacity: 0.65; }\n              100% { opacity: 0.35; }\n            }\n            .pf-skeleton { animation: pf-shimmer 1.4s ease-in-out infinite; }\n            ')
-		]));
-var $elm$svg$Svg$Attributes$viewBox = _VirtualDom_attribute('viewBox');
-var $elm$svg$Svg$Attributes$width = _VirtualDom_attribute('width');
-var $author$project$PF6$Charts$Internal$Skeleton$xTickPlaceholders = F6(
-	function (padLeft, padTop, padBottom, innerW, innerH, color) {
-		return A2(
-			$elm$core$List$map,
-			function (i) {
-				var x = padLeft + $elm$core$Basics$round(innerW * (i / 5));
-				return A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x(
-							$elm$core$String$fromInt(x - 12)),
-							$elm$svg$Svg$Attributes$y(
-							$elm$core$String$fromInt((padTop + innerH) + 10)),
-							$elm$svg$Svg$Attributes$width('24'),
-							$elm$svg$Svg$Attributes$height('8'),
-							$elm$svg$Svg$Attributes$fill(color),
-							$elm$svg$Svg$Attributes$rx('3'),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil);
-			},
-			A2($elm$core$List$range, 0, 5));
-	});
-var $author$project$PF6$Charts$Internal$Skeleton$yTickPlaceholders = F4(
-	function (padLeft, padTop, innerH, color) {
-		return A2(
-			$elm$core$List$map,
-			function (i) {
-				var y = padTop + $elm$core$Basics$round(innerH * (i / 5));
-				return A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x(
-							$elm$core$String$fromInt(padLeft - 28)),
-							$elm$svg$Svg$Attributes$y(
-							$elm$core$String$fromInt(y - 4)),
-							$elm$svg$Svg$Attributes$width('24'),
-							$elm$svg$Svg$Attributes$height('8'),
-							$elm$svg$Svg$Attributes$fill(color),
-							$elm$svg$Svg$Attributes$rx('3'),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil);
-			},
-			A2($elm$core$List$range, 0, 5));
-	});
-var $author$project$PF6$Charts$Internal$Skeleton$view = F2(
-	function (w, h) {
-		var padTop = 20;
-		var padRight = 20;
-		var padLeft = 50;
-		var padBottom = 40;
-		var innerW = (w - padLeft) - padRight;
-		var innerH = (h - padTop) - padBottom;
-		var barColor = '#d2d2d2';
-		var axisColor = '#e8e8e8';
-		return A2(
-			$elm$svg$Svg$svg,
-			_List_fromArray(
-				[
-					$elm$svg$Svg$Attributes$width(
-					$elm$core$String$fromInt(w)),
-					$elm$svg$Svg$Attributes$height(
-					$elm$core$String$fromInt(h)),
-					$elm$svg$Svg$Attributes$viewBox(
-					'0 0 ' + ($elm$core$String$fromInt(w) + (' ' + $elm$core$String$fromInt(h))))
-				]),
-			_List_fromArray(
-				[
-					$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
-					A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x(
-							$elm$core$String$fromInt(padLeft - 1)),
-							$elm$svg$Svg$Attributes$y(
-							$elm$core$String$fromInt(padTop)),
-							$elm$svg$Svg$Attributes$width('2'),
-							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(innerH)),
-							$elm$svg$Svg$Attributes$fill(axisColor),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil),
-					A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x(
-							$elm$core$String$fromInt(padLeft)),
-							$elm$svg$Svg$Attributes$y(
-							$elm$core$String$fromInt(padTop + innerH)),
-							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(innerW)),
-							$elm$svg$Svg$Attributes$height('2'),
-							$elm$svg$Svg$Attributes$fill(axisColor),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil),
-					A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x(
-							$elm$core$String$fromInt(padLeft + 4)),
-							$elm$svg$Svg$Attributes$y(
-							$elm$core$String$fromInt(
-								padTop + $elm$core$Basics$round(innerH * 0.2))),
-							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(innerW - 8)),
-							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(
-								$elm$core$Basics$round(innerH * 0.7))),
-							$elm$svg$Svg$Attributes$fill(barColor),
-							$elm$svg$Svg$Attributes$rx('4'),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil),
-					A2(
-					$elm$svg$Svg$g,
-					_List_Nil,
-					A4($author$project$PF6$Charts$Internal$Skeleton$yTickPlaceholders, padLeft, padTop, innerH, axisColor)),
-					A2(
-					$elm$svg$Svg$g,
-					_List_Nil,
-					A6($author$project$PF6$Charts$Internal$Skeleton$xTickPlaceholders, padLeft, padTop, padBottom, innerW, innerH, axisColor))
-				]));
-	});
 var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var ys = A2($elm$core$List$map, $elm$core$Tuple$second, cfg.b0);
-		var yMax = A2(
-			$elm$core$Maybe$withDefault,
-			1,
-			$elm$core$List$maximum(ys));
-		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, cfg.b0);
-		var xMin = A2(
-			$elm$core$Maybe$withDefault,
-			0,
-			$elm$core$List$minimum(xs));
+		var seriesColor = function (idx) {
+			var _v4 = _Utils_Tuple2(idx, cfg.br);
+			if ((!_v4.a) && (!_v4.b.$)) {
+				var c = _v4.b.a;
+				return c;
+			} else {
+				return A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
+			}
+		};
+		var padTop = (cfg.w !== '') ? 40 : 20;
+		var padRight = 30;
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var legendWidth = $elm$core$List$length(cfg.aR) * 120;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var isMulti = $elm$core$List$length(cfg.aR) > 1;
+		var legendItems = isMulti ? A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (idx, series) {
+					var xOff = idx * 120;
+					var color = seriesColor(idx);
+					return A2(
+						$elm$svg$Svg$g,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'translate(' + ($elm$core$String$fromInt(xOff) + ',0)'))
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$svg$Svg$line,
+								_List_fromArray(
+									[
+										$elm$svg$Svg$Attributes$x1('0'),
+										$elm$svg$Svg$Attributes$y1('6'),
+										$elm$svg$Svg$Attributes$x2('16'),
+										$elm$svg$Svg$Attributes$y2('6'),
+										$elm$svg$Svg$Attributes$stroke(color),
+										$elm$svg$Svg$Attributes$strokeWidth('2')
+									]),
+								_List_Nil),
+								A2(
+								$elm$svg$Svg$text_,
+								_List_fromArray(
+									[
+										$elm$svg$Svg$Attributes$x('20'),
+										$elm$svg$Svg$Attributes$y('10'),
+										$elm$svg$Svg$Attributes$fontSize('11'),
+										$elm$svg$Svg$Attributes$fill(labelColor)
+									]),
+								_List_fromArray(
+									[
+										$elm$svg$Svg$text(series.c)
+									]))
+							]));
+				}),
+			cfg.aR) : _List_Nil;
+		var padBottom = ((cfg.aX !== '') && isMulti) ? 75 : ((cfg.aX !== '') ? 55 : (isMulti ? 50 : 40));
+		var innerW = (cfg.aE - padLeft) - padRight;
+		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
+		var innerH = (cfg.aj - padTop) - padBottom;
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
+		var axisColor = $author$project$PF6$Charts$Theme$axisColor(cfg.az);
+		var allPoints = A2(
+			$elm$core$List$concatMap,
+			function ($) {
+				return $._;
+			},
+			cfg.aR);
+		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, allPoints);
 		var xMax = A2(
 			$elm$core$Maybe$withDefault,
 			1,
 			$elm$core$List$maximum(xs));
-		var padTop = (cfg.H !== '') ? 40 : 20;
-		var padRight = 30;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var innerW = (cfg.aB - padLeft) - padRight;
+		var xMin = A2(
+			$elm$core$Maybe$withDefault,
+			0,
+			$elm$core$List$minimum(xs));
 		var xScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(0, innerW),
 			_Utils_Tuple2(xMin, xMax));
-		var innerH = (cfg.as - padTop) - padBottom;
+		var ys = A2($elm$core$List$map, $elm$core$Tuple$second, allPoints);
+		var yMax = A2(
+			$elm$core$Maybe$withDefault,
+			1,
+			$elm$core$List$maximum(ys));
 		var yScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(innerH, 0),
 			_Utils_Tuple2(0, yMax * 1.1));
-		var toAreaPoint = function (_v3) {
-			var x = _v3.a;
-			var y = _v3.b;
-			return $elm$core$Maybe$Just(
-				_Utils_Tuple2(
-					_Utils_Tuple2(
-						A2($author$project$Scale$convert, xScale, x),
-						A2($author$project$Scale$convert, yScale, 0)),
-					_Utils_Tuple2(
-						A2($author$project$Scale$convert, xScale, x),
-						A2($author$project$Scale$convert, yScale, y))));
-		};
-		var toLinePoint = function (_v2) {
-			var x = _v2.a;
-			var y = _v2.b;
-			return $elm$core$Maybe$Just(
-				_Utils_Tuple2(
-					A2($author$project$Scale$convert, xScale, x),
-					A2($author$project$Scale$convert, yScale, y)));
-		};
-		var linePath = A2(
-			$author$project$Shape$line,
-			$author$project$Shape$monotoneInXCurve,
-			A2($elm$core$List$map, toLinePoint, cfg.b0));
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
 		var gridLines = A2(
 			$elm$core$List$map,
 			function (tick) {
@@ -7650,13 +8018,101 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 					_List_Nil);
 			},
 			A2($author$project$Scale$ticks, yScale, 5));
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
-		var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, cfg.aU, cfg.b3);
-		var axisColor = $author$project$PF6$Charts$Theme$axisColor(cfg.aO);
-		var areaPath = A2(
-			$author$project$Shape$area,
-			$author$project$Shape$monotoneInXCurve,
-			A2($elm$core$List$map, toAreaPoint, cfg.b0));
+		var toAreaPoint = function (_v3) {
+			var x = _v3.a;
+			var y = _v3.b;
+			return $elm$core$Maybe$Just(
+				_Utils_Tuple2(
+					_Utils_Tuple2(
+						A2($author$project$Scale$convert, xScale, x),
+						A2($author$project$Scale$convert, yScale, 0)),
+					_Utils_Tuple2(
+						A2($author$project$Scale$convert, xScale, x),
+						A2($author$project$Scale$convert, yScale, y))));
+		};
+		var toLinePoint = function (_v2) {
+			var x = _v2.a;
+			var y = _v2.b;
+			return $elm$core$Maybe$Just(
+				_Utils_Tuple2(
+					A2($author$project$Scale$convert, xScale, x),
+					A2($author$project$Scale$convert, yScale, y)));
+		};
+		var seriesElements = A2(
+			$elm$core$List$indexedMap,
+			F2(
+				function (idx, series) {
+					var tooltipDots = cfg.cv ? A2(
+						$elm$core$List$map,
+						function (_v1) {
+							var x = _v1.a;
+							var y = _v1.b;
+							return A2(
+								$elm$svg$Svg$circle,
+								_List_fromArray(
+									[
+										$elm$svg$Svg$Attributes$cx(
+										$elm$core$String$fromFloat(
+											A2($author$project$Scale$convert, xScale, x))),
+										$elm$svg$Svg$Attributes$cy(
+										$elm$core$String$fromFloat(
+											A2($author$project$Scale$convert, yScale, y))),
+										$elm$svg$Svg$Attributes$r('6'),
+										$elm$svg$Svg$Attributes$fill('transparent'),
+										$elm$svg$Svg$Attributes$stroke('none')
+									]),
+								_List_fromArray(
+									[
+										A3(
+										$elm$svg$Svg$node,
+										'title',
+										_List_Nil,
+										_List_fromArray(
+											[
+												$elm$svg$Svg$text(
+												'x: ' + ($elm$core$String$fromFloat(x) + (', y: ' + $elm$core$String$fromFloat(y))))
+											]))
+									]));
+						},
+						series._) : _List_Nil;
+					var linePath = A2(
+						$author$project$Shape$line,
+						$author$project$Shape$monotoneInXCurve,
+						A2($elm$core$List$map, toLinePoint, series._));
+					var color = seriesColor(idx);
+					var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, color, cfg.b5);
+					var areaPath = A2(
+						$author$project$Shape$area,
+						$author$project$Shape$monotoneInXCurve,
+						A2($elm$core$List$map, toAreaPoint, series._));
+					return A2(
+						$elm$svg$Svg$g,
+						_List_Nil,
+						_Utils_ap(
+							_List_fromArray(
+								[
+									A2(
+									$folkertdev$one_true_path_experiment$Path$element,
+									areaPath,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$fill(fillColor),
+											$elm$svg$Svg$Attributes$stroke('none')
+										])),
+									A2(
+									$folkertdev$one_true_path_experiment$Path$element,
+									linePath,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$fill('none'),
+											$elm$svg$Svg$Attributes$stroke(color),
+											$elm$svg$Svg$Attributes$strokeWidth('1.5'),
+											$elm$svg$Svg$Attributes$strokeLinejoin('round')
+										]))
+								]),
+							tooltipDots));
+				}),
+			cfg.aR);
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -7671,21 +8127,21 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -7694,7 +8150,7 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -7706,26 +8162,9 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 							_Utils_ap(
 								gridLines,
 								_Utils_ap(
+									seriesElements,
 									_List_fromArray(
 										[
-											A2(
-											$folkertdev$one_true_path_experiment$Path$element,
-											areaPath,
-											_List_fromArray(
-												[
-													$elm$svg$Svg$Attributes$fill(fillColor),
-													$elm$svg$Svg$Attributes$stroke('none')
-												])),
-											A2(
-											$folkertdev$one_true_path_experiment$Path$element,
-											linePath,
-											_List_fromArray(
-												[
-													$elm$svg$Svg$Attributes$fill('none'),
-													$elm$svg$Svg$Attributes$stroke(cfg.aU),
-													$elm$svg$Svg$Attributes$strokeWidth('1.5'),
-													$elm$svg$Svg$Attributes$strokeLinejoin('round')
-												])),
 											A2(
 											$elm$svg$Svg$g,
 											_List_fromArray(
@@ -7756,63 +8195,25 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 														]),
 													yScale)
 												]))
-										]),
-									cfg.cp ? A2(
-										$elm$core$List$map,
-										function (_v1) {
-											var x = _v1.a;
-											var y = _v1.b;
-											return A2(
-												$elm$svg$Svg$g,
-												_List_Nil,
-												_List_fromArray(
-													[
-														A2(
-														$elm$svg$Svg$circle,
-														_List_fromArray(
-															[
-																$elm$svg$Svg$Attributes$cx(
-																$elm$core$String$fromFloat(
-																	A2($author$project$Scale$convert, xScale, x))),
-																$elm$svg$Svg$Attributes$cy(
-																$elm$core$String$fromFloat(
-																	A2($author$project$Scale$convert, yScale, y))),
-																$elm$svg$Svg$Attributes$r('6'),
-																$elm$svg$Svg$Attributes$fill('transparent'),
-																$elm$svg$Svg$Attributes$stroke('none')
-															]),
-														_List_fromArray(
-															[
-																A3(
-																$elm$svg$Svg$node,
-																'title',
-																_List_Nil,
-																_List_fromArray(
-																	[
-																		$elm$svg$Svg$text(
-																		'x: ' + ($elm$core$String$fromFloat(x) + (', y: ' + $elm$core$String$fromFloat(y))))
-																	]))
-															]))
-													]));
-										},
-										cfg.b0) : _List_Nil))),
-							(cfg.be !== '') ? A2(
+										])))),
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(
+										cfg.aj - (isMulti ? 30 : 8))),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -7824,8 +8225,16 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
-								])) : $elm$svg$Svg$text('')
+									$elm$svg$Svg$text(cfg.bj)
+								])) : $elm$svg$Svg$text(''),
+							(!$elm$core$List$isEmpty(legendItems)) ? A2(
+							$elm$svg$Svg$g,
+							_List_fromArray(
+								[
+									$elm$svg$Svg$Attributes$transform(
+									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 14) + ')'))))
+								]),
+							legendItems) : $elm$svg$Svg$text('')
 						]))
 				]));
 	}
@@ -7835,13 +8244,13 @@ var $elm$core$Basics$clamp = F3(
 		return (_Utils_cmp(number, low) < 0) ? low : ((_Utils_cmp(number, high) > 0) ? high : number);
 	});
 var $author$project$Scale$Band$normalizeConfig = function (_v0) {
-	var paddingInner = _v0.ep;
-	var paddingOuter = _v0.eq;
-	var align = _v0.dP;
+	var paddingInner = _v0.cl;
+	var paddingOuter = _v0.cm;
+	var align = _v0.bW;
 	return {
-		dP: A3($elm$core$Basics$clamp, 0, 1, align),
-		ep: A3($elm$core$Basics$clamp, 0, 1, paddingInner),
-		eq: A3($elm$core$Basics$clamp, 0, 1, paddingOuter)
+		bW: A3($elm$core$Basics$clamp, 0, 1, align),
+		cl: A3($elm$core$Basics$clamp, 0, 1, paddingInner),
+		cm: A3($elm$core$Basics$clamp, 0, 1, paddingOuter)
 	};
 };
 var $author$project$Scale$Band$bandwidth = F3(
@@ -7853,8 +8262,8 @@ var $author$project$Scale$Band$bandwidth = F3(
 		var start = _v1.a;
 		var stop = _v1.b;
 		var _v2 = $author$project$Scale$Band$normalizeConfig(cfg);
-		var paddingInner = _v2.ep;
-		var paddingOuter = _v2.eq;
+		var paddingInner = _v2.cl;
+		var paddingOuter = _v2.cm;
 		var step = (stop - start) / A2($elm$core$Basics$max, 1, (n - paddingInner) + (paddingOuter * 2));
 		return step * (1 - paddingInner);
 	});
@@ -7863,9 +8272,9 @@ var $author$project$Scale$Band$computePositions = F3(
 		var start = _v0.a;
 		var stop = _v0.b;
 		var _v1 = $author$project$Scale$Band$normalizeConfig(cfg);
-		var paddingInner = _v1.ep;
-		var paddingOuter = _v1.eq;
-		var align = _v1.dP;
+		var paddingInner = _v1.cl;
+		var paddingOuter = _v1.cm;
+		var align = _v1.bW;
 		var step = (stop - start) / A2($elm$core$Basics$max, 1, (n - paddingInner) + (paddingOuter * 2));
 		var start2 = start + (((stop - start) - (step * (n - paddingInner))) * align);
 		return _Utils_Tuple2(start2, step);
@@ -7928,43 +8337,16 @@ var $author$project$Scale$Band$convert = F4(
 var $author$project$Scale$band = F3(
 	function (config, range_, domain_) {
 		return {
-			bT: A3($author$project$Scale$Band$bandwidth, config, domain_, range_),
-			ag: $author$project$Scale$Band$convert(config),
-			D: domain_,
+			bX: A3($author$project$Scale$Band$bandwidth, config, domain_, range_),
+			ah: $author$project$Scale$Band$convert(config),
+			E: domain_,
 			W: range_
 		};
 	});
 var $author$project$Scale$bandwidth = function (_v0) {
 	var scale = _v0;
-	return scale.bT;
+	return scale.bX;
 };
-var $elm$core$List$append = F2(
-	function (xs, ys) {
-		if (!ys.b) {
-			return xs;
-		} else {
-			return A3($elm$core$List$foldr, $elm$core$List$cons, ys, xs);
-		}
-	});
-var $elm$core$List$concat = function (lists) {
-	return A3($elm$core$List$foldr, $elm$core$List$append, _List_Nil, lists);
-};
-var $elm$core$List$concatMap = F2(
-	function (f, list) {
-		return $elm$core$List$concat(
-			A2($elm$core$List$map, f, list));
-	});
-var $elm$core$List$filter = F2(
-	function (isGood, list) {
-		return A3(
-			$elm$core$List$foldr,
-			F2(
-				function (x, xs) {
-					return isGood(x) ? A2($elm$core$List$cons, x, xs) : xs;
-				}),
-			_List_Nil,
-			list);
-	});
 var $elm$core$Tuple$pair = F2(
 	function (a, b) {
 		return _Utils_Tuple2(a, b);
@@ -7986,7 +8368,6 @@ var $author$project$PF6$Charts$Bar$indexOf = F2(
 						},
 						A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, list)))));
 	});
-var $elm$core$Basics$not = _Basics_not;
 var $elm$core$List$repeatHelp = F3(
 	function (result, n, value) {
 		repeatHelp:
@@ -8013,392 +8394,706 @@ var $author$project$Scale$toRenderable = F2(
 	function (toString, _v0) {
 		var scale = _v0;
 		return {
-			ag: F3(
+			ah: F3(
 				function (dmn, rng, value) {
-					return A3(scale.ag, dmn, rng, value) + (A2($elm$core$Basics$max, scale.bT - 1, 0) / 2);
+					return A3(scale.ah, dmn, rng, value) + (A2($elm$core$Basics$max, scale.bX - 1, 0) / 2);
 				}),
-			D: scale.D,
+			E: scale.E,
 			W: scale.W,
-			di: F2(
+			$7: F2(
 				function (_v1, rng) {
 					return rng;
 				}),
-			dz: F2(
+			dF: F2(
 				function (_v2, _v3) {
 					return toString;
 				}),
-			dA: F2(
+			dG: F2(
 				function (dmn, _v4) {
 					return dmn;
 				})
 		};
 	});
-var $author$project$PF6$Charts$Bar$toSvg = function (_v0) {
-	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
-	} else {
-		var seriesColors = _Utils_ap(
-			cfg.bX,
-			A2($elm$core$List$repeat, 20, $author$project$PF6$Charts$Colors$primary));
-		var padTop = (cfg.H !== '') ? 40 : 20;
-		var padRight = 20;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 60 : 50;
-		var numSeries = $elm$core$List$length(cfg.a4);
-		var legendWidth = numSeries * 110;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var legendItems = (numSeries > 1) ? A2(
-			$elm$core$List$indexedMap,
-			F2(
-				function (idx, series) {
-					var xOff = idx * 110;
-					var color = A2(
-						$elm$core$Maybe$withDefault,
-						$author$project$PF6$Charts$Colors$primary,
-						$elm$core$List$head(
-							A2($elm$core$List$drop, idx, seriesColors)));
-					return A2(
+var $author$project$PF6$Charts$Bar$toSvgHorizontal = function (cfg) {
+	var seriesColors = _Utils_ap(
+		cfg.bs,
+		A2($elm$core$List$repeat, 20, $author$project$PF6$Charts$Colors$primary));
+	var padTop = (cfg.w !== '') ? 40 : 20;
+	var padRight = 20;
+	var padBottom = (cfg.aX !== '') ? 50 : 30;
+	var numSeries = $elm$core$List$length(cfg.aR);
+	var longestLabel = A2(
+		$elm$core$Maybe$withDefault,
+		5,
+		$elm$core$List$maximum(
+			A2($elm$core$List$map, $elm$core$String$length, cfg.ae)));
+	var padLeft = A2($elm$core$Basics$max, 60, (longestLabel * 7) + 12);
+	var legendWidth = numSeries * 110;
+	var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+	var legendItems = (numSeries > 1) ? A2(
+		$elm$core$List$indexedMap,
+		F2(
+			function (idx, series) {
+				var xOff = idx * 110;
+				var color = A2(
+					$elm$core$Maybe$withDefault,
+					$author$project$PF6$Charts$Colors$primary,
+					$elm$core$List$head(
+						A2($elm$core$List$drop, idx, seriesColors)));
+				return A2(
+					$elm$svg$Svg$g,
+					_List_fromArray(
+						[
+							$elm$svg$Svg$Attributes$transform(
+							'translate(' + ($elm$core$String$fromInt(xOff) + ',0)'))
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$svg$Svg$rect,
+							_List_fromArray(
+								[
+									$elm$svg$Svg$Attributes$x('0'),
+									$elm$svg$Svg$Attributes$y('0'),
+									$elm$svg$Svg$Attributes$width('12'),
+									$elm$svg$Svg$Attributes$height('12'),
+									$elm$svg$Svg$Attributes$fill(color),
+									$elm$svg$Svg$Attributes$rx('2')
+								]),
+							_List_Nil),
+							A2(
+							$elm$svg$Svg$text_,
+							_List_fromArray(
+								[
+									$elm$svg$Svg$Attributes$x('16'),
+									$elm$svg$Svg$Attributes$y('10'),
+									$elm$svg$Svg$Attributes$fontSize('11'),
+									$elm$svg$Svg$Attributes$fill(labelColor)
+								]),
+							_List_fromArray(
+								[
+									$elm$svg$Svg$text(series.c)
+								]))
+						]));
+			}),
+		cfg.aR) : _List_Nil;
+	var innerW = (cfg.aE - padLeft) - padRight;
+	var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
+	var innerH = (cfg.aj - padTop) - padBottom;
+	var outerScale = A3(
+		$author$project$Scale$band,
+		{bW: 0.5, cl: 0.4, cm: 0.2},
+		_Utils_Tuple2(0, innerH),
+		cfg.ae);
+	var outerBandwidth = $author$project$Scale$bandwidth(outerScale);
+	var innerScale = A3(
+		$author$project$Scale$band,
+		{bW: 0.5, cl: 0.1, cm: 0},
+		_Utils_Tuple2(0, outerBandwidth),
+		A2($elm$core$List$range, 0, numSeries - 1));
+	var innerBandwidth = $author$project$Scale$bandwidth(innerScale);
+	var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+	var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
+	var allValues = A2(
+		$elm$core$List$concatMap,
+		function ($) {
+			return $.bg;
+		},
+		cfg.aR);
+	var xMax = A2(
+		$elm$core$Maybe$withDefault,
+		1,
+		$elm$core$List$maximum(allValues));
+	var xScale = A2(
+		$author$project$Scale$linear,
+		_Utils_Tuple2(0, innerW),
+		_Utils_Tuple2(0, xMax * 1.1));
+	var bars = A2(
+		$elm$core$List$concatMap,
+		function (cat) {
+			var catY = A2($author$project$Scale$convert, outerScale, cat);
+			return A2(
+				$elm$core$List$indexedMap,
+				F2(
+					function (si, series) {
+						var val = A2(
+							$elm$core$Maybe$withDefault,
+							0,
+							$elm$core$List$head(
+								A2(
+									$elm$core$List$drop,
+									A2($author$project$PF6$Charts$Bar$indexOf, cat, cfg.ae),
+									series.bg)));
+						var ry = A2($elm$core$Basics$min, 2, innerBandwidth / 4);
+						var color = A2(
+							$elm$core$Maybe$withDefault,
+							$author$project$PF6$Charts$Colors$primary,
+							$elm$core$List$head(
+								A2($elm$core$List$drop, si, seriesColors)));
+						var barY = catY + A2($author$project$Scale$convert, innerScale, si);
+						var barW = A2($author$project$Scale$convert, xScale, val);
+						return A2(
+							$elm$svg$Svg$g,
+							_List_Nil,
+							_List_fromArray(
+								[
+									A2(
+									$elm$svg$Svg$rect,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$x('0'),
+											$elm$svg$Svg$Attributes$y(
+											$elm$core$String$fromFloat(barY)),
+											$elm$svg$Svg$Attributes$width(
+											$elm$core$String$fromFloat(barW)),
+											$elm$svg$Svg$Attributes$height(
+											$elm$core$String$fromFloat(innerBandwidth)),
+											$elm$svg$Svg$Attributes$fill(color),
+											$elm$svg$Svg$Attributes$rx(
+											$elm$core$String$fromFloat(ry)),
+											$elm$svg$Svg$Attributes$ry(
+											$elm$core$String$fromFloat(ry))
+										]),
+									cfg.cv ? _List_fromArray(
+										[
+											A3(
+											$elm$svg$Svg$node,
+											'title',
+											_List_Nil,
+											_List_fromArray(
+												[
+													$elm$svg$Svg$text(
+													cat + (' \u00B7 ' + (series.c + (': ' + $elm$core$String$fromFloat(val)))))
+												]))
+										]) : _List_Nil),
+									A2(
+									$elm$svg$Svg$rect,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$x('0'),
+											$elm$svg$Svg$Attributes$y(
+											$elm$core$String$fromFloat(barY)),
+											$elm$svg$Svg$Attributes$width(
+											$elm$core$String$fromFloat(
+												A2($elm$core$Basics$max, 0, barW - ry))),
+											$elm$svg$Svg$Attributes$height(
+											$elm$core$String$fromFloat(innerBandwidth)),
+											$elm$svg$Svg$Attributes$fill(color)
+										]),
+									_List_Nil)
+								]));
+					}),
+				cfg.aR);
+		},
+		cfg.ae);
+	var gridLines = A2(
+		$elm$core$List$map,
+		function (tick) {
+			var x = A2($author$project$Scale$convert, xScale, tick);
+			return A2(
+				$elm$svg$Svg$line,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$x1(
+						$elm$core$String$fromFloat(x)),
+						$elm$svg$Svg$Attributes$x2(
+						$elm$core$String$fromFloat(x)),
+						$elm$svg$Svg$Attributes$y1('0'),
+						$elm$svg$Svg$Attributes$y2(
+						$elm$core$String$fromInt(innerH)),
+						$elm$svg$Svg$Attributes$stroke(gridColor),
+						$elm$svg$Svg$Attributes$strokeWidth('1'),
+						$elm$svg$Svg$Attributes$strokeDasharray('4,4')
+					]),
+				_List_Nil);
+		},
+		A2($author$project$Scale$ticks, xScale, 5));
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+				A2($elm$html$Html$Attributes$style, 'font-family', font)
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$svg$Svg$svg,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$width(
+						$elm$core$String$fromInt(cfg.aE)),
+						$elm$svg$Svg$Attributes$height(
+						$elm$core$String$fromInt(cfg.aj)),
+						$elm$svg$Svg$Attributes$viewBox(
+						'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
+						$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
+					]),
+				_List_fromArray(
+					[
+						(cfg.w !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$x(
+								$elm$core$String$fromInt((cfg.aE / 2) | 0)),
+								$elm$svg$Svg$Attributes$y('20'),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('14'),
+								$elm$svg$Svg$Attributes$fontWeight('600'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
+							]),
+						_List_fromArray(
+							[
+								$elm$svg$Svg$text(cfg.w)
+							])) : $elm$svg$Svg$text(''),
+						A2(
 						$elm$svg$Svg$g,
 						_List_fromArray(
 							[
 								$elm$svg$Svg$Attributes$transform(
-								'translate(' + ($elm$core$String$fromInt(xOff) + ',0)'))
+								'translate(' + ($elm$core$String$fromInt(padLeft) + (',' + ($elm$core$String$fromInt(padTop) + ')'))))
+							]),
+						_Utils_ap(
+							gridLines,
+							_Utils_ap(
+								bars,
+								_List_fromArray(
+									[
+										A2(
+										$elm$svg$Svg$g,
+										_List_fromArray(
+											[
+												$elm$svg$Svg$Attributes$transform(
+												'translate(0,' + ($elm$core$String$fromInt(innerH) + ')'))
+											]),
+										_List_fromArray(
+											[
+												A2(
+												$author$project$Axis$bottom,
+												_List_fromArray(
+													[
+														$author$project$Axis$tickCount(5)
+													]),
+												xScale)
+											])),
+										A2(
+										$elm$svg$Svg$g,
+										_List_Nil,
+										_List_fromArray(
+											[
+												A2(
+												$author$project$Axis$left,
+												_List_Nil,
+												A2($author$project$Scale$toRenderable, $elm$core$Basics$identity, outerScale))
+											]))
+									])))),
+						(cfg.aX !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$x(
+								$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
+								$elm$svg$Svg$Attributes$y(
+								$elm$core$String$fromInt(cfg.aj - 8)),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('12'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
 							]),
 						_List_fromArray(
 							[
-								A2(
-								$elm$svg$Svg$rect,
-								_List_fromArray(
-									[
-										$elm$svg$Svg$Attributes$x('0'),
-										$elm$svg$Svg$Attributes$y('0'),
-										$elm$svg$Svg$Attributes$width('12'),
-										$elm$svg$Svg$Attributes$height('12'),
-										$elm$svg$Svg$Attributes$fill(color),
-										$elm$svg$Svg$Attributes$rx('2')
-									]),
-								_List_Nil),
-								A2(
-								$elm$svg$Svg$text_,
-								_List_fromArray(
-									[
-										$elm$svg$Svg$Attributes$x('16'),
-										$elm$svg$Svg$Attributes$y('10'),
-										$elm$svg$Svg$Attributes$fontSize('11'),
-										$elm$svg$Svg$Attributes$fill(labelColor)
-									]),
-								_List_fromArray(
-									[
-										$elm$svg$Svg$text(series.o)
-									]))
-							]));
-				}),
-			cfg.a4) : _List_Nil;
-		var innerW = (cfg.aB - padLeft) - padRight;
-		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
-		var outerScale = A3(
-			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.6, eq: 0.15},
-			_Utils_Tuple2(0, innerW),
-			cfg.bm);
-		var outerBandwidth = $author$project$Scale$bandwidth(outerScale);
-		var innerScale = A3(
-			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.1, eq: 0},
-			_Utils_Tuple2(0, outerBandwidth),
-			A2($elm$core$List$range, 0, numSeries - 1));
-		var innerH = (cfg.as - padTop) - padBottom;
-		var innerBandwidth = $author$project$Scale$bandwidth(innerScale);
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
-		var allValues = A2(
-			$elm$core$List$concatMap,
-			function ($) {
-				return $.bR;
-			},
-			cfg.a4);
-		var yMax = A2(
-			$elm$core$Maybe$withDefault,
-			1,
-			$elm$core$List$maximum(allValues));
-		var yScale = A2(
-			$author$project$Scale$linear,
-			_Utils_Tuple2(innerH, 0),
-			_Utils_Tuple2(0, yMax * 1.1));
-		var bars = A2(
-			$elm$core$List$concatMap,
-			function (cat) {
-				var catX = A2($author$project$Scale$convert, outerScale, cat);
+								$elm$svg$Svg$text(cfg.aX)
+							])) : $elm$svg$Svg$text(''),
+						(cfg.bj !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'rotate(-90) translate(-' + ($elm$core$String$fromInt(padTop + ((innerH / 2) | 0)) + ',14)')),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('12'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
+							]),
+						_List_fromArray(
+							[
+								$elm$svg$Svg$text(cfg.bj)
+							])) : $elm$svg$Svg$text(''),
+						(!$elm$core$List$isEmpty(legendItems)) ? A2(
+						$elm$svg$Svg$g,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 12) + ')'))))
+							]),
+						legendItems) : $elm$svg$Svg$text('')
+					]))
+			]));
+};
+var $author$project$PF6$Charts$Bar$toSvgVertical = function (cfg) {
+	var seriesColors = _Utils_ap(
+		cfg.bs,
+		A2($elm$core$List$repeat, 20, $author$project$PF6$Charts$Colors$primary));
+	var padTop = (cfg.w !== '') ? 40 : 20;
+	var padRight = 20;
+	var padLeft = (cfg.bj !== '') ? 65 : 50;
+	var padBottom = (cfg.aX !== '') ? 60 : 50;
+	var numSeries = $elm$core$List$length(cfg.aR);
+	var legendWidth = numSeries * 110;
+	var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+	var legendItems = (numSeries > 1) ? A2(
+		$elm$core$List$indexedMap,
+		F2(
+			function (idx, series) {
+				var xOff = idx * 110;
+				var color = A2(
+					$elm$core$Maybe$withDefault,
+					$author$project$PF6$Charts$Colors$primary,
+					$elm$core$List$head(
+						A2($elm$core$List$drop, idx, seriesColors)));
 				return A2(
-					$elm$core$List$indexedMap,
-					F2(
-						function (si, series) {
-							var val = A2(
-								$elm$core$Maybe$withDefault,
-								0,
-								$elm$core$List$head(
-									A2(
-										$elm$core$List$drop,
-										A2($author$project$PF6$Charts$Bar$indexOf, cat, cfg.bm),
-										series.bR)));
-							var rx = A2($elm$core$Basics$min, 2, innerBandwidth / 4);
-							var color = A2(
-								$elm$core$Maybe$withDefault,
-								$author$project$PF6$Charts$Colors$primary,
-								$elm$core$List$head(
-									A2($elm$core$List$drop, si, seriesColors)));
-							var barY = A2($author$project$Scale$convert, yScale, val);
-							var barX = catX + A2($author$project$Scale$convert, innerScale, si);
-							var barH = innerH - A2($author$project$Scale$convert, yScale, val);
-							return A2(
-								$elm$svg$Svg$g,
-								_List_Nil,
-								_List_fromArray(
-									[
-										A2(
-										$elm$svg$Svg$rect,
-										_List_fromArray(
-											[
-												$elm$svg$Svg$Attributes$x(
-												$elm$core$String$fromFloat(barX)),
-												$elm$svg$Svg$Attributes$y(
-												$elm$core$String$fromFloat(barY)),
-												$elm$svg$Svg$Attributes$width(
-												$elm$core$String$fromFloat(innerBandwidth)),
-												$elm$svg$Svg$Attributes$height(
-												$elm$core$String$fromFloat(barH)),
-												$elm$svg$Svg$Attributes$fill(color),
-												$elm$svg$Svg$Attributes$rx(
-												$elm$core$String$fromFloat(rx)),
-												$elm$svg$Svg$Attributes$ry(
-												$elm$core$String$fromFloat(rx))
-											]),
-										cfg.cp ? _List_fromArray(
-											[
-												A3(
-												$elm$svg$Svg$node,
-												'title',
-												_List_Nil,
-												_List_fromArray(
-													[
-														$elm$svg$Svg$text(
-														cat + (' \u00B7 ' + (series.o + (': ' + $elm$core$String$fromFloat(val)))))
-													]))
-											]) : _List_Nil),
-										A2(
-										$elm$svg$Svg$rect,
-										_List_fromArray(
-											[
-												$elm$svg$Svg$Attributes$x(
-												$elm$core$String$fromFloat(barX)),
-												$elm$svg$Svg$Attributes$y(
-												$elm$core$String$fromFloat(barY + rx)),
-												$elm$svg$Svg$Attributes$width(
-												$elm$core$String$fromFloat(innerBandwidth)),
-												$elm$svg$Svg$Attributes$height(
-												$elm$core$String$fromFloat(
-													A2($elm$core$Basics$max, 0, barH - rx))),
-												$elm$svg$Svg$Attributes$fill(color)
-											]),
-										_List_Nil)
-									]));
-						}),
-					cfg.a4);
-			},
-			cfg.bm);
-		var gridLines = A2(
-			$elm$core$List$map,
-			function (tick) {
-				var y = A2($author$project$Scale$convert, yScale, tick);
-				return A2(
-					$elm$svg$Svg$line,
+					$elm$svg$Svg$g,
 					_List_fromArray(
 						[
-							$elm$svg$Svg$Attributes$x1('0'),
-							$elm$svg$Svg$Attributes$x2(
-							$elm$core$String$fromInt(innerW)),
-							$elm$svg$Svg$Attributes$y1(
-							$elm$core$String$fromFloat(y)),
-							$elm$svg$Svg$Attributes$y2(
-							$elm$core$String$fromFloat(y)),
-							$elm$svg$Svg$Attributes$stroke(gridColor),
-							$elm$svg$Svg$Attributes$strokeWidth('1'),
-							$elm$svg$Svg$Attributes$strokeDasharray('4,4')
-						]),
-					_List_Nil);
-			},
-			A2($author$project$Scale$ticks, yScale, 5));
-		return A2(
-			$elm$html$Html$div,
-			_List_fromArray(
-				[
-					A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
-					A2($elm$html$Html$Attributes$style, 'font-family', font)
-				]),
-			_List_fromArray(
-				[
-					A2(
-					$elm$svg$Svg$svg,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
-							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
-							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
-							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
+							$elm$svg$Svg$Attributes$transform(
+							'translate(' + ($elm$core$String$fromInt(xOff) + ',0)'))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							A2(
+							$elm$svg$Svg$rect,
+							_List_fromArray(
+								[
+									$elm$svg$Svg$Attributes$x('0'),
+									$elm$svg$Svg$Attributes$y('0'),
+									$elm$svg$Svg$Attributes$width('12'),
+									$elm$svg$Svg$Attributes$height('12'),
+									$elm$svg$Svg$Attributes$fill(color),
+									$elm$svg$Svg$Attributes$rx('2')
+								]),
+							_List_Nil),
+							A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
-									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
-									$elm$svg$Svg$Attributes$y('20'),
-									$elm$svg$Svg$Attributes$textAnchor('middle'),
-									$elm$svg$Svg$Attributes$fontSize('14'),
-									$elm$svg$Svg$Attributes$fontWeight('600'),
+									$elm$svg$Svg$Attributes$x('16'),
+									$elm$svg$Svg$Attributes$y('10'),
+									$elm$svg$Svg$Attributes$fontSize('11'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
-								])) : $elm$svg$Svg$text(''),
-							A2(
+									$elm$svg$Svg$text(series.c)
+								]))
+						]));
+			}),
+		cfg.aR) : _List_Nil;
+	var innerW = (cfg.aE - padLeft) - padRight;
+	var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
+	var outerScale = A3(
+		$author$project$Scale$band,
+		{bW: 0.5, cl: 0.6, cm: 0.15},
+		_Utils_Tuple2(0, innerW),
+		cfg.ae);
+	var outerBandwidth = $author$project$Scale$bandwidth(outerScale);
+	var innerScale = A3(
+		$author$project$Scale$band,
+		{bW: 0.5, cl: 0.1, cm: 0},
+		_Utils_Tuple2(0, outerBandwidth),
+		A2($elm$core$List$range, 0, numSeries - 1));
+	var innerH = (cfg.aj - padTop) - padBottom;
+	var innerBandwidth = $author$project$Scale$bandwidth(innerScale);
+	var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+	var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
+	var allValues = A2(
+		$elm$core$List$concatMap,
+		function ($) {
+			return $.bg;
+		},
+		cfg.aR);
+	var yMax = A2(
+		$elm$core$Maybe$withDefault,
+		1,
+		$elm$core$List$maximum(allValues));
+	var yScale = A2(
+		$author$project$Scale$linear,
+		_Utils_Tuple2(innerH, 0),
+		_Utils_Tuple2(0, yMax * 1.1));
+	var bars = A2(
+		$elm$core$List$concatMap,
+		function (cat) {
+			var catX = A2($author$project$Scale$convert, outerScale, cat);
+			return A2(
+				$elm$core$List$indexedMap,
+				F2(
+					function (si, series) {
+						var val = A2(
+							$elm$core$Maybe$withDefault,
+							0,
+							$elm$core$List$head(
+								A2(
+									$elm$core$List$drop,
+									A2($author$project$PF6$Charts$Bar$indexOf, cat, cfg.ae),
+									series.bg)));
+						var rx = A2($elm$core$Basics$min, 2, innerBandwidth / 4);
+						var color = A2(
+							$elm$core$Maybe$withDefault,
+							$author$project$PF6$Charts$Colors$primary,
+							$elm$core$List$head(
+								A2($elm$core$List$drop, si, seriesColors)));
+						var barY = A2($author$project$Scale$convert, yScale, val);
+						var barX = catX + A2($author$project$Scale$convert, innerScale, si);
+						var barH = innerH - A2($author$project$Scale$convert, yScale, val);
+						return A2(
 							$elm$svg$Svg$g,
+							_List_Nil,
 							_List_fromArray(
 								[
-									$elm$svg$Svg$Attributes$transform(
-									'translate(' + ($elm$core$String$fromInt(padLeft) + (',' + ($elm$core$String$fromInt(padTop) + ')'))))
-								]),
-							_Utils_ap(
-								gridLines,
-								_Utils_ap(
-									bars,
+									A2(
+									$elm$svg$Svg$rect,
 									_List_fromArray(
 										[
-											A2(
-											$elm$svg$Svg$g,
-											_List_fromArray(
-												[
-													$elm$svg$Svg$Attributes$transform(
-													'translate(0,' + ($elm$core$String$fromInt(innerH) + ')'))
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$author$project$Axis$bottom,
-													_List_Nil,
-													A2($author$project$Scale$toRenderable, $elm$core$Basics$identity, outerScale))
-												])),
-											A2(
-											$elm$svg$Svg$g,
+											$elm$svg$Svg$Attributes$x(
+											$elm$core$String$fromFloat(barX)),
+											$elm$svg$Svg$Attributes$y(
+											$elm$core$String$fromFloat(barY)),
+											$elm$svg$Svg$Attributes$width(
+											$elm$core$String$fromFloat(innerBandwidth)),
+											$elm$svg$Svg$Attributes$height(
+											$elm$core$String$fromFloat(barH)),
+											$elm$svg$Svg$Attributes$fill(color),
+											$elm$svg$Svg$Attributes$rx(
+											$elm$core$String$fromFloat(rx)),
+											$elm$svg$Svg$Attributes$ry(
+											$elm$core$String$fromFloat(rx))
+										]),
+									cfg.cv ? _List_fromArray(
+										[
+											A3(
+											$elm$svg$Svg$node,
+											'title',
 											_List_Nil,
 											_List_fromArray(
 												[
-													A2(
-													$author$project$Axis$left,
-													_List_fromArray(
-														[
-															$author$project$Axis$tickCount(5)
-														]),
-													yScale)
+													$elm$svg$Svg$text(
+													cat + (' \u00B7 ' + (series.c + (': ' + $elm$core$String$fromFloat(val)))))
 												]))
-										])))),
-							(cfg.be !== '') ? A2(
-							$elm$svg$Svg$text_,
-							_List_fromArray(
-								[
-									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
-									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
-									$elm$svg$Svg$Attributes$textAnchor('middle'),
-									$elm$svg$Svg$Attributes$fontSize('12'),
-									$elm$svg$Svg$Attributes$fill(labelColor)
-								]),
-							_List_fromArray(
-								[
-									$elm$svg$Svg$text(cfg.be)
-								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
-							$elm$svg$Svg$text_,
-							_List_fromArray(
-								[
-									$elm$svg$Svg$Attributes$transform(
-									'rotate(-90) translate(-' + ($elm$core$String$fromInt(padTop + ((innerH / 2) | 0)) + ',14)')),
-									$elm$svg$Svg$Attributes$textAnchor('middle'),
-									$elm$svg$Svg$Attributes$fontSize('12'),
-									$elm$svg$Svg$Attributes$fill(labelColor)
-								]),
-							_List_fromArray(
-								[
-									$elm$svg$Svg$text(cfg.bg)
-								])) : $elm$svg$Svg$text(''),
-							(!$elm$core$List$isEmpty(legendItems)) ? A2(
-							$elm$svg$Svg$g,
-							_List_fromArray(
-								[
-									$elm$svg$Svg$Attributes$transform(
-									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.as - 12) + ')'))))
-								]),
-							legendItems) : $elm$svg$Svg$text('')
-						]))
-				]));
+										]) : _List_Nil),
+									A2(
+									$elm$svg$Svg$rect,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$x(
+											$elm$core$String$fromFloat(barX)),
+											$elm$svg$Svg$Attributes$y(
+											$elm$core$String$fromFloat(barY + rx)),
+											$elm$svg$Svg$Attributes$width(
+											$elm$core$String$fromFloat(innerBandwidth)),
+											$elm$svg$Svg$Attributes$height(
+											$elm$core$String$fromFloat(
+												A2($elm$core$Basics$max, 0, barH - rx))),
+											$elm$svg$Svg$Attributes$fill(color)
+										]),
+									_List_Nil)
+								]));
+					}),
+				cfg.aR);
+		},
+		cfg.ae);
+	var gridLines = A2(
+		$elm$core$List$map,
+		function (tick) {
+			var y = A2($author$project$Scale$convert, yScale, tick);
+			return A2(
+				$elm$svg$Svg$line,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$x1('0'),
+						$elm$svg$Svg$Attributes$x2(
+						$elm$core$String$fromInt(innerW)),
+						$elm$svg$Svg$Attributes$y1(
+						$elm$core$String$fromFloat(y)),
+						$elm$svg$Svg$Attributes$y2(
+						$elm$core$String$fromFloat(y)),
+						$elm$svg$Svg$Attributes$stroke(gridColor),
+						$elm$svg$Svg$Attributes$strokeWidth('1'),
+						$elm$svg$Svg$Attributes$strokeDasharray('4,4')
+					]),
+				_List_Nil);
+		},
+		A2($author$project$Scale$ticks, yScale, 5));
+	return A2(
+		$elm$html$Html$div,
+		_List_fromArray(
+			[
+				A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+				A2($elm$html$Html$Attributes$style, 'font-family', font)
+			]),
+		_List_fromArray(
+			[
+				A2(
+				$elm$svg$Svg$svg,
+				_List_fromArray(
+					[
+						$elm$svg$Svg$Attributes$width(
+						$elm$core$String$fromInt(cfg.aE)),
+						$elm$svg$Svg$Attributes$height(
+						$elm$core$String$fromInt(cfg.aj)),
+						$elm$svg$Svg$Attributes$viewBox(
+						'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
+						$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
+					]),
+				_List_fromArray(
+					[
+						(cfg.w !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$x(
+								$elm$core$String$fromInt((cfg.aE / 2) | 0)),
+								$elm$svg$Svg$Attributes$y('20'),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('14'),
+								$elm$svg$Svg$Attributes$fontWeight('600'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
+							]),
+						_List_fromArray(
+							[
+								$elm$svg$Svg$text(cfg.w)
+							])) : $elm$svg$Svg$text(''),
+						A2(
+						$elm$svg$Svg$g,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'translate(' + ($elm$core$String$fromInt(padLeft) + (',' + ($elm$core$String$fromInt(padTop) + ')'))))
+							]),
+						_Utils_ap(
+							gridLines,
+							_Utils_ap(
+								bars,
+								_List_fromArray(
+									[
+										A2(
+										$elm$svg$Svg$g,
+										_List_fromArray(
+											[
+												$elm$svg$Svg$Attributes$transform(
+												'translate(0,' + ($elm$core$String$fromInt(innerH) + ')'))
+											]),
+										_List_fromArray(
+											[
+												A2(
+												$author$project$Axis$bottom,
+												_List_Nil,
+												A2($author$project$Scale$toRenderable, $elm$core$Basics$identity, outerScale))
+											])),
+										A2(
+										$elm$svg$Svg$g,
+										_List_Nil,
+										_List_fromArray(
+											[
+												A2(
+												$author$project$Axis$left,
+												_List_fromArray(
+													[
+														$author$project$Axis$tickCount(5)
+													]),
+												yScale)
+											]))
+									])))),
+						(cfg.aX !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$x(
+								$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
+								$elm$svg$Svg$Attributes$y(
+								$elm$core$String$fromInt(cfg.aj - 8)),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('12'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
+							]),
+						_List_fromArray(
+							[
+								$elm$svg$Svg$text(cfg.aX)
+							])) : $elm$svg$Svg$text(''),
+						(cfg.bj !== '') ? A2(
+						$elm$svg$Svg$text_,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'rotate(-90) translate(-' + ($elm$core$String$fromInt(padTop + ((innerH / 2) | 0)) + ',14)')),
+								$elm$svg$Svg$Attributes$textAnchor('middle'),
+								$elm$svg$Svg$Attributes$fontSize('12'),
+								$elm$svg$Svg$Attributes$fill(labelColor)
+							]),
+						_List_fromArray(
+							[
+								$elm$svg$Svg$text(cfg.bj)
+							])) : $elm$svg$Svg$text(''),
+						(!$elm$core$List$isEmpty(legendItems)) ? A2(
+						$elm$svg$Svg$g,
+						_List_fromArray(
+							[
+								$elm$svg$Svg$Attributes$transform(
+								'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 12) + ')'))))
+							]),
+						legendItems) : $elm$svg$Svg$text('')
+					]))
+			]));
+};
+var $author$project$PF6$Charts$Bar$toSvg = function (_v0) {
+	var cfg = _v0;
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
+	} else {
+		var _v1 = cfg.ci;
+		if (!_v1) {
+			return $author$project$PF6$Charts$Bar$toSvgVertical(cfg);
+		} else {
+			return $author$project$PF6$Charts$Bar$toSvgHorizontal(cfg);
+		}
 	}
 };
 var $elm$svg$Svg$Attributes$fillOpacity = _VirtualDom_attribute('fill-opacity');
 var $author$project$PF6$Charts$Theme$primaryColor = function (_v0) {
 	var c = _v0;
-	return c.aj;
+	return c.al;
 };
-var $author$project$PF6$Charts$Theme$seriesColor = F2(
-	function (idx, _v0) {
-		var c = _v0;
-		return A2(
-			$elm$core$Maybe$withDefault,
-			c.aj,
-			$elm$core$List$head(
-				A2($elm$core$List$drop, idx, c.a4)));
-	});
 var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var primaryColor = $author$project$PF6$Charts$Theme$primaryColor(cfg.aO);
-		var padTop = (cfg.H !== '') ? 40 : 20;
+		var primaryColor = $author$project$PF6$Charts$Theme$primaryColor(cfg.az);
+		var padTop = (cfg.w !== '') ? 40 : 20;
 		var padRight = 20;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var padBottom = (cfg.aX !== '') ? 55 : 40;
 		var labels = A2(
 			$elm$core$List$map,
 			function ($) {
-				return $.o;
+				return $.c;
 			},
-			cfg.b0);
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var innerW = (cfg.aB - padLeft) - padRight;
+			cfg._);
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var xScale = A3(
 			$author$project$Scale$band,
-			{dP: 0.5, ep: 0.78, eq: 0.2},
+			{bW: 0.5, cl: 0.78, cm: 0.2},
 			_Utils_Tuple2(0, innerW),
 			labels);
-		var innerH = (cfg.as - padTop) - padBottom;
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var innerH = (cfg.aj - padTop) - padBottom;
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var bw = $author$project$Scale$bandwidth(xScale);
 		var allValues = A2(
 			$elm$core$List$concatMap,
 			function (d) {
 				return _List_fromArray(
-					[d.cd, d.cj, d.cb, d.ck, d.ca]);
+					[d.cf, d.cp, d.cd, d.cq, d.cc]);
 			},
-			cfg.b0);
+			cfg._);
 		var yMax = A2(
 			$elm$core$Maybe$withDefault,
 			100,
@@ -8416,14 +9111,14 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 			$elm$core$List$indexedMap,
 			F2(
 				function (idx, d) {
-					var yQ3 = A2($author$project$Scale$convert, yScale, d.ck);
-					var yQ1 = A2($author$project$Scale$convert, yScale, d.cj);
-					var yMin_ = A2($author$project$Scale$convert, yScale, d.cd);
-					var yMed = A2($author$project$Scale$convert, yScale, d.cb);
-					var yMax_ = A2($author$project$Scale$convert, yScale, d.ca);
+					var yQ3 = A2($author$project$Scale$convert, yScale, d.cq);
+					var yQ1 = A2($author$project$Scale$convert, yScale, d.cp);
+					var yMin_ = A2($author$project$Scale$convert, yScale, d.cf);
+					var yMed = A2($author$project$Scale$convert, yScale, d.cd);
+					var yMax_ = A2($author$project$Scale$convert, yScale, d.cc);
 					var whiskerW = bw * 0.4;
-					var cx = A2($author$project$Scale$convert, xScale, d.o) + (bw / 2);
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+					var cx = A2($author$project$Scale$convert, xScale, d.c) + (bw / 2);
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					return A2(
 						$elm$svg$Svg$g,
 						_List_Nil,
@@ -8514,7 +9209,7 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 								_List_Nil)
 							]));
 				}),
-			cfg.b0);
+			cfg._);
 		var gridLines = A2(
 			$elm$core$List$map,
 			function (tick) {
@@ -8551,21 +9246,21 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -8574,7 +9269,7 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -8617,23 +9312,23 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 													yScale)
 												]))
 										])))),
-							(cfg.be !== '') ? A2(
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(cfg.aj - 8)),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -8645,7 +9340,7 @@ var $author$project$PF6$Charts$BoxPlot$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
+									$elm$svg$Svg$text(cfg.bj)
 								])) : $elm$svg$Svg$text('')
 						]))
 				]));
@@ -8658,36 +9353,36 @@ var $author$project$Axis$TickFormat = function (a) {
 var $author$project$Axis$tickFormat = $author$project$Axis$TickFormat;
 var $author$project$PF6$Charts$Bullet$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var titleWidth = (cfg.H !== '') ? 90 : 0;
+		var titleWidth = (cfg.w !== '') ? 90 : 0;
 		var rangeAlpha3 = 0.35;
 		var rangeAlpha2 = 0.25;
 		var rangeAlpha1 = 0.15;
-		var range2End = cfg.ca * 0.75;
-		var range1End = cfg.ca * 0.5;
+		var range2End = cfg.cc * 0.75;
+		var range1End = cfg.cc * 0.5;
 		var padTop = 20;
 		var padRight = 20;
 		var padLeft = titleWidth + 10;
 		var padBottom = 35;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var innerW = (cfg.aB - padLeft) - padRight;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var range3W = innerW;
 		var scale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(0, innerW),
-			_Utils_Tuple2(0, cfg.ca));
+			_Utils_Tuple2(0, cfg.cc));
 		var range1W = A2($author$project$Scale$convert, scale, range1End);
 		var range2W = A2($author$project$Scale$convert, scale, range2End);
-		var targetX = A2($author$project$Scale$convert, scale, cfg.fT);
-		var innerH = (cfg.as - padTop) - padBottom;
+		var targetX = A2($author$project$Scale$convert, scale, cfg.fW);
+		var innerH = (cfg.aj - padTop) - padBottom;
 		var rangeH = innerH * 0.8;
 		var rangeY = (innerH / 2) - (rangeH / 2);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var barH = innerH * 0.45;
 		var barY = (innerH / 2) - (barH / 2);
-		var actualW = A2($author$project$Scale$convert, scale, cfg.cv);
+		var actualW = A2($author$project$Scale$convert, scale, cfg.cB);
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -8702,23 +9397,23 @@ var $author$project$PF6$Charts$Bullet$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt((titleWidth / 2) | 0)),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(((cfg.as / 2) | 0) - 4)),
+									$elm$core$String$fromInt(((cfg.aj / 2) | 0) - 4)),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('13'),
 									$elm$svg$Svg$Attributes$fontWeight('600'),
@@ -8726,7 +9421,7 @@ var $author$project$PF6$Charts$Bullet$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -8838,7 +9533,7 @@ var $author$project$PF6$Charts$Bullet$toSvg = function (_v0) {
 													function (v) {
 														return _Utils_ap(
 															$elm$core$String$fromFloat(v),
-															cfg.cs);
+															cfg.cy);
 													})
 												]),
 											scale)
@@ -8899,22 +9594,22 @@ var $author$project$Shape$Pie$arc_ = F6(
 							_List_fromArray(
 								[
 									{
-									cw: $folkertdev$one_true_path_experiment$LowLevel$Command$largestArc,
-									cC: cw,
-									fH: _Utils_Tuple2(r, r),
-									fT: _Utils_Tuple2(x - dx, y - dy),
-									dI: 0
+									cC: $folkertdev$one_true_path_experiment$LowLevel$Command$largestArc,
+									cI: cw,
+									fK: _Utils_Tuple2(r, r),
+									fW: _Utils_Tuple2(x - dx, y - dy),
+									dO: 0
 								}
 								])),
 							$folkertdev$one_true_path_experiment$LowLevel$Command$arcTo(
 							_List_fromArray(
 								[
 									{
-									cw: $folkertdev$one_true_path_experiment$LowLevel$Command$largestArc,
-									cC: cw,
-									fH: _Utils_Tuple2(r, r),
-									fT: _Utils_Tuple2(x0_, y0_),
-									dI: 0
+									cC: $folkertdev$one_true_path_experiment$LowLevel$Command$largestArc,
+									cI: cw,
+									fK: _Utils_Tuple2(r, r),
+									fW: _Utils_Tuple2(x0_, y0_),
+									dO: 0
 								}
 								]))
 						]));
@@ -8929,14 +9624,14 @@ var $author$project$Shape$Pie$arc_ = F6(
 							_List_fromArray(
 								[
 									{
-									cw: $author$project$Shape$Pie$boolToArc(
+									cC: $author$project$Shape$Pie$boolToArc(
 										_Utils_cmp(da_, $elm$core$Basics$pi) > -1),
-									cC: cw,
-									fH: _Utils_Tuple2(r, r),
-									fT: _Utils_Tuple2(
+									cI: cw,
+									fK: _Utils_Tuple2(r, r),
+									fW: _Utils_Tuple2(
 										x + (r * $elm$core$Basics$cos(a1)),
 										y + (r * $elm$core$Basics$sin(a1))),
-									dI: 0
+									dO: 0
 								}
 								]))
 						]));
@@ -8992,8 +9687,8 @@ var $folkertdev$one_true_path_experiment$SubPath$close = function (subpath) {
 	if (subpath.$ === 1) {
 		return $folkertdev$one_true_path_experiment$SubPath$Empty;
 	} else {
-		var moveto = subpath.a.fv;
-		var drawtos = subpath.a.fa;
+		var moveto = subpath.a.fy;
+		var drawtos = subpath.a.fd;
 		var _v1 = $folkertdev$elm_deque$Deque$popBack(drawtos);
 		if ((!_v1.a.$) && (_v1.a.a.$ === 4)) {
 			var _v2 = _v1.a.a;
@@ -9002,8 +9697,8 @@ var $folkertdev$one_true_path_experiment$SubPath$close = function (subpath) {
 		} else {
 			return $folkertdev$one_true_path_experiment$SubPath$SubPath(
 				{
-					fa: A2($folkertdev$elm_deque$Deque$pushBack, $folkertdev$one_true_path_experiment$LowLevel$Command$closePath, drawtos),
-					fv: moveto
+					fd: A2($folkertdev$elm_deque$Deque$pushBack, $folkertdev$one_true_path_experiment$LowLevel$Command$closePath, drawtos),
+					fy: moveto
 				});
 		}
 	}
@@ -9045,7 +9740,7 @@ var $author$project$Shape$Pie$cornerTangents = F7(
 			A2($elm$core$Basics$pow, dx1, 2) + A2($elm$core$Basics$pow, dy1, 2)) > 0) ? _Utils_Tuple2(cx1, cy1) : _Utils_Tuple2(cx0, cy0);
 		var fcx = _v0.a;
 		var fxy = _v0.b;
-		return {J: fcx, K: fxy, X: -ox, ao: fcx * ((r1 / r) - 1), Y: -oy, ap: fxy * ((r1 / r) - 1)};
+		return {J: fcx, K: fxy, X: -ox, aq: fcx * ((r1 / r) - 1), Y: -oy, ar: fxy * ((r1 / r) - 1)};
 	});
 var $author$project$Shape$Pie$intersect = F8(
 	function (x0, y0, x1, y1, x2, y2, x3, y3) {
@@ -9093,16 +9788,16 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState = F2
 		var noControlPoint = function (currentState) {
 			return _Utils_update(
 				currentState,
-				{z: $elm$core$Maybe$Nothing});
+				{D: $elm$core$Maybe$Nothing});
 		};
 		var maybeUpdateCursor = function (coordinate) {
 			return _Utils_update(
 				state,
 				{
-					k: A2($elm$core$Maybe$withDefault, state.k, coordinate)
+					l: A2($elm$core$Maybe$withDefault, state.l, coordinate)
 				});
 		};
-		var _v0 = state.k;
+		var _v0 = state.l;
 		var cursorX = _v0.a;
 		var cursorY = _v0.b;
 		switch (drawto.$) {
@@ -9124,8 +9819,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState = F2
 					return _Utils_update(
 						state,
 						{
-							k: target,
-							z: $elm$core$Maybe$Just(control2)
+							l: target,
+							D: $elm$core$Maybe$Just(control2)
 						});
 				}
 			case 2:
@@ -9140,8 +9835,8 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState = F2
 					return _Utils_update(
 						state,
 						{
-							k: target,
-							z: $elm$core$Maybe$Just(control)
+							l: target,
+							D: $elm$core$Maybe$Just(control)
 						});
 				}
 			case 3:
@@ -9151,7 +9846,7 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState = F2
 						A2(
 							$elm$core$Maybe$map,
 							function ($) {
-								return $.fT;
+								return $.fW;
 							},
 							$elm_community$list_extra$List$Extra$last(_arguments))));
 			default:
@@ -9159,18 +9854,18 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState = F2
 		}
 	});
 var $folkertdev$one_true_path_experiment$SubPath$finalCursorState = function (_v0) {
-	var moveto = _v0.fv;
-	var drawtos = _v0.fa;
+	var moveto = _v0.fy;
+	var drawtos = _v0.fd;
 	var _v1 = moveto;
 	var start = _v1;
-	var initial = {k: start, z: $elm$core$Maybe$Nothing, dw: start};
+	var initial = {l: start, D: $elm$core$Maybe$Nothing, dC: start};
 	return A3($folkertdev$elm_deque$Deque$foldl, $folkertdev$one_true_path_experiment$LowLevel$Command$updateCursorState, initial, drawtos);
 };
 var $folkertdev$one_true_path_experiment$SubPath$finalPoint = A2(
 	$elm$core$Basics$composeR,
 	$folkertdev$one_true_path_experiment$SubPath$finalCursorState,
 	function ($) {
-		return $.k;
+		return $.l;
 	});
 var $folkertdev$elm_deque$Internal$map = F2(
 	function (f, deque) {
@@ -9233,7 +9928,7 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$mapCoordinateDrawTo = 
 							return _Utils_update(
 								argument,
 								{
-									fT: f(argument.fT)
+									fW: f(argument.fW)
 								});
 						},
 						_arguments));
@@ -9243,22 +9938,22 @@ var $folkertdev$one_true_path_experiment$LowLevel$Command$mapCoordinateDrawTo = 
 	});
 var $folkertdev$one_true_path_experiment$SubPath$mapCoordinateInstructions = F2(
 	function (f, _v0) {
-		var moveto = _v0.fv;
-		var drawtos = _v0.fa;
+		var moveto = _v0.fy;
+		var drawtos = _v0.fd;
 		var coordinate = moveto;
 		return {
-			fa: A2(
+			fd: A2(
 				$folkertdev$elm_deque$Deque$map,
 				$folkertdev$one_true_path_experiment$LowLevel$Command$mapCoordinateDrawTo(f),
 				drawtos),
-			fv: f(coordinate)
+			fy: f(coordinate)
 		};
 	});
 var $ianmackenzie$elm_geometry$Vector2d$plus = F2(
 	function (_v0, _v1) {
 		var v2 = _v0;
 		var v1 = _v1;
-		return {dG: v1.dG + v2.dG, dJ: v1.dJ + v2.dJ};
+		return {dM: v1.dM + v2.dM, dP: v1.dP + v2.dP};
 	});
 var $folkertdev$one_true_path_experiment$SubPath$continue = function () {
 	var helper = F2(
@@ -9298,7 +9993,7 @@ var $author$project$Shape$Pie$myAsin = function (x) {
 	return (x >= 1) ? ($elm$core$Basics$pi / 2) : ((_Utils_cmp(x, -1) < 1) ? ((-$elm$core$Basics$pi) / 2) : $elm$core$Basics$asin(x));
 };
 var $author$project$Shape$Pie$arc = function (arcData) {
-	var _v0 = (_Utils_cmp(arcData.d6, arcData.en) > 0) ? _Utils_Tuple2(arcData.en, arcData.d6) : _Utils_Tuple2(arcData.d6, arcData.en);
+	var _v0 = (_Utils_cmp(arcData.eb, arcData.es) > 0) ? _Utils_Tuple2(arcData.es, arcData.eb) : _Utils_Tuple2(arcData.eb, arcData.es);
 	var r0 = _v0.a;
 	var r1 = _v0.b;
 	if (_Utils_cmp(r1, $author$project$Shape$Pie$epsilon) < 1) {
@@ -9312,8 +10007,8 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 					_List_Nil))
 			]);
 	} else {
-		var a1 = arcData.cD - ($elm$core$Basics$pi / 2);
-		var a0 = arcData.dx - ($elm$core$Basics$pi / 2);
+		var a1 = arcData.cJ - ($elm$core$Basics$pi / 2);
+		var a0 = arcData.dD - ($elm$core$Basics$pi / 2);
 		var cw = _Utils_cmp(a1, a0) > 0;
 		var da = $elm$core$Basics$abs(a1 - a0);
 		if (_Utils_cmp(da, (2 * $elm$core$Basics$pi) - $author$project$Shape$Pie$epsilon) > 0) {
@@ -9359,9 +10054,9 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 			var rc = A2(
 				$elm$core$Basics$min,
 				$elm$core$Basics$abs(r1 - r0) / 2,
-				arcData.dU);
-			var ap = arcData.c7 / 2;
-			var rp = (_Utils_cmp(ap, $author$project$Shape$Pie$epsilon) > 0) ? ((arcData.eo > 0) ? arcData.eo : $elm$core$Basics$sqrt(
+				arcData.dZ);
+			var ap = arcData.dd / 2;
+			var rp = (_Utils_cmp(ap, $author$project$Shape$Pie$epsilon) > 0) ? ((arcData.et > 0) ? arcData.et : $elm$core$Basics$sqrt(
 				A2($elm$core$Basics$pow, r0, 2) + A2($elm$core$Basics$pow, r1, 2))) : 0;
 			var _v1 = function () {
 				if (_Utils_cmp(rp, $author$project$Shape$Pie$epsilon) > 0) {
@@ -9451,7 +10146,7 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 							t1.J,
 							t1.K,
 							rc1,
-							A2($elm$core$Basics$atan2, t1.ap, t1.ao),
+							A2($elm$core$Basics$atan2, t1.ar, t1.aq),
 							A2($elm$core$Basics$atan2, t1.Y, t1.X),
 							!cw,
 							A7(
@@ -9459,8 +10154,8 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 								0,
 								0,
 								r1,
-								A2($elm$core$Basics$atan2, t0.K + t0.ap, t0.J + t0.ao),
-								A2($elm$core$Basics$atan2, t1.K + t1.ap, t1.J + t1.ao),
+								A2($elm$core$Basics$atan2, t0.K + t0.ar, t0.J + t0.aq),
+								A2($elm$core$Basics$atan2, t1.K + t1.ar, t1.J + t1.aq),
 								!cw,
 								A7(
 									$author$project$Shape$Pie$makeArc,
@@ -9468,7 +10163,7 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 									t0.K,
 									rc1,
 									A2($elm$core$Basics$atan2, t0.Y, t0.X),
-									A2($elm$core$Basics$atan2, t0.ap, t0.ao),
+									A2($elm$core$Basics$atan2, t0.ar, t0.aq),
 									!cw,
 									p)));
 					} else {
@@ -9533,7 +10228,7 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 								t1.J,
 								t1.K,
 								rc0,
-								A2($elm$core$Basics$atan2, t1.ap, t1.ao),
+								A2($elm$core$Basics$atan2, t1.ar, t1.aq),
 								A2($elm$core$Basics$atan2, t1.Y, t1.X),
 								!cw,
 								A7(
@@ -9541,8 +10236,8 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 									0,
 									0,
 									r0,
-									A2($elm$core$Basics$atan2, t0.K + t0.ap, t0.J + t0.ao),
-									A2($elm$core$Basics$atan2, t1.K + t1.ap, t1.J + t1.ao),
+									A2($elm$core$Basics$atan2, t0.K + t0.ar, t0.J + t0.aq),
+									A2($elm$core$Basics$atan2, t1.K + t1.ar, t1.J + t1.aq),
 									cw,
 									A7(
 										$author$project$Shape$Pie$makeArc,
@@ -9550,7 +10245,7 @@ var $author$project$Shape$Pie$arc = function (arcData) {
 										t0.K,
 										rc0,
 										A2($elm$core$Basics$atan2, t0.Y, t0.X),
-										A2($elm$core$Basics$atan2, t0.ap, t0.ao),
+										A2($elm$core$Basics$atan2, t0.ar, t0.aq),
 										!cw,
 										p))))
 						]);
@@ -9584,7 +10279,7 @@ var $elm$core$Array$fromListHelp = F3(
 				return A2(
 					$elm$core$Array$builderToArray,
 					true,
-					{w: nodeList, p: nodeListSize, s: jsArray});
+					{A: nodeList, p: nodeListSize, v: jsArray});
 			} else {
 				var $temp$list = remainingItems,
 					$temp$nodeList = A2(
@@ -9787,7 +10482,7 @@ var $author$project$Shape$Pie$pie = F2(
 			});
 		var summer = F2(
 			function (a, b) {
-				var v = settings.f_(a);
+				var v = settings.f1(a);
 				return (v > 0) ? (v + b) : b;
 			});
 		var sum = A3($elm$core$List$foldr, summer, 0, data);
@@ -9801,31 +10496,31 @@ var $author$project$Shape$Pie$pie = F2(
 						function (_v2, _v3) {
 							var a = _v2.b;
 							var b = _v3.b;
-							return A2(settings.fN, a, b);
+							return A2(settings.fQ, a, b);
 						}))),
 			$elm$core$List$indexedMap($elm$core$Tuple$pair));
 		var dataArray = $elm$core$Array$fromList(data);
 		var da = A2(
 			$elm$core$Basics$min,
 			2 * $elm$core$Basics$pi,
-			A2($elm$core$Basics$max, (-2) * $elm$core$Basics$pi, settings.cD - settings.dx));
+			A2($elm$core$Basics$max, (-2) * $elm$core$Basics$pi, settings.cJ - settings.dD));
 		var p = A2(
 			$elm$core$Basics$min,
 			$elm$core$Basics$abs(da) / $elm$core$List$length(data),
-			settings.c7);
+			settings.dd);
 		var pa = p * ((da < 0) ? (-1) : 1);
 		var k = (!sum) ? 0 : ((da - ($elm$core$List$length(data) * pa)) / sum);
 		var computeValue = F2(
 			function (el, angle) {
-				var value = settings.f_(el);
+				var value = settings.f1(el);
 				return {
-					dU: settings.dU,
-					cD: (angle + ((value > 0) ? (value * k) : 0)) + pa,
-					d6: settings.d6,
-					en: settings.en,
-					c7: p,
-					eo: settings.eo,
-					dx: angle
+					dZ: settings.dZ,
+					cJ: (angle + ((value > 0) ? (value * k) : 0)) + pa,
+					eb: settings.eb,
+					es: settings.es,
+					dd: p,
+					et: settings.et,
+					dD: angle
 				};
 			});
 		var helper = F2(
@@ -9837,95 +10532,47 @@ var $author$project$Shape$Pie$pie = F2(
 					A2(unsafeGet, index, dataArray),
 					angle);
 				return _Utils_Tuple2(
-					r.cD,
+					r.cJ,
 					A3($elm$core$Dict$insert, index, r, result));
 			});
 		return $elm$core$Dict$values(
 			A3(
 				$elm$core$List$foldl,
 				helper,
-				_Utils_Tuple2(settings.dx, $elm$core$Dict$empty),
+				_Utils_Tuple2(settings.dD, $elm$core$Dict$empty),
 				sortedIndices(data)).b);
 	});
 var $author$project$Shape$pie = $author$project$Shape$Pie$pie;
 var $elm$core$List$sum = function (numbers) {
 	return A3($elm$core$List$foldl, $elm$core$Basics$add, 0, numbers);
 };
-var $author$project$PF6$Charts$Internal$Skeleton$viewCircle = function (size) {
-	var cy = size / 2;
-	var cx = size / 2;
-	var r = cx - 10;
-	var innerR = r * 0.65;
-	return A2(
-		$elm$svg$Svg$svg,
-		_List_fromArray(
-			[
-				$elm$svg$Svg$Attributes$width(
-				$elm$core$String$fromInt(size)),
-				$elm$svg$Svg$Attributes$height(
-				$elm$core$String$fromInt(size)),
-				$elm$svg$Svg$Attributes$viewBox(
-				'0 0 ' + ($elm$core$String$fromInt(size) + (' ' + $elm$core$String$fromInt(size))))
-			]),
-		_List_fromArray(
-			[
-				$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
-				A2(
-				$elm$svg$Svg$circle,
-				_List_fromArray(
-					[
-						$elm$svg$Svg$Attributes$cx(
-						$elm$core$String$fromFloat(cx)),
-						$elm$svg$Svg$Attributes$cy(
-						$elm$core$String$fromFloat(cy)),
-						$elm$svg$Svg$Attributes$r(
-						$elm$core$String$fromFloat(r)),
-						$elm$svg$Svg$Attributes$fill('#d2d2d2'),
-						$elm$svg$Svg$Attributes$class('pf-skeleton')
-					]),
-				_List_Nil),
-				A2(
-				$elm$svg$Svg$circle,
-				_List_fromArray(
-					[
-						$elm$svg$Svg$Attributes$cx(
-						$elm$core$String$fromFloat(cx)),
-						$elm$svg$Svg$Attributes$cy(
-						$elm$core$String$fromFloat(cy)),
-						$elm$svg$Svg$Attributes$r(
-						$elm$core$String$fromFloat(innerR)),
-						$elm$svg$Svg$Attributes$fill('#ffffff')
-					]),
-				_List_Nil)
-			]));
-};
 var $author$project$PF6$Charts$Colors$white = '#ffffff';
 var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return $author$project$PF6$Charts$Internal$Skeleton$viewCircle(cfg.bF);
+	if (cfg.ca) {
+		return $author$project$PF6$Charts$Internal$Skeleton$viewCircle(cfg.bJ);
 	} else {
 		var values = A2(
 			$elm$core$List$map,
 			function ($) {
-				return $.az;
+				return $.aC;
 			},
-			cfg.b0);
+			cfg._);
 		var totalVal = $elm$core$List$sum(
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.az;
+					return $.aC;
 				},
-				cfg.b0));
-		var titleHeight = (cfg.H !== '') ? 30 : 0;
-		var svgSize = cfg.bF;
+				cfg._));
+		var titleHeight = (cfg.w !== '') ? 30 : 0;
+		var svgSize = cfg.bJ;
 		var totalHeight = svgSize + titleHeight;
 		var seriesColors = _Utils_ap(
-			cfg.bX,
+			cfg.bs,
 			A2($elm$core$List$repeat, 20, $author$project$PF6$Charts$Colors$primary));
 		var outerRadius = (svgSize / 2) - 10;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
 		var legendItems = A2(
 			$elm$core$List$indexedMap,
 			F2(
@@ -9966,30 +10613,30 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(slice.o)
+										$elm$svg$Svg$text(slice.c)
 									]))
 							]));
 				}),
-			cfg.b0);
+			cfg._);
 		var innerRadius = outerRadius * 0.82;
 		var pieArcs = A2(
 			$author$project$Shape$pie,
 			{
-				dU: 2,
-				cD: 2 * $elm$core$Basics$pi,
-				d6: innerRadius,
-				en: outerRadius,
-				c7: 0.02,
-				eo: 0,
-				fN: F2(
+				dZ: 2,
+				cJ: 2 * $elm$core$Basics$pi,
+				eb: innerRadius,
+				es: outerRadius,
+				dd: 0.02,
+				et: 0,
+				fQ: F2(
 					function (_v1, _v2) {
 						return 1;
 					}),
-				dx: 0,
-				f_: $elm$core$Basics$identity
+				dD: 0,
+				f1: $elm$core$Basics$identity
 			},
 			values);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var cy = svgSize / 2;
 		var cx = svgSize / 2;
 		var slices = A2(
@@ -9998,10 +10645,10 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 				function (idx, arc) {
 					var slice = A2(
 						$elm$core$Maybe$withDefault,
-						{o: '', az: 0},
+						{c: '', aC: 0},
 						$elm$core$List$head(
-							A2($elm$core$List$drop, idx, cfg.b0)));
-					var pct = (totalVal > 0) ? $elm$core$Basics$round((slice.az / totalVal) * 100) : 0;
+							A2($elm$core$List$drop, idx, cfg._)));
+					var pct = (totalVal > 0) ? $elm$core$Basics$round((slice.aC / totalVal) * 100) : 0;
 					var color = A2(
 						$elm$core$Maybe$withDefault,
 						$author$project$PF6$Charts$Colors$primary,
@@ -10010,7 +10657,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 					var arcPath = A2(
 						$folkertdev$one_true_path_experiment$Path$element,
 						$author$project$Shape$arc(
-							{dU: 2, cD: arc.cD, d6: innerRadius, en: outerRadius, c7: arc.c7, eo: 0, dx: arc.dx}),
+							{dZ: 2, cJ: arc.cJ, eb: innerRadius, es: outerRadius, dd: arc.dd, et: 0, dD: arc.dD}),
 						_List_fromArray(
 							[
 								$elm$svg$Svg$Attributes$fill(color),
@@ -10019,7 +10666,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 								$elm$svg$Svg$Attributes$transform(
 								'translate(' + ($elm$core$String$fromFloat(cx) + (',' + ($elm$core$String$fromFloat(cy) + ')'))))
 							]));
-					return cfg.cp ? A2(
+					return cfg.cv ? A2(
 						$elm$svg$Svg$g,
 						_List_Nil,
 						_List_fromArray(
@@ -10032,7 +10679,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 								_List_fromArray(
 									[
 										$elm$svg$Svg$text(
-										slice.o + (': ' + ($elm$core$String$fromFloat(slice.az) + (' (' + ($elm$core$String$fromInt(pct) + '%)')))))
+										slice.c + (': ' + ($elm$core$String$fromFloat(slice.aC) + (' (' + ($elm$core$String$fromInt(pct) + '%)')))))
 									]))
 							])) : arcPath;
 				}),
@@ -10062,7 +10709,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 						slices,
 						_List_fromArray(
 							[
-								(cfg.bo !== '') ? A2(
+								(cfg.bq !== '') ? A2(
 								$elm$svg$Svg$text_,
 								_List_fromArray(
 									[
@@ -10077,9 +10724,9 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(cfg.bo)
+										$elm$svg$Svg$text(cfg.bq)
 									])) : $elm$svg$Svg$text(''),
-								(cfg.bn !== '') ? A2(
+								(cfg.bp !== '') ? A2(
 								$elm$svg$Svg$text_,
 								_List_fromArray(
 									[
@@ -10093,9 +10740,9 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(cfg.bn)
+										$elm$svg$Svg$text(cfg.bp)
 									])) : $elm$svg$Svg$text(''),
-								(cfg.H !== '') ? A2(
+								(cfg.w !== '') ? A2(
 								$elm$svg$Svg$text_,
 								_List_fromArray(
 									[
@@ -10109,7 +10756,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(cfg.H)
+										$elm$svg$Svg$text(cfg.w)
 									])) : $elm$svg$Svg$text('')
 							])))
 				]));
@@ -10117,37 +10764,37 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 };
 var $author$project$PF6$Charts$DonutUtilization$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return $author$project$PF6$Charts$Internal$Skeleton$viewCircle(cfg.bF);
+	if (cfg.ca) {
+		return $author$project$PF6$Charts$Internal$Skeleton$viewCircle(cfg.bJ);
 	} else {
 		var trackColor = '#d2d2d2';
-		var titleHeight = (cfg.H !== '') ? 30 : 0;
-		var svgSize = cfg.bF;
+		var titleHeight = (cfg.w !== '') ? 30 : 0;
+		var svgSize = cfg.bJ;
 		var totalHeight = svgSize + titleHeight;
-		var percent = (cfg.bO > 0) ? ((cfg.ct / cfg.bO) * 100) : 0;
+		var percent = (cfg.bS > 0) ? ((cfg.cz / cfg.bS) * 100) : 0;
 		var percentStr = $elm$core$String$fromInt(
 			$elm$core$Basics$round(percent)) + '%';
 		var outerRadius = (svgSize / 2) - 10;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
 		var innerRadius = outerRadius * 0.82;
 		var fullAngle = 2 * $elm$core$Basics$pi;
 		var trackPath = $author$project$Shape$arc(
-			{dU: 2, cD: fullAngle - 0.001, d6: innerRadius, en: outerRadius, c7: 0, eo: 0, dx: 0});
+			{dZ: 2, cJ: fullAngle - 0.001, eb: innerRadius, es: outerRadius, dd: 0, et: 0, dD: 0});
 		var usedAngle = (percent / 100) * fullAngle;
 		var usedPath = $author$project$Shape$arc(
 			{
-				dU: 2,
-				cD: A2($elm$core$Basics$max, 0.001, usedAngle),
-				d6: innerRadius,
-				en: outerRadius,
-				c7: 0,
-				eo: 0,
-				dx: 0
+				dZ: 2,
+				cJ: A2($elm$core$Basics$max, 0.001, usedAngle),
+				eb: innerRadius,
+				es: outerRadius,
+				dd: 0,
+				et: 0,
+				dD: 0
 			});
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var cy = svgSize / 2;
 		var cx = svgSize / 2;
-		var arcColor = (_Utils_cmp(percent, cfg.b$) > -1) ? '#c9190b' : ((_Utils_cmp(percent, cfg.cu) > -1) ? '#f0ab00' : $author$project$PF6$Charts$Theme$primaryColor(cfg.aO));
+		var arcColor = (_Utils_cmp(percent, cfg.b2) > -1) ? '#c9190b' : ((_Utils_cmp(percent, cfg.cA) > -1) ? '#f0ab00' : $author$project$PF6$Charts$Theme$primaryColor(cfg.az));
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -10221,9 +10868,9 @@ var $author$project$PF6$Charts$DonutUtilization$toSvg = function (_v0) {
 							_List_fromArray(
 								[
 									$elm$svg$Svg$text(
-									$elm$core$String$fromFloat(cfg.ct) + (' of ' + ($elm$core$String$fromFloat(cfg.bO) + ((cfg.cs !== '') ? (' ' + cfg.cs) : ''))))
+									$elm$core$String$fromFloat(cfg.cz) + (' of ' + ($elm$core$String$fromFloat(cfg.bS) + ((cfg.cy !== '') ? (' ' + cfg.cy) : ''))))
 								])),
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -10237,7 +10884,7 @@ var $author$project$PF6$Charts$DonutUtilization$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text('')
 						]))
 				]));
@@ -10245,20 +10892,20 @@ var $author$project$PF6$Charts$DonutUtilization$toSvg = function (_v0) {
 };
 var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var padTop = (cfg.H !== '') ? 40 : 20;
+		var padTop = (cfg.w !== '') ? 40 : 20;
 		var padRight = 30;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var legendWidth = $elm$core$List$length(cfg.a4) * 120;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var legendItems = ($elm$core$List$length(cfg.a4) > 1) ? A2(
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var legendWidth = $elm$core$List$length(cfg.aR) * 120;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var legendItems = ($elm$core$List$length(cfg.aR) > 1) ? A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (idx, series) {
 					var xOff = idx * 120;
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					return A2(
 						$elm$svg$Svg$g,
 						_List_fromArray(
@@ -10291,24 +10938,24 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(series.o)
+										$elm$svg$Svg$text(series.c)
 									]))
 							]));
 				}),
-			cfg.a4) : _List_Nil;
-		var innerW = (cfg.aB - padLeft) - padRight;
+			cfg.aR) : _List_Nil;
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
-		var hasLegend = $elm$core$List$length(cfg.a4) > 1;
-		var padBottom = ((cfg.be !== '') && hasLegend) ? 75 : ((cfg.be !== '') ? 55 : (hasLegend ? 50 : 40));
-		var innerH = (cfg.as - padTop) - padBottom;
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var hasLegend = $elm$core$List$length(cfg.aR) > 1;
+		var padBottom = ((cfg.aX !== '') && hasLegend) ? 75 : ((cfg.aX !== '') ? 55 : (hasLegend ? 50 : 40));
+		var innerH = (cfg.aj - padTop) - padBottom;
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var allPoints = A2(
 			$elm$core$List$concatMap,
 			function ($) {
-				return $.b0;
+				return $._;
 			},
-			cfg.a4);
+			cfg.aR);
 		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, allPoints);
 		var xMax = A2(
 			$elm$core$Maybe$withDefault,
@@ -10370,8 +11017,8 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 										A2($author$project$Scale$convert, xScale, x),
 										A2($author$project$Scale$convert, yScale, y)));
 							},
-							series.b0));
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+							series._));
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					return A2(
 						$folkertdev$one_true_path_experiment$Path$element,
 						path,
@@ -10383,7 +11030,7 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 								$elm$svg$Svg$Attributes$strokeLinejoin('round')
 							]));
 				}),
-			cfg.a4);
+			cfg.aR);
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -10398,21 +11045,21 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -10421,7 +11068,7 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -10467,7 +11114,7 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 													yScale)
 												]))
 										])))),
-							(cfg.be !== '') ? A2(
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -10475,16 +11122,16 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
 									$elm$core$String$fromInt(
-										cfg.as - (hasLegend ? 30 : 8))),
+										cfg.aj - (hasLegend ? 30 : 8))),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -10496,98 +11143,64 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
+									$elm$svg$Svg$text(cfg.bj)
 								])) : $elm$svg$Svg$text(''),
 							(!$elm$core$List$isEmpty(legendItems)) ? A2(
 							$elm$svg$Svg$g,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$transform(
-									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.as - 14) + ')'))))
+									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 14) + ')'))))
 								]),
 							legendItems) : $elm$svg$Svg$text('')
 						]))
 				]));
 	}
 };
-var $author$project$PF6$Charts$Internal$Skeleton$viewPie = function (size) {
-	var cy = size / 2;
-	var cx = size / 2;
-	var r = cx - 10;
-	return A2(
-		$elm$svg$Svg$svg,
-		_List_fromArray(
-			[
-				$elm$svg$Svg$Attributes$width(
-				$elm$core$String$fromInt(size)),
-				$elm$svg$Svg$Attributes$height(
-				$elm$core$String$fromInt(size)),
-				$elm$svg$Svg$Attributes$viewBox(
-				'0 0 ' + ($elm$core$String$fromInt(size) + (' ' + $elm$core$String$fromInt(size))))
-			]),
-		_List_fromArray(
-			[
-				$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
-				A2(
-				$elm$svg$Svg$circle,
-				_List_fromArray(
-					[
-						$elm$svg$Svg$Attributes$cx(
-						$elm$core$String$fromFloat(cx)),
-						$elm$svg$Svg$Attributes$cy(
-						$elm$core$String$fromFloat(cy)),
-						$elm$svg$Svg$Attributes$r(
-						$elm$core$String$fromFloat(r)),
-						$elm$svg$Svg$Attributes$fill('#d2d2d2'),
-						$elm$svg$Svg$Attributes$class('pf-skeleton')
-					]),
-				_List_Nil)
-			]));
-};
 var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return $author$project$PF6$Charts$Internal$Skeleton$viewPie(cfg.bF);
+	if (cfg.ca) {
+		return $author$project$PF6$Charts$Internal$Skeleton$viewPie(cfg.bJ);
 	} else {
 		var values = A2(
 			$elm$core$List$map,
 			function ($) {
-				return $.az;
+				return $.aC;
 			},
-			cfg.b0);
+			cfg._);
 		var totalVal = $elm$core$List$sum(
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.az;
+					return $.aC;
 				},
-				cfg.b0));
-		var titleHeight = (cfg.H !== '') ? 30 : 0;
-		var svgSize = cfg.bF;
+				cfg._));
+		var titleHeight = (cfg.w !== '') ? 30 : 0;
+		var svgSize = cfg.bJ;
 		var totalHeight = svgSize + titleHeight;
 		var seriesColors = _Utils_ap(
-			cfg.bX,
+			cfg.bs,
 			A2($elm$core$List$repeat, 20, $author$project$PF6$Charts$Colors$primary));
 		var outerRadius = (svgSize / 2) - 10;
 		var pieArcs = A2(
 			$author$project$Shape$pie,
 			{
-				dU: 2,
-				cD: 2 * $elm$core$Basics$pi,
-				d6: 0,
-				en: outerRadius,
-				c7: 0.02,
-				eo: 0,
-				fN: F2(
+				dZ: 2,
+				cJ: 2 * $elm$core$Basics$pi,
+				eb: 0,
+				es: outerRadius,
+				dd: 0.02,
+				et: 0,
+				fQ: F2(
 					function (_v1, _v2) {
 						return 1;
 					}),
-				dx: 0,
-				f_: $elm$core$Basics$identity
+				dD: 0,
+				f1: $elm$core$Basics$identity
 			},
 			values);
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var cy = svgSize / 2;
 		var cx = svgSize / 2;
 		var slices = A2(
@@ -10596,10 +11209,10 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 				function (idx, arc) {
 					var slice = A2(
 						$elm$core$Maybe$withDefault,
-						{o: '', az: 0},
+						{c: '', aC: 0},
 						$elm$core$List$head(
-							A2($elm$core$List$drop, idx, cfg.b0)));
-					var pct = (totalVal > 0) ? $elm$core$Basics$round((slice.az / totalVal) * 100) : 0;
+							A2($elm$core$List$drop, idx, cfg._)));
+					var pct = (totalVal > 0) ? $elm$core$Basics$round((slice.aC / totalVal) * 100) : 0;
 					var color = A2(
 						$elm$core$Maybe$withDefault,
 						$author$project$PF6$Charts$Colors$primary,
@@ -10608,7 +11221,7 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 					var arcPath = A2(
 						$folkertdev$one_true_path_experiment$Path$element,
 						$author$project$Shape$arc(
-							{dU: 2, cD: arc.cD, d6: 0, en: outerRadius, c7: arc.c7, eo: 0, dx: arc.dx}),
+							{dZ: 2, cJ: arc.cJ, eb: 0, es: outerRadius, dd: arc.dd, et: 0, dD: arc.dD}),
 						_List_fromArray(
 							[
 								$elm$svg$Svg$Attributes$fill(color),
@@ -10617,7 +11230,7 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 								$elm$svg$Svg$Attributes$transform(
 								'translate(' + ($elm$core$String$fromFloat(cx) + (',' + ($elm$core$String$fromFloat(cy) + ')'))))
 							]));
-					return cfg.cp ? A2(
+					return cfg.cv ? A2(
 						$elm$svg$Svg$g,
 						_List_Nil,
 						_List_fromArray(
@@ -10630,7 +11243,7 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 								_List_fromArray(
 									[
 										$elm$svg$Svg$text(
-										slice.o + (': ' + ($elm$core$String$fromFloat(slice.az) + (' (' + ($elm$core$String$fromInt(pct) + '%)')))))
+										slice.c + (': ' + ($elm$core$String$fromFloat(slice.aC) + (' (' + ($elm$core$String$fromInt(pct) + '%)')))))
 									]))
 							])) : arcPath;
 				}),
@@ -10660,7 +11273,7 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 						slices,
 						_List_fromArray(
 							[
-								(cfg.H !== '') ? A2(
+								(cfg.w !== '') ? A2(
 								$elm$svg$Svg$text_,
 								_List_fromArray(
 									[
@@ -10674,27 +11287,38 @@ var $author$project$PF6$Charts$Pie$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(cfg.H)
+										$elm$svg$Svg$text(cfg.w)
 									])) : $elm$svg$Svg$text('')
 							])))
 				]));
 	}
 };
+var $elm$core$List$sortBy = _List_sortBy;
 var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var padTop = (cfg.H !== '') ? 40 : 20;
+		var sortedSeries = A2(
+			$elm$core$List$map,
+			function (s) {
+				return _Utils_update(
+					s,
+					{
+						_: A2($elm$core$List$sortBy, $elm$core$Tuple$first, s._)
+					});
+			},
+			cfg.aR);
+		var padTop = (cfg.w !== '') ? 40 : 20;
 		var padRight = 30;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var legendItems = ($elm$core$List$length(cfg.a4) > 1) ? A2(
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var legendItems = ($elm$core$List$length(cfg.aR) > 1) ? A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (idx, series) {
 					var xOff = idx * 110;
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					return A2(
 						$elm$svg$Svg$g,
 						_List_fromArray(
@@ -10725,27 +11349,27 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(series.o)
+										$elm$svg$Svg$text(series.c)
 									]))
 							]));
 				}),
-			cfg.a4) : _List_Nil;
-		var innerW = (cfg.aB - padLeft) - padRight;
+			cfg.aR) : _List_Nil;
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var legendX = padLeft + A2(
 			$elm$core$Basics$max,
 			0,
-			((innerW / 2) | 0) - ($elm$core$List$length(cfg.a4) * 55));
-		var hasLegend = $elm$core$List$length(cfg.a4) > 1;
-		var padBottom = ((cfg.be !== '') && hasLegend) ? 75 : ((cfg.be !== '') ? 55 : (hasLegend ? 50 : 40));
-		var innerH = (cfg.as - padTop) - padBottom;
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+			((innerW / 2) | 0) - ($elm$core$List$length(cfg.aR) * 55));
+		var hasLegend = $elm$core$List$length(cfg.aR) > 1;
+		var padBottom = ((cfg.aX !== '') && hasLegend) ? 75 : ((cfg.aX !== '') ? 55 : (hasLegend ? 50 : 40));
+		var innerH = (cfg.aj - padTop) - padBottom;
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var allPoints = A2(
 			$elm$core$List$concatMap,
 			function ($) {
-				return $.b0;
+				return $._;
 			},
-			cfg.a4);
+			cfg.aR);
 		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, allPoints);
 		var xMax = A2(
 			$elm$core$Maybe$withDefault,
@@ -10796,12 +11420,117 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 					_List_Nil);
 			},
 			A2($author$project$Scale$ticks, yScale, 5));
+		var overlayElements = function () {
+			var _v3 = cfg.ck;
+			switch (_v3) {
+				case 0:
+					return _List_Nil;
+				case 1:
+					return A2(
+						$elm$core$List$indexedMap,
+						F2(
+							function (idx, series) {
+								var path = A2(
+									$author$project$Shape$line,
+									$author$project$Shape$monotoneInXCurve,
+									A2(
+										$elm$core$List$map,
+										function (_v4) {
+											var x = _v4.a;
+											var y = _v4.b;
+											return $elm$core$Maybe$Just(
+												_Utils_Tuple2(
+													A2($author$project$Scale$convert, xScale, x),
+													A2($author$project$Scale$convert, yScale, y)));
+										},
+										series._));
+								var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
+								return A2(
+									$folkertdev$one_true_path_experiment$Path$element,
+									path,
+									_List_fromArray(
+										[
+											$elm$svg$Svg$Attributes$fill('none'),
+											$elm$svg$Svg$Attributes$stroke(color),
+											$elm$svg$Svg$Attributes$strokeWidth('1.5'),
+											$elm$svg$Svg$Attributes$strokeLinejoin('round'),
+											$elm$svg$Svg$Attributes$opacity('0.7')
+										]));
+							}),
+						sortedSeries);
+				default:
+					return A2(
+						$elm$core$List$indexedMap,
+						F2(
+							function (idx, series) {
+								var linePath = A2(
+									$author$project$Shape$line,
+									$author$project$Shape$monotoneInXCurve,
+									A2(
+										$elm$core$List$map,
+										function (_v6) {
+											var x = _v6.a;
+											var y = _v6.b;
+											return $elm$core$Maybe$Just(
+												_Utils_Tuple2(
+													A2($author$project$Scale$convert, xScale, x),
+													A2($author$project$Scale$convert, yScale, y)));
+										},
+										series._));
+								var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
+								var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, color, 0.20);
+								var areaPath = A2(
+									$author$project$Shape$area,
+									$author$project$Shape$monotoneInXCurve,
+									A2(
+										$elm$core$List$map,
+										function (_v5) {
+											var x = _v5.a;
+											var y = _v5.b;
+											return $elm$core$Maybe$Just(
+												_Utils_Tuple2(
+													_Utils_Tuple2(
+														A2($author$project$Scale$convert, xScale, x),
+														A2($author$project$Scale$convert, yScale, 0)),
+													_Utils_Tuple2(
+														A2($author$project$Scale$convert, xScale, x),
+														A2($author$project$Scale$convert, yScale, y))));
+										},
+										series._));
+								return A2(
+									$elm$svg$Svg$g,
+									_List_Nil,
+									_List_fromArray(
+										[
+											A2(
+											$folkertdev$one_true_path_experiment$Path$element,
+											areaPath,
+											_List_fromArray(
+												[
+													$elm$svg$Svg$Attributes$fill(fillColor),
+													$elm$svg$Svg$Attributes$stroke('none')
+												])),
+											A2(
+											$folkertdev$one_true_path_experiment$Path$element,
+											linePath,
+											_List_fromArray(
+												[
+													$elm$svg$Svg$Attributes$fill('none'),
+													$elm$svg$Svg$Attributes$stroke(color),
+													$elm$svg$Svg$Attributes$strokeWidth('1.5'),
+													$elm$svg$Svg$Attributes$strokeLinejoin('round')
+												]))
+										]));
+							}),
+						sortedSeries);
+			}
+		}();
 		var points = A2(
 			$elm$core$List$concatMap,
 			function (_v1) {
 				var idx = _v1.a;
 				var series = _v1.b;
-				var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+				var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 				return A2(
 					$elm$core$List$map,
 					function (_v2) {
@@ -10818,11 +11547,11 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 									$elm$core$String$fromFloat(
 										A2($author$project$Scale$convert, yScale, y))),
 									$elm$svg$Svg$Attributes$r(
-									$elm$core$String$fromFloat(cfg.ci)),
+									$elm$core$String$fromFloat(cfg.co)),
 									$elm$svg$Svg$Attributes$fill(color),
 									$elm$svg$Svg$Attributes$opacity('0.8')
 								]),
-							cfg.cp ? _List_fromArray(
+							cfg.cv ? _List_fromArray(
 								[
 									A3(
 									$elm$svg$Svg$node,
@@ -10835,9 +11564,9 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 										]))
 								]) : _List_Nil);
 					},
-					series.b0);
+					series._);
 			},
-			A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, cfg.a4));
+			A2($elm$core$List$indexedMap, $elm$core$Tuple$pair, cfg.aR));
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -10852,21 +11581,21 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -10875,7 +11604,7 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -10887,41 +11616,43 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 							_Utils_ap(
 								gridLines,
 								_Utils_ap(
-									points,
-									_List_fromArray(
-										[
-											A2(
-											$elm$svg$Svg$g,
-											_List_fromArray(
-												[
-													$elm$svg$Svg$Attributes$transform(
-													'translate(0,' + ($elm$core$String$fromInt(innerH) + ')'))
-												]),
-											_List_fromArray(
-												[
-													A2(
-													$author$project$Axis$bottom,
-													_List_fromArray(
-														[
-															$author$project$Axis$tickCount(6)
-														]),
-													xScale)
-												])),
-											A2(
-											$elm$svg$Svg$g,
-											_List_Nil,
-											_List_fromArray(
-												[
-													A2(
-													$author$project$Axis$left,
-													_List_fromArray(
-														[
-															$author$project$Axis$tickCount(5)
-														]),
-													yScale)
-												]))
-										])))),
-							(cfg.be !== '') ? A2(
+									overlayElements,
+									_Utils_ap(
+										points,
+										_List_fromArray(
+											[
+												A2(
+												$elm$svg$Svg$g,
+												_List_fromArray(
+													[
+														$elm$svg$Svg$Attributes$transform(
+														'translate(0,' + ($elm$core$String$fromInt(innerH) + ')'))
+													]),
+												_List_fromArray(
+													[
+														A2(
+														$author$project$Axis$bottom,
+														_List_fromArray(
+															[
+																$author$project$Axis$tickCount(6)
+															]),
+														xScale)
+													])),
+												A2(
+												$elm$svg$Svg$g,
+												_List_Nil,
+												_List_fromArray(
+													[
+														A2(
+														$author$project$Axis$left,
+														_List_fromArray(
+															[
+																$author$project$Axis$tickCount(5)
+															]),
+														yScale)
+													]))
+											]))))),
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -10929,16 +11660,16 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
 									$elm$core$String$fromInt(
-										cfg.as - (hasLegend ? 30 : 8))),
+										cfg.aj - (hasLegend ? 30 : 8))),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -10950,75 +11681,42 @@ var $author$project$PF6$Charts$Scatter$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
+									$elm$svg$Svg$text(cfg.bj)
 								])) : $elm$svg$Svg$text(''),
 							(!$elm$core$List$isEmpty(legendItems)) ? A2(
 							$elm$svg$Svg$g,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$transform(
-									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.as - 12) + ')'))))
+									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 12) + ')'))))
 								]),
 							legendItems) : $elm$svg$Svg$text('')
 						]))
 				]));
 	}
 };
-var $author$project$PF6$Charts$Internal$Skeleton$viewSparkline = F2(
-	function (w, h) {
-		return A2(
-			$elm$svg$Svg$svg,
-			_List_fromArray(
-				[
-					$elm$svg$Svg$Attributes$width(
-					$elm$core$String$fromInt(w)),
-					$elm$svg$Svg$Attributes$height(
-					$elm$core$String$fromInt(h)),
-					$elm$svg$Svg$Attributes$viewBox(
-					'0 0 ' + ($elm$core$String$fromInt(w) + (' ' + $elm$core$String$fromInt(h))))
-				]),
-			_List_fromArray(
-				[
-					$author$project$PF6$Charts$Internal$Skeleton$shimmerStyle,
-					A2(
-					$elm$svg$Svg$rect,
-					_List_fromArray(
-						[
-							$elm$svg$Svg$Attributes$x('2'),
-							$elm$svg$Svg$Attributes$y('2'),
-							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(w - 4)),
-							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(h - 4)),
-							$elm$svg$Svg$Attributes$fill('#d2d2d2'),
-							$elm$svg$Svg$Attributes$rx('3'),
-							$elm$svg$Svg$Attributes$class('pf-skeleton')
-						]),
-					_List_Nil)
-				]));
-	});
 var $author$project$PF6$Charts$Sparkline$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$viewSparkline, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$viewSparkline, cfg.aE, cfg.aj);
 	} else {
 		var pad = 2;
-		var n = $elm$core$List$length(cfg.b0);
-		var innerW = cfg.aB - (pad * 2);
+		var n = $elm$core$List$length(cfg._);
+		var innerW = cfg.aE - (pad * 2);
 		var xScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(0, innerW),
 			_Utils_Tuple2(
 				0,
 				A2($elm$core$Basics$max, 1, n - 1)));
-		var innerH = cfg.as - (pad * 2);
+		var innerH = cfg.aj - (pad * 2);
 		var indexedData = A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (i, y) {
 					return _Utils_Tuple2(i, y);
 				}),
-			cfg.b0);
+			cfg._);
 		var ys = A2($elm$core$List$map, $elm$core$Tuple$second, indexedData);
 		var yMax = A2(
 			$elm$core$Maybe$withDefault,
@@ -11056,7 +11754,7 @@ var $author$project$PF6$Charts$Sparkline$toSvg = function (_v0) {
 			$author$project$Shape$line,
 			$author$project$Shape$monotoneInXCurve,
 			A2($elm$core$List$map, toLinePoint, indexedData));
-		var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, cfg.aU, 0.15);
+		var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, cfg.aY, 0.15);
 		var areaPath = A2(
 			$author$project$Shape$area,
 			$author$project$Shape$monotoneInXCurve,
@@ -11074,11 +11772,11 @@ var $author$project$PF6$Charts$Sparkline$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as))))
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj))))
 						]),
 					_List_fromArray(
 						[
@@ -11091,7 +11789,7 @@ var $author$project$PF6$Charts$Sparkline$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									cfg.b2 ? A2(
+									cfg.b4 ? A2(
 									$folkertdev$one_true_path_experiment$Path$element,
 									areaPath,
 									_List_fromArray(
@@ -11105,7 +11803,7 @@ var $author$project$PF6$Charts$Sparkline$toSvg = function (_v0) {
 									_List_fromArray(
 										[
 											$elm$svg$Svg$Attributes$fill('none'),
-											$elm$svg$Svg$Attributes$stroke(cfg.aU),
+											$elm$svg$Svg$Attributes$stroke(cfg.aY),
 											$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 											$elm$svg$Svg$Attributes$strokeLinejoin('round')
 										]))
@@ -11120,26 +11818,26 @@ var $elm$svg$Svg$polygon = $elm$svg$Svg$trustedNode('polygon');
 var $elm$svg$Svg$polyline = $elm$svg$Svg$trustedNode('polyline');
 var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
 		var xMin = A2(
 			$elm$core$Maybe$withDefault,
 			0,
-			$elm$core$List$minimum(cfg.bf));
-		var padTop = (cfg.H !== '') ? 40 : 20;
+			$elm$core$List$minimum(cfg.bi));
+		var padTop = (cfg.w !== '') ? 40 : 20;
 		var padRight = 30;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 75 : 50;
-		var n = $elm$core$List$length(cfg.bf);
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var padBottom = (cfg.aX !== '') ? 75 : 50;
+		var n = $elm$core$List$length(cfg.bi);
 		var totals = A3(
 			$elm$core$List$foldl,
 			F2(
 				function (series, acc) {
-					return A3($elm$core$List$map2, $elm$core$Basics$add, acc, series.bR);
+					return A3($elm$core$List$map2, $elm$core$Basics$add, acc, series.bg);
 				}),
 			A2($elm$core$List$repeat, n, 0),
-			cfg.a4);
+			cfg.aR);
 		var yMax = A2(
 			$elm$core$Maybe$withDefault,
 			1,
@@ -11147,15 +11845,15 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 		var xMax = A2(
 			$elm$core$Maybe$withDefault,
 			n - 1,
-			$elm$core$List$maximum(cfg.bf));
-		var legendWidth = $elm$core$List$length(cfg.a4) * 110;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
+			$elm$core$List$maximum(cfg.bi));
+		var legendWidth = $elm$core$List$length(cfg.aR) * 110;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
 		var legendItems = A2(
 			$elm$core$List$indexedMap,
 			F2(
 				function (idx, series) {
 					var xOff = idx * 110;
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					return A2(
 						$elm$svg$Svg$g,
 						_List_fromArray(
@@ -11188,23 +11886,23 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 									]),
 								_List_fromArray(
 									[
-										$elm$svg$Svg$text(series.o)
+										$elm$svg$Svg$text(series.c)
 									]))
 							]));
 				}),
-			cfg.a4);
-		var innerW = (cfg.aB - padLeft) - padRight;
+			cfg.aR);
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var legendX = padLeft + A2($elm$core$Basics$max, 0, ((innerW / 2) | 0) - ((legendWidth / 2) | 0));
 		var xScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(0, innerW),
 			_Utils_Tuple2(xMin, xMax));
-		var innerH = (cfg.as - padTop) - padBottom;
+		var innerH = (cfg.aj - padTop) - padBottom;
 		var yScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(innerH, 0),
 			_Utils_Tuple2(0, yMax * 1.1));
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
 		var gridLines = A2(
 			$elm$core$List$map,
 			function (tick) {
@@ -11227,7 +11925,7 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 					_List_Nil);
 			},
 			A2($author$project$Scale$ticks, yScale, 5));
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
 		var baselines = A3(
 			$elm$core$List$foldl,
 			F2(
@@ -11240,12 +11938,12 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 							accBaselines,
 							_List_fromArray(
 								[newBaseline])),
-						A3($elm$core$List$map2, $elm$core$Basics$add, runningSum, series.bR));
+						A3($elm$core$List$map2, $elm$core$Basics$add, runningSum, series.bg));
 				}),
 			_Utils_Tuple2(
 				_List_Nil,
 				A2($elm$core$List$repeat, n, 0)),
-			cfg.a4).a;
+			cfg.aR).a;
 		var areas = A4(
 			$elm$core$List$map3,
 			F3(
@@ -11259,9 +11957,9 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 								var px = A2($author$project$Scale$convert, xScale, x);
 								return _Utils_Tuple3(px, y0, y1);
 							}),
-						cfg.bf,
+						cfg.bi,
 						baseline,
-						series.bR);
+						series.bg);
 					var topPoints = A2(
 						$elm$core$List$map,
 						function (_v4) {
@@ -11270,7 +11968,7 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 							return _Utils_Tuple2(px, y1);
 						},
 						points);
-					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.aO);
+					var color = A2($author$project$PF6$Charts$Theme$seriesColor, idx, cfg.az);
 					var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, color, 0.7);
 					var bottomPoints = $elm$core$List$reverse(
 						A2(
@@ -11333,8 +12031,8 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 			A2(
 				$elm$core$List$range,
 				0,
-				$elm$core$List$length(cfg.a4) - 1),
-			cfg.a4,
+				$elm$core$List$length(cfg.aR) - 1),
+			cfg.aR,
 			baselines);
 		return A2(
 			$elm$html$Html$div,
@@ -11350,21 +12048,21 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -11373,7 +12071,7 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -11419,23 +12117,23 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 													yScale)
 												]))
 										])))),
-							(cfg.be !== '') ? A2(
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 30)),
+									$elm$core$String$fromInt(cfg.aj - 30)),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -11447,48 +12145,27 @@ var $author$project$PF6$Charts$Stack$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
+									$elm$svg$Svg$text(cfg.bj)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$transform(
-									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.as - 12) + ')'))))
+									'translate(' + ($elm$core$String$fromInt(legendX) + (',' + ($elm$core$String$fromInt(cfg.aj - 12) + ')'))))
 								]),
 							legendItems)
 						]))
 				]));
 	}
 };
-var $elm$core$List$any = F2(
-	function (isOkay, list) {
-		any:
-		while (true) {
-			if (!list.b) {
-				return false;
-			} else {
-				var x = list.a;
-				var xs = list.b;
-				if (isOkay(x)) {
-					return true;
-				} else {
-					var $temp$isOkay = isOkay,
-						$temp$list = xs;
-					isOkay = $temp$isOkay;
-					list = $temp$list;
-					continue any;
-				}
-			}
-		}
-	});
 var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 	var cfg = _v0;
-	if (cfg.b8) {
-		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aB, cfg.as);
+	if (cfg.ca) {
+		return A2($author$project$PF6$Charts$Internal$Skeleton$view, cfg.aE, cfg.aj);
 	} else {
-		var ys = A2($elm$core$List$map, $elm$core$Tuple$second, cfg.b0);
-		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, cfg.b0);
+		var ys = A2($elm$core$List$map, $elm$core$Tuple$second, cfg._);
+		var xs = A2($elm$core$List$map, $elm$core$Tuple$first, cfg._);
 		var xMin = A2(
 			$elm$core$Maybe$withDefault,
 			0,
@@ -11497,33 +12174,33 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 			$elm$core$Maybe$withDefault,
 			1,
 			$elm$core$List$maximum(xs));
-		var padTop = (cfg.H !== '') ? 40 : 20;
+		var padTop = (cfg.w !== '') ? 40 : 20;
 		var padRight = A2(
 			$elm$core$List$any,
 			function (t) {
-				return t.o !== '';
+				return t.c !== '';
 			},
-			cfg.aP) ? 80 : 30;
-		var padLeft = (cfg.bg !== '') ? 65 : 50;
-		var padBottom = (cfg.be !== '') ? 55 : 40;
-		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var innerW = (cfg.aB - padLeft) - padRight;
+			cfg.aS) ? 80 : 30;
+		var padLeft = (cfg.bj !== '') ? 65 : 50;
+		var padBottom = (cfg.aX !== '') ? 55 : 40;
+		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.az);
+		var innerW = (cfg.aE - padLeft) - padRight;
 		var xScale = A2(
 			$author$project$Scale$linear,
 			_Utils_Tuple2(0, innerW),
 			_Utils_Tuple2(xMin, xMax));
-		var innerH = (cfg.as - padTop) - padBottom;
-		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.aO);
-		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.aO);
-		var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, cfg.aU, cfg.b3);
+		var innerH = (cfg.aj - padTop) - padBottom;
+		var gridColor = $author$project$PF6$Charts$Theme$gridColor(cfg.az);
+		var font = $author$project$PF6$Charts$Theme$fontFamily(cfg.az);
+		var fillColor = A2($author$project$PF6$Charts$Internal$Color$hexToRgba, cfg.aY, cfg.b5);
 		var allYValues = _Utils_ap(
 			ys,
 			A2(
 				$elm$core$List$map,
 				function ($) {
-					return $.az;
+					return $.aC;
 				},
-				cfg.aP));
+				cfg.aS));
 		var yMax = A2(
 			$elm$core$Maybe$withDefault,
 			100,
@@ -11557,7 +12234,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 		var thresholdLines = A2(
 			$elm$core$List$map,
 			function (t) {
-				var ty = A2($author$project$Scale$convert, yScale, t.az);
+				var ty = A2($author$project$Scale$convert, yScale, t.aC);
 				return A2(
 					$elm$svg$Svg$g,
 					_List_Nil,
@@ -11574,12 +12251,12 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 									$elm$core$String$fromFloat(ty)),
 									$elm$svg$Svg$Attributes$y2(
 									$elm$core$String$fromFloat(ty)),
-									$elm$svg$Svg$Attributes$stroke(t.aU),
+									$elm$svg$Svg$Attributes$stroke(t.aY),
 									$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 									$elm$svg$Svg$Attributes$strokeDasharray('6,3')
 								]),
 							_List_Nil),
-							(t.o !== '') ? A2(
+							(t.c !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -11588,15 +12265,15 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 									$elm$svg$Svg$Attributes$y(
 									$elm$core$String$fromFloat(ty + 4)),
 									$elm$svg$Svg$Attributes$fontSize('10'),
-									$elm$svg$Svg$Attributes$fill(t.aU)
+									$elm$svg$Svg$Attributes$fill(t.aY)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(t.o)
+									$elm$svg$Svg$text(t.c)
 								])) : $elm$svg$Svg$text('')
 						]));
 			},
-			cfg.aP);
+			cfg.aS);
 		var toAreaPoint = function (_v2) {
 			var x = _v2.a;
 			var y = _v2.b;
@@ -11612,7 +12289,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 		var areaPath = A2(
 			$author$project$Shape$area,
 			$author$project$Shape$monotoneInXCurve,
-			A2($elm$core$List$map, toAreaPoint, cfg.b0));
+			A2($elm$core$List$map, toAreaPoint, cfg._));
 		var toLinePoint = function (_v1) {
 			var x = _v1.a;
 			var y = _v1.b;
@@ -11624,7 +12301,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 		var linePath = A2(
 			$author$project$Shape$line,
 			$author$project$Shape$monotoneInXCurve,
-			A2($elm$core$List$map, toLinePoint, cfg.b0));
+			A2($elm$core$List$map, toLinePoint, cfg._));
 		return A2(
 			$elm$html$Html$div,
 			_List_fromArray(
@@ -11639,21 +12316,21 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 					_List_fromArray(
 						[
 							$elm$svg$Svg$Attributes$width(
-							$elm$core$String$fromInt(cfg.aB)),
+							$elm$core$String$fromInt(cfg.aE)),
 							$elm$svg$Svg$Attributes$height(
-							$elm$core$String$fromInt(cfg.as)),
+							$elm$core$String$fromInt(cfg.aj)),
 							$elm$svg$Svg$Attributes$viewBox(
-							'0 0 ' + ($elm$core$String$fromInt(cfg.aB) + (' ' + $elm$core$String$fromInt(cfg.as)))),
+							'0 0 ' + ($elm$core$String$fromInt(cfg.aE) + (' ' + $elm$core$String$fromInt(cfg.aj)))),
 							$elm$svg$Svg$Attributes$style('font-family: ' + (font + ('; font-size: 12px; fill: ' + (labelColor + ';'))))
 						]),
 					_List_fromArray(
 						[
-							(cfg.H !== '') ? A2(
+							(cfg.w !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
-									$elm$core$String$fromInt((cfg.aB / 2) | 0)),
+									$elm$core$String$fromInt((cfg.aE / 2) | 0)),
 									$elm$svg$Svg$Attributes$y('20'),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('14'),
@@ -11662,7 +12339,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.H)
+									$elm$svg$Svg$text(cfg.w)
 								])) : $elm$svg$Svg$text(''),
 							A2(
 							$elm$svg$Svg$g,
@@ -11691,7 +12368,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 											_List_fromArray(
 												[
 													$elm$svg$Svg$Attributes$fill('none'),
-													$elm$svg$Svg$Attributes$stroke(cfg.aU),
+													$elm$svg$Svg$Attributes$stroke(cfg.aY),
 													$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 													$elm$svg$Svg$Attributes$strokeLinejoin('round')
 												])),
@@ -11726,23 +12403,23 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 													yScale)
 												]))
 										])))),
-							(cfg.be !== '') ? A2(
+							(cfg.aX !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
 									$elm$svg$Svg$Attributes$x(
 									$elm$core$String$fromInt(padLeft + ((innerW / 2) | 0))),
 									$elm$svg$Svg$Attributes$y(
-									$elm$core$String$fromInt(cfg.as - 8)),
+									$elm$core$String$fromInt(cfg.aj - 8)),
 									$elm$svg$Svg$Attributes$textAnchor('middle'),
 									$elm$svg$Svg$Attributes$fontSize('12'),
 									$elm$svg$Svg$Attributes$fill(labelColor)
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.be)
+									$elm$svg$Svg$text(cfg.aX)
 								])) : $elm$svg$Svg$text(''),
-							(cfg.bg !== '') ? A2(
+							(cfg.bj !== '') ? A2(
 							$elm$svg$Svg$text_,
 							_List_fromArray(
 								[
@@ -11754,7 +12431,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 								]),
 							_List_fromArray(
 								[
-									$elm$svg$Svg$text(cfg.bg)
+									$elm$svg$Svg$text(cfg.bj)
 								])) : $elm$svg$Svg$text('')
 						]))
 				]));
@@ -11765,56 +12442,84 @@ var $author$project$PF6$Charts$Donut$withCenterText = F3(
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bn: label, bo: value});
+			{bp: label, bq: value});
 	});
 var $author$project$PF6$Charts$Sparkline$withColor = F2(
 	function (c, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aU: c});
+			{aY: c});
 	});
 var $author$project$PF6$Charts$Donut$withColors = F2(
 	function (colors, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bX: colors});
+			{bs: colors});
 	});
 var $author$project$PF6$Charts$DonutUtilization$withDangerThreshold = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{b$: t});
+			{b2: t});
 	});
 var $author$project$PF6$Charts$Sparkline$withFill = F2(
 	function (f, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{b2: f});
+			{b4: f});
+	});
+var $author$project$PF6$Charts$Line$withHeight = F2(
+	function (h, _v0) {
+		var cfg = _v0;
+		return _Utils_update(
+			cfg,
+			{aj: h});
 	});
 var $author$project$PF6$Charts$Sparkline$withHeight = F2(
 	function (h, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{as: h});
+			{aj: h});
+	});
+var $author$project$PF6$Charts$Bar$withOrientation = F2(
+	function (o, _v0) {
+		var cfg = _v0;
+		return _Utils_update(
+			cfg,
+			{ci: o});
+	});
+var $author$project$PF6$Charts$Scatter$withOverlay = F2(
+	function (o, _v0) {
+		var cfg = _v0;
+		return _Utils_update(
+			cfg,
+			{ck: o});
 	});
 var $author$project$PF6$Charts$Donut$withSize = F2(
 	function (s, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bF: s});
+			{bJ: s});
 	});
 var $author$project$PF6$Charts$Pie$withSize = F2(
 	function (s, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bF: s});
+			{bJ: s});
+	});
+var $author$project$PF6$Charts$Line$withTheme = F2(
+	function (theme, _v0) {
+		var cfg = _v0;
+		return _Utils_update(
+			cfg,
+			{az: theme});
 	});
 var $author$project$PF6$Charts$Threshold$withThresholdLabel = F4(
 	function (value, color, label, _v0) {
@@ -11822,11 +12527,11 @@ var $author$project$PF6$Charts$Threshold$withThresholdLabel = F4(
 		return _Utils_update(
 			cfg,
 			{
-				aP: _Utils_ap(
-					cfg.aP,
+				aS: _Utils_ap(
+					cfg.aS,
 					_List_fromArray(
 						[
-							{aU: color, o: label, az: value}
+							{aY: color, c: label, aC: value}
 						]))
 			});
 	});
@@ -11835,322 +12540,384 @@ var $author$project$PF6$Charts$Area$withTitle = F2(
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Bar$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$BoxPlot$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Bullet$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Donut$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$DonutUtilization$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Line$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Pie$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Scatter$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Stack$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Threshold$withTitle = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{H: t});
+			{w: t});
 	});
 var $author$project$PF6$Charts$Area$withTooltips = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cp: t});
+			{cv: t});
 	});
 var $author$project$PF6$Charts$Bar$withTooltips = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cp: t});
+			{cv: t});
 	});
 var $author$project$PF6$Charts$Donut$withTooltips = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cp: t});
+			{cv: t});
 	});
 var $author$project$PF6$Charts$Pie$withTooltips = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cp: t});
+			{cv: t});
 	});
 var $author$project$PF6$Charts$Scatter$withTooltips = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cp: t});
+			{cv: t});
 	});
 var $author$project$PF6$Charts$Bullet$withUnit = F2(
 	function (u, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cs: u});
+			{cy: u});
 	});
 var $author$project$PF6$Charts$DonutUtilization$withWarningThreshold = F2(
 	function (t, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{cu: t});
+			{cA: t});
 	});
 var $author$project$PF6$Charts$Area$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Bar$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$BoxPlot$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Bullet$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Line$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Scatter$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Sparkline$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Stack$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Threshold$withWidth = F2(
 	function (w, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{aB: w});
+			{aE: w});
 	});
 var $author$project$PF6$Charts$Area$withXLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{be: label});
+			{aX: label});
+	});
+var $author$project$PF6$Charts$Bar$withXLabel = F2(
+	function (label, _v0) {
+		var cfg = _v0;
+		return _Utils_update(
+			cfg,
+			{aX: label});
 	});
 var $author$project$PF6$Charts$Line$withXLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{be: label});
+			{aX: label});
 	});
 var $author$project$PF6$Charts$Scatter$withXLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{be: label});
+			{aX: label});
 	});
 var $author$project$PF6$Charts$Stack$withXLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{be: label});
+			{aX: label});
 	});
 var $author$project$PF6$Charts$Threshold$withXLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{be: label});
+			{aX: label});
 	});
 var $author$project$PF6$Charts$Area$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$Bar$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$BoxPlot$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$Line$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$Scatter$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$Stack$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$PF6$Charts$Threshold$withYLabel = F2(
 	function (label, _v0) {
 		var cfg = _v0;
 		return _Utils_update(
 			cfg,
-			{bg: label});
+			{bj: label});
 	});
 var $author$project$Main$allChartPanels = function (model) {
 	return _List_fromArray(
 		[
 			{
-			A: $author$project$PF6$Charts$Area$toSvg(
-				A2(
-					$author$project$PF6$Charts$Area$withTooltips,
-					true,
-					A2(
-						$author$project$PF6$Charts$Area$withTitle,
-						'CPU Utilization',
+			s: A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+						A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
+						A2($elm$html$Html$Attributes$style, 'gap', '32px'),
+						A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+					]),
+				_List_fromArray(
+					[
+						$author$project$PF6$Charts$Area$toSvg(
 						A2(
-							$author$project$PF6$Charts$Area$withYLabel,
-							'CPU %',
+							$author$project$PF6$Charts$Area$withTooltips,
+							true,
 							A2(
-								$author$project$PF6$Charts$Area$withXLabel,
-								'Time (minutes)',
+								$author$project$PF6$Charts$Area$withTitle,
+								'CPU Utilization',
 								A2(
-									$author$project$PF6$Charts$Area$withWidth,
-									560,
-									$author$project$PF6$Charts$Area$fromData($author$project$Main$cpuData))))))),
-			B: 'Area.fromData cpuData\n    |> Area.withWidth 560\n    |> Area.withXLabel "Time (minutes)"\n    |> Area.withYLabel "CPU %"\n    |> Area.withTitle "CPU Utilization"\n    |> Area.withTooltips True\n    |> Area.toSvg',
-			C: 'Area charts show a metric over time with a filled region under the line. Best for continuous data like CPU utilization, memory usage, or bandwidth. Hover the data points to see tooltips.',
-			cJ: 'area',
-			H: 'Area Chart'
-		},
-			{
-			A: $author$project$PF6$Charts$Bar$toSvg(
-				A2(
-					$author$project$PF6$Charts$Bar$withTooltips,
-					true,
-					A2(
-						$author$project$PF6$Charts$Bar$withTitle,
-						'Memory Usage by Node',
+									$author$project$PF6$Charts$Area$withYLabel,
+									'CPU %',
+									A2(
+										$author$project$PF6$Charts$Area$withXLabel,
+										'Time (minutes)',
+										A2(
+											$author$project$PF6$Charts$Area$withWidth,
+											560,
+											$author$project$PF6$Charts$Area$fromData($author$project$Main$cpuData))))))),
+						$author$project$PF6$Charts$Area$toSvg(
 						A2(
-							$author$project$PF6$Charts$Bar$withYLabel,
-							'GiB',
+							$author$project$PF6$Charts$Area$withTitle,
+							'Pets Over Time (multi-series)',
 							A2(
-								$author$project$PF6$Charts$Bar$withWidth,
-								560,
-								A2($author$project$PF6$Charts$Bar$fromData, $author$project$Main$memoryCategories, $author$project$Main$memoryData)))))),
-			B: 'Bar.fromData\n    [ "Node 1", "Node 2", "Node 3", "Node 4", "Node 5" ]\n    [ { label = "Used (GiB)", values = [ 12.4, 18.7, 8.2, 15.1, 22.0 ] }\n    , { label = "Cached (GiB)", values = [ 4.2, 6.1, 3.5, 5.8, 7.3 ] }\n    ]\n    |> Bar.withWidth 560\n    |> Bar.withYLabel "GiB"\n    |> Bar.withTitle "Memory Usage by Node"\n    |> Bar.withTooltips True\n    |> Bar.toSvg',
-			C: 'Bar charts compare values across categories. Grouped bars let you compare multiple series side-by-side per category. Hover bars for value tooltips.',
-			cJ: 'bar',
-			H: 'Bar Chart'
+								$author$project$PF6$Charts$Area$withYLabel,
+								'Count',
+								A2(
+									$author$project$PF6$Charts$Area$withXLabel,
+									'Year',
+									A2(
+										$author$project$PF6$Charts$Area$withWidth,
+										560,
+										$author$project$PF6$Charts$Area$fromSeries($author$project$Main$multiAreaSeriesData))))))
+					])),
+			t: '-- Single-series\nArea.fromData cpuData\n    |> Area.withWidth 560\n    |> Area.withXLabel "Time (minutes)"\n    |> Area.withYLabel "CPU %"\n    |> Area.withTitle "CPU Utilization"\n    |> Area.withTooltips True\n    |> Area.toSvg\n\n-- Multi-series\nArea.fromSeries\n    [ { label = "Cats", data = catData }\n    , { label = "Dogs", data = dogData }\n    , { label = "Birds", data = birdData }\n    ]\n    |> Area.withWidth 560\n    |> Area.withTitle "Pets Over Time"\n    |> Area.toSvg',
+			u: 'Area charts show one or more metrics over time with a filled region under each line. The single-series form (fromData) uses PF6 primary blue. The multi-series form (fromSeries) assigns each series a distinct theme color with an automatic legend.',
+			cP: 'area',
+			w: 'Area Chart'
 		},
 			{
-			A: $author$project$PF6$Charts$BoxPlot$toSvg(
+			s: A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+						A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
+						A2($elm$html$Html$Attributes$style, 'gap', '32px'),
+						A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+					]),
+				_List_fromArray(
+					[
+						$author$project$PF6$Charts$Bar$toSvg(
+						A2(
+							$author$project$PF6$Charts$Bar$withTooltips,
+							true,
+							A2(
+								$author$project$PF6$Charts$Bar$withTitle,
+								'Memory Usage by Node',
+								A2(
+									$author$project$PF6$Charts$Bar$withYLabel,
+									'GiB',
+									A2(
+										$author$project$PF6$Charts$Bar$withWidth,
+										560,
+										A2($author$project$PF6$Charts$Bar$fromData, $author$project$Main$memoryCategories, $author$project$Main$memoryData)))))),
+						$author$project$PF6$Charts$Bar$toSvg(
+						A2(
+							$author$project$PF6$Charts$Bar$withTooltips,
+							true,
+							A2(
+								$author$project$PF6$Charts$Bar$withOrientation,
+								1,
+								A2(
+									$author$project$PF6$Charts$Bar$withTitle,
+									'Instances by Region (horizontal)',
+									A2(
+										$author$project$PF6$Charts$Bar$withXLabel,
+										'Instances',
+										A2(
+											$author$project$PF6$Charts$Bar$withWidth,
+											560,
+											A2($author$project$PF6$Charts$Bar$fromData, $author$project$Main$regionCategories, $author$project$Main$regionData)))))))
+					])),
+			t: '-- Vertical grouped bars (default)\nBar.fromData categories series\n    |> Bar.withWidth 560\n    |> Bar.withTitle "Memory Usage by Node"\n    |> Bar.withTooltips True\n    |> Bar.toSvg\n\n-- Horizontal bars\nBar.fromData regionCategories regionData\n    |> Bar.withWidth 560\n    |> Bar.withXLabel "Instances"\n    |> Bar.withTitle "Instances by Region"\n    |> Bar.withOrientation Bar.Horizontal\n    |> Bar.toSvg',
+			u: 'Bar charts compare values across categories. The default vertical orientation groups bars side-by-side per category. The horizontal orientation places categories on the y-axis — useful for long labels or nominal data.',
+			cP: 'bar',
+			w: 'Bar Chart'
+		},
+			{
+			s: $author$project$PF6$Charts$BoxPlot$toSvg(
 				A2(
 					$author$project$PF6$Charts$BoxPlot$withTitle,
 					'API Response Latency by Month',
@@ -12161,13 +12928,13 @@ var $author$project$Main$allChartPanels = function (model) {
 							$author$project$PF6$Charts$BoxPlot$withWidth,
 							560,
 							$author$project$PF6$Charts$BoxPlot$fromData($author$project$Main$boxData))))),
-			B: 'BoxPlot.fromData\n    [ { label = "Jan", min = 12, q1 = 28, median = 42, q3 = 58, max = 78 }\n    , { label = "Feb", min = 18, q1 = 32, median = 47, q3 = 63, max = 82 }\n    ]\n    |> BoxPlot.withWidth 560\n    |> BoxPlot.withYLabel "Latency (ms)"\n    |> BoxPlot.withTitle "API Response Latency by Month"\n    |> BoxPlot.toSvg',
-			C: 'Box plots show the statistical distribution of data: median, interquartile range, and whiskers for min/max. Useful for comparing distributions across categories.',
-			cJ: 'boxplot',
-			H: 'Box Plot'
+			t: 'BoxPlot.fromData\n    [ { label = "Jan", min = 12, q1 = 28, median = 42, q3 = 58, max = 78 }\n    , { label = "Feb", min = 18, q1 = 32, median = 47, q3 = 63, max = 82 }\n    ]\n    |> BoxPlot.withWidth 560\n    |> BoxPlot.withYLabel "Latency (ms)"\n    |> BoxPlot.withTitle "API Response Latency by Month"\n    |> BoxPlot.toSvg',
+			u: 'Box plots show the statistical distribution of data: median, interquartile range, and whiskers for min/max. Useful for comparing distributions across categories.',
+			cP: 'boxplot',
+			w: 'Box Plot'
 		},
 			{
-			A: A2(
+			s: A2(
 				$elm$html$Html$div,
 				_List_Nil,
 				_List_fromArray(
@@ -12224,13 +12991,13 @@ var $author$project$Main$allChartPanels = function (model) {
 									560,
 									A3($author$project$PF6$Charts$Bullet$fromData, 45, 60, 100)))))
 					])),
-			B: 'Bullet.fromData 62 75 100\n    |> Bullet.withWidth 560\n    |> Bullet.withTitle "CPU"\n    |> Bullet.withUnit "%"\n    |> Bullet.toSvg',
-			C: 'Bullet charts show a primary measure against a qualitative range (poor / needs improvement / good) and a target marker. A compact alternative to gauge charts.',
-			cJ: 'bullet',
-			H: 'Bullet Chart'
+			t: 'Bullet.fromData 62 75 100\n    |> Bullet.withWidth 560\n    |> Bullet.withTitle "CPU"\n    |> Bullet.withUnit "%"\n    |> Bullet.toSvg',
+			u: 'Bullet charts show a primary measure against a qualitative range (poor / needs improvement / good) and a target marker. A compact alternative to gauge charts.',
+			cP: 'bullet',
+			w: 'Bullet Chart'
 		},
 			{
-			A: A2(
+			s: A2(
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
@@ -12272,13 +13039,13 @@ var $author$project$Main$allChartPanels = function (model) {
 											200,
 											$author$project$PF6$Charts$Donut$fromData($author$project$Main$donutSlices)))))))
 					])),
-			B: 'Donut.fromData\n    [ { label = "Running", value = 42 }\n    , { label = "Stopped", value = 8 }\n    , { label = "Pending", value = 5 }\n    , { label = "Failed", value = 3 }\n    ]\n    |> Donut.withCenterText "58" "Instances"\n    |> Donut.withTitle "Instance Status"\n    |> Donut.withTooltips True\n    |> Donut.toSvg',
-			C: 'Donut charts show part-to-whole relationships with a hollow center that can display a summary metric. A core PatternFly pattern for resource allocation and status breakdowns. Hover slices for label + percentage tooltips.',
-			cJ: 'donut',
-			H: 'Donut Chart'
+			t: 'Donut.fromData\n    [ { label = "Running", value = 42 }\n    , { label = "Stopped", value = 8 }\n    , { label = "Pending", value = 5 }\n    , { label = "Failed", value = 3 }\n    ]\n    |> Donut.withCenterText "58" "Instances"\n    |> Donut.withTitle "Instance Status"\n    |> Donut.withTooltips True\n    |> Donut.toSvg',
+			u: 'Donut charts show part-to-whole relationships with a hollow center that can display a summary metric. A core PatternFly pattern for resource allocation and status breakdowns. Hover slices for label + percentage tooltips.',
+			cP: 'donut',
+			w: 'Donut Chart'
 		},
 			{
-			A: A2(
+			s: A2(
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
@@ -12311,13 +13078,13 @@ var $author$project$Main$allChartPanels = function (model) {
 								'Storage Quota',
 								A2($author$project$PF6$Charts$DonutUtilization$fromData, 92, 100))))
 					])),
-			B: '-- Normal (48%)\nDonutUtil.fromData 48 100\n    |> DonutUtil.withTitle "vCPU Quota"\n    |> DonutUtil.toSvg\n\n-- Warning (78%, threshold at 75%)\nDonutUtil.fromData 78 100\n    |> DonutUtil.withTitle "Memory Quota"\n    |> DonutUtil.withWarningThreshold 75\n    |> DonutUtil.toSvg',
-			C: 'Donut utilization charts show a single metric\'s utilization against its total. The arc color shifts to warning (gold) or danger (red) as configurable thresholds are crossed.',
-			cJ: 'donut-util',
-			H: 'Donut Utilization'
+			t: '-- Normal (48%)\nDonutUtil.fromData 48 100\n    |> DonutUtil.withTitle "vCPU Quota"\n    |> DonutUtil.toSvg\n\n-- Warning (78%, threshold at 75%)\nDonutUtil.fromData 78 100\n    |> DonutUtil.withTitle "Memory Quota"\n    |> DonutUtil.withWarningThreshold 75\n    |> DonutUtil.toSvg',
+			u: 'Donut utilization charts show a single metric\'s utilization against its total. The arc color shifts to warning (gold) or danger (red) as configurable thresholds are crossed.',
+			cP: 'donut-util',
+			w: 'Donut Utilization'
 		},
 			{
-			A: $author$project$PF6$Charts$Line$toSvg(
+			s: $author$project$PF6$Charts$Line$toSvg(
 				A2(
 					$author$project$PF6$Charts$Line$withTitle,
 					'Network Throughput',
@@ -12331,13 +13098,131 @@ var $author$project$Main$allChartPanels = function (model) {
 								$author$project$PF6$Charts$Line$withWidth,
 								560,
 								$author$project$PF6$Charts$Line$fromSeries($author$project$Main$networkSeriesData)))))),
-			B: 'Line.fromSeries\n    [ { label = "Inbound",  data = inboundData }\n    , { label = "Outbound", data = outboundData }\n    ]\n    |> Line.withWidth 560\n    |> Line.withXLabel "Time (minutes)"\n    |> Line.withYLabel "Mbps"\n    |> Line.withTitle "Network Throughput"\n    |> Line.toSvg',
-			C: 'Line charts show one or more continuous metrics over time. Multiple series use the multi-unordered color scale and are automatically labeled in a legend.',
-			cJ: 'line',
-			H: 'Line Chart'
+			t: 'Line.fromSeries\n    [ { label = "Inbound",  data = inboundData }\n    , { label = "Outbound", data = outboundData }\n    ]\n    |> Line.withWidth 560\n    |> Line.withXLabel "Time (minutes)"\n    |> Line.withYLabel "Mbps"\n    |> Line.withTitle "Network Throughput"\n    |> Line.toSvg',
+			u: 'Line charts show one or more continuous metrics over time. Multiple series use the multi-unordered color scale and are automatically labeled in a legend.',
+			cP: 'line',
+			w: 'Line Chart'
 		},
 			{
-			A: $author$project$PF6$Charts$Pie$toSvg(
+			s: function () {
+				var visibleSeries = A2(
+					$elm$core$List$filter,
+					function (s) {
+						return !A2($elm$core$List$member, s.c, model.au);
+					},
+					$author$project$Main$interactiveSeriesAll);
+				var seriesColors = _List_fromArray(
+					['#0066cc', '#7cc674', '#009596']);
+				var legendItem = F2(
+					function (idx, s) {
+						var isHidden = A2($elm$core$List$member, s.c, model.au);
+						var color = A2(
+							$elm$core$Maybe$withDefault,
+							'#0066cc',
+							$elm$core$List$head(
+								A2($elm$core$List$drop, idx, seriesColors)));
+						return A2(
+							$elm$html$Html$button,
+							_List_fromArray(
+								[
+									$elm$html$Html$Events$onClick(
+									$author$project$Main$ToggleSeries(s.c)),
+									A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+									A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+									A2($elm$html$Html$Attributes$style, 'gap', '6px'),
+									A2($elm$html$Html$Attributes$style, 'padding', '4px 10px'),
+									A2($elm$html$Html$Attributes$style, 'border', '1px solid #d2d2d2'),
+									A2($elm$html$Html$Attributes$style, 'border-radius', '4px'),
+									A2($elm$html$Html$Attributes$style, 'background', '#ffffff'),
+									A2($elm$html$Html$Attributes$style, 'cursor', 'pointer'),
+									A2($elm$html$Html$Attributes$style, 'font-size', '13px'),
+									A2(
+									$elm$html$Html$Attributes$style,
+									'color',
+									isHidden ? '#6a6e73' : '#151515'),
+									A2(
+									$elm$html$Html$Attributes$style,
+									'opacity',
+									isHidden ? '0.6' : '1')
+								]),
+							_List_fromArray(
+								[
+									A2(
+									$elm$html$Html$span,
+									_List_fromArray(
+										[
+											A2($elm$html$Html$Attributes$style, 'display', 'inline-block'),
+											A2($elm$html$Html$Attributes$style, 'width', '12px'),
+											A2($elm$html$Html$Attributes$style, 'height', '12px'),
+											A2($elm$html$Html$Attributes$style, 'border-radius', '2px'),
+											A2(
+											$elm$html$Html$Attributes$style,
+											'background',
+											isHidden ? '#d2d2d2' : color)
+										]),
+									_List_Nil),
+									$elm$html$Html$text(
+									isHidden ? ('⊘ ' + s.c) : s.c)
+								]));
+					});
+				return A2(
+					$elm$html$Html$div,
+					_List_fromArray(
+						[
+							A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+							A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
+							A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+							A2($elm$html$Html$Attributes$style, 'gap', '12px')
+						]),
+					_List_fromArray(
+						[
+							A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+									A2($elm$html$Html$Attributes$style, 'gap', '8px'),
+									A2($elm$html$Html$Attributes$style, 'flex-wrap', 'wrap')
+								]),
+							A2($elm$core$List$indexedMap, legendItem, $author$project$Main$interactiveSeriesAll)),
+							$elm$core$List$isEmpty(visibleSeries) ? A2(
+							$elm$html$Html$div,
+							_List_fromArray(
+								[
+									A2($elm$html$Html$Attributes$style, 'width', '560px'),
+									A2($elm$html$Html$Attributes$style, 'height', '250px'),
+									A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+									A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+									A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
+									A2($elm$html$Html$Attributes$style, 'color', '#6a6e73'),
+									A2($elm$html$Html$Attributes$style, 'font-size', '14px')
+								]),
+							_List_fromArray(
+								[
+									$elm$html$Html$text('All series hidden — click a legend item to show it')
+								])) : $author$project$PF6$Charts$Line$toSvg(
+							A2(
+								$author$project$PF6$Charts$Line$withTitle,
+								'Resource Utilization',
+								A2(
+									$author$project$PF6$Charts$Line$withYLabel,
+									'Usage %',
+									A2(
+										$author$project$PF6$Charts$Line$withXLabel,
+										'Time (minutes)',
+										A2(
+											$author$project$PF6$Charts$Line$withWidth,
+											560,
+											$author$project$PF6$Charts$Line$fromSeries(visibleSeries))))))
+						]));
+			}(),
+			t: '-- In your Model:\ntype alias Model =\n    { hiddenSeries : List String, ... }\n\n-- In your Msg:\ntype Msg = ToggleSeries String | ...\n\n-- In update:\nToggleSeries label ->\n    let newHidden =\n            if List.member label model.hiddenSeries\n            then List.filter (\\l -> l /= label) model.hiddenSeries\n            else label :: model.hiddenSeries\n    in ( { model | hiddenSeries = newHidden }, Cmd.none )\n\n-- In view: filter series then pass to Line:\nLine.fromSeries\n    (List.filter (\\s -> not (List.member s.label model.hiddenSeries))\n        allSeriesData)\n    |> Line.withWidth 560\n    |> Line.toSvg',
+			u: 'Click a legend item to hide/show that series. The legend shows an eye-slash indicator when a series is hidden. This pattern uses your app\'s Model — the library renders whatever series you pass it.',
+			cP: 'interactive-legend',
+			w: 'Interactive Legend'
+		},
+			{
+			s: $author$project$PF6$Charts$Pie$toSvg(
 				A2(
 					$author$project$PF6$Charts$Pie$withTooltips,
 					true,
@@ -12348,36 +13233,82 @@ var $author$project$Main$allChartPanels = function (model) {
 							$author$project$PF6$Charts$Pie$withSize,
 							250,
 							$author$project$PF6$Charts$Pie$fromData($author$project$Main$pieSlices))))),
-			B: 'Pie.fromData\n    [ { label = "US East", value = 35 }\n    , { label = "US West", value = 28 }\n    , { label = "EU",      value = 22 }\n    , { label = "APAC",    value = 15 }\n    ]\n    |> Pie.withSize 250\n    |> Pie.withTitle "Instances by Region"\n    |> Pie.withTooltips True\n    |> Pie.toSvg',
-			C: 'Pie charts show part-to-whole relationships as solid circular slices. Use Donut when you need a center metric label. Hover slices for label + percentage tooltips.',
-			cJ: 'pie',
-			H: 'Pie Chart'
+			t: 'Pie.fromData\n    [ { label = "US East", value = 35 }\n    , { label = "US West", value = 28 }\n    , { label = "EU",      value = 22 }\n    , { label = "APAC",    value = 15 }\n    ]\n    |> Pie.withSize 250\n    |> Pie.withTitle "Instances by Region"\n    |> Pie.withTooltips True\n    |> Pie.toSvg',
+			u: 'Pie charts show part-to-whole relationships as solid circular slices. Use Donut when you need a center metric label. Hover slices for label + percentage tooltips.',
+			cP: 'pie',
+			w: 'Pie Chart'
 		},
 			{
-			A: $author$project$PF6$Charts$Scatter$toSvg(
-				A2(
-					$author$project$PF6$Charts$Scatter$withTooltips,
-					true,
-					A2(
-						$author$project$PF6$Charts$Scatter$withTitle,
-						'Cluster Resource Distribution',
+			s: A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+						A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
+						A2($elm$html$Html$Attributes$style, 'gap', '32px'),
+						A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+					]),
+				_List_fromArray(
+					[
+						$author$project$PF6$Charts$Scatter$toSvg(
 						A2(
-							$author$project$PF6$Charts$Scatter$withYLabel,
-							'Memory (GiB)',
+							$author$project$PF6$Charts$Scatter$withTooltips,
+							true,
 							A2(
-								$author$project$PF6$Charts$Scatter$withXLabel,
-								'CPU Cores',
+								$author$project$PF6$Charts$Scatter$withTitle,
+								'Cluster Distribution',
 								A2(
-									$author$project$PF6$Charts$Scatter$withWidth,
-									560,
-									$author$project$PF6$Charts$Scatter$fromSeries($author$project$Main$scatterSeriesData))))))),
-			B: 'Scatter.fromSeries\n    [ { label = "Cluster A", data = clusterAPoints }\n    , { label = "Cluster B", data = clusterBPoints }\n    ]\n    |> Scatter.withWidth 560\n    |> Scatter.withXLabel "CPU Cores"\n    |> Scatter.withYLabel "Memory (GiB)"\n    |> Scatter.withTitle "Cluster Resource Distribution"\n    |> Scatter.withTooltips True\n    |> Scatter.toSvg',
-			C: 'Scatter charts plot individual data points on a 2D plane to reveal correlations or clusters. Multiple series use distinct colors. Hover points for (x, y) tooltips.',
-			cJ: 'scatter',
-			H: 'Scatter Chart'
+									$author$project$PF6$Charts$Scatter$withYLabel,
+									'Memory (GiB)',
+									A2(
+										$author$project$PF6$Charts$Scatter$withXLabel,
+										'CPU Cores',
+										A2(
+											$author$project$PF6$Charts$Scatter$withWidth,
+											560,
+											$author$project$PF6$Charts$Scatter$fromSeries($author$project$Main$scatterSeriesData))))))),
+						$author$project$PF6$Charts$Scatter$toSvg(
+						A2(
+							$author$project$PF6$Charts$Scatter$withOverlay,
+							1,
+							A2(
+								$author$project$PF6$Charts$Scatter$withTitle,
+								'With Line Overlay',
+								A2(
+									$author$project$PF6$Charts$Scatter$withYLabel,
+									'Memory (GiB)',
+									A2(
+										$author$project$PF6$Charts$Scatter$withXLabel,
+										'CPU Cores',
+										A2(
+											$author$project$PF6$Charts$Scatter$withWidth,
+											560,
+											$author$project$PF6$Charts$Scatter$fromSeries($author$project$Main$scatterSeriesData))))))),
+						$author$project$PF6$Charts$Scatter$toSvg(
+						A2(
+							$author$project$PF6$Charts$Scatter$withOverlay,
+							2,
+							A2(
+								$author$project$PF6$Charts$Scatter$withTitle,
+								'With Area Overlay',
+								A2(
+									$author$project$PF6$Charts$Scatter$withYLabel,
+									'Memory (GiB)',
+									A2(
+										$author$project$PF6$Charts$Scatter$withXLabel,
+										'CPU Cores',
+										A2(
+											$author$project$PF6$Charts$Scatter$withWidth,
+											560,
+											$author$project$PF6$Charts$Scatter$fromSeries($author$project$Main$scatterSeriesData)))))))
+					])),
+			t: '-- Basic scatter\nScatter.fromSeries series\n    |> Scatter.withWidth 560\n    |> Scatter.withTooltips True\n    |> Scatter.toSvg\n\n-- Scatter + connecting line\nScatter.fromSeries series\n    |> Scatter.withOverlay Scatter.WithLine\n    |> Scatter.toSvg\n\n-- Scatter + area fill\nScatter.fromSeries series\n    |> Scatter.withOverlay Scatter.WithArea\n    |> Scatter.toSvg',
+			u: 'Scatter charts plot individual data points on a 2D plane. Use NoOverlay for pure scatter, WithLine to connect points with a line, or WithArea for a filled area overlay — matching PF6\'s scatter variants.',
+			cP: 'scatter',
+			w: 'Scatter Chart'
 		},
 			{
-			A: A2(
+			s: A2(
 				$elm$html$Html$div,
 				_List_fromArray(
 					[
@@ -12537,13 +13468,13 @@ var $author$project$Main$allChartPanels = function (model) {
 									]))
 							]))
 					])),
-			B: '-- Embed in a table/card row:\nHtml.div [ HA.style "display" "flex", HA.style "align-items" "center" ]\n    [ Html.span [] [ Html.text "CPU" ]\n    , Sparkline.fromData [ 42, 55, 48, 72, 63, 75 ]\n        |> Sparkline.withWidth 180\n        |> Sparkline.withHeight 40\n        |> Sparkline.toSvg\n    , Html.span [] [ Html.text "75%" ]\n    ]',
-			C: 'Sparklines are miniature, axis-free line charts for embedding in tables, cards, or list items to show a metric\'s trend without the overhead of a full chart.',
-			cJ: 'sparkline',
-			H: 'Sparkline'
+			t: 'Sparkline.fromData [ 42, 55, 48, 72, 63, 75 ]\n    |> Sparkline.withWidth 180\n    |> Sparkline.withHeight 40\n    |> Sparkline.toSvg',
+			u: 'Sparklines are miniature, axis-free line charts for embedding in tables, cards, or list items to show a metric\'s trend without the overhead of a full chart.',
+			cP: 'sparkline',
+			w: 'Sparkline'
 		},
 			{
-			A: $author$project$PF6$Charts$Stack$toSvg(
+			s: $author$project$PF6$Charts$Stack$toSvg(
 				A2(
 					$author$project$PF6$Charts$Stack$withTitle,
 					'Bandwidth by Project',
@@ -12557,13 +13488,13 @@ var $author$project$Main$allChartPanels = function (model) {
 								$author$project$PF6$Charts$Stack$withWidth,
 								560,
 								$author$project$PF6$Charts$Stack$fromSeries($author$project$Main$stackSeriesData)))))),
-			B: 'Stack.fromSeries\n    [ { label = "Project A", values = [ 10, 14, 18, 22, 20, 25, 28, 24 ] }\n    , { label = "Project B", values = [ 8, 10, 12, 15, 13, 16, 18, 15 ] }\n    , { label = "Project C", values = [ 5, 7, 9, 11, 10, 12, 14, 12 ] }\n    ]\n    |> Stack.withWidth 560\n    |> Stack.withXLabel "Week"\n    |> Stack.withYLabel "Bandwidth (GB)"\n    |> Stack.withTitle "Bandwidth by Project"\n    |> Stack.toSvg',
-			C: 'Stacked area charts show multiple series stacked atop each other, making it easy to see both individual series contributions and the total over time.',
-			cJ: 'stack',
-			H: 'Stack Chart'
+			t: 'Stack.fromSeries\n    [ { label = "Project A", values = [ 10, 14, 18, 22, 20, 25, 28, 24 ] }\n    , { label = "Project B", values = [ 8, 10, 12, 15, 13, 16, 18, 15 ] }\n    , { label = "Project C", values = [ 5, 7, 9, 11, 10, 12, 14, 12 ] }\n    ]\n    |> Stack.withWidth 560\n    |> Stack.withTitle "Bandwidth by Project"\n    |> Stack.toSvg',
+			u: 'Stacked area charts show multiple series stacked atop each other, making it easy to see both individual series contributions and the total over time.',
+			cP: 'stack',
+			w: 'Stack Chart'
 		},
 			{
-			A: $author$project$PF6$Charts$Threshold$toSvg(
+			s: $author$project$PF6$Charts$Threshold$toSvg(
 				A4(
 					$author$project$PF6$Charts$Threshold$withThresholdLabel,
 					90,
@@ -12587,13 +13518,219 @@ var $author$project$Main$allChartPanels = function (model) {
 										$author$project$PF6$Charts$Threshold$withWidth,
 										560,
 										$author$project$PF6$Charts$Threshold$fromData($author$project$Main$thresholdData)))))))),
-			B: 'Threshold.fromData cpuData\n    |> Threshold.withWidth 560\n    |> Threshold.withXLabel "Time (minutes)"\n    |> Threshold.withYLabel "CPU %"\n    |> Threshold.withTitle "CPU with Warning Thresholds"\n    |> Threshold.withThresholdLabel 75 "#f0ab00" "Warning (75%)"\n    |> Threshold.withThresholdLabel 90 "#c9190b" "Critical (90%)"\n    |> Threshold.toSvg',
-			C: 'Threshold charts add horizontal warning/danger lines to a line chart. Essential for infrastructure dashboards showing SLA boundaries or capacity limits.',
-			cJ: 'threshold',
-			H: 'Threshold Chart'
+			t: 'Threshold.fromData cpuData\n    |> Threshold.withWidth 560\n    |> Threshold.withTitle "CPU with Warning Thresholds"\n    |> Threshold.withThresholdLabel 75 "#f0ab00" "Warning (75%)"\n    |> Threshold.withThresholdLabel 90 "#c9190b" "Critical (90%)"\n    |> Threshold.toSvg',
+			u: 'Threshold charts add horizontal warning/danger lines to a line chart. Essential for infrastructure dashboards showing SLA boundaries or capacity limits.',
+			cP: 'threshold',
+			w: 'Threshold Chart'
 		},
 			{
-			A: A2(
+			s: A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+						A2($elm$html$Html$Attributes$style, 'flex-direction', 'column'),
+						A2($elm$html$Html$Attributes$style, 'gap', '24px'),
+						A2($elm$html$Html$Attributes$style, 'align-items', 'center'),
+						A2($elm$html$Html$Attributes$style, 'width', '100%')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+								A2($elm$html$Html$Attributes$style, 'gap', '24px'),
+								A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
+								A2($elm$html$Html$Attributes$style, 'flex-wrap', 'wrap')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$p,
+										_List_fromArray(
+											[
+												A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+												A2($elm$html$Html$Attributes$style, 'color', '#6a6e73'),
+												A2($elm$html$Html$Attributes$style, 'margin', '0 0 6px 0'),
+												A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Area / Line / Bar')
+											])),
+										A2($author$project$PF6$Charts$Skeleton$area, 280, 160)
+									])),
+								A2(
+								$elm$html$Html$div,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$p,
+										_List_fromArray(
+											[
+												A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+												A2($elm$html$Html$Attributes$style, 'color', '#6a6e73'),
+												A2($elm$html$Html$Attributes$style, 'margin', '0 0 6px 0'),
+												A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Donut / Pie')
+											])),
+										A2(
+										$elm$html$Html$div,
+										_List_fromArray(
+											[
+												A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+												A2($elm$html$Html$Attributes$style, 'gap', '16px')
+											]),
+										_List_fromArray(
+											[
+												$author$project$PF6$Charts$Skeleton$donut(160),
+												$author$project$PF6$Charts$Skeleton$pie(160)
+											]))
+									]))
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+								A2($elm$html$Html$Attributes$style, 'gap', '24px'),
+								A2($elm$html$Html$Attributes$style, 'align-items', 'center')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$div,
+								_List_Nil,
+								_List_fromArray(
+									[
+										A2(
+										$elm$html$Html$p,
+										_List_fromArray(
+											[
+												A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+												A2($elm$html$Html$Attributes$style, 'color', '#6a6e73'),
+												A2($elm$html$Html$Attributes$style, 'margin', '0 0 6px 0'),
+												A2($elm$html$Html$Attributes$style, 'text-align', 'center')
+											]),
+										_List_fromArray(
+											[
+												$elm$html$Html$text('Sparkline')
+											])),
+										A2($author$project$PF6$Charts$Skeleton$sparkline, 180, 40)
+									]))
+							]))
+					])),
+			t: '-- While loading, swap the real chart for its skeleton:\nif model.loading then\n    Skeleton.area 560 250\nelse\n    Area.fromData model.data\n        |> Area.withWidth 560\n        |> Area.toSvg\n\n-- Circular skeletons take a size argument:\nSkeleton.donut 240\nSkeleton.pie 200\n\n-- Sparkline skeleton:\nSkeleton.sparkline 180 40',
+			u: 'Loading skeleton placeholders for every chart type. Use these in place of a real chart while data is fetching. They match each chart\'s dimensions and show a shimmer animation consistent with PatternFly\'s skeleton component.',
+			cP: 'skeleton',
+			w: 'Skeletons'
+		},
+			{
+			s: A2(
+				$elm$html$Html$div,
+				_List_fromArray(
+					[
+						A2($elm$html$Html$Attributes$style, 'display', 'flex'),
+						A2($elm$html$Html$Attributes$style, 'gap', '24px'),
+						A2($elm$html$Html$Attributes$style, 'justify-content', 'center'),
+						A2($elm$html$Html$Attributes$style, 'flex-wrap', 'wrap')
+					]),
+				_List_fromArray(
+					[
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'background', '#ffffff'),
+								A2($elm$html$Html$Attributes$style, 'border', '1px solid #d2d2d2'),
+								A2($elm$html$Html$Attributes$style, 'border-radius', '6px'),
+								A2($elm$html$Html$Attributes$style, 'padding', '16px')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$p,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+										A2($elm$html$Html$Attributes$style, 'color', '#6a6e73'),
+										A2($elm$html$Html$Attributes$style, 'margin', '0 0 8px 4px'),
+										A2($elm$html$Html$Attributes$style, 'font-weight', '600')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Theme.light (default)')
+									])),
+								$author$project$PF6$Charts$Line$toSvg(
+								A2(
+									$author$project$PF6$Charts$Line$withTitle,
+									'Network Throughput',
+									A2(
+										$author$project$PF6$Charts$Line$withHeight,
+										180,
+										A2(
+											$author$project$PF6$Charts$Line$withWidth,
+											260,
+											$author$project$PF6$Charts$Line$fromSeries($author$project$Main$networkSeriesData)))))
+							])),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'background', '#212427'),
+								A2($elm$html$Html$Attributes$style, 'border', '1px solid #3c3f42'),
+								A2($elm$html$Html$Attributes$style, 'border-radius', '6px'),
+								A2($elm$html$Html$Attributes$style, 'padding', '16px')
+							]),
+						_List_fromArray(
+							[
+								A2(
+								$elm$html$Html$p,
+								_List_fromArray(
+									[
+										A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+										A2($elm$html$Html$Attributes$style, 'color', '#8a8d90'),
+										A2($elm$html$Html$Attributes$style, 'margin', '0 0 8px 4px'),
+										A2($elm$html$Html$Attributes$style, 'font-weight', '600')
+									]),
+								_List_fromArray(
+									[
+										$elm$html$Html$text('Theme.dark')
+									])),
+								$author$project$PF6$Charts$Line$toSvg(
+								A2(
+									$author$project$PF6$Charts$Line$withTheme,
+									$author$project$PF6$Charts$Theme$dark,
+									A2(
+										$author$project$PF6$Charts$Line$withTitle,
+										'Network Throughput',
+										A2(
+											$author$project$PF6$Charts$Line$withHeight,
+											180,
+											A2(
+												$author$project$PF6$Charts$Line$withWidth,
+												260,
+												$author$project$PF6$Charts$Line$fromSeries($author$project$Main$networkSeriesData))))))
+							]))
+					])),
+			t: '-- Light theme (default — no setup required)\nLine.fromSeries series\n    |> Line.withWidth 560\n    |> Line.toSvg\n\n-- Dark theme — wrap in a dark background container:\nHtml.div [ HA.style "background" "#212427" ]\n    [ Line.fromSeries series\n        |> Line.withTheme Theme.dark\n        |> Line.toSvg\n    ]\n\n-- Bridge from your own UI theme:\nmyChartTheme : ChartTheme.Theme\nmyChartTheme =\n    ChartTheme.fromUiThemeColors\n        { primary       = "#0066cc"\n        , labelText     = "#151515"\n        , background    = "#ffffff"\n        , borderDefault = "#d2d2d2"\n        }',
+			u: 'PF6.Charts supports light (default) and dark themes. Use Theme.dark for charts on dark backgrounds. Theme.fromUiThemeColors lets you bridge in any UI library\'s color tokens without adding a dependency.',
+			cP: 'theme',
+			w: 'Themes'
+		},
+			{
+			s: A2(
 				$elm$html$Html$div,
 				_List_Nil,
 				_List_fromArray(
@@ -12619,7 +13756,7 @@ var $author$project$Main$allChartPanels = function (model) {
 									true,
 									A2(
 										$author$project$PF6$Charts$Area$withTitle,
-										'Responsive Area Chart (' + ($elm$core$String$fromInt(model.bD) + 'px)'),
+										'Responsive Area Chart (' + ($elm$core$String$fromInt(model.bH) + 'px)'),
 										A2(
 											$author$project$PF6$Charts$Area$withYLabel,
 											'CPU %',
@@ -12628,7 +13765,7 @@ var $author$project$Main$allChartPanels = function (model) {
 												'Time (minutes)',
 												A2(
 													$author$project$PF6$Charts$Area$withWidth,
-													model.bD,
+													model.bH,
 													$author$project$PF6$Charts$Area$fromData($author$project$Main$cpuData)))))))
 							])),
 						A2(
@@ -12645,10 +13782,10 @@ var $author$project$Main$allChartPanels = function (model) {
 								$elm$html$Html$text('← Drag the handle at the bottom-right corner of the chart box to resize →')
 							]))
 					])),
-			B: '-- ─── Elm side (your app, not the library) ────────────────────────────────\n\n-- 1. Change your module declaration:\nport module Main exposing (main)\n\n-- 2. Declare the port (one line):\nport containerWidth : (Int -> msg) -> Sub msg\n\n-- 3. Add a field to your Model:\ntype alias Model =\n    { ..., chartWidth : Int }\n\n-- 4. Add a Msg variant:\ntype Msg = ... | ResizedTo Int\n\n-- 5. Handle it in update (contentRect.width is the inner width, no offset needed):\nResizedTo w ->\n    ( { model | chartWidth = max 200 w }, Cmd.none )\n\n-- 6. Subscribe:\nsubscriptions : Model -> Sub Msg\nsubscriptions _ =\n    containerWidth ResizedTo\n\n-- 7. Give the chart a resizable container and pass width from the port:\nHtml.div\n    [ Html.Attributes.id "my-chart-container"\n    , Html.Attributes.style "resize" "horizontal"\n    , Html.Attributes.style "overflow" "hidden"\n    , Html.Attributes.style "min-width" "200px"\n    , Html.Attributes.style "max-width" "100%"\n    , Html.Attributes.style "width" "560px"   -- initial width\n    ]\n    [ Area.fromData cpuData\n        |> Area.withWidth model.chartWidth\n        |> Area.toSvg\n    ]\n\n\n-- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────\n\n-- This entire block is optional — charts just use their last-set width\n-- if ResizeObserver is unavailable.\nif (typeof ResizeObserver !== \'undefined\') {\n  const ro = new ResizeObserver(entries => {\n    for (const entry of entries) {\n      // contentRect.width is the inner (content) width — use it directly\n      app.ports.containerWidth.send(\n        Math.round(entry.contentRect.width)\n      );\n    }\n  });\n  // Observe your specific chart container, not the whole page:\n  requestAnimationFrame(() => {\n    const el = document.getElementById(\'my-chart-container\');\n    if (el) ro.observe(el);\n  });\n}',
-			C: 'PF6.Charts is a package and cannot contain ports, but all chart types accept withWidth and withHeight. Wire up a ResizeObserver port in your own app to make any chart responsive — the library just consumes the width you pass. Resize your browser window to see the chart below reflow. The ResizeObserver is optional: charts fall back to their last known width if the JS API is unavailable.',
-			cJ: 'resize',
-			H: 'Resize Observer'
+			t: '-- ─── Elm side (your app, not the library) ────────────────────────────────\n\n-- 1. Change your module declaration:\nport module Main exposing (main)\n\n-- 2. Declare the port (one line):\nport containerWidth : (Int -> msg) -> Sub msg\n\n-- 3. Add a field to your Model:\ntype alias Model =\n    { ..., chartWidth : Int }\n\n-- 4. Add a Msg variant:\ntype Msg = ... | ResizedTo Int\n\n-- 5. Handle it in update:\nResizedTo w ->\n    ( { model | chartWidth = max 200 w }, Cmd.none )\n\n-- 6. Subscribe:\nsubscriptions : Model -> Sub Msg\nsubscriptions _ =\n    containerWidth ResizedTo\n\n-- 7. Pass width from the port:\nArea.fromData cpuData\n    |> Area.withWidth model.chartWidth\n    |> Area.toSvg\n\n\n-- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────\nif (typeof ResizeObserver !== \'undefined\') {\n  const ro = new ResizeObserver(entries => {\n    for (const entry of entries) {\n      app.ports.containerWidth.send(\n        Math.round(entry.contentRect.width)\n      );\n    }\n  });\n  requestAnimationFrame(() => {\n    const el = document.getElementById(\'my-chart-container\');\n    if (el) ro.observe(el);\n  });\n}',
+			u: 'PF6.Charts is a package and cannot contain ports, but all chart types accept withWidth and withHeight. Wire up a ResizeObserver port in your own app to make any chart responsive — the library just consumes the width you pass. Resize your browser window to see the chart below reflow. The ResizeObserver is optional: charts fall back to their last known width if the JS API is unavailable.',
+			cP: 'resize',
+			w: 'Resize Observer'
 		}
 		]);
 };
@@ -12671,11 +13808,14 @@ var $author$project$Main$navItems = _List_fromArray(
 		_Utils_Tuple2('donut', 'Donut Chart'),
 		_Utils_Tuple2('donut-util', 'Donut Utilization'),
 		_Utils_Tuple2('line', 'Line Chart'),
+		_Utils_Tuple2('interactive-legend', 'Interactive Legend'),
 		_Utils_Tuple2('pie', 'Pie Chart'),
 		_Utils_Tuple2('scatter', 'Scatter Chart'),
 		_Utils_Tuple2('sparkline', 'Sparkline'),
 		_Utils_Tuple2('stack', 'Stack Chart'),
 		_Utils_Tuple2('threshold', 'Threshold Chart'),
+		_Utils_Tuple2('skeleton', 'Skeletons'),
+		_Utils_Tuple2('theme', 'Themes'),
 		_Utils_Tuple2('resize', 'Resize Observer')
 	]);
 var $elm$html$Html$ul = _VirtualDom_node('ul');
@@ -12690,7 +13830,7 @@ var $author$project$Main$viewChartPanel = function (panel) {
 		$elm$html$Html$section,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$id(panel.cJ),
+				$elm$html$Html$Attributes$id(panel.cP),
 				A2($elm$html$Html$Attributes$style, 'margin-bottom', '56px'),
 				A2($elm$html$Html$Attributes$style, 'scroll-margin-top', '24px')
 			]),
@@ -12707,7 +13847,7 @@ var $author$project$Main$viewChartPanel = function (panel) {
 					]),
 				_List_fromArray(
 					[
-						$elm$html$Html$text(panel.H)
+						$elm$html$Html$text(panel.w)
 					])),
 				A2(
 				$elm$html$Html$p,
@@ -12719,7 +13859,7 @@ var $author$project$Main$viewChartPanel = function (panel) {
 					]),
 				_List_fromArray(
 					[
-						$elm$html$Html$text(panel.C)
+						$elm$html$Html$text(panel.u)
 					])),
 				A2(
 				$elm$html$Html$div,
@@ -12734,7 +13874,7 @@ var $author$project$Main$viewChartPanel = function (panel) {
 						A2($elm$html$Html$Attributes$style, 'justify-content', 'center')
 					]),
 				_List_fromArray(
-					[panel.A])),
+					[panel.s])),
 				A2(
 				$elm$html$Html$details,
 				_List_fromArray(
@@ -12781,7 +13921,7 @@ var $author$project$Main$viewChartPanel = function (panel) {
 								_List_Nil,
 								_List_fromArray(
 									[
-										$elm$html$Html$text(panel.B)
+										$elm$html$Html$text(panel.t)
 									]))
 							]))
 					]))
@@ -12791,23 +13931,6 @@ var $author$project$Main$SetSection = function (a) {
 	return {$: 0, a: a};
 };
 var $elm$html$Html$li = _VirtualDom_node('li');
-var $elm$virtual_dom$VirtualDom$Normal = function (a) {
-	return {$: 0, a: a};
-};
-var $elm$virtual_dom$VirtualDom$on = _VirtualDom_on;
-var $elm$html$Html$Events$on = F2(
-	function (event, decoder) {
-		return A2(
-			$elm$virtual_dom$VirtualDom$on,
-			event,
-			$elm$virtual_dom$VirtualDom$Normal(decoder));
-	});
-var $elm$html$Html$Events$onClick = function (msg) {
-	return A2(
-		$elm$html$Html$Events$on,
-		'click',
-		$elm$json$Json$Decode$succeed(msg));
-};
 var $author$project$Main$viewNavItem = F2(
 	function (active, _v0) {
 		var id = _v0.a;
@@ -12926,7 +14049,7 @@ var $author$project$Main$view = function (model) {
 							]),
 						A2(
 							$elm$core$List$map,
-							$author$project$Main$viewNavItem(model.bS),
+							$author$project$Main$viewNavItem(model.bV),
 							$author$project$Main$navItems))
 					])),
 				A2(
@@ -12977,12 +14100,12 @@ var $author$project$Main$view = function (model) {
 };
 var $author$project$Main$main = $elm$browser$Browser$element(
 	{
-		fi: function (_v0) {
+		fl: function (_v0) {
 			return _Utils_Tuple2($author$project$Main$initialModel, $elm$core$Platform$Cmd$none);
 		},
-		fR: $author$project$Main$subscriptions,
-		fZ: $author$project$Main$update,
-		f0: $author$project$Main$view
+		fU: $author$project$Main$subscriptions,
+		f0: $author$project$Main$update,
+		f3: $author$project$Main$view
 	});
 _Platform_export({'Main':{'init':$author$project$Main$main(
 	$elm$json$Json$Decode$succeed(0))(0)}});}(this));

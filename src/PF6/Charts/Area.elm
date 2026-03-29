@@ -1,6 +1,6 @@
 module PF6.Charts.Area exposing
-    ( AreaChart
-    , fromData
+    ( AreaChart, Series
+    , fromData, fromSeries
     , withWidth, withHeight
     , withColor, withTheme
     , withFillOpacity
@@ -13,17 +13,19 @@ module PF6.Charts.Area exposing
 
 {-| Area chart — a line chart with the region below the line filled.
 
-Ideal for showing a single metric over time (CPU utilization, bandwidth).
+Supports a single series (`fromData`) or multiple overlapping series
+(`fromSeries`), each with its own fill and stroke color drawn from the theme's
+multi-ordered scale.
 
 
-# Type
+# Types
 
-@docs AreaChart
+@docs AreaChart, Series
 
 
-# Constructor
+# Constructors
 
-@docs fromData
+@docs fromData, fromSeries
 
 
 # Modifiers
@@ -57,6 +59,14 @@ import Svg exposing (Svg)
 import Svg.Attributes as SA
 
 
+{-| A named series of `(x, y)` data points for a multi-series area chart.
+-}
+type alias Series =
+    { label : String
+    , data : List ( Float, Float )
+    }
+
+
 {-| An opaque area chart configuration.
 -}
 type AreaChart
@@ -66,8 +76,8 @@ type AreaChart
 type alias Config =
     { width : Int
     , height : Int
-    , data : List ( Float, Float )
-    , color : String
+    , series : List Series
+    , colorOverride : Maybe String
     , fillOpacity : Float
     , xLabel : String
     , yLabel : String
@@ -78,12 +88,12 @@ type alias Config =
     }
 
 
-defaultConfig : List ( Float, Float ) -> Config
-defaultConfig data =
+defaultConfig : List Series -> Config
+defaultConfig series =
     { width = 500
     , height = 250
-    , data = data
-    , color = Colors.primary
+    , series = series
+    , colorOverride = Nothing
     , fillOpacity = 0.20
     , xLabel = ""
     , yLabel = ""
@@ -94,7 +104,7 @@ defaultConfig data =
     }
 
 
-{-| Create an area chart from a list of `(x, y)` pairs.
+{-| Create a single-series area chart from a list of `(x, y)` pairs.
 
 The x-axis is treated as a continuous numeric scale (use index 0, 1, 2... for
 evenly-spaced time steps, or real timestamps as epoch seconds).
@@ -106,7 +116,24 @@ evenly-spaced time steps, or real timestamps as epoch seconds).
 -}
 fromData : List ( Float, Float ) -> AreaChart
 fromData data =
-    AreaChart (defaultConfig data)
+    AreaChart (defaultConfig [ { label = "", data = data } ])
+
+
+{-| Create a multi-series area chart from named series.
+
+Each series is drawn with a distinct color from the theme's multi-ordered
+scale. Series are drawn back-to-front so later series appear on top.
+
+    chart =
+        Area.fromSeries
+            [ { label = "Cats", data = catData }
+            , { label = "Dogs", data = dogData }
+            ]
+
+-}
+fromSeries : List Series -> AreaChart
+fromSeries series =
+    AreaChart (defaultConfig series)
 
 
 {-| Set chart width in pixels. Default: 500.
@@ -123,21 +150,24 @@ withHeight h (AreaChart cfg) =
     AreaChart { cfg | height = h }
 
 
-{-| Override the series color with a hex string. Default: PF6 primary blue.
+{-| Override the color for a single-series chart with a hex string. Default: PF6 primary blue.
+
+Has no effect on multi-series charts (use `withTheme` to customise series colors).
+
 -}
 withColor : String -> AreaChart -> AreaChart
 withColor c (AreaChart cfg) =
-    AreaChart { cfg | color = c }
+    AreaChart { cfg | colorOverride = Just c }
 
 
-{-| Apply a `Theme`, setting axis, grid, label, and primary series colors.
+{-| Apply a `Theme`, setting axis, grid, label, and series colors.
 -}
 withTheme : Theme -> AreaChart -> AreaChart
 withTheme theme (AreaChart cfg) =
-    AreaChart { cfg | theme = theme, color = Theme.primaryColor theme }
+    AreaChart { cfg | theme = theme, colorOverride = Nothing }
 
 
-{-| Set the fill opacity under the line. Default: 0.15.
+{-| Set the fill opacity under each area line. Default: 0.20.
 -}
 withFillOpacity : Float -> AreaChart -> AreaChart
 withFillOpacity op (AreaChart cfg) =
@@ -192,6 +222,9 @@ toSvg (AreaChart cfg) =
 
     else
     let
+        isMulti =
+            List.length cfg.series > 1
+
         padTop =
             if cfg.title /= "" then
                 40
@@ -203,9 +236,12 @@ toSvg (AreaChart cfg) =
             30
 
         padBottom =
-            if cfg.xLabel /= "" then
+            if cfg.xLabel /= "" && isMulti then
+                75
+            else if cfg.xLabel /= "" then
                 55
-
+            else if isMulti then
+                50
             else
                 40
 
@@ -222,11 +258,14 @@ toSvg (AreaChart cfg) =
         innerH =
             cfg.height - padTop - padBottom
 
+        allPoints =
+            List.concatMap .data cfg.series
+
         xs =
-            List.map Tuple.first cfg.data
+            List.map Tuple.first allPoints
 
         ys =
-            List.map Tuple.second cfg.data
+            List.map Tuple.second allPoints
 
         xMin =
             Maybe.withDefault 0 (List.minimum xs)
@@ -245,6 +284,14 @@ toSvg (AreaChart cfg) =
         yScale =
             Scale.linear ( toFloat innerH, 0 ) ( 0, yMax * 1.1 )
 
+        seriesColor idx =
+            case ( idx, cfg.colorOverride ) of
+                ( 0, Just c ) ->
+                    c
+
+                _ ->
+                    Theme.seriesColor idx cfg.theme
+
         toLinePoint ( x, y ) =
             Just ( Scale.convert xScale x, Scale.convert yScale y )
 
@@ -253,15 +300,6 @@ toSvg (AreaChart cfg) =
                 ( ( Scale.convert xScale x, Scale.convert yScale 0 )
                 , ( Scale.convert xScale x, Scale.convert yScale y )
                 )
-
-        areaPath =
-            Shape.area Shape.monotoneInXCurve (List.map toAreaPoint cfg.data)
-
-        linePath =
-            Shape.line Shape.monotoneInXCurve (List.map toLinePoint cfg.data)
-
-        fillColor =
-            IC.hexToRgba cfg.color cfg.fillOpacity
 
         axisColor =
             Theme.axisColor cfg.theme
@@ -275,7 +313,6 @@ toSvg (AreaChart cfg) =
         font =
             Theme.fontFamily cfg.theme
 
-        -- Horizontal grid lines at each y-tick position
         gridLines =
             Scale.ticks yScale 5
                 |> List.map
@@ -295,6 +332,111 @@ toSvg (AreaChart cfg) =
                             ]
                             []
                     )
+
+        -- Render each series: fill area then stroke line
+        seriesElements =
+            List.indexedMap
+                (\idx series ->
+                    let
+                        color =
+                            seriesColor idx
+
+                        fillColor =
+                            IC.hexToRgba color cfg.fillOpacity
+
+                        areaPath =
+                            Shape.area Shape.monotoneInXCurve
+                                (List.map toAreaPoint series.data)
+
+                        linePath =
+                            Shape.line Shape.monotoneInXCurve
+                                (List.map toLinePoint series.data)
+
+                        tooltipDots =
+                            if cfg.tooltips then
+                                List.map
+                                    (\( x, y ) ->
+                                        Svg.circle
+                                            [ SA.cx (String.fromFloat (Scale.convert xScale x))
+                                            , SA.cy (String.fromFloat (Scale.convert yScale y))
+                                            , SA.r "6"
+                                            , SA.fill "transparent"
+                                            , SA.stroke "none"
+                                            ]
+                                            [ Svg.node "title"
+                                                []
+                                                [ Svg.text
+                                                    ("x: "
+                                                        ++ String.fromFloat x
+                                                        ++ ", y: "
+                                                        ++ String.fromFloat y
+                                                    )
+                                                ]
+                                            ]
+                                    )
+                                    series.data
+
+                            else
+                                []
+                    in
+                    Svg.g []
+                        ([ Path.element areaPath
+                            [ SA.fill fillColor
+                            , SA.stroke "none"
+                            ]
+                         , Path.element linePath
+                            [ SA.fill "none"
+                            , SA.stroke color
+                            , SA.strokeWidth "1.5"
+                            , SA.strokeLinejoin "round"
+                            ]
+                         ]
+                            ++ tooltipDots
+                        )
+                )
+                cfg.series
+
+        legendItems =
+            if isMulti then
+                List.indexedMap
+                    (\idx series ->
+                        let
+                            color =
+                                seriesColor idx
+
+                            xOff =
+                                idx * 120
+                        in
+                        Svg.g
+                            [ SA.transform ("translate(" ++ String.fromInt xOff ++ ",0)") ]
+                            [ Svg.line
+                                [ SA.x1 "0"
+                                , SA.y1 "6"
+                                , SA.x2 "16"
+                                , SA.y2 "6"
+                                , SA.stroke color
+                                , SA.strokeWidth "2"
+                                ]
+                                []
+                            , Svg.text_
+                                [ SA.x "20"
+                                , SA.y "10"
+                                , SA.fontSize "11"
+                                , SA.fill labelColor
+                                ]
+                                [ Svg.text series.label ]
+                            ]
+                    )
+                    cfg.series
+
+            else
+                []
+
+        legendWidth =
+            List.length cfg.series * 120
+
+        legendX =
+            padLeft + max 0 (innerW // 2 - legendWidth // 2)
     in
     Html.div
         [ HA.style "display" "inline-block"
@@ -341,63 +483,22 @@ toSvg (AreaChart cfg) =
                     )
                 ]
                 (gridLines
-                    ++ [ -- Area fill
-                         Path.element areaPath
-                            [ SA.fill fillColor
-                            , SA.stroke "none"
-                            ]
-
-                       -- Line on top
-                       , Path.element linePath
-                            [ SA.fill "none"
-                            , SA.stroke cfg.color
-                            , SA.strokeWidth "1.5"
-                            , SA.strokeLinejoin "round"
-                            ]
-
-                       -- X axis
-                       , Svg.g
+                    ++ seriesElements
+                    ++ [ -- X axis
+                         Svg.g
                             [ SA.transform ("translate(0," ++ String.fromInt innerH ++ ")") ]
                             [ Axis.bottom [ Axis.tickCount 6 ] xScale ]
 
                        -- Y axis
                        , Svg.g [] [ Axis.left [ Axis.tickCount 5 ] yScale ]
                        ]
-                    ++ (if cfg.tooltips then
-                            List.map
-                                (\( x, y ) ->
-                                    Svg.g []
-                                        [ Svg.circle
-                                            [ SA.cx (String.fromFloat (Scale.convert xScale x))
-                                            , SA.cy (String.fromFloat (Scale.convert yScale y))
-                                            , SA.r "6"
-                                            , SA.fill "transparent"
-                                            , SA.stroke "none"
-                                            ]
-                                            [ Svg.node "title"
-                                                []
-                                                [ Svg.text
-                                                    ("x: "
-                                                        ++ String.fromFloat x
-                                                        ++ ", y: "
-                                                        ++ String.fromFloat y
-                                                    )
-                                                ]
-                                            ]
-                                        ]
-                                )
-                                cfg.data
-
-                        else
-                            []
-                       )
                 )
 
              -- X label
              , if cfg.xLabel /= "" then
                 Svg.text_
                     [ SA.x (String.fromInt (padLeft + innerW // 2))
-                    , SA.y (String.fromInt (cfg.height - 8))
+                    , SA.y (String.fromInt (cfg.height - (if isMulti then 30 else 8)))
                     , SA.textAnchor "middle"
                     , SA.fontSize "12"
                     , SA.fill labelColor
@@ -420,6 +521,22 @@ toSvg (AreaChart cfg) =
                     , SA.fill labelColor
                     ]
                     [ Svg.text cfg.yLabel ]
+
+               else
+                Svg.text ""
+
+             -- Legend (multi-series only)
+             , if not (List.isEmpty legendItems) then
+                Svg.g
+                    [ SA.transform
+                        ("translate("
+                            ++ String.fromInt legendX
+                            ++ ","
+                            ++ String.fromInt (cfg.height - 14)
+                            ++ ")"
+                        )
+                    ]
+                    legendItems
 
                else
                 Svg.text ""

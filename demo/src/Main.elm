@@ -1,6 +1,6 @@
 port module Main exposing (main)
 
-{-| PF6.Charts gallery — shows all 13 chart types with PatternFly v6 styling.
+{-| PF6.Charts gallery — shows all chart types with PatternFly v6 styling.
 
 Layout mirrors patternfly.org/charts/about-charts: a sticky sidebar nav on
 the left, chart panels on the right.
@@ -21,6 +21,7 @@ import PF6.Charts.DonutUtilization as DonutUtil
 import PF6.Charts.Line as Line
 import PF6.Charts.Pie as Pie
 import PF6.Charts.Scatter as Scatter
+import PF6.Charts.Skeleton as Skeleton
 import PF6.Charts.Sparkline as Sparkline
 import PF6.Charts.Stack as Stack
 import PF6.Charts.Theme as Theme
@@ -50,6 +51,7 @@ main =
 type alias Model =
     { activeSection : String
     , responsiveWidth : Int
+    , hiddenSeries : List String
     }
 
 
@@ -57,12 +59,14 @@ initialModel : Model
 initialModel =
     { activeSection = "area"
     , responsiveWidth = 560
+    , hiddenSeries = []
     }
 
 
 type Msg
     = SetSection String
     | ResizedTo Int
+    | ToggleSeries String
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -73,6 +77,17 @@ update msg model =
 
         ResizedTo w ->
             ( { model | responsiveWidth = max 200 w }, Cmd.none )
+
+        ToggleSeries label ->
+            let
+                newHidden =
+                    if List.member label model.hiddenSeries then
+                        List.filter (\l -> l /= label) model.hiddenSeries
+
+                    else
+                        label :: model.hiddenSeries
+            in
+            ( { model | hiddenSeries = newHidden }, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
@@ -93,11 +108,14 @@ navItems =
     , ( "donut", "Donut Chart" )
     , ( "donut-util", "Donut Utilization" )
     , ( "line", "Line Chart" )
+    , ( "interactive-legend", "Interactive Legend" )
     , ( "pie", "Pie Chart" )
     , ( "scatter", "Scatter Chart" )
     , ( "sparkline", "Sparkline" )
     , ( "stack", "Stack Chart" )
     , ( "threshold", "Threshold Chart" )
+    , ( "skeleton", "Skeletons" )
+    , ( "theme", "Themes" )
     , ( "resize", "Resize Observer" )
     ]
 
@@ -300,6 +318,20 @@ cpuData =
         [ 42, 55, 48, 72, 63, 58, 70, 65, 80, 73, 68, 75 ]
 
 
+multiAreaSeriesData : List Area.Series
+multiAreaSeriesData =
+    [ { label = "Cats"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 2, 3, 4, 3, 5, 6, 4, 6, 7, 5, 6, 7 ]
+      }
+    , { label = "Dogs"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 1, 2, 2, 3, 3, 4, 3, 4, 5, 4, 5, 5 ]
+      }
+    , { label = "Birds"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 1, 1, 2, 1, 2, 2, 1, 2, 3, 2, 2, 3 ]
+      }
+    ]
+
+
 networkSeriesData : List Line.Series
 networkSeriesData =
     [ { label = "Inbound"
@@ -321,6 +353,16 @@ memoryData =
     [ { label = "Used (GiB)", values = [ 12.4, 18.7, 8.2, 15.1, 22.0 ] }
     , { label = "Cached (GiB)", values = [ 4.2, 6.1, 3.5, 5.8, 7.3 ] }
     ]
+
+
+regionCategories : List String
+regionCategories =
+    [ "US East", "US West", "EU Central", "APAC", "SA East" ]
+
+
+regionData : List Bar.SeriesData
+regionData =
+    [ { label = "Instances", values = [ 142, 98, 76, 55, 31 ] } ]
 
 
 boxData : List BoxPlot.BoxData
@@ -386,6 +428,21 @@ thresholdData =
         [ 35, 42, 55, 68, 58, 72, 80, 75, 88, 82, 78, 90 ]
 
 
+-- All series available for interactive legend demo
+interactiveSeriesAll : List Line.Series
+interactiveSeriesAll =
+    [ { label = "CPU"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 42, 55, 48, 72, 63, 58, 70, 65, 80, 73, 68, 75 ]
+      }
+    , { label = "Memory"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 60, 62, 65, 68, 72, 70, 75, 80, 78, 82, 85, 88 ]
+      }
+    , { label = "Disk I/O"
+      , data = List.indexedMap (\i v -> ( toFloat i, v )) [ 20, 25, 22, 28, 30, 35, 28, 32, 38, 35, 40, 42 ]
+      }
+    ]
+
+
 
 -- CHART PANELS
 
@@ -394,42 +451,90 @@ allChartPanels : Model -> List ChartPanel
 allChartPanels model =
     [ { id = "area"
       , title = "Area Chart"
-      , description = "Area charts show a metric over time with a filled region under the line. Best for continuous data like CPU utilization, memory usage, or bandwidth. Hover the data points to see tooltips."
+      , description = "Area charts show one or more metrics over time with a filled region under each line. The single-series form (fromData) uses PF6 primary blue. The multi-series form (fromSeries) assigns each series a distinct theme color with an automatic legend."
       , chart =
-            Area.fromData cpuData
-                |> Area.withWidth 560
-                |> Area.withXLabel "Time (minutes)"
-                |> Area.withYLabel "CPU %"
-                |> Area.withTitle "CPU Utilization"
-                |> Area.withTooltips True
-                |> Area.toSvg
-      , code = """Area.fromData cpuData
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "flex-direction" "column"
+                , HA.style "gap" "32px"
+                , HA.style "align-items" "center"
+                ]
+                [ -- Single-series
+                  Area.fromData cpuData
+                    |> Area.withWidth 560
+                    |> Area.withXLabel "Time (minutes)"
+                    |> Area.withYLabel "CPU %"
+                    |> Area.withTitle "CPU Utilization"
+                    |> Area.withTooltips True
+                    |> Area.toSvg
+
+                -- Multi-series
+                , Area.fromSeries multiAreaSeriesData
+                    |> Area.withWidth 560
+                    |> Area.withXLabel "Year"
+                    |> Area.withYLabel "Count"
+                    |> Area.withTitle "Pets Over Time (multi-series)"
+                    |> Area.toSvg
+                ]
+      , code = """-- Single-series
+Area.fromData cpuData
     |> Area.withWidth 560
     |> Area.withXLabel "Time (minutes)"
     |> Area.withYLabel "CPU %"
     |> Area.withTitle "CPU Utilization"
     |> Area.withTooltips True
+    |> Area.toSvg
+
+-- Multi-series
+Area.fromSeries
+    [ { label = "Cats", data = catData }
+    , { label = "Dogs", data = dogData }
+    , { label = "Birds", data = birdData }
+    ]
+    |> Area.withWidth 560
+    |> Area.withTitle "Pets Over Time"
     |> Area.toSvg"""
       }
     , { id = "bar"
       , title = "Bar Chart"
-      , description = "Bar charts compare values across categories. Grouped bars let you compare multiple series side-by-side per category. Hover bars for value tooltips."
+      , description = "Bar charts compare values across categories. The default vertical orientation groups bars side-by-side per category. The horizontal orientation places categories on the y-axis — useful for long labels or nominal data."
       , chart =
-            Bar.fromData memoryCategories memoryData
-                |> Bar.withWidth 560
-                |> Bar.withYLabel "GiB"
-                |> Bar.withTitle "Memory Usage by Node"
-                |> Bar.withTooltips True
-                |> Bar.toSvg
-      , code = """Bar.fromData
-    [ "Node 1", "Node 2", "Node 3", "Node 4", "Node 5" ]
-    [ { label = "Used (GiB)", values = [ 12.4, 18.7, 8.2, 15.1, 22.0 ] }
-    , { label = "Cached (GiB)", values = [ 4.2, 6.1, 3.5, 5.8, 7.3 ] }
-    ]
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "flex-direction" "column"
+                , HA.style "gap" "32px"
+                , HA.style "align-items" "center"
+                ]
+                [ -- Vertical grouped
+                  Bar.fromData memoryCategories memoryData
+                    |> Bar.withWidth 560
+                    |> Bar.withYLabel "GiB"
+                    |> Bar.withTitle "Memory Usage by Node"
+                    |> Bar.withTooltips True
+                    |> Bar.toSvg
+
+                -- Horizontal single-series
+                , Bar.fromData regionCategories regionData
+                    |> Bar.withWidth 560
+                    |> Bar.withXLabel "Instances"
+                    |> Bar.withTitle "Instances by Region (horizontal)"
+                    |> Bar.withOrientation Bar.Horizontal
+                    |> Bar.withTooltips True
+                    |> Bar.toSvg
+                ]
+      , code = """-- Vertical grouped bars (default)
+Bar.fromData categories series
     |> Bar.withWidth 560
-    |> Bar.withYLabel "GiB"
     |> Bar.withTitle "Memory Usage by Node"
     |> Bar.withTooltips True
+    |> Bar.toSvg
+
+-- Horizontal bars
+Bar.fromData regionCategories regionData
+    |> Bar.withWidth 560
+    |> Bar.withXLabel "Instances"
+    |> Bar.withTitle "Instances by Region"
+    |> Bar.withOrientation Bar.Horizontal
     |> Bar.toSvg"""
       }
     , { id = "boxplot"
@@ -570,6 +675,132 @@ DonutUtil.fromData 78 100
     |> Line.withTitle "Network Throughput"
     |> Line.toSvg"""
       }
+    , { id = "interactive-legend"
+      , title = "Interactive Legend"
+      , description = "Click a legend item to hide/show that series. The legend shows an eye-slash indicator when a series is hidden. This pattern uses your app's Model — the library renders whatever series you pass it."
+      , chart =
+            let
+                visibleSeries =
+                    List.filter
+                        (\s -> not (List.member s.label model.hiddenSeries))
+                        interactiveSeriesAll
+
+                seriesColors =
+                    [ "#0066cc", "#7cc674", "#009596" ]
+
+                legendItem idx s =
+                    let
+                        isHidden =
+                            List.member s.label model.hiddenSeries
+
+                        color =
+                            List.drop idx seriesColors
+                                |> List.head
+                                |> Maybe.withDefault "#0066cc"
+                    in
+                    Html.button
+                        [ HE.onClick (ToggleSeries s.label)
+                        , HA.style "display" "flex"
+                        , HA.style "align-items" "center"
+                        , HA.style "gap" "6px"
+                        , HA.style "padding" "4px 10px"
+                        , HA.style "border" "1px solid #d2d2d2"
+                        , HA.style "border-radius" "4px"
+                        , HA.style "background" "#ffffff"
+                        , HA.style "cursor" "pointer"
+                        , HA.style "font-size" "13px"
+                        , HA.style "color"
+                            (if isHidden then
+                                "#6a6e73"
+
+                             else
+                                "#151515"
+                            )
+                        , HA.style "opacity"
+                            (if isHidden then
+                                "0.6"
+
+                             else
+                                "1"
+                            )
+                        ]
+                        [ Html.span
+                            [ HA.style "display" "inline-block"
+                            , HA.style "width" "12px"
+                            , HA.style "height" "12px"
+                            , HA.style "border-radius" "2px"
+                            , HA.style "background"
+                                (if isHidden then
+                                    "#d2d2d2"
+
+                                 else
+                                    color
+                                )
+                            ]
+                            []
+                        , Html.text
+                            (if isHidden then
+                                "⊘ " ++ s.label
+
+                             else
+                                s.label
+                            )
+                        ]
+            in
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "flex-direction" "column"
+                , HA.style "align-items" "center"
+                , HA.style "gap" "12px"
+                ]
+                [ Html.div
+                    [ HA.style "display" "flex"
+                    , HA.style "gap" "8px"
+                    , HA.style "flex-wrap" "wrap"
+                    ]
+                    (List.indexedMap legendItem interactiveSeriesAll)
+                , if List.isEmpty visibleSeries then
+                    Html.div
+                        [ HA.style "width" "560px"
+                        , HA.style "height" "250px"
+                        , HA.style "display" "flex"
+                        , HA.style "align-items" "center"
+                        , HA.style "justify-content" "center"
+                        , HA.style "color" "#6a6e73"
+                        , HA.style "font-size" "14px"
+                        ]
+                        [ Html.text "All series hidden — click a legend item to show it" ]
+
+                  else
+                    Line.fromSeries visibleSeries
+                        |> Line.withWidth 560
+                        |> Line.withXLabel "Time (minutes)"
+                        |> Line.withYLabel "Usage %"
+                        |> Line.withTitle "Resource Utilization"
+                        |> Line.toSvg
+                ]
+      , code = """-- In your Model:
+type alias Model =
+    { hiddenSeries : List String, ... }
+
+-- In your Msg:
+type Msg = ToggleSeries String | ...
+
+-- In update:
+ToggleSeries label ->
+    let newHidden =
+            if List.member label model.hiddenSeries
+            then List.filter (\\l -> l /= label) model.hiddenSeries
+            else label :: model.hiddenSeries
+    in ( { model | hiddenSeries = newHidden }, Cmd.none )
+
+-- In view: filter series then pass to Line:
+Line.fromSeries
+    (List.filter (\\s -> not (List.member s.label model.hiddenSeries))
+        allSeriesData)
+    |> Line.withWidth 560
+    |> Line.toSvg"""
+      }
     , { id = "pie"
       , title = "Pie Chart"
       , description = "Pie charts show part-to-whole relationships as solid circular slices. Use Donut when you need a center metric label. Hover slices for label + percentage tooltips."
@@ -592,24 +823,55 @@ DonutUtil.fromData 78 100
       }
     , { id = "scatter"
       , title = "Scatter Chart"
-      , description = "Scatter charts plot individual data points on a 2D plane to reveal correlations or clusters. Multiple series use distinct colors. Hover points for (x, y) tooltips."
+      , description = "Scatter charts plot individual data points on a 2D plane. Use NoOverlay for pure scatter, WithLine to connect points with a line, or WithArea for a filled area overlay — matching PF6's scatter variants."
       , chart =
-            Scatter.fromSeries scatterSeriesData
-                |> Scatter.withWidth 560
-                |> Scatter.withXLabel "CPU Cores"
-                |> Scatter.withYLabel "Memory (GiB)"
-                |> Scatter.withTitle "Cluster Resource Distribution"
-                |> Scatter.withTooltips True
-                |> Scatter.toSvg
-      , code = """Scatter.fromSeries
-    [ { label = "Cluster A", data = clusterAPoints }
-    , { label = "Cluster B", data = clusterBPoints }
-    ]
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "flex-direction" "column"
+                , HA.style "gap" "32px"
+                , HA.style "align-items" "center"
+                ]
+                [ -- Basic scatter
+                  Scatter.fromSeries scatterSeriesData
+                    |> Scatter.withWidth 560
+                    |> Scatter.withXLabel "CPU Cores"
+                    |> Scatter.withYLabel "Memory (GiB)"
+                    |> Scatter.withTitle "Cluster Distribution"
+                    |> Scatter.withTooltips True
+                    |> Scatter.toSvg
+
+                -- Scatter + line overlay
+                , Scatter.fromSeries scatterSeriesData
+                    |> Scatter.withWidth 560
+                    |> Scatter.withXLabel "CPU Cores"
+                    |> Scatter.withYLabel "Memory (GiB)"
+                    |> Scatter.withTitle "With Line Overlay"
+                    |> Scatter.withOverlay Scatter.WithLine
+                    |> Scatter.toSvg
+
+                -- Scatter + area overlay
+                , Scatter.fromSeries scatterSeriesData
+                    |> Scatter.withWidth 560
+                    |> Scatter.withXLabel "CPU Cores"
+                    |> Scatter.withYLabel "Memory (GiB)"
+                    |> Scatter.withTitle "With Area Overlay"
+                    |> Scatter.withOverlay Scatter.WithArea
+                    |> Scatter.toSvg
+                ]
+      , code = """-- Basic scatter
+Scatter.fromSeries series
     |> Scatter.withWidth 560
-    |> Scatter.withXLabel "CPU Cores"
-    |> Scatter.withYLabel "Memory (GiB)"
-    |> Scatter.withTitle "Cluster Resource Distribution"
     |> Scatter.withTooltips True
+    |> Scatter.toSvg
+
+-- Scatter + connecting line
+Scatter.fromSeries series
+    |> Scatter.withOverlay Scatter.WithLine
+    |> Scatter.toSvg
+
+-- Scatter + area fill
+Scatter.fromSeries series
+    |> Scatter.withOverlay Scatter.WithArea
     |> Scatter.toSvg"""
       }
     , { id = "sparkline"
@@ -698,15 +960,10 @@ DonutUtil.fromData 78 100
                         [ Html.text "42 MB/s" ]
                     ]
                 ]
-      , code = """-- Embed in a table/card row:
-Html.div [ HA.style "display" "flex", HA.style "align-items" "center" ]
-    [ Html.span [] [ Html.text "CPU" ]
-    , Sparkline.fromData [ 42, 55, 48, 72, 63, 75 ]
-        |> Sparkline.withWidth 180
-        |> Sparkline.withHeight 40
-        |> Sparkline.toSvg
-    , Html.span [] [ Html.text "75%" ]
-    ]"""
+      , code = """Sparkline.fromData [ 42, 55, 48, 72, 63, 75 ]
+    |> Sparkline.withWidth 180
+    |> Sparkline.withHeight 40
+    |> Sparkline.toSvg"""
       }
     , { id = "stack"
       , title = "Stack Chart"
@@ -724,8 +981,6 @@ Html.div [ HA.style "display" "flex", HA.style "align-items" "center" ]
     , { label = "Project C", values = [ 5, 7, 9, 11, 10, 12, 14, 12 ] }
     ]
     |> Stack.withWidth 560
-    |> Stack.withXLabel "Week"
-    |> Stack.withYLabel "Bandwidth (GB)"
     |> Stack.withTitle "Bandwidth by Project"
     |> Stack.toSvg"""
       }
@@ -743,12 +998,161 @@ Html.div [ HA.style "display" "flex", HA.style "align-items" "center" ]
                 |> Threshold.toSvg
       , code = """Threshold.fromData cpuData
     |> Threshold.withWidth 560
-    |> Threshold.withXLabel "Time (minutes)"
-    |> Threshold.withYLabel "CPU %"
     |> Threshold.withTitle "CPU with Warning Thresholds"
     |> Threshold.withThresholdLabel 75 "#f0ab00" "Warning (75%)"
     |> Threshold.withThresholdLabel 90 "#c9190b" "Critical (90%)"
     |> Threshold.toSvg"""
+      }
+    , { id = "skeleton"
+      , title = "Skeletons"
+      , description = "Loading skeleton placeholders for every chart type. Use these in place of a real chart while data is fetching. They match each chart's dimensions and show a shimmer animation consistent with PatternFly's skeleton component."
+      , chart =
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "flex-direction" "column"
+                , HA.style "gap" "24px"
+                , HA.style "align-items" "center"
+                , HA.style "width" "100%"
+                ]
+                [ Html.div
+                    [ HA.style "display" "flex"
+                    , HA.style "gap" "24px"
+                    , HA.style "justify-content" "center"
+                    , HA.style "flex-wrap" "wrap"
+                    ]
+                    [ Html.div []
+                        [ Html.p
+                            [ HA.style "font-size" "12px"
+                            , HA.style "color" "#6a6e73"
+                            , HA.style "margin" "0 0 6px 0"
+                            , HA.style "text-align" "center"
+                            ]
+                            [ Html.text "Area / Line / Bar" ]
+                        , Skeleton.area 280 160
+                        ]
+                    , Html.div []
+                        [ Html.p
+                            [ HA.style "font-size" "12px"
+                            , HA.style "color" "#6a6e73"
+                            , HA.style "margin" "0 0 6px 0"
+                            , HA.style "text-align" "center"
+                            ]
+                            [ Html.text "Donut / Pie" ]
+                        , Html.div
+                            [ HA.style "display" "flex"
+                            , HA.style "gap" "16px"
+                            ]
+                            [ Skeleton.donut 160
+                            , Skeleton.pie 160
+                            ]
+                        ]
+                    ]
+                , Html.div
+                    [ HA.style "display" "flex"
+                    , HA.style "gap" "24px"
+                    , HA.style "align-items" "center"
+                    ]
+                    [ Html.div []
+                        [ Html.p
+                            [ HA.style "font-size" "12px"
+                            , HA.style "color" "#6a6e73"
+                            , HA.style "margin" "0 0 6px 0"
+                            , HA.style "text-align" "center"
+                            ]
+                            [ Html.text "Sparkline" ]
+                        , Skeleton.sparkline 180 40
+                        ]
+                    ]
+                ]
+      , code = """-- While loading, swap the real chart for its skeleton:
+if model.loading then
+    Skeleton.area 560 250
+else
+    Area.fromData model.data
+        |> Area.withWidth 560
+        |> Area.toSvg
+
+-- Circular skeletons take a size argument:
+Skeleton.donut 240
+Skeleton.pie 200
+
+-- Sparkline skeleton:
+Skeleton.sparkline 180 40"""
+      }
+    , { id = "theme"
+      , title = "Themes"
+      , description = "PF6.Charts supports light (default) and dark themes. Use Theme.dark for charts on dark backgrounds. Theme.fromUiThemeColors lets you bridge in any UI library's color tokens without adding a dependency."
+      , chart =
+            Html.div
+                [ HA.style "display" "flex"
+                , HA.style "gap" "24px"
+                , HA.style "justify-content" "center"
+                , HA.style "flex-wrap" "wrap"
+                ]
+                [ -- Light theme (default)
+                  Html.div
+                    [ HA.style "background" "#ffffff"
+                    , HA.style "border" "1px solid #d2d2d2"
+                    , HA.style "border-radius" "6px"
+                    , HA.style "padding" "16px"
+                    ]
+                    [ Html.p
+                        [ HA.style "font-size" "12px"
+                        , HA.style "color" "#6a6e73"
+                        , HA.style "margin" "0 0 8px 4px"
+                        , HA.style "font-weight" "600"
+                        ]
+                        [ Html.text "Theme.light (default)" ]
+                    , Line.fromSeries networkSeriesData
+                        |> Line.withWidth 260
+                        |> Line.withHeight 180
+                        |> Line.withTitle "Network Throughput"
+                        |> Line.toSvg
+                    ]
+
+                -- Dark theme
+                , Html.div
+                    [ HA.style "background" "#212427"
+                    , HA.style "border" "1px solid #3c3f42"
+                    , HA.style "border-radius" "6px"
+                    , HA.style "padding" "16px"
+                    ]
+                    [ Html.p
+                        [ HA.style "font-size" "12px"
+                        , HA.style "color" "#8a8d90"
+                        , HA.style "margin" "0 0 8px 4px"
+                        , HA.style "font-weight" "600"
+                        ]
+                        [ Html.text "Theme.dark" ]
+                    , Line.fromSeries networkSeriesData
+                        |> Line.withWidth 260
+                        |> Line.withHeight 180
+                        |> Line.withTitle "Network Throughput"
+                        |> Line.withTheme Theme.dark
+                        |> Line.toSvg
+                    ]
+                ]
+      , code = """-- Light theme (default — no setup required)
+Line.fromSeries series
+    |> Line.withWidth 560
+    |> Line.toSvg
+
+-- Dark theme — wrap in a dark background container:
+Html.div [ HA.style "background" "#212427" ]
+    [ Line.fromSeries series
+        |> Line.withTheme Theme.dark
+        |> Line.toSvg
+    ]
+
+-- Bridge from your own UI theme:
+myChartTheme : ChartTheme.Theme
+myChartTheme =
+    ChartTheme.fromUiThemeColors
+        { primary       = "#0066cc"
+        , labelText     = "#151515"
+        , background    = "#ffffff"
+        , borderDefault = "#d2d2d2"
+        }"""
       }
     , { id = "resize"
       , title = "Resize Observer"
@@ -797,7 +1201,7 @@ type alias Model =
 -- 4. Add a Msg variant:
 type Msg = ... | ResizedTo Int
 
--- 5. Handle it in update (contentRect.width is the inner width, no offset needed):
+-- 5. Handle it in update:
 ResizedTo w ->
     ( { model | chartWidth = max 200 w }, Cmd.none )
 
@@ -806,35 +1210,21 @@ subscriptions : Model -> Sub Msg
 subscriptions _ =
     containerWidth ResizedTo
 
--- 7. Give the chart a resizable container and pass width from the port:
-Html.div
-    [ Html.Attributes.id "my-chart-container"
-    , Html.Attributes.style "resize" "horizontal"
-    , Html.Attributes.style "overflow" "hidden"
-    , Html.Attributes.style "min-width" "200px"
-    , Html.Attributes.style "max-width" "100%"
-    , Html.Attributes.style "width" "560px"   -- initial width
-    ]
-    [ Area.fromData cpuData
-        |> Area.withWidth model.chartWidth
-        |> Area.toSvg
-    ]
+-- 7. Pass width from the port:
+Area.fromData cpuData
+    |> Area.withWidth model.chartWidth
+    |> Area.toSvg
 
 
 -- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────
-
--- This entire block is optional — charts just use their last-set width
--- if ResizeObserver is unavailable.
 if (typeof ResizeObserver !== 'undefined') {
   const ro = new ResizeObserver(entries => {
     for (const entry of entries) {
-      // contentRect.width is the inner (content) width — use it directly
       app.ports.containerWidth.send(
         Math.round(entry.contentRect.width)
       );
     }
   });
-  // Observe your specific chart container, not the whole page:
   requestAnimationFrame(() => {
     const el = document.getElementById('my-chart-container');
     if (el) ro.observe(el);

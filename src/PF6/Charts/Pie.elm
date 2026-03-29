@@ -59,6 +59,11 @@ type PieChart
     = PieChart Config
 
 
+{-| A single slice in a pie chart, identified by a label and a numeric value.
+
+    { label = "US East", value = 35 }
+
+-}
 type alias Slice =
     { label : String
     , value : Float

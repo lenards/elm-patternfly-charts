@@ -5,6 +5,8 @@ module PF6.Charts.Pie exposing
     , withTheme
     , withColors
     , withTitle
+    , withLoading
+    , withTooltips
     , toSvg
     )
 
@@ -30,6 +32,8 @@ display a summary metric in the center.
 @docs withTheme
 @docs withColors
 @docs withTitle
+@docs withLoading
+@docs withTooltips
 
 
 # Renderer
@@ -42,6 +46,7 @@ import Html exposing (Html)
 import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Shape exposing (Arc)
 import Svg exposing (Svg)
@@ -66,6 +71,8 @@ type alias Config =
     , colors : List String
     , title : String
     , theme : Theme
+    , loading : Bool
+    , tooltips : Bool
     }
 
 
@@ -76,6 +83,8 @@ defaultConfig data =
     , colors = Colors.multiOrdered
     , title = ""
     , theme = Theme.light
+    , loading = False
+    , tooltips = False
     }
 
 
@@ -122,10 +131,32 @@ withTitle t (PieChart cfg) =
     PieChart { cfg | title = t }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> PieChart -> PieChart
+withLoading l (PieChart cfg) =
+    PieChart { cfg | loading = l }
+
+
+{-| Enable SVG `<title>` tooltips on each slice. Default: `False`.
+
+When enabled, hovering over a slice shows a browser-native tooltip with the
+label, value, and percentage (e.g. `"Running: 42 (76%)"`). No ports required.
+
+-}
+withTooltips : Bool -> PieChart -> PieChart
+withTooltips t (PieChart cfg) =
+    PieChart { cfg | tooltips = t }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : PieChart -> Html msg
 toSvg (PieChart cfg) =
+    if cfg.loading then
+        Skeleton.viewPie cfg.size
+
+    else
     let
         svgSize =
             cfg.size
@@ -175,6 +206,9 @@ toSvg (PieChart cfg) =
         font =
             Theme.fontFamily cfg.theme
 
+        totalVal =
+            List.sum (List.map .value cfg.data)
+
         slices =
             List.indexedMap
                 (\idx arc ->
@@ -183,29 +217,61 @@ toSvg (PieChart cfg) =
                             List.drop idx seriesColors
                                 |> List.head
                                 |> Maybe.withDefault Colors.primary
+
+                        slice =
+                            List.drop idx cfg.data
+                                |> List.head
+                                |> Maybe.withDefault { label = "", value = 0 }
+
+                        pct =
+                            if totalVal > 0 then
+                                round (slice.value / totalVal * 100)
+
+                            else
+                                0
+
+                        arcPath =
+                            Path.element
+                                (Shape.arc
+                                    { innerRadius = 0
+                                    , outerRadius = outerRadius
+                                    , cornerRadius = 2
+                                    , startAngle = arc.startAngle
+                                    , endAngle = arc.endAngle
+                                    , padAngle = arc.padAngle
+                                    , padRadius = 0
+                                    }
+                                )
+                                [ SA.fill color
+                                , SA.stroke Colors.white
+                                , SA.strokeWidth "2"
+                                , SA.transform
+                                    ("translate("
+                                        ++ String.fromFloat cx
+                                        ++ ","
+                                        ++ String.fromFloat cy
+                                        ++ ")"
+                                    )
+                                ]
                     in
-                    Path.element
-                        (Shape.arc
-                            { innerRadius = 0
-                            , outerRadius = outerRadius
-                            , cornerRadius = 2
-                            , startAngle = arc.startAngle
-                            , endAngle = arc.endAngle
-                            , padAngle = arc.padAngle
-                            , padRadius = 0
-                            }
-                        )
-                        [ SA.fill color
-                        , SA.stroke Colors.white
-                        , SA.strokeWidth "2"
-                        , SA.transform
-                            ("translate("
-                                ++ String.fromFloat cx
-                                ++ ","
-                                ++ String.fromFloat cy
-                                ++ ")"
-                            )
-                        ]
+                    if cfg.tooltips then
+                        Svg.g []
+                            [ arcPath
+                            , Svg.node "title"
+                                []
+                                [ Svg.text
+                                    (slice.label
+                                        ++ ": "
+                                        ++ String.fromFloat slice.value
+                                        ++ " ("
+                                        ++ String.fromInt pct
+                                        ++ "%)"
+                                    )
+                                ]
+                            ]
+
+                    else
+                        arcPath
                 )
                 pieArcs
     in

@@ -6,6 +6,8 @@ module PF6.Charts.Scatter exposing
     , withXLabel, withYLabel
     , withTitle
     , withPointRadius
+    , withLoading
+    , withTooltips
     , toSvg
     )
 
@@ -31,6 +33,8 @@ Supports multiple series with automatic color assignment.
 @docs withXLabel, withYLabel
 @docs withTitle
 @docs withPointRadius
+@docs withLoading
+@docs withTooltips
 
 
 # Renderer
@@ -43,6 +47,7 @@ import Axis
 import Html exposing (Html)
 import Html.Attributes as HA
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Svg exposing (Svg)
@@ -72,6 +77,8 @@ type alias Config =
     , title : String
     , theme : Theme
     , pointRadius : Float
+    , loading : Bool
+    , tooltips : Bool
     }
 
 
@@ -85,6 +92,8 @@ defaultConfig series =
     , title = ""
     , theme = Theme.light
     , pointRadius = 5
+    , loading = False
+    , tooltips = False
     }
 
 
@@ -151,10 +160,32 @@ withPointRadius r (ScatterChart cfg) =
     ScatterChart { cfg | pointRadius = r }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> ScatterChart -> ScatterChart
+withLoading l (ScatterChart cfg) =
+    ScatterChart { cfg | loading = l }
+
+
+{-| Enable SVG `<title>` tooltips on each point. Default: `False`.
+
+When enabled, hovering over a scatter point shows a browser-native tooltip
+with the x and y coordinates (e.g. `"(3.5, 72.0)"`). No ports or state required.
+
+-}
+withTooltips : Bool -> ScatterChart -> ScatterChart
+withTooltips t (ScatterChart cfg) =
+    ScatterChart { cfg | tooltips = t }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : ScatterChart -> Html msg
 toSvg (ScatterChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then
@@ -263,7 +294,22 @@ toSvg (ScatterChart cfg) =
                                 , SA.fill color
                                 , SA.opacity "0.8"
                                 ]
-                                []
+                                (if cfg.tooltips then
+                                    [ Svg.node "title"
+                                        []
+                                        [ Svg.text
+                                            ("("
+                                                ++ String.fromFloat x
+                                                ++ ", "
+                                                ++ String.fromFloat y
+                                                ++ ")"
+                                            )
+                                        ]
+                                    ]
+
+                                 else
+                                    []
+                                )
                         )
                         series.data
                 )

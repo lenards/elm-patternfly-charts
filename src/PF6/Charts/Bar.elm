@@ -7,6 +7,8 @@ module PF6.Charts.Bar exposing
     , withXLabel, withYLabel
     , withTitle
     , withGrouped
+    , withLoading
+    , withTooltips
     , toSvg
     )
 
@@ -34,6 +36,8 @@ color assignment from the theme's multi-ordered color scale.
 @docs withXLabel, withYLabel
 @docs withTitle
 @docs withGrouped
+@docs withLoading
+@docs withTooltips
 
 
 # Renderer
@@ -46,6 +50,7 @@ import Axis
 import Html exposing (Html)
 import Html.Attributes as HA
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (BandScale, ContinuousScale)
 import Svg exposing (Svg)
@@ -77,6 +82,8 @@ type alias Config =
     , title : String
     , theme : Theme
     , grouped : Bool
+    , loading : Bool
+    , tooltips : Bool
     }
 
 
@@ -92,6 +99,8 @@ defaultConfig categories series =
     , title = ""
     , theme = Theme.light
     , grouped = True
+    , loading = False
+    , tooltips = False
     }
 
 
@@ -176,10 +185,32 @@ withGrouped g (BarChart cfg) =
     BarChart { cfg | grouped = g }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> BarChart -> BarChart
+withLoading l (BarChart cfg) =
+    BarChart { cfg | loading = l }
+
+
+{-| Enable SVG `<title>` tooltips on each bar. Default: `False`.
+
+When enabled, hovering over a bar shows a browser-native tooltip with the
+category and value (e.g. `"Memory · Used: 70"`). No ports or state required.
+
+-}
+withTooltips : Bool -> BarChart -> BarChart
+withTooltips t (BarChart cfg) =
+    BarChart { cfg | tooltips = t }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : BarChart -> Html msg
 toSvg (BarChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then
@@ -316,8 +347,8 @@ toSvg (BarChart cfg) =
                                     min 2 (innerBandwidth / 4)
                             in
                             Svg.g []
-                                [ -- Main rect (full height, no rounding on bottom)
-                                  Svg.rect
+                                ([ -- Main rect (full height, no rounding on bottom)
+                                   Svg.rect
                                     [ SA.x (String.fromFloat barX)
                                     , SA.y (String.fromFloat barY)
                                     , SA.width (String.fromFloat innerBandwidth)
@@ -326,9 +357,24 @@ toSvg (BarChart cfg) =
                                     , SA.rx (String.fromFloat rx)
                                     , SA.ry (String.fromFloat rx)
                                     ]
-                                    []
+                                    (if cfg.tooltips then
+                                        [ Svg.node "title"
+                                            []
+                                            [ Svg.text
+                                                (cat
+                                                    ++ " \u{00B7} "
+                                                    ++ series.label
+                                                    ++ ": "
+                                                    ++ String.fromFloat val
+                                                )
+                                            ]
+                                        ]
+
+                                     else
+                                        []
+                                    )
                                   -- Cover bottom corners to make only top rounded
-                                , Svg.rect
+                                 , Svg.rect
                                     [ SA.x (String.fromFloat barX)
                                     , SA.y (String.fromFloat (barY + rx))
                                     , SA.width (String.fromFloat innerBandwidth)
@@ -336,7 +382,8 @@ toSvg (BarChart cfg) =
                                     , SA.fill color
                                     ]
                                     []
-                                ]
+                                 ]
+                                )
                         )
                         cfg.series
                 )

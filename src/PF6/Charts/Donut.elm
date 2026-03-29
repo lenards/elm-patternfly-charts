@@ -6,6 +6,8 @@ module PF6.Charts.Donut exposing
     , withColors
     , withTitle
     , withCenterText
+    , withLoading
+    , withTooltips
     , toSvg
     )
 
@@ -33,6 +35,8 @@ display a summary metric.
 @docs withColors
 @docs withTitle
 @docs withCenterText
+@docs withLoading
+@docs withTooltips
 
 
 # Renderer
@@ -45,6 +49,7 @@ import Html exposing (Html)
 import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Shape exposing (Arc)
 import Svg exposing (Svg)
@@ -73,6 +78,8 @@ type alias Config =
     , centerValue : String
     , centerLabel : String
     , theme : Theme
+    , loading : Bool
+    , tooltips : Bool
     }
 
 
@@ -85,6 +92,8 @@ defaultConfig data =
     , centerValue = ""
     , centerLabel = ""
     , theme = Theme.light
+    , loading = False
+    , tooltips = False
     }
 
 
@@ -145,10 +154,32 @@ withCenterText value label (DonutChart cfg) =
     DonutChart { cfg | centerValue = value, centerLabel = label }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> DonutChart -> DonutChart
+withLoading l (DonutChart cfg) =
+    DonutChart { cfg | loading = l }
+
+
+{-| Enable SVG `<title>` tooltips on each slice. Default: `False`.
+
+When enabled, hovering over a slice shows a browser-native tooltip with the
+label, value, and percentage (e.g. `"Running: 42 (76%)"`). No ports required.
+
+-}
+withTooltips : Bool -> DonutChart -> DonutChart
+withTooltips t (DonutChart cfg) =
+    DonutChart { cfg | tooltips = t }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : DonutChart -> Html msg
 toSvg (DonutChart cfg) =
+    if cfg.loading then
+        Skeleton.viewCircle cfg.size
+
+    else
     let
         svgSize =
             cfg.size
@@ -201,6 +232,9 @@ toSvg (DonutChart cfg) =
         font =
             Theme.fontFamily cfg.theme
 
+        totalVal =
+            List.sum (List.map .value cfg.data)
+
         slices =
             List.indexedMap
                 (\idx arc ->
@@ -209,29 +243,61 @@ toSvg (DonutChart cfg) =
                             List.drop idx seriesColors
                                 |> List.head
                                 |> Maybe.withDefault Colors.primary
+
+                        slice =
+                            List.drop idx cfg.data
+                                |> List.head
+                                |> Maybe.withDefault { label = "", value = 0 }
+
+                        pct =
+                            if totalVal > 0 then
+                                round (slice.value / totalVal * 100)
+
+                            else
+                                0
+
+                        arcPath =
+                            Path.element
+                                (Shape.arc
+                                    { innerRadius = innerRadius
+                                    , outerRadius = outerRadius
+                                    , cornerRadius = 2
+                                    , startAngle = arc.startAngle
+                                    , endAngle = arc.endAngle
+                                    , padAngle = arc.padAngle
+                                    , padRadius = 0
+                                    }
+                                )
+                                [ SA.fill color
+                                , SA.stroke Colors.white
+                                , SA.strokeWidth "2"
+                                , SA.transform
+                                    ("translate("
+                                        ++ String.fromFloat cx
+                                        ++ ","
+                                        ++ String.fromFloat cy
+                                        ++ ")"
+                                    )
+                                ]
                     in
-                    Path.element
-                        (Shape.arc
-                            { innerRadius = innerRadius
-                            , outerRadius = outerRadius
-                            , cornerRadius = 2
-                            , startAngle = arc.startAngle
-                            , endAngle = arc.endAngle
-                            , padAngle = arc.padAngle
-                            , padRadius = 0
-                            }
-                        )
-                        [ SA.fill color
-                        , SA.stroke Colors.white
-                        , SA.strokeWidth "2"
-                        , SA.transform
-                            ("translate("
-                                ++ String.fromFloat cx
-                                ++ ","
-                                ++ String.fromFloat cy
-                                ++ ")"
-                            )
-                        ]
+                    if cfg.tooltips then
+                        Svg.g []
+                            [ arcPath
+                            , Svg.node "title"
+                                []
+                                [ Svg.text
+                                    (slice.label
+                                        ++ ": "
+                                        ++ String.fromFloat slice.value
+                                        ++ " ("
+                                        ++ String.fromInt pct
+                                        ++ "%)"
+                                    )
+                                ]
+                            ]
+
+                    else
+                        arcPath
                 )
                 pieArcs
 

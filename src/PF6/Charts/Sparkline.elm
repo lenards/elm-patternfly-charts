@@ -4,6 +4,7 @@ module PF6.Charts.Sparkline exposing
     , withWidth, withHeight
     , withColor, withTheme
     , withFill
+    , withLoading
     , toSvg
     )
 
@@ -28,6 +29,7 @@ without the overhead of a full chart.
 @docs withWidth, withHeight
 @docs withColor, withTheme
 @docs withFill
+@docs withLoading
 
 
 # Renderer
@@ -41,6 +43,7 @@ import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
 import PF6.Charts.Internal.Color as IC
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Shape
@@ -61,6 +64,7 @@ type alias Config =
     , color : String
     , fill : Bool
     , theme : Theme
+    , loading : Bool
     }
 
 
@@ -72,6 +76,7 @@ defaultConfig data =
     , color = Colors.primary
     , fill = True
     , theme = Theme.light
+    , loading = False
     }
 
 
@@ -121,10 +126,21 @@ withFill f (Sparkline cfg) =
     Sparkline { cfg | fill = f }
 
 
+{-| Show a skeleton placeholder instead of the sparkline while data is loading.
+-}
+withLoading : Bool -> Sparkline -> Sparkline
+withLoading l (Sparkline cfg) =
+    Sparkline { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : Sparkline -> Html msg
 toSvg (Sparkline cfg) =
+    if cfg.loading then
+        Skeleton.viewSparkline cfg.width cfg.height
+
+    else
     let
         pad =
             2

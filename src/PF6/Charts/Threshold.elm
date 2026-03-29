@@ -7,6 +7,7 @@ module PF6.Charts.Threshold exposing
     , withXLabel, withYLabel
     , withTitle
     , withThresholdLabel
+    , withLoading
     , toSvg
     )
 
@@ -34,6 +35,7 @@ Common in infrastructure dashboards to show warning/danger levels
 @docs withXLabel, withYLabel
 @docs withTitle
 @docs withThresholdLabel
+@docs withLoading
 
 
 # Renderer
@@ -48,6 +50,7 @@ import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
 import PF6.Charts.Internal.Color as IC
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Shape
@@ -81,6 +84,7 @@ type alias Config =
     , yLabel : String
     , title : String
     , theme : Theme
+    , loading : Bool
     }
 
 
@@ -96,6 +100,7 @@ defaultConfig data =
     , yLabel = ""
     , title = ""
     , theme = Theme.light
+    , loading = False
     }
 
 
@@ -179,10 +184,21 @@ withThresholdLabel value color label (ThresholdChart cfg) =
         }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> ThresholdChart -> ThresholdChart
+withLoading l (ThresholdChart cfg) =
+    ThresholdChart { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : ThresholdChart -> Html msg
 toSvg (ThresholdChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then

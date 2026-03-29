@@ -5,6 +5,7 @@ module PF6.Charts.Bullet exposing
     , withTheme
     , withTitle
     , withUnit
+    , withLoading
     , toSvg
     )
 
@@ -30,6 +31,7 @@ A compact alternative to gauge charts for showing progress against a goal.
 @docs withTheme
 @docs withTitle
 @docs withUnit
+@docs withLoading
 
 
 # Renderer
@@ -41,6 +43,7 @@ A compact alternative to gauge charts for showing progress against a goal.
 import Html exposing (Html)
 import Html.Attributes as HA
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Svg exposing (Svg)
@@ -64,6 +67,7 @@ type alias Config =
     , subtitle : String
     , unit : String
     , theme : Theme
+    , loading : Bool
     }
 
 
@@ -78,6 +82,7 @@ defaultConfig actual target max =
     , subtitle = ""
     , unit = ""
     , theme = Theme.light
+    , loading = False
     }
 
 
@@ -131,10 +136,21 @@ withUnit u (BulletChart cfg) =
     BulletChart { cfg | unit = u }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> BulletChart -> BulletChart
+withLoading l (BulletChart cfg) =
+    BulletChart { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : BulletChart -> Html msg
 toSvg (BulletChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         titleWidth =
             if cfg.title /= "" then

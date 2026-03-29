@@ -6,6 +6,7 @@ module PF6.Charts.DonutUtilization exposing
     , withTitle
     , withWarningThreshold
     , withDangerThreshold
+    , withLoading
     , toSvg
     )
 
@@ -33,6 +34,7 @@ warning/danger as thresholds are crossed.
 @docs withTitle
 @docs withWarningThreshold
 @docs withDangerThreshold
+@docs withLoading
 
 
 # Renderer
@@ -45,6 +47,7 @@ import Html exposing (Html)
 import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Shape
 import Svg exposing (Svg)
@@ -66,6 +69,7 @@ type alias Config =
     , theme : Theme
     , warningThreshold : Float
     , dangerThreshold : Float
+    , loading : Bool
     }
 
 
@@ -79,6 +83,7 @@ defaultConfig used total =
     , theme = Theme.light
     , warningThreshold = 75
     , dangerThreshold = 90
+    , loading = False
     }
 
 
@@ -136,10 +141,21 @@ withDangerThreshold t (DonutUtilization cfg) =
     DonutUtilization { cfg | dangerThreshold = t }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> DonutUtilization -> DonutUtilization
+withLoading l (DonutUtilization cfg) =
+    DonutUtilization { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : DonutUtilization -> Html msg
 toSvg (DonutUtilization cfg) =
+    if cfg.loading then
+        Skeleton.viewCircle cfg.size
+
+    else
     let
         percent =
             if cfg.total > 0 then

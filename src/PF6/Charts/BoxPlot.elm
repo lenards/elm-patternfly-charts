@@ -5,6 +5,7 @@ module PF6.Charts.BoxPlot exposing
     , withTheme
     , withXLabel, withYLabel
     , withTitle
+    , withLoading
     , toSvg
     )
 
@@ -33,6 +34,7 @@ Each box displays:
 @docs withTheme
 @docs withXLabel, withYLabel
 @docs withTitle
+@docs withLoading
 
 
 # Renderer
@@ -45,6 +47,7 @@ import Axis
 import Html exposing (Html)
 import Html.Attributes as HA
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (BandScale, ContinuousScale)
 import Svg exposing (Svg)
@@ -77,6 +80,7 @@ type alias Config =
     , yLabel : String
     , title : String
     , theme : Theme
+    , loading : Bool
     }
 
 
@@ -89,6 +93,7 @@ defaultConfig data =
     , yLabel = ""
     , title = ""
     , theme = Theme.light
+    , loading = False
     }
 
 
@@ -148,10 +153,21 @@ withTitle t (BoxPlotChart cfg) =
     BoxPlotChart { cfg | title = t }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> BoxPlotChart -> BoxPlotChart
+withLoading l (BoxPlotChart cfg) =
+    BoxPlotChart { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : BoxPlotChart -> Html msg
 toSvg (BoxPlotChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then

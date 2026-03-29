@@ -1,6 +1,7 @@
 module PF6.Charts.Theme exposing
     ( Theme, Mode(..)
     , light, dark, fromMode
+    , UiThemeColors, fromUiThemeColors
     , primaryColor, seriesColor, axisColor, gridColor, labelColor, backgroundColor, fontFamily
     )
 
@@ -18,6 +19,53 @@ chart-specific tokens (axis, grid, series colors).
 # Constructors
 
 @docs light, dark, fromMode
+
+
+# Bridging from a UI theme library
+
+`PF6.Charts` intentionally has no dependency on `mdgriffith/elm-ui` or any
+specific UI theme library. If you are already using `lenards/elm-ui-patternfly`
+(or a future `elm-patternfly` built on `elm/html`), use `UiThemeColors` and
+`fromUiThemeColors` to bridge your theme into chart tokens.
+
+@docs UiThemeColors, fromUiThemeColors
+
+**Example — bridging from `lenards/elm-ui-patternfly`:**
+
+```elm
+import Element exposing (toRgb)
+import PF6.Theme as UiTheme
+import PF6.Charts.Theme as ChartTheme
+
+{-| Convert an elm-ui Color to a 6-digit hex string.
+    Requires rtfeldman/elm-hex or a similar hex-encoding package.
+-}
+colorToHex : Element.Color -> String
+colorToHex color =
+    let
+        { red, green, blue } =
+            Element.toRgb color
+
+        byte n =
+            String.padLeft 2 '0' (Hex.toString (round (n * 255)))
+    in
+    "#" ++ byte red ++ byte green ++ byte blue
+
+{-| Derive chart tokens from a PF6 UI theme.
+-}
+chartTheme : UiTheme.Theme -> ChartTheme.Theme
+chartTheme uiTheme =
+    ChartTheme.fromUiThemeColors
+        { primary = colorToHex (UiTheme.primary uiTheme)
+        , labelText = colorToHex (UiTheme.text uiTheme)
+        , background = colorToHex (UiTheme.backgroundDefault uiTheme)
+        , borderDefault = colorToHex (UiTheme.borderDefault uiTheme)
+        }
+```
+
+The same pattern will work for a future `elm-patternfly` library built on
+`elm/html` — just swap the `colorToHex` helper for whatever color type that
+library exposes.
 
 
 # Accessors
@@ -112,6 +160,46 @@ fromMode mode =
 
         Dark ->
             dark
+
+
+
+-- BRIDGE FROM UI THEME
+
+
+{-| A plain record of hex color strings extracted from a UI theme library.
+
+Pass this to `fromUiThemeColors` to get a `Theme` without requiring any
+dependency on `mdgriffith/elm-ui` or `lenards/elm-ui-patternfly`.
+
+All fields are 6-digit hex strings, e.g. `"#0066cc"`.
+
+-}
+type alias UiThemeColors =
+    { primary : String
+    , labelText : String
+    , background : String
+    , borderDefault : String
+    }
+
+
+{-| Build a chart `Theme` from a `UiThemeColors` record.
+
+The chart `series` color scale defaults to `Colors.multiOrdered` with `primary`
+as the first color. Axis and grid lines use `borderDefault`. Label text uses
+`labelText`. See the module doc for a full bridging example.
+
+-}
+fromUiThemeColors : UiThemeColors -> Theme
+fromUiThemeColors c =
+    Theme
+        { primary = c.primary
+        , series = c.primary :: List.drop 1 Colors.multiOrdered
+        , axis = c.borderDefault
+        , grid = c.borderDefault
+        , label = c.labelText
+        , background = c.background
+        , fontFamily = "Red Hat Text, RedHatText, sans-serif"
+        }
 
 
 

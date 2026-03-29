@@ -5,6 +5,7 @@ module PF6.Charts.Line exposing
     , withTheme
     , withXLabel, withYLabel
     , withTitle
+    , withLoading
     , toSvg
     )
 
@@ -30,6 +31,7 @@ multi-unordered color scale.
 @docs withTheme
 @docs withXLabel, withYLabel
 @docs withTitle
+@docs withLoading
 
 
 # Renderer
@@ -43,6 +45,7 @@ import Html exposing (Html)
 import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Shape
@@ -72,6 +75,7 @@ type alias Config =
     , yLabel : String
     , title : String
     , theme : Theme
+    , loading : Bool
     }
 
 
@@ -84,6 +88,7 @@ defaultConfig series =
     , yLabel = ""
     , title = ""
     , theme = Theme.light
+    , loading = False
     }
 
 
@@ -150,10 +155,21 @@ withTitle t (LineChart cfg) =
     LineChart { cfg | title = t }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> LineChart -> LineChart
+withLoading l (LineChart cfg) =
+    LineChart { cfg | loading = l }
+
+
 {-| Render to `Html msg`.
 -}
 toSvg : LineChart -> Html msg
 toSvg (LineChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then

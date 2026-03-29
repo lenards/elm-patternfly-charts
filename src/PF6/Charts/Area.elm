@@ -6,6 +6,8 @@ module PF6.Charts.Area exposing
     , withFillOpacity
     , withXLabel, withYLabel
     , withTitle
+    , withLoading
+    , withTooltips
     , toSvg
     )
 
@@ -31,6 +33,8 @@ Ideal for showing a single metric over time (CPU utilization, bandwidth).
 @docs withFillOpacity
 @docs withXLabel, withYLabel
 @docs withTitle
+@docs withLoading
+@docs withTooltips
 
 
 # Renderer
@@ -45,6 +49,7 @@ import Html.Attributes as HA
 import Path
 import PF6.Charts.Colors as Colors
 import PF6.Charts.Internal.Color as IC
+import PF6.Charts.Internal.Skeleton as Skeleton
 import PF6.Charts.Theme as Theme exposing (Theme)
 import Scale exposing (ContinuousScale)
 import Shape
@@ -68,6 +73,8 @@ type alias Config =
     , yLabel : String
     , title : String
     , theme : Theme
+    , loading : Bool
+    , tooltips : Bool
     }
 
 
@@ -82,6 +89,8 @@ defaultConfig data =
     , yLabel = ""
     , title = ""
     , theme = Theme.light
+    , loading = False
+    , tooltips = False
     }
 
 
@@ -156,10 +165,32 @@ withTitle t (AreaChart cfg) =
     AreaChart { cfg | title = t }
 
 
+{-| Show a skeleton placeholder instead of the chart while data is loading.
+-}
+withLoading : Bool -> AreaChart -> AreaChart
+withLoading l (AreaChart cfg) =
+    AreaChart { cfg | loading = l }
+
+
+{-| Enable SVG `<title>` tooltips on each data point. Default: `False`.
+
+When enabled, hovering over a data point shows a browser-native tooltip with
+the x and y values (e.g. `"x: 3, y: 72"`). No ports or state required.
+
+-}
+withTooltips : Bool -> AreaChart -> AreaChart
+withTooltips t (AreaChart cfg) =
+    AreaChart { cfg | tooltips = t }
+
+
 {-| Render the chart to an `Html msg` node.
 -}
 toSvg : AreaChart -> Html msg
 toSvg (AreaChart cfg) =
+    if cfg.loading then
+        Skeleton.view cfg.width cfg.height
+
+    else
     let
         padTop =
             if cfg.title /= "" then
@@ -332,6 +363,34 @@ toSvg (AreaChart cfg) =
                        -- Y axis
                        , Svg.g [] [ Axis.left [ Axis.tickCount 5 ] yScale ]
                        ]
+                    ++ (if cfg.tooltips then
+                            List.map
+                                (\( x, y ) ->
+                                    Svg.g []
+                                        [ Svg.circle
+                                            [ SA.cx (String.fromFloat (Scale.convert xScale x))
+                                            , SA.cy (String.fromFloat (Scale.convert yScale y))
+                                            , SA.r "6"
+                                            , SA.fill "transparent"
+                                            , SA.stroke "none"
+                                            ]
+                                            [ Svg.node "title"
+                                                []
+                                                [ Svg.text
+                                                    ("x: "
+                                                        ++ String.fromFloat x
+                                                        ++ ", y: "
+                                                        ++ String.fromFloat y
+                                                    )
+                                                ]
+                                            ]
+                                        ]
+                                )
+                                cfg.data
+
+                        else
+                            []
+                       )
                 )
 
              -- X label

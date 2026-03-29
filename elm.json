@@ -19,7 +19,8 @@
             "PF6.Charts.Scatter",
             "PF6.Charts.Sparkline",
             "PF6.Charts.Stack",
-            "PF6.Charts.Threshold"
+            "PF6.Charts.Threshold",
+            "PF6.Charts.Skeleton"
         ]
     },
     "elm-version": "0.19.0 <= v < 0.20.0",

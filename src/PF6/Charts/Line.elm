@@ -282,7 +282,7 @@ toSvg (LineChart cfg) =
                     Path.element path
                         [ SA.fill "none"
                         , SA.stroke color
-                        , SA.strokeWidth "2"
+                        , SA.strokeWidth "1.5"
                         , SA.strokeLinejoin "round"
                         ]
                 )
@@ -313,7 +313,7 @@ toSvg (LineChart cfg) =
                                     , SA.x2 "16"
                                     , SA.y2 "6"
                                     , SA.stroke color
-                                    , SA.strokeWidth "2"
+                                    , SA.strokeWidth "1.5"
                                     ]
                                     []
                                 , Svg.text_

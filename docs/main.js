@@ -5266,7 +5266,7 @@ var $author$project$PF6$Charts$Colors$multiOrdered = _List_fromArray(
 var $author$project$PF6$Charts$Colors$primary = '#0066cc';
 var $author$project$PF6$Charts$Theme$light = {bj: $author$project$PF6$Charts$Colors$axisLine, aF: $author$project$PF6$Charts$Colors$background, bw: 'Red Hat Text, RedHatText, sans-serif', by: $author$project$PF6$Charts$Colors$gridLine, o: $author$project$PF6$Charts$Colors$labelText, aj: $author$project$PF6$Charts$Colors$primary, a4: $author$project$PF6$Charts$Colors$multiOrdered};
 var $author$project$PF6$Charts$Area$defaultConfig = function (data) {
-	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.15, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
+	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.20, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, H: '', cp: false, aB: 500, be: '', bg: ''};
 };
 var $author$project$PF6$Charts$Area$fromData = function (data) {
 	return $author$project$PF6$Charts$Area$defaultConfig(data);
@@ -5333,7 +5333,7 @@ var $author$project$PF6$Charts$Sparkline$fromData = function (data) {
 };
 var $author$project$PF6$Charts$Threshold$ThresholdChart = $elm$core$Basics$identity;
 var $author$project$PF6$Charts$Threshold$defaultConfig = function (data) {
-	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.15, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, aP: _List_Nil, H: '', aB: 500, be: '', bg: ''};
+	return {aU: $author$project$PF6$Charts$Colors$primary, b0: data, b3: 0.20, as: 250, b8: false, aO: $author$project$PF6$Charts$Theme$light, aP: _List_Nil, H: '', aB: 500, be: '', bg: ''};
 };
 var $author$project$PF6$Charts$Threshold$fromData = function (data) {
 	return $author$project$PF6$Charts$Threshold$defaultConfig(data);
@@ -7723,7 +7723,7 @@ var $author$project$PF6$Charts$Area$toSvg = function (_v0) {
 												[
 													$elm$svg$Svg$Attributes$fill('none'),
 													$elm$svg$Svg$Attributes$stroke(cfg.aU),
-													$elm$svg$Svg$Attributes$strokeWidth('2'),
+													$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 													$elm$svg$Svg$Attributes$strokeLinejoin('round')
 												])),
 											A2(
@@ -9971,7 +9971,7 @@ var $author$project$PF6$Charts$Donut$toSvg = function (_v0) {
 							]));
 				}),
 			cfg.b0);
-		var innerRadius = outerRadius * 0.65;
+		var innerRadius = outerRadius * 0.82;
 		var pieArcs = A2(
 			$author$project$Shape$pie,
 			{
@@ -10129,7 +10129,7 @@ var $author$project$PF6$Charts$DonutUtilization$toSvg = function (_v0) {
 			$elm$core$Basics$round(percent)) + '%';
 		var outerRadius = (svgSize / 2) - 10;
 		var labelColor = $author$project$PF6$Charts$Theme$labelColor(cfg.aO);
-		var innerRadius = outerRadius * 0.65;
+		var innerRadius = outerRadius * 0.82;
 		var fullAngle = 2 * $elm$core$Basics$pi;
 		var trackPath = $author$project$Shape$arc(
 			{dU: 2, cD: fullAngle - 0.001, d6: innerRadius, en: outerRadius, c7: 0, eo: 0, dx: 0});
@@ -10277,7 +10277,7 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 										$elm$svg$Svg$Attributes$x2('16'),
 										$elm$svg$Svg$Attributes$y2('6'),
 										$elm$svg$Svg$Attributes$stroke(color),
-										$elm$svg$Svg$Attributes$strokeWidth('2')
+										$elm$svg$Svg$Attributes$strokeWidth('1.5')
 									]),
 								_List_Nil),
 								A2(
@@ -10379,7 +10379,7 @@ var $author$project$PF6$Charts$Line$toSvg = function (_v0) {
 							[
 								$elm$svg$Svg$Attributes$fill('none'),
 								$elm$svg$Svg$Attributes$stroke(color),
-								$elm$svg$Svg$Attributes$strokeWidth('2'),
+								$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 								$elm$svg$Svg$Attributes$strokeLinejoin('round')
 							]));
 				}),
@@ -11575,7 +11575,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 									$elm$svg$Svg$Attributes$y2(
 									$elm$core$String$fromFloat(ty)),
 									$elm$svg$Svg$Attributes$stroke(t.aU),
-									$elm$svg$Svg$Attributes$strokeWidth('2'),
+									$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 									$elm$svg$Svg$Attributes$strokeDasharray('6,3')
 								]),
 							_List_Nil),
@@ -11692,7 +11692,7 @@ var $author$project$PF6$Charts$Threshold$toSvg = function (_v0) {
 												[
 													$elm$svg$Svg$Attributes$fill('none'),
 													$elm$svg$Svg$Attributes$stroke(cfg.aU),
-													$elm$svg$Svg$Attributes$strokeWidth('2'),
+													$elm$svg$Svg$Attributes$strokeWidth('1.5'),
 													$elm$svg$Svg$Attributes$strokeLinejoin('round')
 												])),
 											A2(

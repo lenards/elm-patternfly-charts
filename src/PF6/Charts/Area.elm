@@ -84,7 +84,7 @@ defaultConfig data =
     , height = 250
     , data = data
     , color = Colors.primary
-    , fillOpacity = 0.15
+    , fillOpacity = 0.20
     , xLabel = ""
     , yLabel = ""
     , title = ""
@@ -351,7 +351,7 @@ toSvg (AreaChart cfg) =
                        , Path.element linePath
                             [ SA.fill "none"
                             , SA.stroke cfg.color
-                            , SA.strokeWidth "2"
+                            , SA.strokeWidth "1.5"
                             , SA.strokeLinejoin "round"
                             ]
 

@@ -94,7 +94,7 @@ defaultConfig data =
     , height = 250
     , data = data
     , color = Colors.primary
-    , fillOpacity = 0.15
+    , fillOpacity = 0.20
     , thresholds = []
     , xLabel = ""
     , yLabel = ""
@@ -317,7 +317,7 @@ toSvg (ThresholdChart cfg) =
                             , SA.y1 (String.fromFloat ty)
                             , SA.y2 (String.fromFloat ty)
                             , SA.stroke t.color
-                            , SA.strokeWidth "2"
+                            , SA.strokeWidth "1.5"
                             , SA.strokeDasharray "6,3"
                             ]
                             []
@@ -388,7 +388,7 @@ toSvg (ThresholdChart cfg) =
                        , Path.element linePath
                             [ SA.fill "none"
                             , SA.stroke cfg.color
-                            , SA.strokeWidth "2"
+                            , SA.strokeWidth "1.5"
                             , SA.strokeLinejoin "round"
                             ]
                        , Svg.g

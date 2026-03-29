@@ -200,7 +200,7 @@ toSvg (DonutUtilization cfg) =
             toFloat svgSize / 2 - 10
 
         innerRadius =
-            outerRadius * 0.65
+            outerRadius * 0.82
 
         fullAngle =
             2 * pi

@@ -72,7 +72,7 @@ update msg model =
             ( { model | activeSection = id }, Cmd.none )
 
         ResizedTo w ->
-            ( { model | responsiveWidth = max 200 (w - 48) }, Cmd.none )
+            ( { model | responsiveWidth = max 200 w }, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
@@ -755,13 +755,33 @@ Html.div [ HA.style "display" "flex", HA.style "align-items" "center" ]
       , description =
             "PF6.Charts is a package and cannot contain ports, but all chart types accept withWidth and withHeight. Wire up a ResizeObserver port in your own app to make any chart responsive — the library just consumes the width you pass. Resize your browser window to see the chart below reflow. The ResizeObserver is optional: charts fall back to their last known width if the JS API is unavailable."
       , chart =
-            Area.fromData cpuData
-                |> Area.withWidth model.responsiveWidth
-                |> Area.withXLabel "Time (minutes)"
-                |> Area.withYLabel "CPU %"
-                |> Area.withTitle ("Responsive Area Chart (" ++ String.fromInt model.responsiveWidth ++ "px)")
-                |> Area.withTooltips True
-                |> Area.toSvg
+            Html.div []
+                [ Html.div
+                    [ HA.id "resize-chart-container"
+                    , HA.style "resize" "horizontal"
+                    , HA.style "overflow" "hidden"
+                    , HA.style "min-width" "200px"
+                    , HA.style "max-width" "100%"
+                    , HA.style "width" "560px"
+                    , HA.style "border" "1px dashed #c7c7c7"
+                    , HA.style "border-radius" "4px"
+                    ]
+                    [ Area.fromData cpuData
+                        |> Area.withWidth model.responsiveWidth
+                        |> Area.withXLabel "Time (minutes)"
+                        |> Area.withYLabel "CPU %"
+                        |> Area.withTitle ("Responsive Area Chart (" ++ String.fromInt model.responsiveWidth ++ "px)")
+                        |> Area.withTooltips True
+                        |> Area.toSvg
+                    ]
+                , Html.p
+                    [ HA.style "text-align" "center"
+                    , HA.style "color" "#8a8d90"
+                    , HA.style "font-size" "12px"
+                    , HA.style "margin" "8px 0 0"
+                    ]
+                    [ Html.text "← Drag the handle at the bottom-right corner of the chart box to resize →" ]
+                ]
       , code = """-- ─── Elm side (your app, not the library) ────────────────────────────────
 
 -- 1. Change your module declaration:
@@ -777,19 +797,28 @@ type alias Model =
 -- 4. Add a Msg variant:
 type Msg = ... | ResizedTo Int
 
--- 5. Handle it in update:
+-- 5. Handle it in update (contentRect.width is the inner width, no offset needed):
 ResizedTo w ->
-    ( { model | chartWidth = max 200 (w - 48) }, Cmd.none )
+    ( { model | chartWidth = max 200 w }, Cmd.none )
 
 -- 6. Subscribe:
 subscriptions : Model -> Sub Msg
 subscriptions _ =
     containerWidth ResizedTo
 
--- 7. Pass the width to any chart:
-Area.fromData cpuData
-    |> Area.withWidth model.chartWidth
-    |> Area.toSvg
+-- 7. Give the chart a resizable container and pass width from the port:
+Html.div
+    [ Html.Attributes.id "my-chart-container"
+    , Html.Attributes.style "resize" "horizontal"
+    , Html.Attributes.style "overflow" "hidden"
+    , Html.Attributes.style "min-width" "200px"
+    , Html.Attributes.style "max-width" "100%"
+    , Html.Attributes.style "width" "560px"   -- initial width
+    ]
+    [ Area.fromData cpuData
+        |> Area.withWidth model.chartWidth
+        |> Area.toSvg
+    ]
 
 
 -- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────
@@ -799,14 +828,15 @@ Area.fromData cpuData
 if (typeof ResizeObserver !== 'undefined') {
   const ro = new ResizeObserver(entries => {
     for (const entry of entries) {
+      // contentRect.width is the inner (content) width — use it directly
       app.ports.containerWidth.send(
         Math.round(entry.contentRect.width)
       );
     }
   });
-  // Observe whichever element wraps your chart area:
+  // Observe your specific chart container, not the whole page:
   requestAnimationFrame(() => {
-    const el = document.querySelector('main');
+    const el = document.getElementById('my-chart-container');
     if (el) ro.observe(el);
   });
 }"""

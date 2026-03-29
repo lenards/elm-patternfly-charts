@@ -46,21 +46,28 @@
     <script>
       var app = Elm.Main.init({ node: document.getElementById('app') });
 
-      // ResizeObserver: sends the main content area width to Elm so charts
-      // can reflow responsively. The library itself has no ports — only the
-      // consumer application (this file) does.
+      // ResizeObserver: watches the draggable chart container in the
+      // Resize Observer demo panel and sends its width to Elm via port.
+      // The library itself has no ports — only the consumer app does.
       if (typeof ResizeObserver !== 'undefined') {
         var ro = new ResizeObserver(function(entries) {
           for (var i = 0; i < entries.length; i++) {
+            // contentRect.width is the inner (content) width — use directly
             var w = Math.round(entries[i].contentRect.width);
             app.ports.containerWidth.send(w);
           }
         });
-        // Observe the main content area once Elm has rendered it
-        requestAnimationFrame(function() {
-          var main = document.querySelector('main');
-          if (main) { ro.observe(main); }
+        // Wait for Elm to render, then observe the specific resizable container.
+        // Using MutationObserver as a one-shot trigger so we catch the element
+        // even if the user navigates to the Resize Observer panel later.
+        var observer = new MutationObserver(function() {
+          var el = document.getElementById('resize-chart-container');
+          if (el) {
+            ro.observe(el);
+            observer.disconnect();
+          }
         });
+        observer.observe(document.body, { childList: true, subtree: true });
       }
     </script>
   </body>

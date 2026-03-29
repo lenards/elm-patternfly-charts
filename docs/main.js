@@ -5216,7 +5216,7 @@ var $author$project$Main$update = F2(
 				_Utils_update(
 					model,
 					{
-						bD: A2($elm$core$Basics$max, 200, w - 48)
+						bD: A2($elm$core$Basics$max, 200, w)
 					}),
 				$elm$core$Platform$Cmd$none);
 		}
@@ -5412,6 +5412,15 @@ var $author$project$PF6$Charts$Stack$defaultConfig = function (series) {
 var $author$project$PF6$Charts$Stack$fromSeries = function (series) {
 	return $author$project$PF6$Charts$Stack$defaultConfig(series);
 };
+var $elm$json$Json$Encode$string = _Json_wrap;
+var $elm$html$Html$Attributes$stringProperty = F2(
+	function (key, string) {
+		return A2(
+			_VirtualDom_property,
+			key,
+			$elm$json$Json$Encode$string(string));
+	});
+var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $author$project$Main$memoryCategories = _List_fromArray(
 	['Node 1', 'Node 2', 'Node 3', 'Node 4', 'Node 5']);
 var $author$project$Main$memoryData = _List_fromArray(
@@ -5452,6 +5461,7 @@ var $author$project$Main$networkSeriesData = _List_fromArray(
 		o: 'Outbound'
 	}
 	]);
+var $elm$html$Html$p = _VirtualDom_node('p');
 var $author$project$Main$pieSlices = _List_fromArray(
 	[
 		{o: 'US East', az: 35},
@@ -12578,38 +12588,65 @@ var $author$project$Main$allChartPanels = function (model) {
 			H: 'Threshold Chart'
 		},
 			{
-			A: $author$project$PF6$Charts$Area$toSvg(
-				A2(
-					$author$project$PF6$Charts$Area$withTooltips,
-					true,
-					A2(
-						$author$project$PF6$Charts$Area$withTitle,
-						'Responsive Area Chart (' + ($elm$core$String$fromInt(model.bD) + 'px)'),
+			A: A2(
+				$elm$html$Html$div,
+				_List_Nil,
+				_List_fromArray(
+					[
 						A2(
-							$author$project$PF6$Charts$Area$withYLabel,
-							'CPU %',
-							A2(
-								$author$project$PF6$Charts$Area$withXLabel,
-								'Time (minutes)',
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$id('resize-chart-container'),
+								A2($elm$html$Html$Attributes$style, 'resize', 'horizontal'),
+								A2($elm$html$Html$Attributes$style, 'overflow', 'hidden'),
+								A2($elm$html$Html$Attributes$style, 'min-width', '200px'),
+								A2($elm$html$Html$Attributes$style, 'max-width', '100%'),
+								A2($elm$html$Html$Attributes$style, 'width', '560px'),
+								A2($elm$html$Html$Attributes$style, 'border', '1px dashed #c7c7c7'),
+								A2($elm$html$Html$Attributes$style, 'border-radius', '4px')
+							]),
+						_List_fromArray(
+							[
+								$author$project$PF6$Charts$Area$toSvg(
 								A2(
-									$author$project$PF6$Charts$Area$withWidth,
-									model.bD,
-									$author$project$PF6$Charts$Area$fromData($author$project$Main$cpuData))))))),
-			B: '-- ─── Elm side (your app, not the library) ────────────────────────────────\n\n-- 1. Change your module declaration:\nport module Main exposing (main)\n\n-- 2. Declare the port (one line):\nport containerWidth : (Int -> msg) -> Sub msg\n\n-- 3. Add a field to your Model:\ntype alias Model =\n    { ..., chartWidth : Int }\n\n-- 4. Add a Msg variant:\ntype Msg = ... | ResizedTo Int\n\n-- 5. Handle it in update:\nResizedTo w ->\n    ( { model | chartWidth = max 200 (w - 48) }, Cmd.none )\n\n-- 6. Subscribe:\nsubscriptions : Model -> Sub Msg\nsubscriptions _ =\n    containerWidth ResizedTo\n\n-- 7. Pass the width to any chart:\nArea.fromData cpuData\n    |> Area.withWidth model.chartWidth\n    |> Area.toSvg\n\n\n-- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────\n\n-- This entire block is optional — charts just use their last-set width\n-- if ResizeObserver is unavailable.\nif (typeof ResizeObserver !== \'undefined\') {\n  const ro = new ResizeObserver(entries => {\n    for (const entry of entries) {\n      app.ports.containerWidth.send(\n        Math.round(entry.contentRect.width)\n      );\n    }\n  });\n  // Observe whichever element wraps your chart area:\n  requestAnimationFrame(() => {\n    const el = document.querySelector(\'main\');\n    if (el) ro.observe(el);\n  });\n}',
+									$author$project$PF6$Charts$Area$withTooltips,
+									true,
+									A2(
+										$author$project$PF6$Charts$Area$withTitle,
+										'Responsive Area Chart (' + ($elm$core$String$fromInt(model.bD) + 'px)'),
+										A2(
+											$author$project$PF6$Charts$Area$withYLabel,
+											'CPU %',
+											A2(
+												$author$project$PF6$Charts$Area$withXLabel,
+												'Time (minutes)',
+												A2(
+													$author$project$PF6$Charts$Area$withWidth,
+													model.bD,
+													$author$project$PF6$Charts$Area$fromData($author$project$Main$cpuData)))))))
+							])),
+						A2(
+						$elm$html$Html$p,
+						_List_fromArray(
+							[
+								A2($elm$html$Html$Attributes$style, 'text-align', 'center'),
+								A2($elm$html$Html$Attributes$style, 'color', '#8a8d90'),
+								A2($elm$html$Html$Attributes$style, 'font-size', '12px'),
+								A2($elm$html$Html$Attributes$style, 'margin', '8px 0 0')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('← Drag the handle at the bottom-right corner of the chart box to resize →')
+							]))
+					])),
+			B: '-- ─── Elm side (your app, not the library) ────────────────────────────────\n\n-- 1. Change your module declaration:\nport module Main exposing (main)\n\n-- 2. Declare the port (one line):\nport containerWidth : (Int -> msg) -> Sub msg\n\n-- 3. Add a field to your Model:\ntype alias Model =\n    { ..., chartWidth : Int }\n\n-- 4. Add a Msg variant:\ntype Msg = ... | ResizedTo Int\n\n-- 5. Handle it in update (contentRect.width is the inner width, no offset needed):\nResizedTo w ->\n    ( { model | chartWidth = max 200 w }, Cmd.none )\n\n-- 6. Subscribe:\nsubscriptions : Model -> Sub Msg\nsubscriptions _ =\n    containerWidth ResizedTo\n\n-- 7. Give the chart a resizable container and pass width from the port:\nHtml.div\n    [ Html.Attributes.id "my-chart-container"\n    , Html.Attributes.style "resize" "horizontal"\n    , Html.Attributes.style "overflow" "hidden"\n    , Html.Attributes.style "min-width" "200px"\n    , Html.Attributes.style "max-width" "100%"\n    , Html.Attributes.style "width" "560px"   -- initial width\n    ]\n    [ Area.fromData cpuData\n        |> Area.withWidth model.chartWidth\n        |> Area.toSvg\n    ]\n\n\n-- ─── JS side (index.html, after Elm.Main.init) ───────────────────────────\n\n-- This entire block is optional — charts just use their last-set width\n-- if ResizeObserver is unavailable.\nif (typeof ResizeObserver !== \'undefined\') {\n  const ro = new ResizeObserver(entries => {\n    for (const entry of entries) {\n      // contentRect.width is the inner (content) width — use it directly\n      app.ports.containerWidth.send(\n        Math.round(entry.contentRect.width)\n      );\n    }\n  });\n  // Observe your specific chart container, not the whole page:\n  requestAnimationFrame(() => {\n    const el = document.getElementById(\'my-chart-container\');\n    if (el) ro.observe(el);\n  });\n}',
 			C: 'PF6.Charts is a package and cannot contain ports, but all chart types accept withWidth and withHeight. Wire up a ResizeObserver port in your own app to make any chart responsive — the library just consumes the width you pass. Resize your browser window to see the chart below reflow. The ResizeObserver is optional: charts fall back to their last known width if the JS API is unavailable.',
 			cJ: 'resize',
 			H: 'Resize Observer'
 		}
 		]);
 };
-var $elm$json$Json$Encode$string = _Json_wrap;
-var $elm$html$Html$Attributes$stringProperty = F2(
-	function (key, string) {
-		return A2(
-			_VirtualDom_property,
-			key,
-			$elm$json$Json$Encode$string(string));
-	});
 var $elm$html$Html$Attributes$class = $elm$html$Html$Attributes$stringProperty('className');
 var $elm$html$Html$h1 = _VirtualDom_node('h1');
 var $elm$html$Html$Attributes$href = function (url) {
@@ -12636,12 +12673,10 @@ var $author$project$Main$navItems = _List_fromArray(
 		_Utils_Tuple2('threshold', 'Threshold Chart'),
 		_Utils_Tuple2('resize', 'Resize Observer')
 	]);
-var $elm$html$Html$p = _VirtualDom_node('p');
 var $elm$html$Html$ul = _VirtualDom_node('ul');
 var $elm$html$Html$code = _VirtualDom_node('code');
 var $elm$html$Html$details = _VirtualDom_node('details');
 var $elm$html$Html$h2 = _VirtualDom_node('h2');
-var $elm$html$Html$Attributes$id = $elm$html$Html$Attributes$stringProperty('id');
 var $elm$html$Html$pre = _VirtualDom_node('pre');
 var $elm$html$Html$section = _VirtualDom_node('section');
 var $elm$html$Html$summary = _VirtualDom_node('summary');
